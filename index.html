@@ -1,100 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Vita3K</title>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
-  <link href="style.css" rel="stylesheet" type="text/css">
-  <meta charset="utf-8">
-</head>
+  <head>
 
-<body>
-  <ul class="nav">
-    <li>
-      <a href="#about">About</a>
-    </li>
-    <li>
-      <a href="#download">Download</a>
-    </li>
-    <li>
-      <a href="#community">Community</a>
-    </li>
-    <li>
-      <a href="#compatibility">Compatibility</a>
-    </li>
-    <li>
-      <a href="#contribute">Contribute</a>
-    </li>
-    <li>
-      <a href="#donate">Donate</a>
-    </li>
-  </ul>
-  <img class="logo" src="logo.svg" width="128" height="128" title="Logo by Gordon Mackay" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <div class="box">
-    <div id="about" class="anchor" />
-    <h1>About Vita3K</h1>
-    <p>
-      <strong>Vita3K</strong> is an experimental open-source PlayStation Vita emulator for Windows and macOS.</p>
+    <title>Vita3K - An Experimental PSVITA Emulator</title>
 
-    <div id="download" class="anchor" />
-    <h1>Download</h1>
-    <p>Official releases will be provided on the
-      <a href="https://github.com/Vita3K/Vita3K/releases">GitHub releases</a> page.</p>
-    <p>The latest builds for Windows can be downloaded on
-      <a href="https://ci.appveyor.com/project/Vita3K/vita3k/branch/master/artifacts">AppVeyor</a>.</p>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <div id="community" class="anchor" />
-    <h1>Community</h1>
-    <p>You can get in touch with developers and users in the following ways:</p>
-    <ul>
-      <li>
-        <a href="https://discord.gg/6aGwQzh">Discord</a> (preferred)
-      </li>
-      <li>IRC
-        <code>#vita3k</code> on
-        <strong>freenode</strong>
-      </li>
-    </ul>
+    <!-- Custom fonts for this template -->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
-    <div id="compatibility" class="anchor" />
-    <h1>Compatibility</h1>
-    <p>The emulator does
-      <strong>not yet run any commercial games</strong>.</p>
-    <p>Several homebrew games are supported. Please check the
-      <a href="https://github.com/Vita3K/homebrew-compatibility/issues">compatibility database</a> for details!</p>
-    <img src="screenshots/vitaQuake.png" title="vitaQuake by Rinnegatamante" class="screenshot" />
-    <img src="screenshots/VitaTester.png" title="VitaTester by SMOKE5" class="screenshot" />
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-    <div id="contribute" class="anchor" />
-    <h1>Contribute</h1>
-    <p>You can contribute to the emulator in the following ways:</p>
-    <ul>
-      <li>File issues or make pull requests on our
-        <a href="https://github.com/Vita3K/Vita3K">GitHub repo</a>.</li>
-      <li>Update the
-        <a href="https://github.com/Vita3K/homebrew-compatibility/issues">Homebrew compatibility database</a>.</li>
-    </ul>
+    <!-- Custom styles for this template -->
+    <link href="css/creative.css" rel="stylesheet">
 
-    <div id="donate" class="anchor" />
-    <h1>Donate</h1>
-    <p>If you would like to show your appreciation or even help fund development, the project has a
-      <a href="https://www.patreon.com/Vita3K">Patreon</a> page.</p>
-    <a href="https://www.patreon.com/bePatron?u=230097" data-patreon-widget-type="become-patron-button">Become a Patron!</a>
-    <script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
+    <link rel=icon href=img/logo.svg sizes="any" type="image/svg+xml">
+    
+  </head>
 
-    <h1>Note</h1>
-    <p>The purpose of the emulator is not to enable illegal activity.</p>
+  <body id="page-top">
 
-    <p>PlayStation and PS Vita are trademarks of Sony Interactive Entertainment Inc. The emulator is not related to or endorsed
-      by Sony, or derived from confidential materials belonging to Sony.</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="logo" src="img/logo.svg" width="32" height="32" title="Logo by Gordon Mackay" /></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#community">Community</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#compatibility">Compatibility</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#showcase">Showcase</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contribute">Contribute</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#donate">Donate</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <p>Copyright &copy; 2018 Vita3K team</p>
-    <p>Logo by Gordon Mackay -
-      <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> -
-      <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
-    </p>
-  </div>
-</body>
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>Vita3K</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">The world's first PlayStation Vita emulator.</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">About Vita3K</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Vita3K is the world's first experimental open-source PlayStation Vita emulator for Windows and MacOs.<br>
+            Please note that the purpose of the emulator is not to enable illegal activity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Pick up your build!</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fab fa-4x fa-windows text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Windows</h3>
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">Coming Soon!</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fab fa-4x fa-apple text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">MacOs</h3>
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">Coming Soon!</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fab fa-4x fa-windows text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Windows Nightlies</h3>
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://ci.appveyor.com/project/Vita3K/vita3k/branch/master/artifacts">Grab from AppVeyor</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fab fa-4x fa-apple text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">MacOs Nightlies</h3>
+              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">Coming Soon</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="bg-dark text-white" id="community">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Get in touch with us!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Get in touch with the developers and other users whenever you want. We prefer Discord server but the choice is up to you!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fab fa-discord fa-3x mb-3 sr-contact"></i>
+            <p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://discord.gg/6aGwQzh">Join now!</a>
+            </p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-comments fa-3x mb-3 sr-contact"></i>
+            <p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://webchat.freenode.net/?channels=%23vita3k">Join now!</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compatibility">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Check out what currently runs!</h2>
+            <hr class="my-4">
+            <p class="mb-5">The emulator does not yet run <b>any commercial games</b>.<br>
+            Several homebrew games are supported. Please check the <a href="https://github.com/Vita3K/homebrew-compatibility/issues">compatibility database</a> for details!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="p-0" id="showcase">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/1.png">
+              <img class="img-fluid" src="img/portfolio/thumbnails/1.png" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Homebrew Game Port
+                  </div>
+                  <div class="project-name">
+                    vitaQuake
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/2.png">
+              <img class="img-fluid" src="img/portfolio/thumbnails/2.png" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Homebrew Game
+                  </div>
+                  <div class="project-name">
+                    DoggyTwiceVT
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/3.png">
+              <img class="img-fluid" src="img/portfolio/thumbnails/3.png" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Homebrew Game
+                  </div>
+                  <div class="project-name">
+                    Happy Land
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/4.png">
+              <img class="img-fluid" src="img/portfolio/thumbnails/4.png" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Homebrew Game
+                  </div>
+                  <div class="project-name">
+                    Minesweeper
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/5.png">
+              <img class="img-fluid" src="img/portfolio/thumbnails/5.png" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Homebrew Game
+                  </div>
+                  <div class="project-name">
+                    Tactic Miner
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/6.png">
+              <img class="img-fluid" src="img/portfolio/thumbnails/6.png" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Homebrew Utility
+                  </div>
+                  <div class="project-name">
+                    VitaTester
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark text-white" id="contribute">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Help us getting better!</h2>
+            <hr class="my-4">
+            <p class="mb-5">You can contribute to the emulator in the following ways: 
+            <br><ul>
+            <li>File issues or make pull requests on our
+                <a href="https://github.com/Vita3K/Vita3K">GitHub repo</a>.</li>
+            <li>Update the
+                <a href="https://github.com/Vita3K/homebrew-compatibility/issues">Homebrew compatibility database</a>.</li>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="donate">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Show us your love!</h2>
+            <hr class="my-4">
+            <p class="mb-5">If you would like to show your appreciation or even help fund development, the project has a <a href="https://www.patreon.com/Vita3K">Patreon page</a>.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="container text-center">
+            <i class="fab fa-patreon fa-3x mb-3 sr-contact"></i>
+            <p><a class="btn btn-light btn-xl sr-button" href="https://www.patreon.com/bePatron?u=230097&redirect_uri=https%3A%2F%2Fvita3k.github.io%2F%23about&utm_medium=widget">Become a Patron</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="bg-dark text-white" id="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <p class="mb-5">
+                PlayStation and PS Vita are trademarks of Sony Interactive Entertainment Inc. The emulator is not related to or endorsed by Sony, or derived from confidential materials belonging to Sony.<br><br>
+                Copyright © 2018 Vita3K team<br>
+                Logo by Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+  </body>
 
 </html>
