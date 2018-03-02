@@ -2,6 +2,7 @@ body,
 html {
   width: 100%;
   height: 100%;
+  background-color: #191919;
 }
 
 body {
@@ -14,8 +15,27 @@ hr {
   border-color: #F05F40;
 }
 
+.plate{
+	border-radius: 15px 50px 30px;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.plate:hover{
+	color: white;
+}
+
 hr.light {
   border-color: #fff;
+}
+
+td a {
+    display:block;
+    width:100%;
+	color: #FFFFFF;
 }
 
 a {
@@ -23,6 +43,10 @@ a {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
+}
+
+.progress {
+  background-color: #00000000;
 }
 
 a:hover {
@@ -175,6 +199,7 @@ header.masthead {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: #000000;
 }
 
 header.masthead hr {
