@@ -82,8 +82,8 @@
                                 $scope.views[4].push(data[i])
                             }
                             $scope.views[0].push(data[i])
-								$scope.data = $scope.views[0];
-								$scope.data = $filter('orderBy')($scope.data, 'title', false);
+                            $scope.data = $scope.views[0];
+                            $scope.data = $filter('orderBy')($scope.data, 'title', false);
                         }
                     })
                     .error(function() {
@@ -91,10 +91,10 @@
                     });
                 page++
             }
-			
+
             $scope.changeView = function(field) {
                     $scope.data = $scope.views[field]
-						$scope.data = $filter('orderBy')($scope.data, 'title', false);
+                    $scope.data = $filter('orderBy')($scope.data, 'title', false);
                 }
                 // Angular filter
             $scope.filterEntries = function(val) {
@@ -139,45 +139,73 @@
                         <a href="#" class="plate" ng-click="changeView(4)" style="background-color: #0e8a16">Playable ({{views[4].length}})</a>
                         <a href="#" class="plate" ng-click="changeView(0)" style="background-color: blue">All ({{views[0].length}})</a>
                         <center>
-						<table><tr><td><small><font color=red>Crashes ({{((views[1].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that crash the emulator.</small></td><td width="50%"><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:{{(views[1].length/views[0].length)*100}}%">
-    
-  </div>
-  
-  </div></td></tr><tr><td>
-  <small><font color=#d93f0b>Buggy ({{((views[2].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that work with bugs or glitches.</small>
-  </td><td width="50%"><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:{{(views[2].length/views[0].length)*100}}%">
-  </div>
-  
-  </div></td></tr><tr><td>
-  <small><font color=#fbca04>Slow ({{((views[3].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that work but have very poor framerate.</small>
-  </td><td width="50%"><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:{{(views[3].length/views[0].length)*100}}%">
-    
-  </div>
-  
-  </div></td></tr><tr><td>
-    <small><font color=#0e8a16>Playable ({{((views[4].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that are perfectly playable.</small>
-  </td><td width="50%"><div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:{{(views[4].length/views[0].length)*100}}%">
-    
-  </div>
+                            <table>
+                                <tr>
+                                    <td><small><font color=red>Crashes ({{((views[1].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that crash the emulator.</small></td>
+                                    <td width="50%">
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:{{(views[1].length/views[0].length)*100}}%">
 
-</div></td></tr>
-</table><br><br>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <small><font color=#d93f0b>Buggy ({{((views[2].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that work with bugs or glitches.</small>
+                                    </td>
+                                    <td width="50%">
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:{{(views[2].length/views[0].length)*100}}%">
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <small><font color=#fbca04>Slow ({{((views[3].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that work but have very poor framerate.</small>
+                                    </td>
+                                    <td width="50%">
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" style="width:{{(views[3].length/views[0].length)*100}}%">
+
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <small><font color=#0e8a16>Playable ({{((views[4].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that are perfectly playable.</small>
+                                    </td>
+                                    <td width="50%">
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width:{{(views[4].length/views[0].length)*100}}%">
+
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br>
+                            <br>
 
                             <table class="table-hover table-bordered table-striped">
-                                <thead><tr>
-                                    <td><font color=yellow><small>Entry Name</small></font></td>
-                                    <td><font color=yellow><small>Status</small></font></td>
-                                </tr></thead>
-								<tbody>
-                                <tr ng-repeat="entry in data | filter: filterEntries(field)">
-                                    <td align="left"><a href="{{entry.html_url}}"><small>{{entry.title}}</small></a></td>
-                                    <td bgcolor="{{entry.color}}"><font color="white"><small>{{entry.status}}</small></font></td>
-                                </tr>
-								</tbody>
+                                <thead>
+                                    <tr>
+                                        <td><font color=yellow><small>Entry Name</small></font></td>
+                                        <td><font color=yellow><small>Status</small></font></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="entry in data | filter: filterEntries(field)">
+                                        <td align="left"><a href="{{entry.html_url}}"><small>{{entry.title}}</small></a></td>
+                                        <td bgcolor="{{entry.color}}"><font color="white"><small>{{entry.status}}</small></font></td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </center>
                     </p>
