@@ -1,14 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="Vita3K">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Vita3K - An Experimental PSVITA Emulator</title>
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+
+    <!-- Texts -->
+    <script src="texts/index.js"></script>
+
+    <script>
+        function get(name) {
+            if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
+                return decodeURIComponent(name[1]);
+        }
+
+        angular.module('Vita3K', []).controller("angularController", function($scope) {
+
+            // Multilanguage setup
+            var lang = get('lang');
+            if (lang == "en") {
+                $scope.texts = texts[0]
+                $scope.lang = "en"
+            } else if (lang == "it") {
+                $scope.texts = texts[1]
+                $scope.lang = "it"
+            } else {
+                var lang = window.navigator.language || window.navigator.userLanguage;
+                if (lang === 'it-IT') {
+                    $scope.texts = texts[1]
+                    $scope.lang = "it"
+                    $scope.langcode = 1
+                } else {
+                    $scope.texts = texts[0]
+                    $scope.lang = "en"
+                }
+            }
+
+            $scope.changeLang = function(field) {
+                $scope.texts = texts[field]
+                if (field == 0) {
+                    $scope.lang = "en"
+                } else if (field == 1) {
+                    $scope.lang = "it"
+                }
+            }
+
+        })
+    </script>
+
+    <title>Vita3K - An Experimental PSVita Emulator</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +63,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="flag-icon/css/flag-icon.css" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -25,305 +72,332 @@
     <link href="css/creative.css" rel="stylesheet">
 
     <link rel=icon href=img/logo.svg sizes="any" type="image/svg+xml">
-    
-  </head>
 
-  <body id="page-top">
+</head>
+
+<body id="page-top" ng-controller="angularController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="logo" src="img/logo.svg" width="32" height="32" title="Logo by Gordon Mackay" /></a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#download">Download</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#community">Community</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#compatibility">Compatibility</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#showcase">Showcase</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contribute">Contribute</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#donate">Donate</a>
-            </li>
-          </ul>
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="logo" src="img/logo.svg" width="32" height="32" title="Logo by Gordon Mackay" /></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">{{texts[0]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#download">{{texts[1]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#community">{{texts[2]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#compatibility">{{texts[3]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#showcase">{{texts[4]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contribute">{{texts[5]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#donate">{{texts[6]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#language">
+                            <span ng-if="lang == 'en'"><span class="flag-icon flag-icon-gb"></span> EN</span>
+                            <span ng-if="lang == 'it'"><span class="flag-icon flag-icon-it"></span> IT</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
+    <!-- Language selection -->
+    <div class="modal fade language" id="language" tabindex="-1" role="dialog" aria-labelledby="language" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{texts[39]}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(0)"><span class="flag-icon flag-icon-gb"></span> English</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-it"></span> Italiano</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="masthead text-center text-white d-flex">
-      <div class="container my-auto">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h1 class="text-uppercase">
+        <div class="container my-auto">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="text-uppercase">
               <strong>Vita3K</strong>
             </h1>
-            <hr>
-          </div>
-          <div class="col-lg-8 mx-auto">
-            <p class="text-faded mb-5">The world's first PlayStation Vita emulator.</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
-          </div>
+                    <hr>
+                </div>
+                <div class="col-lg-8 mx-auto">
+                    <p class="text-faded mb-5">{{texts[7]}}</p>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">{{texts[8]}}</a>
+                </div>
+            </div>
         </div>
-      </div>
     </header>
 
     <section class="bg-primary" id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">About Vita3K</h2>
-            <hr class="light my-4">
-            <p class="text-faded mb-4">Vita3K is the world's first experimental open-source PlayStation Vita emulator for Windows and MacOs.<br>
-            Please note that the purpose of the emulator is not to enable illegal activity.
-            </p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading text-white">{{texts[9]}}</h2>
+                    <hr class="light my-4">
+                    <p class="text-faded mb-4">{{texts[10]}}
+                        <br> {{texts[11]}}
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <section class="bg-white text-dark" id="download">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Pick up your build!</h2>
-            <hr class="my-4">
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">{{texts[12]}}</h2>
+                    <hr class="my-4">
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fab fa-4x fa-windows text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Windows</h3>
-              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">Coming Soon!</a>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fab fa-4x fa-windows text-primary mb-3 sr-icons"></i>
+                        <h3 class="mb-3">Windows</h3>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">{{texts[13]}}</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fab fa-4x fa-apple text-primary mb-3 sr-icons"></i>
+                        <h3 class="mb-3">MacOs</h3>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">{{texts[13]}}</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fab fa-4x fa-windows text-primary mb-3 sr-icons"></i>
+                        <h3 class="mb-3">Windows Nightlies</h3>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://ci.appveyor.com/project/Vita3K/vita3k/branch/master/artifacts">{{texts[14]}} AppVeyor</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box mt-5 mx-auto">
+                        <i class="fab fa-4x fa-apple text-primary mb-3 sr-icons"></i>
+                        <h3 class="mb-3">MacOs Nightlies</h3>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">{{texts[13]}}</a>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fab fa-4x fa-apple text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">MacOs</h3>
-              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">Coming Soon!</a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fab fa-4x fa-windows text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Windows Nightlies</h3>
-              <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://ci.appveyor.com/project/Vita3K/vita3k/branch/master/artifacts">Grab from AppVeyor</a>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 text-center">
-            <div class="service-box mt-5 mx-auto">
-              <i class="fab fa-4x fa-apple text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">MacOs Nightlies</h3>
-              <a class="btn btn-primary btn-xl js-scroll-trigger" href="#download">Coming Soon</a>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
-    
+
     <section class="bg-dark text-white" id="community">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Get in touch with us!</h2>
-            <hr class="my-4">
-            <p class="mb-5">Get in touch with the developers and other users whenever you want. We prefer Discord server but the choice is up to you!</p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">{{texts[15]}}</h2>
+                    <hr class="my-4">
+                    <p class="mb-5">{{texts[16]}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 ml-auto text-center">
+                    <i class="fab fa-discord fa-3x mb-3 sr-contact"></i>
+                    <p>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://discord.gg/6aGwQzh">{{texts[17]}}</a>
+                    </p>
+                </div>
+                <div class="col-lg-4 mr-auto text-center">
+                    <i class="fa fa-comments fa-3x mb-3 sr-contact"></i>
+                    <p>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://webchat.freenode.net/?channels=%23vita3k">{{texts[17]}}</a>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto text-center">
-            <i class="fab fa-discord fa-3x mb-3 sr-contact"></i>
-            <p>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://discord.gg/6aGwQzh">Join now!</a>
-            </p>
-          </div>
-          <div class="col-lg-4 mr-auto text-center">
-            <i class="fa fa-comments fa-3x mb-3 sr-contact"></i>
-            <p>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://webchat.freenode.net/?channels=%23vita3k">Join now!</a>
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section class="bg-white text-dark" id="compatibility">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Check out what currently runs!</h2>
-            <hr class="my-4">
-            <p class="mb-5">The emulator does not yet run <b>any commercial games</b>.<br>
-            Several homebrew games are supported. Please check the <a href="compatibility.html">compatibility database</a> for details!</p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">{{texts[18]}}</h2>
+                    <hr class="my-4">
+                    <p class="mb-5">{{texts[19]}} <b>{{texts[20]}}</b>.
+                        <br> {{texts[21]}} <a href="compatibility.html?lang={{lang}}">{{texts[22]}}</a> {{texts[23]}}</p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
-    
+
     <section class="p-0" id="showcase">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters popup-gallery">
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/1.png">
-              <img class="img-fluid" src="img/portfolio/thumbnails/1.png" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Homebrew Game Port
-                  </div>
-                  <div class="project-name">
-                    vitaQuake
-                  </div>
+        <div class="container-fluid p-0">
+            <div class="row no-gutters popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/1.png">
+                        <img class="img-fluid" src="img/portfolio/thumbnails/1.png" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {{texts[24]}}
+                                </div>
+                                <div class="project-name">
+                                    vitaQuake
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/2.png">
-              <img class="img-fluid" src="img/portfolio/thumbnails/2.png" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Homebrew Game
-                  </div>
-                  <div class="project-name">
-                    DoggyTwiceVT
-                  </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/2.png">
+                        <img class="img-fluid" src="img/portfolio/thumbnails/2.png" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {{texts[25]}}
+                                </div>
+                                <div class="project-name">
+                                    DoggyTwiceVT
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/3.png">
-              <img class="img-fluid" src="img/portfolio/thumbnails/3.png" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Homebrew Game
-                  </div>
-                  <div class="project-name">
-                    Happy Land
-                  </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/3.png">
+                        <img class="img-fluid" src="img/portfolio/thumbnails/3.png" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {{texts[25]}}
+                                </div>
+                                <div class="project-name">
+                                    Happy Land
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/4.png">
-              <img class="img-fluid" src="img/portfolio/thumbnails/4.png" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Homebrew Game
-                  </div>
-                  <div class="project-name">
-                    Minesweeper
-                  </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/4.png">
+                        <img class="img-fluid" src="img/portfolio/thumbnails/4.png" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {{texts[25]}}
+                                </div>
+                                <div class="project-name">
+                                    Minesweeper
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/5.png">
-              <img class="img-fluid" src="img/portfolio/thumbnails/5.png" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Homebrew Game
-                  </div>
-                  <div class="project-name">
-                    Tactic Miner
-                  </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/5.png">
+                        <img class="img-fluid" src="img/portfolio/thumbnails/5.png" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {{texts[25]}}
+                                </div>
+                                <div class="project-name">
+                                    Tactic Miner
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-sm-6">
-            <a class="portfolio-box" href="img/portfolio/fullsize/6.png">
-              <img class="img-fluid" src="img/portfolio/thumbnails/6.png" alt="">
-              <div class="portfolio-box-caption">
-                <div class="portfolio-box-caption-content">
-                  <div class="project-category text-faded">
-                    Homebrew Utility
-                  </div>
-                  <div class="project-name">
-                    VitaTester
-                  </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a class="portfolio-box" href="img/portfolio/fullsize/6.png">
+                        <img class="img-fluid" src="img/portfolio/thumbnails/6.png" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    {{texts[26]}}
+                                </div>
+                                <div class="project-name">
+                                    VitaTester
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-              </div>
-            </a>
-          </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <section class="bg-dark text-white" id="contribute">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Help us getting better!</h2>
-            <hr class="my-4">
-            <p class="mb-5">You can contribute to the emulator in the following ways: 
-            <br><ul>
-            <li>File issues or make pull requests on our
-                <a href="https://github.com/Vita3K/Vita3K">GitHub repo</a>.</li>
-            <li>Update the
-                <a href="https://github.com/Vita3K/homebrew-compatibility/issues">Homebrew compatibility database</a>.</li>
-            </ul>
-            </p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">{{texts[27]}}</h2>
+                    <hr class="my-4">
+                    <p class="mb-5">{{texts[28]}}
+                        <br>
+                        <ul>
+                            <li>{{texts[29]}}
+                                <a href="https://github.com/Vita3K/Vita3K">GitHub repo</a>.</li>
+                            <li>{{texts[30]}}
+                                <a href="https://github.com/Vita3K/homebrew-compatibility/issues">{{texts[31]}}</a>.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <section class="bg-white text-dark" id="donate">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading">Show us your love!</h2>
-            <hr class="my-4">
-            <p class="mb-5">If you would like to show your appreciation or even help fund development, the project has a <a href="https://www.patreon.com/Vita3K">Patreon page</a>.</p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-heading">{{texts[32]}}</h2>
+                    <hr class="my-4">
+                    <p class="mb-5">{{texts[33]}} <a href="https://www.patreon.com/Vita3K">{{texts[34]}}</a>.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container text-center">
+                    <i class="fab fa-patreon fa-3x mb-3 sr-contact"></i>
+                    <p><a class="btn btn-light btn-xl sr-button" href="https://www.patreon.com/bePatron?u=230097&redirect_uri=https%3A%2F%2Fvita3k.github.io%2F%23about&utm_medium=widget">{{texts[35]}}</a></p>
+                </div>
+            </div>
         </div>
-        <div class="row">
-          <div class="container text-center">
-            <i class="fab fa-patreon fa-3x mb-3 sr-contact"></i>
-            <p><a class="btn btn-light btn-xl sr-button" href="https://www.patreon.com/bePatron?u=230097&redirect_uri=https%3A%2F%2Fvita3k.github.io%2F%23about&utm_medium=widget">Become a Patron</a></p>
-          </div>
-        </div>
-      </div>
     </section>
-    
+
     <section class="bg-dark text-white" id="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <p class="mb-5">
-                PlayStation and PS Vita are trademarks of Sony Interactive Entertainment Inc. The emulator is not related to or endorsed by Sony, or derived from confidential materials belonging to Sony.<br><br>
-                Copyright © 2018 Vita3K team<br>
-                Logo by Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
-            </p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="mb-5">
+                        {{texts[36]}} {{texts[37]}}
+                        <br>
+                        <br> Copyright © 2018 Vita3K team
+                        <br> {{texts[38]}} Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- Bootstrap core JavaScript -->
@@ -338,6 +412,6 @@
     <!-- Custom scripts for this template -->
     <script src="js/creative.min.js"></script>
 
-  </body>
+</body>
 
 </html>
