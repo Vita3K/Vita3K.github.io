@@ -20,13 +20,14 @@
                 return decodeURIComponent(name[1]);
         }
 
-        angular.module('Vita3K', []).controller("angularController", function($scope) {
+        angular.module('Vita3K', []).controller("angularController", function($scope, $filter, $sce) {
 
             // Multilanguage setup
             var lang = get('lang');
             if (lang == "en") {
                 $scope.texts = texts[0]
                 $scope.lang = "en"
+
             } else if (lang == "it") {
                 $scope.texts = texts[1]
                 $scope.lang = "it"
@@ -41,6 +42,7 @@
                     $scope.lang = "en"
                 }
             }
+            lang = $scope.lang
 
             $scope.changeLang = function(field) {
                 $scope.texts = texts[field]
@@ -49,9 +51,14 @@
                 } else if (field == 1) {
                     $scope.lang = "it"
                 }
+                lang = $scope.lang
             }
 
-        })
+        }).filter('unsafe', function($sce) {
+            return function(val) {
+                return $sce.trustAsHtml(val);
+            };
+        });
     </script>
 
     <title>Vita3K - An Experimental PSVita Emulator</title>
@@ -71,7 +78,7 @@
     <!-- Custom styles for this template -->
     <link href="css/creative.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel=icon href=img/logo.svg sizes="any" type="image/svg+xml">
 
 </head>
 
@@ -123,7 +130,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{texts[39]}}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{texts[33]}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -243,8 +250,8 @@
                 <div class="col-lg-8 mx-auto text-center">
                     <h2 class="section-heading">{{texts[18]}}</h2>
                     <hr class="my-4">
-                    <p class="mb-5">{{texts[19]}} <b>{{texts[20]}}</b>.
-                        <br> {{texts[21]}} <a href="compatibility.html?lang={{lang}}">{{texts[22]}}</a> {{texts[23]}}</p>
+                    <p class="mb-5" ng-bind-html="texts[19] | unsafe">
+                    </p>
                 </div>
             </div>
         </div>
@@ -259,7 +266,7 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    {{texts[24]}}
+                                    {{texts[20]}}
                                 </div>
                                 <div class="project-name">
                                     vitaQuake
@@ -274,7 +281,7 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    {{texts[25]}}
+                                    {{texts[21]}}
                                 </div>
                                 <div class="project-name">
                                     DoggyTwiceVT
@@ -289,7 +296,7 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    {{texts[25]}}
+                                    {{texts[21]}}
                                 </div>
                                 <div class="project-name">
                                     Happy Land
@@ -304,7 +311,7 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    {{texts[25]}}
+                                    {{texts[21]}}
                                 </div>
                                 <div class="project-name">
                                     Minesweeper
@@ -319,7 +326,7 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    {{texts[25]}}
+                                    {{texts[21]}}
                                 </div>
                                 <div class="project-name">
                                     Tactic Miner
@@ -334,7 +341,7 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    {{texts[26]}}
+                                    {{texts[22]}}
                                 </div>
                                 <div class="project-name">
                                     VitaTester
@@ -351,15 +358,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">{{texts[27]}}</h2>
+                    <h2 class="section-heading">{{texts[23]}}</h2>
                     <hr class="my-4">
-                    <p class="mb-5">{{texts[28]}}
+                    <p class="mb-5">{{texts[24]}}
                         <br>
                         <ul>
-                            <li>{{texts[29]}}
-                                <a href="https://github.com/Vita3K/Vita3K">GitHub repo</a>.</li>
-                            <li>{{texts[30]}}
-                                <a href="https://github.com/Vita3K/homebrew-compatibility/issues">{{texts[31]}}</a>.</li>
+                            <li ng-bind-html="texts[25] | unsafe"></li>
+                            <li ng-bind-html="texts[26] | unsafe"></li>
                         </ul>
                     </p>
                 </div>
@@ -371,15 +376,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">{{texts[32]}}</h2>
+                    <h2 class="section-heading">{{texts[27]}}</h2>
                     <hr class="my-4">
-                    <p class="mb-5">{{texts[33]}} <a href="https://www.patreon.com/Vita3K">{{texts[34]}}</a>.</p>
+                    <p class="mb-5" ng-bind-html="texts[28] | unsafe"></p>
                 </div>
             </div>
             <div class="row">
                 <div class="container text-center">
                     <i class="fab fa-patreon fa-3x mb-3 sr-contact"></i>
-                    <p><a class="btn btn-light btn-xl sr-button" href="https://www.patreon.com/bePatron?u=230097&redirect_uri=https%3A%2F%2Fvita3k.github.io%2F%23about&utm_medium=widget">{{texts[35]}}</a></p>
+                    <p><a class="btn btn-light btn-xl sr-button" href="https://www.patreon.com/bePatron?u=230097&redirect_uri=https%3A%2F%2Fvita3k.github.io%2F%23about&utm_medium=widget">{{texts[29]}}</a></p>
                 </div>
             </div>
         </div>
@@ -390,10 +395,10 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <p class="mb-5">
-                        {{texts[36]}} {{texts[37]}}
+                        {{texts[30]}} {{texts[31]}}
                         <br>
                         <br> Copyright © 2018 Vita3K team
-                        <br> {{texts[38]}} Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
+                        <br> {{texts[32]}} Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
                     </p>
                 </div>
             </div>

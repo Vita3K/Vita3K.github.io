@@ -21,27 +21,21 @@ texts.push([
 	"Get in touch with the developers and other users whenever you want. We prefer Discord server but the choice is up to you!", // 16
 	"Join now!", // 17
 	"Check out what currently runs!", // 18
-	"The emulator does not yet run", // 19
-	"any commercial games", // 20
-	"Several homebrew games are supported. Please check the", // 21
-	"compatibility list", // 22
-	"for details!", // 23
-	"Homebrew Game Port", // 24
-	"Homebrew Game", // 25
-	"Homebrew Utility", // 26
-	"Help us getting better!", // 27
-	"You can contribute to the emulator in the following ways:", // 28
-	"File issues or make Pull Requests on our", // 29
-	"Update the", // 30
-	"Homebrew compatibility database", // 31
-	"Show us your love!", // 32
-	"If you would like to show your appreciation and even help fund development, the project has a", // 33
-	"Patreon Page", // 34
-	"Become a Patron", // 35
-	"PlayStation and PS Vita are trademarks of Sony Interactive Entertainment Inc.", // 36
-	"The emulator is not related to or endorsed by Sony, or derived from confidential materials belonging to Sony.", // 37
-	"Logo by", // 38
-	"Select Language" // 39
+	"The emulator does not yet run <b>any commercial games</b>.<br>Several homebrew games are supported. Please check the <a href=\"compatibility.html?lang=en\">compatibility list</a> for further details!", // 19
+	"Homebrew Game Port", // 20
+	"Homebrew Game", // 21
+	"Homebrew Utility", // 22
+	"Help us getting better!", // 23
+	"You can contribute to the emulator in the following ways:", // 24
+	"File issues or make Pull Requests on our <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 25
+	"Update the <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">homebrew compatibility database</a>.", // 26
+	"Show us your love!", // 27
+	"If you would like to show your appreciation and even help fund development, the project has a <a href=\"https://www.patreon.com/Vita3K\">Patreon Page</a>.", // 28
+	"Become a Patron", // 29
+	"PlayStation and PS Vita are trademarks of Sony Interactive Entertainment Inc.", // 30
+	"The emulator is not related to or endorsed by Sony, or derived from confidential materials belonging to Sony.", // 31
+	"Logo by", // 32
+	"Select Language" // 33
 ])
 
 // Italian (translation provided by Rinnegatamante)
@@ -65,25 +59,19 @@ texts.push([
 	"Mettiti in contatto con i programmatori e con altri utenti quando preferisci. Preferiamo l'utilizzo del server Discord ma la scelta spetta a te!", // 16
 	"Unisciti ora!", // 17
 	"Controlla cosa funziona attualmente!", // 18
-	"L'emulatore attualmente non esegue", // 19
-	"nessun titolo commerciale", // 20
-	"Tuttavia diverse homebrew sono supportate. Controlla la", // 21
-	"lista di compatibilità", // 22
-	"per i dettagli!", // 23
-	"Port Amatoriale", // 24
-	"Gioco Homebrew", // 25
-	"Tool Homebrew", // 26
-	"Aiutaci a migliorare!", // 27
-	"Puoi contribuire allo sviluppo dell'emulatore in diversi modi:", // 28
-	"Riporta problemi o prepara delle Pull Request sulla nostra", // 29
-	"Aggiorna il", // 30
-	"database delle homebrew compatibili", // 31
-	"Mostraci il tuo amore!", // 32
-	"Se vuoi dimostrarci il tuo apprezzamento e finanziare lo sviluppo, il progetto ha una", // 33
-	"pagina Patreon", // 34
-	"Diventa un Patron", // 35
-	"PlayStation e PS Vita sono marchi registrati di Sony Interactive Entertainment Inc.", // 36
-	"L'emulatore non è correlato o certificato da Sony, nè derivato da materiale confidenziale appartenente alla Sony.", // 37
-	"Logo creato da", // 38
-	"Seleziona Lingua" // 39
+	"L'emulatore attualmente non esegue <b>nessun titolo commerciale</b>.<br>Tuttavia diverse homebrew sono supportate. Controlla la <a href=\"compatibility.html?lang=it\">lista di compatibilità</a> per ulteriori dettagli!", // 19
+	"Port Amatoriale", // 20
+	"Gioco Homebrew", // 21
+	"Tool Homebrew", // 22
+	"Aiutaci a migliorare!", // 23
+	"Puoi contribuire allo sviluppo dell'emulatore in diversi modi:", // 24
+	"Riporta problemi o prepara delle Pull Request sulla nostra <a href=\"https://github.com/Vita3K/Vita3K\">repository GitHub</a>.", // 25
+	"Aggiorna il <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">database delle homebrew compatibili</a>.", // 26
+	"Mostraci il tuo amore!", // 27
+	"Se vuoi dimostrarci il tuo apprezzamento e finanziare lo sviluppo, il progetto ha una <a href=\"https://www.patreon.com/Vita3K\">pagina Patreon</a>.", // 28
+	"Diventa un Patron", // 29
+	"PlayStation e PS Vita sono marchi registrati di Sony Interactive Entertainment Inc.", // 30
+	"L'emulatore non è correlato o certificato da Sony, nè derivato da materiale confidenziale appartenente alla Sony.", // 31
+	"Logo creato da", // 32
+	"Seleziona Lingua" // 33
 ])
