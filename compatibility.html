@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" ng-app>
+﻿<!DOCTYPE html>
+<html ng-app="Vita3K">
 
 <head>
 
@@ -17,6 +17,7 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="flag-icon/css/flag-icon.css" rel="stylesheet">
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
@@ -25,7 +26,10 @@
     <link href="css/creative.css" rel="stylesheet">
 
     <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+
+    <!-- Texts -->
+    <script src="texts/compatibility.js"></script>
 
     <link rel=icon href=img/logo.svg sizes="any" type="image/svg+xml">
 
@@ -34,13 +38,38 @@
 <body id="page-top" ng-controller="angularController">
 
     <script>
-        function angularController($scope, $http, $filter) {
+        function get(name) {
+            if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
+                return decodeURIComponent(name[1]);
+        }
+
+        angular.module('Vita3K', []).controller("angularController", function($scope, $http, $filter) {
             $scope.views = []
             $scope.views.push([])
             $scope.views.push([])
             $scope.views.push([])
             $scope.views.push([])
             $scope.views.push([])
+
+            // Multilanguage setup
+            var lang = get('lang');
+            if (lang == "en") {
+                $scope.texts = texts[0]
+                $scope.lang = "en"
+            } else if (lang == "it") {
+                $scope.texts = texts[1]
+                $scope.lang = "it"
+            } else {
+                var lang = window.navigator.language || window.navigator.userLanguage;
+                if (lang === 'it-IT') {
+                    $scope.texts = texts[1]
+                    $scope.lang = "it"
+                } else {
+                    $scope.texts = texts[0]
+                    $scope.lang = "en"
+                }
+            }
+
             var pagination = true
             var page = 1
             while (pagination) {
@@ -51,35 +80,29 @@
                         var i = 0,
                             j = 0
                         for (i = 0; i < data.length; i++) {
-                            data[i].status = "Unknown"
+                            data[i].status = 0
                             data[i].color = "000000"
                             for (j = 0; j < data[i].labels.length; j++) {
                                 if (data[i].labels[j].name == "crash") { // Fatal label, breaking recursion
                                     data[i].color = data[i].labels[j].color
-                                    data[i].status = "Crashes"
+                                    data[i].status = 1
                                     break;
                                 } else if (data[i].labels[j].name == "playable") {
-                                    if (data[i].status != "Unknown") continue;
+                                    if (data[i].status != 0) continue;
                                     data[i].color = data[i].labels[j].color
-                                    data[i].status = "Playable"
+                                    data[i].status = 4
                                 } else if (data[i].labels[j].name.indexOf("bug") >= 0) {
                                     data[i].color = data[i].labels[j].color
-                                    data[i].status = "Buggy"
+                                    data[i].status = 2
                                 } else if (data[i].labels[j].name == "slow") {
-                                    if ((data[i].status != "Unknown") && data[i].status != "Playable") continue;
+                                    if ((data[i].status != 0) && data[i].status != 4) continue;
                                     data[i].color = data[i].labels[j].color
-                                    data[i].status = "Slow"
+                                    data[i].status = 3
 
                                 }
                             }
-                            if (data[i].status == "Crashes") {
-                                $scope.views[1].push(data[i])
-                            } else if (data[i].status == "Buggy") {
-                                $scope.views[2].push(data[i])
-                            } else if (data[i].status == "Slow") {
-                                $scope.views[3].push(data[i])
-                            } else if (data[i].status == "Playable") {
-                                $scope.views[4].push(data[i])
+                            if (data[i].status > 0) {
+                                $scope.views[data[i].status].push(data[i])
                             }
                             $scope.views[0].push(data[i])
                             $scope.data = $scope.views[0];
@@ -93,17 +116,27 @@
             }
 
             $scope.changeView = function(field) {
-                    $scope.data = $scope.views[field]
-                    $scope.data = $filter('orderBy')($scope.data, 'title', false);
+                $scope.data = $scope.views[field]
+                $scope.data = $filter('orderBy')($scope.data, 'title', false);
+            }
+
+            $scope.changeLang = function(field) {
+                $scope.texts = texts[field]
+                if (field == 0) {
+                    $scope.lang = "en"
+                } else if (field == 1) {
+                    $scope.lang = "it"
                 }
-                // Angular filter
+            }
+
+            // Angular filter
             $scope.filterEntries = function(val) {
                 return function(entry) {
                     if (val == undefined) return true;
                     return (entry.title.toLowerCase().indexOf(val.toLowerCase() || '') !== -1);
                 }
             }
-        }
+        })
     </script>
 
     <!-- Navigation -->
@@ -116,32 +149,57 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="index.html">Home Page</a>
+                        <a class="nav-link js-scroll-trigger" href="index.html?lang={{lang}}">{{texts[6]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#language">
+                            <span ng-if="lang == 'en'"><span class="flag-icon flag-icon-gb"></span> EN</span>
+                            <span ng-if="lang == 'it'"><span class="flag-icon flag-icon-it"></span> IT</span>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Language selection -->
+    <div class="modal fade language" id="language" tabindex="-1" role="dialog" aria-labelledby="language" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{texts[19]}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(0)"><span class="flag-icon flag-icon-gb"></span> English</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-it"></span> Italiano</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="text-white" id="compatibility">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mx-auto text-center">
-                    <h2 class="section-heading">Compatibility List</h2>
+                    <h2 class="section-heading">{{texts[7]}}</h2>
                     <hr class="my-4">
                     <p class="mb-5">
-                        <input style="display:inline-block;vertical-align:middle;" type="text" ng-model="field" class="form-control" placeholder="Search..." required="true" />
+                        <input style="display:inline-block;vertical-align:middle;" type="text" ng-model="field" class="form-control" placeholder="{{texts[18]}}..." required="true" />
                         <br>
-                        <br>Tags:
-                        <a href="#" class="plate" ng-click="changeView(1)" style="background-color: red">Crashes ({{views[1].length}})</a>
-                        <a href="#" class="plate" ng-click="changeView(2)" style="background-color: #d93f0b">Buggy ({{views[2].length}})</a>
-                        <a href="#" class="plate" ng-click="changeView(3)" style="background-color: #fbca04">Slow ({{views[3].length}})</a>
-                        <a href="#" class="plate" ng-click="changeView(4)" style="background-color: #0e8a16">Playable ({{views[4].length}})</a>
-                        <a href="#" class="plate" ng-click="changeView(0)" style="background-color: blue">All ({{views[0].length}})</a>
+                        <br>{{texts[8]}}:
+                        <a href="#" class="plate" ng-click="changeView(1)" style="background-color: red">{{texts[1]}} ({{views[1].length}})</a>
+                        <a href="#" class="plate" ng-click="changeView(2)" style="background-color: #d93f0b">{{texts[2]}} ({{views[2].length}})</a>
+                        <a href="#" class="plate" ng-click="changeView(3)" style="background-color: #fbca04">{{texts[3]}} ({{views[3].length}})</a>
+                        <a href="#" class="plate" ng-click="changeView(4)" style="background-color: #0e8a16">{{texts[4]}} ({{views[4].length}})</a>
+                        <a href="#" class="plate" ng-click="changeView(0)" style="background-color: blue">{{texts[5]}} ({{views[0].length}})</a>
                         <center>
                             <table>
                                 <tr>
-                                    <td><small><font color=red>Crashes ({{((views[1].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that crash the emulator.</small></td>
+                                    <td><small><font color=red>{{texts[1]}} ({{((views[1].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[9]}}</font></small></td>
                                     <td width="50%">
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:{{(views[1].length/views[0].length)*100}}%">
@@ -153,7 +211,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <small><font color=#d93f0b>Buggy ({{((views[2].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that work with bugs or glitches.</small>
+                                        <small><font color=#d93f0b>{{texts[2]}} ({{((views[2].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[10]}}</font></small>
                                     </td>
                                     <td width="50%">
                                         <div class="progress">
@@ -165,7 +223,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <small><font color=#fbca04>Slow ({{((views[3].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that work but have very poor framerate.</small>
+                                        <small><font color=#fbca04>{{texts[3]}} ({{((views[3].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[11]}}</font></small>
                                     </td>
                                     <td width="50%">
                                         <div class="progress">
@@ -178,7 +236,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <small><font color=#0e8a16>Playable ({{((views[4].length/views[0].length)*100).toFixed(2)}}%):</font> Homebrews that are perfectly playable.</small>
+                                        <small><font color=#0e8a16>{{texts[4]}} ({{((views[4].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[12]}}</font></small>
                                     </td>
                                     <td width="50%">
                                         <div class="progress">
@@ -196,14 +254,14 @@
                             <table class="table-hover table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <td><font color=yellow><small>Entry Name</small></font></td>
-                                        <td><font color=yellow><small>Status</small></font></td>
+                                        <td><font color=yellow><small>{{texts[13]}}</small></font></td>
+                                        <td><font color=yellow><small>{{texts[14]}}</small></font></td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="entry in data | filter: filterEntries(field)">
                                         <td align="left"><a href="{{entry.html_url}}"><small>{{entry.title}}</small></a></td>
-                                        <td bgcolor="{{entry.color}}"><font color="white"><small>{{entry.status}}</small></font></td>
+                                        <td bgcolor="{{entry.color}}"><font color="white"><small>{{texts[entry.status]}}</small></font></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -219,10 +277,10 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <p class="mb-5">
-                        PlayStation and PS Vita are trademarks of Sony Interactive Entertainment Inc. The emulator is not related to or endorsed by Sony, or derived from confidential materials belonging to Sony.
+                        {{texts[15]}} {{texts[16]}}
                         <br>
                         <br> Copyright © 2018 Vita3K team
-                        <br> Logo by Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
+                        <br> {{texts[17]}} Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
                     </p>
                 </div>
             </div>
