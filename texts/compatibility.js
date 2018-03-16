@@ -47,3 +47,27 @@ texts.push([
 	"Cerca", // 18
 	"Seleziona Lingua" // 19
 ])
+
+// French (translation provided by Drayano)
+texts.push([
+	"Inconnu", // 0
+	"Crash", // 1
+	"Buggé", // 2
+	"Lent", // 3
+	"Jouable", // 4
+	"Tout", // 5
+	"Page d'accueil", // 6
+	"Liste de Compatibilité", // 7
+	"Tags", // 8
+	"Homebrew qui font crash l'émulateur.", // 9
+	"Homebrew qui marchent avec des bugs ou des pépins.", // 10
+	"Homebrew qui marchent mais qui ont de très mauvaises performances.", // 11
+	"Homebrew qui sont parfaitement jouables.", // 12
+	"Nom", // 13
+	"Statut", // 14
+	"PlayStation et PS Vita sont des marques déposées de Sony Interactive Entertainment Inc.", // 15
+	"Vita3K n'est pas lié ou approuvé par Sony, ou dérivé de documents confidentiels appartenant à Sony.", // 16
+	"Logo fait par", // 17
+	"Rechercher", // 18
+	"Choisissez votre langue" // 19
+])
