@@ -78,6 +78,43 @@ texts.push([
 	"Seleziona Lingua" // 33
 ])
 
+// French (translation provided by Drayano)
+texts.push([
+	"À propos", // 0
+	"Télécharger", // 1
+	"Communauté", // 2
+	"Compatibilité", // 3
+	"Galerie", // 4 
+	"Contribuer", // 5
+	"Faire un don", // 6
+	"Le premier émulateur au monde pour la PlayStation Vita.", // 7
+	"En savoir plus", // 8
+	"À propos de Vita3K", // 9
+	"Vita3K est le tout premier émulateur open-source pour la PlayStation Vita compatible avec Windows et MacOs.", // 10 
+	"Cet émulateur n'a pas pour but de permettre l'activité illégale.", // 11
+	"Choisissez votre version !", // 12
+	"Bientôt !", // 13
+	"Obtenir depuis", // 14
+	"Contactez nous !", // 15
+	"Vous pouvez contacter les développeurs ainsi que les autres utilisateurs quand vous le voulez. Nous préférons notre serveur Discord mais le choix est vôtre !", // 16
+	"Rejoignez nous !", // 17
+	"Découvrez ce qui tourne actuellement !", // 18
+	"L'émulateur ne permet pas encore de jouer aux <b>jeux commerciaux</b>.<br>Plusieurs jeux 'homebrew' sont supportés. Consultez la <a href=\"compatibility.html?lang=fr\">liste de compatibilité</a> pour plus de détails !", // 19
+	"Port de jeu Homebrew", // 20
+	"Jeu Homebrew", // 21
+	"Homebrew Utilitaire", // 22
+	"Aidez nous à nous améliorer !", // 23
+	"Vous pouvez contribuer au développement de l'émulateur de plusieurs manières :", // 24
+	"Reportez les bugs ou faites des Pulls Requests sur <a href=\"https://github.com/Vita3K/Vita3K\">GitHub</a>.", // 25
+	"Mettre à jour la <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">liste de compatibilité des homebrews</a>.", // 26
+	"Faire une donation !", // 27
+	"Si vous souhaitez aider à financer le développement, vous pouvez faire un don sur la <a href=\"https://www.patreon.com/Vita3K\">Page Patreon</a> du projet.", // 28
+	"Devenir un Patron", // 29
+	"PlayStation et PS Vita sont des marques déposées par Sony Interactive Entertainment Inc.", // 30
+	"Vita3K n'est pas lié ou approuvé par Sony, ou dérivé de documents confidentiels appartenant à Sony.", // 31
+	"Logo fait par", // 32
+	"Choisissez votre langue" // 33
+])
 
 // Arabic (translation by IllusionMan1212)
 texts.push([
