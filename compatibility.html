@@ -56,19 +56,40 @@
             if (lang == "en") {
                 $scope.texts = texts[0]
                 $scope.lang = "en"
+
             } else if (lang == "it") {
                 $scope.texts = texts[1]
                 $scope.lang = "it"
             } else {
                 var lang = window.navigator.language || window.navigator.userLanguage;
-                if (lang === 'it-IT') {
+                if ((lang === 'it-IT') || (lang === 'it-CH')) {
                     $scope.texts = texts[1]
                     $scope.lang = "it"
-                } else {
+                    $scope.langcode = 1
+                } else if ((lang === 'ar-AR') ||
+                    (lang === 'ar-DZ') || (lang === 'ar-BH') ||
+                    (lang === 'ar-BH') || (lang === 'ar-EG') ||
+                    (lang === 'ar-IQ') || (lang === 'ar-JO') ||
+                    (lang === 'ar-KW') || (lang === 'ar-LB') ||
+                    (lang === 'ar-LY') || (lang === 'ar-MA') ||
+                    (lang === 'ar-OM') || (lang === 'ar-QA') ||
+                    (lang === 'ar-SA') || (lang === 'ar-SY') ||
+                    (lang === 'ar-TN') || (lang === 'ar-AE') ||
+                    (lang === 'ar-YE')) {
+                    $scope.texts = texts[3]
+                    $scope.lang = "ar"
+                } else if ((lang === 'fr-FR') ||
+                    (lang === 'fr-BE') || (lang === 'fr-LU') ||
+                    (lang === 'fr-MC') || (lang === 'fr-CH') ||
+                    (lang === 'fr-CA')) {
+                    $scope.texts = texts[2]
+                    $scope.lang = "fr"
+				  } else {
                     $scope.texts = texts[0]
                     $scope.lang = "en"
                 }
             }
+            lang = $scope.lang
 
             var pagination = true
             var page = 1
@@ -121,12 +142,20 @@
             }
 
             $scope.changeLang = function(field) {
-                $scope.texts = texts[field]
-                if (field == 0) {
+                if (field == 1) {
+                    $scope.texts = texts[3]
+                    $scope.lang = "ar"
+                } else if (field == 2) {
+                    $scope.texts = texts[2]
+                    $scope.lang = "fr"
+                } else if (field == 3) {
+                    $scope.texts = texts[0]
                     $scope.lang = "en"
-                } else if (field == 1) {
+                } else if (field == 4) {
+                    $scope.texts = texts[1]
                     $scope.lang = "it"
                 }
+                lang = $scope.lang
             }
 
             // Angular filter
@@ -153,6 +182,8 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#language">
+                            <span ng-if="lang == 'ar'"><span class="flag-icon flag-icon-sa"></span> AR</span>
+                            <span ng-if="lang == 'fr'"><span class="flag-icon flag-icon-fr"></span> FR</span>
                             <span ng-if="lang == 'en'"><span class="flag-icon flag-icon-gb"></span> EN</span>
                             <span ng-if="lang == 'it'"><span class="flag-icon flag-icon-it"></span> IT</span>
                         </a>
@@ -173,9 +204,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(0)"><span class="flag-icon flag-icon-gb"></span> English</a>
+                   <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-sa"></span> العربية</a>
                     <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-it"></span> Italiano</a>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(2)"><span class="flag-icon flag-icon-fr"></span> Français</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(3)"><span class="flag-icon flag-icon-gb"></span> English</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(4)"><span class="flag-icon flag-icon-it"></span> Italiano</a>
                 </div>
             </div>
         </div>

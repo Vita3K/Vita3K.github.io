@@ -24,8 +24,6 @@ texts.push([
 	"Select Language" // 19
 ])
 
-
-
 // Italian (translation provided by Rinnegatamante)
 texts.push([
 	"Sconosciuto", // 0
@@ -74,7 +72,7 @@ texts.push([
 	"Choisissez votre langue" // 19
 ])
 
-// Arabic (translation by IllusionMan1212)
+// Arabic (translation provided by IllusionMan1212)
 texts.push([
 	"غير معروف", //0
 	"يغلق" , // 1
@@ -95,7 +93,5 @@ texts.push([
 	"المحاكي غير مرتبط او مؤيد من Sony, او مأخوذ من مستندات سرية تنتمي الى Sony", // 16
 	"الشعار من قبل", // 17
 	"البحث", // 18
-	"اختيار اللغة", // 19
-
-	
+	"اختيار اللغة" // 19
 ])

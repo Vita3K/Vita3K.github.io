@@ -38,8 +38,6 @@ texts.push([
 	"Select Language" // 33
 ])
 
-
-
 // Italian (translation provided by Rinnegatamante)
 texts.push([
 	"Riguardo", // 0
@@ -116,7 +114,7 @@ texts.push([
 	"Choisissez votre langue" // 33
 ])
 
-// Arabic (translation by IllusionMan1212)
+// Arabic (translation provided by IllusionMan1212)
 texts.push([
 	"حول", // 0
 	"تنزيل", // 1
@@ -151,5 +149,5 @@ texts.push([
 	"PlayStation و PS Vita هما علامتين تجاريتين لشركة Sony Interactive Entertainment Inc.", // 30
 	"المحاكي غير مرتبط او مؤيد من ٍSony, او مأخوذ من مستندات سرية تنتمي الى Sony. ", // 31
 	"الشعار من قبل", // 32
-	"اختر اللغة", // 33 
+	"اختر اللغة" // 33 
 ])
