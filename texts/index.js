@@ -152,7 +152,7 @@ texts.push([
 	"اختر اللغة" // 33
 ])
 
-// Greek (translation by VelocityRa)
+// Greek (translation provided by VelocityRa)
 texts.push([
 	"Περί", // 0
 	"Κατεβάσε", // 1
@@ -173,7 +173,7 @@ texts.push([
 	"Ελάτε σε επαφή με τους προγραμματιστές και τους άλλους χρήστες όποτε θέλετε. Προτιμούμε το Discord αλλά η επιλογή εξαρτάται από εσάς!", // 16
 	"Εγγραφείτε τώρα!", // 17
 	"Δείτε τι τρέχει τώρα!", // 18
-	"Ο εξομοιωτής <b> δεν εκτελεί ακόμα εμπορικά παιχνίδια </b>. <br> Υποστηρίζονται διάφορα παιχνίδια homebrew. Ελέγξτε τη <a href=\"compatibility.html?lang=en\"> λίστα συμβατότητας </ b> για περισσότερες λεπτομέρειες! ", // 19
+	"Ο εξομοιωτής <b> δεν εκτελεί ακόμα εμπορικά παιχνίδια </b>. <br> Υποστηρίζονται διάφορα παιχνίδια homebrew. Ελέγξτε τη <a href=\"compatibility.html?lang=gr\"> λίστα συμβατότητας </ b> για περισσότερες λεπτομέρειες! ", // 19
 	"Μετατρεμμένο παιχνίδι Homebrew", // 20
 	"Παιχνίδι Homebrew", // 21
 	"Βοηθητικό πρόγραμμα Homebrew", // 22
@@ -190,7 +190,7 @@ texts.push([
 	"Επιλογή γλώσσας" // 33
 ])
 
-// Vietnamese (Translation by Bentokun)
+// Vietnamese (Translation provided by Bentokun)
 texts.push([
 	"Về chúng tôi", // 1
 	"Tải xuống", // 2
@@ -211,7 +211,7 @@ texts.push([
 	"Liên lạc với các lập trình viên và các người dùng khác lúc nào bạn muốn. Chúng tôi ưu tiên sever Discord, nhưng bạn là người quyết định!", // 16
 	"Tham gia ngay hôm nay!", // 17
 	"Hãy xem hiện tại trình giả lập chạy được những gì!", // 18
-	"Trình giả lập hiện chưa chạy dược <b>bất cứ trò chơi thương mại nào</b>.<br>Vài game homebrew được hỗ trợ. Xin hãy ghé xem <a href=\"compatibility.html?lang=en\">danh sách tương thích</a> để biết thêm chi tiết!", // 19
+	"Trình giả lập hiện chưa chạy dược <b>bất cứ trò chơi thương mại nào</b>.<br>Vài game homebrew được hỗ trợ. Xin hãy ghé xem <a href=\"compatibility.html?lang=vt\">danh sách tương thích</a> để biết thêm chi tiết!", // 19
 	"Game Homebrew được Port", // 20
 	"Game Homebrew", // 21
 	"Homebrew trợ giúp", // 22

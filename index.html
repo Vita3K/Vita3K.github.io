@@ -27,10 +27,18 @@
             if (lang == "en") {
                 $scope.texts = texts[0]
                 $scope.lang = "en"
-
             } else if (lang == "it") {
                 $scope.texts = texts[1]
                 $scope.lang = "it"
+            } else if (lang == "fr") {
+                $scope.texts = texts[2]
+                $scope.lang = "ar"
+            } else if (lang == "ar") {
+                $scope.texts = texts[3]
+                $scope.lang = "ar"
+            } else if (lang == "gr") {
+                $scope.texts = texts[4]
+                $scope.lang = "gr"
             } else {
                 var lang = window.navigator.language || window.navigator.userLanguage;
                 if ((lang === 'it-IT') || (lang === 'it-CH')) {
@@ -55,7 +63,7 @@
                     (lang === 'fr-CA')) {
                     $scope.texts = texts[2]
                     $scope.lang = "fr"
-                } else if (lang === 'el-EL') {
+                } else if (lang === 'el-GR') {
                     $scope.texts = texts[4]
                     $scope.lang = "gr"
 				  } else {
