@@ -211,7 +211,7 @@ texts.push([
 	"Liên lạc với các lập trình viên và các người dùng khác lúc nào bạn muốn. Chúng tôi ưu tiên sever Discord, nhưng bạn là người quyết định!", // 16
 	"Tham gia ngay hôm nay!", // 17
 	"Hãy xem hiện tại trình giả lập chạy được những gì!", // 18
-	"Trình giả lập hiện chưa chạy dược <b>bất cứ trò chơi thương mại nào</b>.<br>Vài game homebrew được hỗ trợ. Xin hãy ghé xem <a href=\"compatibility.html?lang=vt\">danh sách tương thích</a> để biết thêm chi tiết!", // 19
+	"Trình giả lập hiện chưa chạy dược <b>bất cứ trò chơi thương mại nào</b>.<br>Vài game homebrew được hỗ trợ. Xin hãy ghé xem <a href=\"compatibility.html?lang=vn\">danh sách tương thích</a> để biết thêm chi tiết!", // 19
 	"Game Homebrew được Port", // 20
 	"Game Homebrew", // 21
 	"Homebrew trợ giúp", // 22

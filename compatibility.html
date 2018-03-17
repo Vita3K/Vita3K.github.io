@@ -73,29 +73,19 @@
                 $scope.lang = "vn"
             } else {
                 var lang = window.navigator.language || window.navigator.userLanguage;
-                if ((lang === 'it-IT') || (lang === 'it-CH')) {
+                if (lang.startsWith('it')) {
                     $scope.texts = texts[1]
                     $scope.lang = "it"
-                    $scope.langcode = 1
-                } else if ((lang === 'ar-AR') ||
-                    (lang === 'ar-DZ') || (lang === 'ar-BH') ||
-                    (lang === 'ar-BH') || (lang === 'ar-EG') ||
-                    (lang === 'ar-IQ') || (lang === 'ar-JO') ||
-                    (lang === 'ar-KW') || (lang === 'ar-LB') ||
-                    (lang === 'ar-LY') || (lang === 'ar-MA') ||
-                    (lang === 'ar-OM') || (lang === 'ar-QA') ||
-                    (lang === 'ar-SA') || (lang === 'ar-SY') ||
-                    (lang === 'ar-TN') || (lang === 'ar-AE') ||
-                    (lang === 'ar-YE')) {
+                } else if (lang.startsWith('ar')) {
                     $scope.texts = texts[3]
                     $scope.lang = "ar"
-                } else if ((lang === 'fr-FR') ||
-                    (lang === 'fr-BE') || (lang === 'fr-LU') ||
-                    (lang === 'fr-MC') || (lang === 'fr-CH') ||
-                    (lang === 'fr-CA')) {
+                } else if (lang.startsWith('fr')) {
                     $scope.texts = texts[2]
                     $scope.lang = "fr"
-                } else if ((lang === 'vi-VI') || (lang === 'vi-VN')) {
+                } else if (lang.startsWith('el')) {
+                    $scope.texts = texts[4]
+                    $scope.lang = "gr"
+                } else if (lang.startsWith('vi')) {
                     $scope.texts = texts[5]
                     $scope.lang = "vn"
                 } else {
@@ -103,6 +93,7 @@
                     $scope.lang = "en"
                 }
             }
+
             lang = $scope.lang
 
             var pagination = true
@@ -173,7 +164,7 @@
                     $scope.lang = "it"
                 } else if (field == 6) {
                     $scope.texts = texts[5]
-                    $scope.lang = "vn"				
+                    $scope.lang = "vn"
                 }
                 lang = $scope.lang
             }
@@ -232,7 +223,7 @@
                     <br>
                     <a href="#" data-dismiss="modal" ng-click="changeLang(3)"><span class="flag-icon flag-icon-gb"></span> English</a>
                     <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(4)"><span class="flag-icon flag-icon-gr"></span> Greek</a>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(4)"><span class="flag-icon flag-icon-gr"></span> Ελληνικά</a>
                     <br>
                     <a href="#" data-dismiss="modal" ng-click="changeLang(5)"><span class="flag-icon flag-icon-it"></span> Italiano</a>
                     <br>
