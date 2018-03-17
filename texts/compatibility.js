@@ -119,3 +119,26 @@ texts.push([
 	"Αναζήτηση", // 18
 	"Επιλογή γλώσσας" // 19
 ])
+
+// Vietnamese (translation provided by Bentokun)
+texts.push([
+	"Không rõ", // 1
+	"Treo", // 2
+	"Nhiều lỗi", // 3
+	"Chậm", // 4
+	"Chơi được", // 5
+	"Tất cả", // 6
+	"Danh sách tương thích", // 7
+	"Tags", //8
+	"Homebrew làm trình giả lập bị treo.", // 9
+	"Homebrew chạy được nhưng nhiều lỗi.", // 10
+	"Homebrew chạy được nhưng framerate thấp", // 11
+	"Homebrew chơi được bình thường.", // 12
+	"Tên trò chơi", // 13
+	"Trạng thái", // 14
+	"Playstation và PS Vita đều là thương hiệu của Sony Interactive Entertainment Inc.", // 15
+	"Trình giả lập không liên quan hay được xác nhận bởi Sony, không dựa trên nền tảng những chương trình hay tài liệu mật thuộc về Sony.", // 16
+	"Logo bởi", // 17
+	"Tìm kiếm", // 18
+	"Chọn ngôn ngữ" // 19
+])
