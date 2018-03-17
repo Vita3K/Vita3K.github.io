@@ -27,7 +27,7 @@ texts.push([
 	"Homebrew Utility", // 22
 	"Help us get better!", // 23
 	"You can contribute to the emulator in the following ways:", // 24
-	"File issues or make Pull Requests on our <a href=\"https://github.com/Vita3K/Vita3K\">Kho mã nguồn GitHub</a>.", // 25
+	"File issues or make Pull Requests on our <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 25
 	"Update the <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">homebrew compatibility database</a>.", // 26
 	"Show us your love!", // 27
 	"If you would like to show your appreciation and even help fund development, the project has a <a href=\"https://www.patreon.com/Vita3K\">Patreon Page</a>.", // 28
@@ -217,7 +217,7 @@ texts.push([
 	"Homebrew trợ giúp", // 22
 	"Giúp chúng tôi tốt hơn nữa!", // 23
 	"Bạn có thể đóng góp cho trình giả lập bằng những cách sau đây:", // 24
-	"Mở các Issues hoặc Pull Request tại <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 25
+	"Mở các Issues hoặc Pull Request tại <a href=\"https://github.com/Vita3K/Vita3K\">Kho mã nguồn trên GitHub</a>.", // 25
 	"Giúp cập nhật <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">danh sách tương thích</a>.", // 26
 	"Thể hiện tình yêu với chúng tôi!", // 27
 	"Nếu bạn muốn thể hiện lòng cảm kích và quyên góp cho chúng tôi, dự án có một <a href=\"https://www.patreon.com/Vita3K\">Trang Patreon</a>.", // 28
