@@ -261,7 +261,7 @@ texts.push([
 	"Indien jij je waardering wilt tonen en zelfs de ontwikkeling wilt financieren, kun je een kijkje nemen op de <a href=\"https://www.patreon.com/Vita3K\">Patreon-pagina</a> van dit project.", // 28
 	"Wordt een Patron", // 29
 	"PlayStation en PS Vita zijn handelsmerken van Sony Interactive Entertainment Inc.", // 30
-	"Deze emulator wordt niet ondersteund en staat los van Sony, of is afgeleid van vertrouwelijk materiaal in het bezig van Sony.", // 31
+	"Deze emulator wordt niet ondersteund en staat los van Sony en is niet afgeleid van vertrouwelijk materiaal in het bezit van Sony.", // 31
 	"Logo door", // 32
 	"Selecteer Taal" // 33
 ])
