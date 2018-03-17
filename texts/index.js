@@ -189,3 +189,41 @@ texts.push([
 	"Λογότυπο από", // 32
 	"Επιλογή γλώσσας" // 33
 ])
+
+// Vietnamese (Translation by Bentokun)
+texts.push([
+	"Về chúng tôi", // 1
+	"Tải xuống", // 2
+	"Cộng đồng", // 2
+	"Danh sách tương thích", // 3
+	"Showcase", // 4
+	"Đóng góp", // 5
+	"Quyên góp", // 6
+	"Trình giả lập Playstation Vita đầu tiên trên thế giới.", // 7
+	"Tìm hiểu thêm", // 8
+	"Về Vita3K", // 9
+	"Vita3K là trình giả lập Playstation thử nghiệm đầu tiên mã nguồn mở dành cho Windows và MacOS.", // 10
+	"Xin hãy chú ý rằng mục đích của trình giả lập này không phải là đẩy mạnh hoạt động trái pháp luật.", // 11
+	"Chọn build của bạn!", // 12
+	"Sắp ra mắt!", // 13
+	"Láy từ", // 14
+	"Liên lạc với chúng tôi!", // 15
+	"Liên lạc với các lập trình viên và các người dùng khác lúc nào bạn muốn. Chúng tôi ưu tiên sever Discord, nhưng bạn là người quyết định!", // 16
+	"Tham gia ngay hôm nay!", // 17
+	"Hãy xem hiện tại trình giả lập chạy được những gì!", // 18
+	"Trình giả lập hiện chưa chạy dược <b>bất cứ trò chơi thương mại nào</b>.<br>Vài game homebrew được hỗ trợ. Xin hãy ghé xem <a href=\"compatibility.html?lang=en\">danh sách tương thích</a> để biết thêm chi tiết!", // 19
+	"Game Homebrew được Port", // 20
+	"Game Homebrew", // 21
+	"Homebrew trợ giúp", // 22
+	"Giúp chúng tôi tốt hơn nữa!", // 23
+	"Bạn có thể đóng góp cho trình giả lập bằng những cách sau đây:", // 24
+	"Mở các Issues hoặc Pull Request tại <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 25
+	"Giúp cập nhật <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">danh sách tương thích</a>.", // 26
+	"Thể hiện tình yêu với chúng tôi!", // 27
+	"Nếu bạn muốn thể hiện lòng cảm kích và quyên góp cho chúng tôi, dự án có một <a href=\"https://www.patreon.com/Vita3K\">Trang Patreon</a>.", // 28
+	"Trở thành một Patreon", // 29
+	"Playstation và PS Vita đều là thương hiệu của Sony Interactive Entertainment Inc.", // 30
+	"Trình giả lập không liên quan hay được xác nhận bởi Sony, không dựa trên nền tảng những chương trình hay tài liệu mật thuộc về Sony.", // 31
+	"Logo bởi", // 32
+	"Chọn ngôn ngữ" // 33
+])
