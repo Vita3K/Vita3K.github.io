@@ -122,12 +122,13 @@ texts.push([
 
 // Vietnamese (translation provided by Bentokun)
 texts.push([
-	"Không rõ", // 1
-	"Treo", // 2
-	"Nhiều lỗi", // 3
-	"Chậm", // 4
-	"Chơi được", // 5
-	"Tất cả", // 6
+	"Không rõ", // 0
+	"Treo", // 1
+	"Nhiều lỗi", // 2
+	"Chậm", // 3
+	"Chơi được", // 4
+	"Tất cả", // 5
+	"Trang chủ", // 6
 	"Danh sách tương thích", // 7
 	"Tags", //8
 	"Homebrew làm trình giả lập bị treo.", // 9

@@ -192,8 +192,8 @@ texts.push([
 
 // Vietnamese (Translation provided by Bentokun)
 texts.push([
-	"Về chúng tôi", // 1
-	"Tải xuống", // 2
+	"Về chúng tôi", // 0
+	"Tải xuống", // 1
 	"Cộng đồng", // 2
 	"Danh sách tương thích", // 3
 	"Showcase", // 4
