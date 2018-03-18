@@ -256,7 +256,7 @@ texts.push([
 	"Help ons beter worden!", // 23
 	"Je kunt op de volgende manieren bijdragen aan de emulator:", // 24
 	"Licht ons in over problemen of maak Pull Requests op onze <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 25
-	"Update de <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">homebrew compatibiliteitslijst</a>.", // 26
+	"Update de <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">homebrew-compatibiliteitslijst</a>.", // 26
 	"Toon ons je liefde!", // 27
 	"Indien jij je waardering wilt tonen en zelfs de ontwikkeling wilt financieren, kun je een kijkje nemen op de <a href=\"https://www.patreon.com/Vita3K\">Patreon-pagina</a> van dit project.", // 28
 	"Wordt een Patron", // 29
