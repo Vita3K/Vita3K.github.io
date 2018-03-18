@@ -249,7 +249,7 @@ texts.push([
 	"Neem contact op met de ontwikkelaars en andere gebruikers wanneer je maar wilt. Doe dit het liefst via Discord, maar de keuze ligt bij jou!", // 16
 	"Doe mee!", // 17
 	"Kijk wat we aan het doen zijn!", // 18
-	"De emulator kan nog geen <b>commerciële spellen</b> afspelen. <br>Er worden een paar homebrew-spellen ondersteund. Zie de <a href=\"compatibility.html?lang=en\">compatibiliteitslijst</a> voor verdere informatie!", // 19
+	"De emulator kan nog geen <b>commerciële spellen</b> afspelen. <br>Er worden een paar homebrew-spellen ondersteund. Zie de <a href=\"compatibility.html?lang=nl\">compatibiliteitslijst</a> voor verdere informatie!", // 19
 	"Homebrew Game Port", // 20
 	"Homebrew Game", // 21
 	"Homebrew Hulpmiddel", // 22
