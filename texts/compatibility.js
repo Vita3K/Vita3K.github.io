@@ -143,3 +143,27 @@ texts.push([
 	"Tìm kiếm", // 18
 	"Chọn ngôn ngữ" // 19
 ])
+
+// Dutch (Translation provided by jelle619)
+texts.push([
+	"Onbekend", // 0
+	"Crasht", // 1
+	"Buggy", // 2
+	"Langzaam", // 3
+	"Speelbaar", // 4
+	"Alles", // 5
+	"Home Page", // 6
+	"Compitabiliteitslijst", // 7
+	"Tags", // 8
+	"Homebrew dat de emulator laat crashen.", // 9
+	"Homebrew dat met bugs of glitches werkt.", // 10
+	"Homebrew dat werkt, maar met een lage framerate.", // 11
+	"Homebrew dat perfect speelbaar is.", // 12
+	"Naam", // 13
+	"Status", // 14
+	"PlayStation en PS Vita zijn handelsmerken van Sony Interactive Entertainment Inc.", // 15
+	"Deze emulator wordt niet ondersteund en staat los van Sony en is niet afgeleid van vertrouwelijk materiaal in het bezit van Sony.", // 16
+	"Logo door", // 17
+	"Zoeken", // 18
+	"Selecteer Taal" // 19
+])
