@@ -1,4 +1,4 @@
-﻿var texts = []
+var texts = []
 
 // English
 texts.push([
@@ -226,4 +226,42 @@ texts.push([
 	"Trình giả lập không liên quan hay được xác nhận bởi Sony, không dựa trên nền tảng những chương trình hay tài liệu mật thuộc về Sony.", // 31
 	"Logo bởi", // 32
 	"Chọn ngôn ngữ" // 33
+])
+
+// Dutch (Translation provided by jelle619)
+texts.push([
+	"Over", // 0
+	"Download", // 1
+	"Gemeenschap", // 2
+	"Compatibiliteit", // 3
+	"Showcase", // 4
+	"Draag bij", // 5
+	"Doneer", // 6
+	"’s Werelds eerste PlayStation Vita emulator.", // 7
+	"Kom Meer Te Weten", // 8
+	"Over Vita3K", // 9
+	"Vita3K is ‘s werelds eerste experimentele open-source PlayStation Vita emulator voor Windows en MacOS.", // 10
+	"Wees ervan bewust dat het in staat stellen van illegale activiteiten niet de bedoeling van deze emulator is.", // 11
+	"Kies een passende versie!", // 12
+	"Binnenkort!", // 13
+	"Haal binnen via", // 14
+	"Neem contact met ons op!", // 15
+	"Neem contact op met de ontwikkelaars en andere gebruikers wanneer je maar wilt. Doe dit het liefst via Discord, maar de keuze ligt bij jou!", // 16
+	"Doe mee!", // 17
+	"Kijk wat we aan het doen zijn!", // 18
+	"De emulator kan nog geen <b>commerciële spellen</b> afspelen. <br>Er worden een paar homebrew-spellen ondersteund. Zie de <a href=\"compatibility.html?lang=nl\">compatibiliteitslijst</a> voor verdere informatie!", // 19
+	"Homebrew Game Port", // 20
+	"Homebrew Game", // 21
+	"Homebrew Hulpmiddel", // 22
+	"Help ons beter worden!", // 23
+	"Je kunt op de volgende manieren bijdragen aan de emulator:", // 24
+	"Licht ons in over problemen of maak Pull Requests op onze <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 25
+	"Update de <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">homebrew-compatibiliteitslijst</a>.", // 26
+	"Toon ons je liefde!", // 27
+	"Indien jij je waardering wilt tonen en zelfs de ontwikkeling wilt financieren, kun je een kijkje nemen op de <a href=\"https://www.patreon.com/Vita3K\">Patreon-pagina</a> van dit project.", // 28
+	"Wordt een Patron", // 29
+	"PlayStation en PS Vita zijn handelsmerken van Sony Interactive Entertainment Inc.", // 30
+	"Deze emulator wordt niet ondersteund en staat los van Sony en is niet afgeleid van vertrouwelijk materiaal in het bezit van Sony.", // 31
+	"Logo door", // 32
+	"Selecteer Taal" // 33
 ])
