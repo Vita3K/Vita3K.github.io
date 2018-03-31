@@ -244,7 +244,7 @@ texts.push([
 	"Wees ervan bewust dat het in staat stellen van illegale activiteiten niet de bedoeling van deze emulator is.", // 11
 	"Kies een passende versie!", // 12
 	"Binnenkort!", // 13
-	"Haal binnen via", // 14
+	"Haal op via", // 14
 	"Neem contact met ons op!", // 15
 	"Neem contact op met de ontwikkelaars en andere gebruikers wanneer je maar wilt. Doe dit het liefst via Discord, maar de keuze ligt bij jou!", // 16
 	"Doe mee!", // 17
