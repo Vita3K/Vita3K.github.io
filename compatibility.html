@@ -74,6 +74,9 @@
             } else if (lang == "nl") {
                 $scope.texts = texts[6]
                 $scope.lang = "nl"
+            } else if (lang == "pl") {
+                $scope.texts = texts[7]
+                $scope.lang = "pl"
             } else {
                 var lang = window.navigator.language || window.navigator.userLanguage;
                 if (lang.startsWith('it')) {
@@ -93,7 +96,10 @@
                     $scope.lang = "vn"
                 } else if (lang.startsWith('nl')) {
                     $scope.texts = texts[6]
-                    $scope.lang = "nl"    
+                    $scope.lang = "nl"
+                } else if (lang.startsWith('pl')) {
+                    $scope.texts = texts[7]
+                    $scope.lang = 'pl'
                 } else {
                     $scope.texts = texts[0]
                     $scope.lang = "en"
@@ -172,6 +178,9 @@
                     $scope.texts = texts[6]
                     $scope.lang = "nl"
                 } else if (field == 7) {
+                    $scope.texts = texts[7]
+                    $scope.lang = 'pl'
+                } else if (field == 8) {
                     $scope.texts = texts[5]
                     $scope.lang = "vn"
                 }
@@ -208,6 +217,7 @@
                             <span ng-if="lang == 'gr'"><span class="flag-icon flag-icon-gr"></span> GR</span>
                             <span ng-if="lang == 'it'"><span class="flag-icon flag-icon-it"></span> IT</span>
                             <span ng-if="lang == 'nl'"><span class="flag-icon flag-icon-nl"></span> NL</span>
+                            <span ng-if="lang == 'pl'"><span class="flag-icon flag-icon-pl"></span> PL</span>
                             <span ng-if="lang == 'vn'"><span class="flag-icon flag-icon-vn"></span> VN</span>
                         </a>
                     </li>
@@ -239,7 +249,9 @@
                     <br>
                     <a href="#" data-dismiss="modal" ng-click="changeLang(6)"><span class="flag-icon flag-icon-nl"></span> Nederlands</a>
                     <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(7)"><span class="flag-icon flag-icon-vn"></span> Tiếng Việt</a>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(7)"><span class="flag-icon flag-icon-pl"></span> Polskie</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(8)"><span class="flag-icon flag-icon-vn"></span> Tiếng Việt</a>
                 </div>
             </div>
         </div>
