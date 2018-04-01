@@ -287,7 +287,7 @@ texts.push([
 	"Skontaktuj się z deweloperami i innymi urzytkownikami kiedy tylko chcesz. Wolimy przez Discord, ale to twój wybór!", // 16
 	"Dołącz!", // 17
 	"Sprawdź co działa!", // 18
-	"Ten emulator jeszcze nie obsługuje <b>żadnych gier komercyjnych</b>.Wiele gier homebrew są obsługiwane. Proszę sprawdzić <a href=\"compatibility.html?lang=en\">liste kompatybilnośći</a> po więcej detali!", // 19
+	"Ten emulator jeszcze nie obsługuje <b>żadnych gier komercyjnych</b>.Wiele gier homebrew są obsługiwane. Proszę sprawdzić <a href=\"compatibility.html?lang=pl\">liste kompatybilnośći</a> po więcej detali!", // 19
 	"Port gry homebrew", // 20
 	"Gra homebrew", // 21
 	"Program homebrew", // 22
