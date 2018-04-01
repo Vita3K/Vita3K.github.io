@@ -265,3 +265,41 @@ texts.push([
 	"Logo door", // 32
 	"Selecteer Taal" // 33
 ])
+
+// Polish (Translation provided by MAX0342)
+texts.push([
+	"O nas", // 0
+	"Pobierz", // 1
+	"Społeczność", // 2
+	"Kompatybilność", // 3
+	"Przedstawienie", // 4
+	"Współpracuj", // 5
+	"Złóż donacje", // 6
+	"Pierwszy emulator PlayStation Vity na świecie.", // 7
+	"Dowiedz się więcej", // 8
+	"O Vita3K", // 9
+	"Vita3K to pierwszy na świecie experymentalny i otwartoźródłowy emulator PlayStation Vity dla Windows-a i macOS-a.", // 10
+	"Pamietaj, że celem tego emulatora nie jest umożliwienie nielegalnej aktywnośći.", // 11
+	"Wybierz swoją kompilacje!", // 12
+	"Dostępne wkrótce!", // 13
+	"Weż z", // 14
+	"Skontaktuj się z nami!", // 15
+	"Skontaktuj się z deweloperami i innymi urzytkownikami kiedy tylko chcesz. Wolimy przez Discord, ale to twój wybór!", // 16
+	"Dołącz!", // 17
+	"Sprawdź co działa!", // 18
+	"Ten emulator jeszcze nie obsługuje <b>żadnych gier komercyjnych</b>.Wiele gier homebrew są obsługiwane. Proszę sprawdzić <a href=\"compatibility.html?lang=en\">liste kompatybilnośći</a> po więcej detali!", // 19
+	"Port gry homebrew", // 20
+	"Gra homebrew", // 21
+	"Program homebrew", // 22
+	"Pomóż nam się ulpszać!", // 23
+	"Możesz współpracować z nami w takie sposoby:", // 24
+	"Zgłoś problem lub rób Pull Request-y na naszym <a href=\"https://github.com/Vita3K/Vita3K\">Githubie</a>.", // 25
+	"Aktualizuj <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">liste kompatybilnośći homebrew</a>.", // 26
+	"Pokaż nam swoją miłość!", // 27
+	"Jeżeli chcesz pokazać nam swój szacunek i nawet pomóc nam zfinansować rozbudowe tego projektu mamy <a href=\"https://www.patreon.com/Vita3K\">Patreon-a</a>.", // 28
+	"Stań się patronem", // 29
+	"PlayStation and PS Vita są znakami towarowymi Sony Interactive Entertainment Inc.", // 30
+	"Emulator nie jest powiązany z Sony ani nie jest przez niego wspierany ani nie pochodzi z poufnych materiałów należących do firmy Sony.", // 31
+	"Logo stworzone przez", // 32
+	"Wybierz język" // 33
+])
