@@ -181,9 +181,9 @@ texts.push([
 	"Tagi", // 8
 	"Homebrew, które crashuje emulator.", // 9
 	"Homebrew, które mają błędy i awarie.", // 10
-	"Homebrew, które działają z bardzo małymi FPS-ami", // 11
+	"Homebrew, które działają z bardzo małymi klatkami", // 11
 	"Homebrew, które działają perekcyjnie.", // 12
-	"Nazwa zapisu", // 13
+	"Nazwa gry", // 13
 	"Status", // 14
 	"PlayStation and PS Vita są znakami towarowymi Sony Interactive Entertainment Inc.", // 15
 	"Emulator nie jest powiązany z Sony ani nie jest przez niego wspierany ani nie pochodzi z poufnych materiałów należących do firmy Sony.", // 16
