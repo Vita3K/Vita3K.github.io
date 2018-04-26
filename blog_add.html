@@ -1,0 +1,280 @@
+﻿<!DOCTYPE html>
+<html ng-app="Vita3K">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Vita3K - An Experimental PSVITA Emulator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="flag-icon/css/flag-icon.css" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.css" rel="stylesheet">
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
+
+	<!-- Texts -->
+    <script src="texts/compatibility.js"></script>
+	
+    <link rel=icon href=img/logo.svg sizes="any" type="image/svg+xml">
+
+</head>
+
+<body id="page-top" ng-controller="angularController">
+
+    <script>
+        function get(name) {
+            if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
+                return decodeURIComponent(name[1]);
+        }
+
+        angular.module('Vita3K', []).controller("angularController", function($scope, $http, $filter, $window) {
+
+            // Multilanguage setup
+            var lang = get('lang');
+            if (lang == "en") {
+                $scope.texts = texts[0]
+                $scope.lang = "en"
+            } else if (lang == "it") {
+                $scope.texts = texts[1]
+                $scope.lang = "it"
+            } else if (lang == "fr") {
+                $scope.texts = texts[2]
+                $scope.lang = "ar"
+            } else if (lang == "ar") {
+                $scope.texts = texts[3]
+                $scope.lang = "ar"
+            } else if (lang == "gr") {
+                $scope.texts = texts[4]
+                $scope.lang = "gr"
+            } else if (lang == "vn") {
+                $scope.texts = texts[5]
+                $scope.lang = "vn"
+            } else {
+                var lang = window.navigator.language || window.navigator.userLanguage;
+                if ((lang === 'it-IT') || (lang === 'it-CH')) {
+                    $scope.texts = texts[1]
+                    $scope.lang = "it"
+                    $scope.langcode = 1
+                } else if ((lang === 'ar-AR') ||
+                    (lang === 'ar-DZ') || (lang === 'ar-BH') ||
+                    (lang === 'ar-BH') || (lang === 'ar-EG') ||
+                    (lang === 'ar-IQ') || (lang === 'ar-JO') ||
+                    (lang === 'ar-KW') || (lang === 'ar-LB') ||
+                    (lang === 'ar-LY') || (lang === 'ar-MA') ||
+                    (lang === 'ar-OM') || (lang === 'ar-QA') ||
+                    (lang === 'ar-SA') || (lang === 'ar-SY') ||
+                    (lang === 'ar-TN') || (lang === 'ar-AE') ||
+                    (lang === 'ar-YE')) {
+                    $scope.texts = texts[3]
+                    $scope.lang = "ar"
+                } else if ((lang === 'fr-FR') ||
+                    (lang === 'fr-BE') || (lang === 'fr-LU') ||
+                    (lang === 'fr-MC') || (lang === 'fr-CH') ||
+                    (lang === 'fr-CA')) {
+                    $scope.texts = texts[2]
+                    $scope.lang = "fr"
+                } else if ((lang === 'vi-VI') || (lang === 'vi-VN')) {
+                    $scope.texts = texts[5]
+                    $scope.lang = "vn"
+                } else {
+                    $scope.texts = texts[0]
+                    $scope.lang = "en"
+                }
+            }
+            lang = $scope.lang
+
+            $scope.changeLang = function(field) {
+                if (field == 1) {
+                    $scope.texts = texts[3]
+                    $scope.lang = "ar"
+                } else if (field == 2) {
+                    $scope.texts = texts[2]
+                    $scope.lang = "fr"
+                } else if (field == 3) {
+                    $scope.texts = texts[0]
+                    $scope.lang = "en"
+                } else if (field == 4) {
+                    $scope.texts = texts[4]
+                    $scope.lang = "gr"
+                } else if (field == 5) {
+                    $scope.texts = texts[1]
+                    $scope.lang = "it"
+                } else if (field == 6) {
+                    $scope.texts = texts[5]
+                    $scope.lang = "vn"				
+                }
+                lang = $scope.lang
+            }
+			
+			$scope.showPreview = 0;
+			
+            $scope.title = "";
+            $scope.report = "";
+            $scope.author = "";
+            $scope.password = "";
+			$scope.preview = {}
+            $scope.data = {}
+            
+            $scope.show = function() {
+                $scope.showPreview = 1;
+                $scope.preview.title = $scope.title
+                $scope.preview.report = $scope.report
+                $scope.preview.author = $scope.author
+            }
+            
+            $scope.send = function() {
+                $scope.data.password = $scope.password
+                $scope.data.title = $scope.title
+                $scope.data.report = $scope.report
+                $scope.data.author = $scope.author
+                $http.post('http://vita3k.rinnegatamante.it/get_reports.php/submit.php', $scope.data).then(res => {
+                   $window.location.href = "/blog.html";
+                })
+            }
+			
+        }).filter('unsafe', function($sce) {
+            return function(val) {
+                return $sce.trustAsHtml(val);
+            };
+        });
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="logo" src="img/logo.svg" width="32" height="32" title="Logo by Gordon Mackay" /></a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="index.html?lang={{lang}}">{{texts[6]}}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#language">
+                            <span ng-if="lang == 'ar'"><span class="flag-icon flag-icon-sa"></span> AR</span>
+                            <span ng-if="lang == 'fr'"><span class="flag-icon flag-icon-fr"></span> FR</span>
+                            <span ng-if="lang == 'en'"><span class="flag-icon flag-icon-gb"></span> EN</span>
+                            <span ng-if="lang == 'gr'"><span class="flag-icon flag-icon-gr"></span> GR</span>
+                            <span ng-if="lang == 'it'"><span class="flag-icon flag-icon-it"></span> IT</span>
+                            <span ng-if="lang == 'vn'"><span class="flag-icon flag-icon-vn"></span> VN</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Language selection -->
+    <div class="modal fade language" id="language" tabindex="-1" role="dialog" aria-labelledby="language" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{texts[19]}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-sa"></span> العربية</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(2)"><span class="flag-icon flag-icon-fr"></span> Français</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(3)"><span class="flag-icon flag-icon-gb"></span> English</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(4)"><span class="flag-icon flag-icon-gr"></span> Greek</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(5)"><span class="flag-icon flag-icon-it"></span> Italiano</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(6)"><span class="flag-icon flag-icon-vn"></span> Tiếng Việt</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mx-auto text-center">
+                    <h2 class="section-heading">Add a Blog Entry</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-dark text-white">
+        <div class="container">
+			<div class="row">
+                <div class="col-lg-12 mx-auto text-center">
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="" ng-click="show()">Show Preview</a>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="" ng-click="send()">Submit Entry</a>
+                    <hr class="my-4">
+                    <input type="text" ng-model="password" class="form-control" placeholder="Password" required="true" /><br>
+                    <input type="text" ng-model="title" class="form-control" placeholder="Title" required="true" /><br>
+                    <input type="text" ng-model="author" class="form-control" placeholder="Author" required="true" /><br>
+                    <textarea style="resize: vertical;" ng-model="report" class="form-control" placeholder="Blog Entry" required="true"></textarea>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<section class="text-white" ng-if="showPreview == 1">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 mx-auto text-center">
+                    <h3 class="section-heading"><font color=#bbbbbb>{{preview.title}}</font></h3>
+                    <hr class="my-4">
+                    <p class="mb-5" align="left" ng-bind-html="preview.report | unsafe">
+                    </p>
+				<div align="right"><small><i>by {{preview.author}}</i></small></div>
+            </div>
+        </div>
+	</section>
+
+    <section class="text-white" id="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="mb-5">
+                        {{texts[15]}} {{texts[16]}}
+                        <br>
+                        <br> Copyright © 2018 Vita3K team
+                        <br> {{texts[17]}} Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+</body>
+
+</html>
