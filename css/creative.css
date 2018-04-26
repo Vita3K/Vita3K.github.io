@@ -82,6 +82,10 @@ section {
   margin-top: 0;
 }
 
+.stackedit__html {
+  max-width: 100% !important;
+}
+
 ::-moz-selection {
   color: #fff;
   background: #212529;
