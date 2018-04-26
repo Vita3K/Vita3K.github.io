@@ -143,7 +143,7 @@
                 $scope.data.title = $scope.title
                 $scope.data.report = $scope.report
                 $scope.data.author = $scope.author
-                $http.post('http://vita3k.rinnegatamante.it/get_reports.php/submit.php', $scope.data).then(res => {
+                $http.post('https://vita3k.rinnegatamante.it/get_reports.php/submit.php', $scope.data).then(res => {
                    $window.location.href = "/blog.html";
                 })
             }
