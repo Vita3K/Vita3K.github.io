@@ -1,3 +1,10 @@
+*::selection {
+  background: lightgray!important; /* WebKit/Blink Browsers */
+}
+*::-moz-selection {
+  background: lightgray!important; /* Gecko Browsers */
+}
+
 body,
 html {
   width: 100%;
@@ -88,8 +95,14 @@ section {
   max-width: 55%;
 }
 
+.blog-post {
+  background: hsl(210, 11%, 17%);
+  border-radius: 25px;
+  -moz-border-radius: 25px;
+}
+
 .blog-body {
-  padding: 2rem 0;
+  padding: 8rem 0;
   padding-bottom: 50px;
 }
 

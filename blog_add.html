@@ -30,7 +30,7 @@
 
 	<!-- Texts -->
     <script src="texts/compatibility.js"></script>
-	
+
     <link rel=icon href=img/logo.svg sizes="any" type="image/svg+xml">
 
 </head>
@@ -117,27 +117,27 @@
                     $scope.lang = "it"
                 } else if (field == 6) {
                     $scope.texts = texts[5]
-                    $scope.lang = "vn"				
+                    $scope.lang = "vn"
                 }
                 lang = $scope.lang
             }
-			
+
 			$scope.showPreview = 0;
-			
+
             $scope.title = "";
             $scope.report = "";
             $scope.author = "";
             $scope.password = "";
 			$scope.preview = {}
             $scope.data = {}
-            
+
             $scope.show = function() {
                 $scope.showPreview = 1;
                 $scope.preview.title = $scope.title
                 $scope.preview.report = $scope.report
                 $scope.preview.author = $scope.author
             }
-            
+
             $scope.send = function() {
                 $scope.data.password = $scope.password
                 $scope.data.title = $scope.title
@@ -147,7 +147,7 @@
                    $window.location.href = "/blog_admin.html";
                 })
             }
-			
+
         }).filter('unsafe', function($sce) {
             return function(val) {
                 return $sce.trustAsHtml(val);
@@ -218,7 +218,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="bg-dark text-white">
         <div class="container">
 			<div class="row">
@@ -234,16 +234,16 @@
             </div>
         </div>
     </section>
-	
-	<section class="text-white" ng-if="showPreview == 1">
-		<div class="container">
-			<div class="row">
+
+	<section  class="blog-body text-white" ng-if="showPreview == 1">
+		<div class="container" id="blog-container">
+			<div class="row blog-post">
 				<div class="col-lg-12 mx-auto text-center">
-                    <h3 class="section-heading"><font color=#bbbbbb>{{preview.title}}</font></h3>
+                    <h3 class="blog-post-title section-heading"><font color="#bbbbbb">{{preview.title}}</font></h3>
                     <hr class="my-4">
-                    <p class="mb-5" align="left" ng-bind-html="preview.report | unsafe">
+                    <p class="blog-post-body mb-5" align="left" ng-bind-html="preview.report | unsafe">
                     </p>
-				<div align="right"><small><i>by {{preview.author}}</i></small></div>
+				<div class="blog-post-author" align="right"><small><i>by {{preview.author}}</i></small></div>
             </div>
         </div>
 	</section>
