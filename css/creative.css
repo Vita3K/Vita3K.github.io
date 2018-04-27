@@ -84,6 +84,7 @@ section {
 }
 
 #blog-container {
+  font-size: 15px;
   max-width: 55%;
 }
 
@@ -112,6 +113,19 @@ section {
 .stackedit__html {
   max-width: 100% !important;
   margin-bottom: 50px !important;
+}
+
+.stackedit__html>p {
+  color: rgb(210, 210, 210);
+}
+
+.stackedit__html>h1 {
+  margin-bottom: 30px;
+  font-size: 2.1rem;
+}
+.stackedit__html>h2 {
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 ::-moz-selection {
