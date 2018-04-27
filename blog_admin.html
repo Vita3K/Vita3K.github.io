@@ -30,7 +30,7 @@
 
 	<!-- Texts -->
     <script src="texts/compatibility.js"></script>
-	
+
     <link rel=icon href=img/logo.svg sizes="any" type="image/svg+xml">
 
 </head>
@@ -117,15 +117,15 @@
                     $scope.lang = "it"
                 } else if (field == 6) {
                     $scope.texts = texts[5]
-                    $scope.lang = "vn"				
+                    $scope.lang = "vn"
                 }
                 lang = $scope.lang
             }
-			
+
 			$http.post('https://vita3k.rinnegatamante.it/get_reports.php').then(function(res){
 				$scope.reports = res.data
 			})
-			
+
             $scope.data = {}
             $scope.remove = function(id) {
                 $scope.data.password = $scope.password
@@ -136,11 +136,11 @@
                     })
                 })
             }
-            
+
             $scope.edit = function(id) {
                 $window.location.href = "/blog_update.html?id=" + id;
             }
-			
+
         });
     </script>
 
@@ -184,7 +184,7 @@
                 <div class="modal-body">
                    <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-sa"></span> ???????</a>
                     <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(2)"><span class="flag-icon flag-icon-fr"></span> Français</a>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(2)"><span class="flag-icon flag-icon-fr"></span> FranÃ§ais</a>
                     <br>
                     <a href="#" data-dismiss="modal" ng-click="changeLang(3)"><span class="flag-icon flag-icon-gb"></span> English</a>
                     <br>
@@ -207,14 +207,14 @@
             </div>
         </div>
     </section>
-	
+
 	<section class="bg-dark text-white">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mx-auto text-center">
                     <input type="text" ng-model="password" class="form-control" placeholder="Password" required="true" /><br>
                     <center>
-                    <table class="table-hover table-bordered table-striped">
+                    <table cellpadding="12" class="table-hover table-bordered table-striped">
                         <thead>
                             <tr>
                                 <td><font color=yellow><small>ID</small></font></td>
@@ -252,7 +252,7 @@
                     <p class="mb-5">
                         {{texts[15]}} {{texts[16]}}
                         <br>
-                        <br> Copyright © 2018 Vita3K team
+                        <br> Copyright Â© 2018 Vita3K team
                         <br> {{texts[17]}} Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
                     </p>
                 </div>
