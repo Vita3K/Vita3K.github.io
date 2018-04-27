@@ -78,12 +78,40 @@ section {
   padding: 8rem 0;
 }
 
+#blog-header {
+  padding: 2rem 0 !important;
+  padding-bottom: 50px;
+}
+
+#blog-container {
+  max-width: 55%;
+}
+
+.blog-body {
+  padding: 2rem 0;
+  padding-bottom: 50px;
+}
+
+.blog-post-title {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+}
+
+.blog-post-body {
+  margin-bottom: 0px !important;
+}
+
+.blog-post-author {
+  margin-right: 5%;
+}
+
 .section-heading {
   margin-top: 0;
 }
 
 .stackedit__html {
   max-width: 100% !important;
+  margin-bottom: 50px !important;
 }
 
 ::-moz-selection {
