@@ -212,9 +212,9 @@
     </section>
 
 	<div ng-repeat="report in reports">
-		<section class="blog-body" ng-class-odd="'bg-dark text-white'" ng-class-even="'text-white'" id="{{report.id}}">
+		<section class="blog-body" ng-class="'bg-dark text-white'" id="{{report.id}}">
 			<div class="container" id="blog-container">
-				<div class="row">
+				<div class="row blog-post">
 					<div class="col-lg-12 mx-auto text-center">
                         <h2 class="blog-post-title section-heading"><font color="#bbbbbb">{{report.title}}</font></h2>
                         <p class="blog-post-body mb-5" align="left" ng-bind-html="report.report | unsafe">
