@@ -121,7 +121,7 @@
             var pagination = true
             var page = 1
             while (pagination) {
-                if (page == 2) pagination = false
+                if (page == 3) pagination = false
                 $http.get("https://api.github.com/repos/Vita3K/homebrew-compatibility/issues?state=open&page=" + page + "&per_page=100")
                     .success(function(data) {
 
