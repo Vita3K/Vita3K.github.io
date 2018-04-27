@@ -43,8 +43,10 @@
                 return decodeURIComponent(name[1]);
         }
 
-        angular.module('Vita3K', []).controller("angularController", function($scope, $http, $filter, $window) {
-
+        angular.module('Vita3K', []).controller("angularController", function($scope, $http, $filter, $window, $location) {
+            
+            var paramValue = $location.search().myParam;
+            
             // Multilanguage setup
             var lang = get('lang');
             if (lang == "en") {
@@ -122,11 +124,24 @@
                 lang = $scope.lang
             }
 			
+            $scope.title = ""
+            $scope.author = ""
+            $scope.report = ""
+            
 			$scope.showPreview = 0;
-			
-            $scope.title = "";
-            $scope.report = "";
-            $scope.author = "";
+            $http.post('https://vita3k.rinnegatamante.it/get_reports.php').then(function(res){
+                i = 0
+                while (i < res.data.length){
+                    if (res.data[i].id == $location.search().id){
+                        $scope.title = res.data[i].title;
+                        $scope.report = res.data[i].report;
+                        $scope.author = res.data[i].author;
+                        break;
+                    }
+                    i++;
+                }
+			})
+            
             $scope.password = "";
 			$scope.preview = {}
             $scope.data = {}
@@ -143,7 +158,8 @@
                 $scope.data.title = $scope.title
                 $scope.data.report = $scope.report
                 $scope.data.author = $scope.author
-                $http.post('https://vita3k.rinnegatamante.it/submit.php', $scope.data).then(res => {
+                $scope.data.id = $location.search().id
+                $http.post('https://vita3k.rinnegatamante.it/update.php', $scope.data).then(res => {
                    $window.location.href = "/blog_admin.html";
                 })
             }
@@ -152,6 +168,11 @@
             return function(val) {
                 return $sce.trustAsHtml(val);
             };
+        }).config(function($locationProvider) {
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
         });
     </script>
 

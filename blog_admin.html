@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="Vita3K">
 
 <head>
@@ -43,7 +43,7 @@
                 return decodeURIComponent(name[1]);
         }
 
-        angular.module('Vita3K', []).controller("angularController", function($scope, $http, $filter, $window) {
+        angular.module('Vita3K', []).controller("angularController", function($scope, $http, $window) {
 
             // Multilanguage setup
             var lang = get('lang');
@@ -122,36 +122,25 @@
                 lang = $scope.lang
             }
 			
-			$scope.showPreview = 0;
+			$http.post('https://vita3k.rinnegatamante.it/get_reports.php').then(function(res){
+				$scope.reports = res.data
+			})
 			
-            $scope.title = "";
-            $scope.report = "";
-            $scope.author = "";
-            $scope.password = "";
-			$scope.preview = {}
             $scope.data = {}
-            
-            $scope.show = function() {
-                $scope.showPreview = 1;
-                $scope.preview.title = $scope.title
-                $scope.preview.report = $scope.report
-                $scope.preview.author = $scope.author
-            }
-            
-            $scope.send = function() {
+            $scope.remove = function(id) {
                 $scope.data.password = $scope.password
-                $scope.data.title = $scope.title
-                $scope.data.report = $scope.report
-                $scope.data.author = $scope.author
-                $http.post('https://vita3k.rinnegatamante.it/submit.php', $scope.data).then(res => {
-                   $window.location.href = "/blog_admin.html";
+                $scope.data.id = id
+                $http.post('https://vita3k.rinnegatamante.it/remove.php', $scope.data).then(res => {
+                    $http.post('https://vita3k.rinnegatamante.it/get_reports.php').then(function(res){
+                        $scope.reports = res.data
+                    })
                 })
             }
+            
+            $scope.edit = function(id) {
+                $window.location.href = "/blog_update.html?id=" + id;
+            }
 			
-        }).filter('unsafe', function($sce) {
-            return function(val) {
-                return $sce.trustAsHtml(val);
-            };
         });
     </script>
 
@@ -193,9 +182,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                   <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-sa"></span> العربية</a>
+                   <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-sa"></span> ???????</a>
                     <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(2)"><span class="flag-icon flag-icon-fr"></span> Français</a>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(2)"><span class="flag-icon flag-icon-fr"></span> Fran�ais</a>
                     <br>
                     <a href="#" data-dismiss="modal" ng-click="changeLang(3)"><span class="flag-icon flag-icon-gb"></span> English</a>
                     <br>
@@ -203,49 +192,57 @@
                     <br>
                     <a href="#" data-dismiss="modal" ng-click="changeLang(5)"><span class="flag-icon flag-icon-it"></span> Italiano</a>
                     <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(6)"><span class="flag-icon flag-icon-vn"></span> Tiếng Việt</a>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(6)"><span class="flag-icon flag-icon-vn"></span> Ti?ng Vi?t</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <section class="text-white">
+    <section class="text-white" id="compatibility">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mx-auto text-center">
-                    <h2 class="section-heading">Add a Blog Entry</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="bg-dark text-white">
-        <div class="container">
-			<div class="row">
-                <div class="col-lg-12 mx-auto text-center">
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="" ng-click="show()">Show Preview</a>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="" ng-click="send()">Submit Entry</a>
-                    <hr class="my-4">
-                    <input type="text" ng-model="password" class="form-control" placeholder="Password" required="true" /><br>
-                    <input type="text" ng-model="title" class="form-control" placeholder="Title" required="true" /><br>
-                    <input type="text" ng-model="author" class="form-control" placeholder="Author" required="true" /><br>
-                    <textarea style="resize: vertical;" ng-model="report" class="form-control" placeholder="Blog Entry" required="true"></textarea>
+                    <h3>Blog</h3>
                 </div>
             </div>
         </div>
     </section>
 	
-	<section class="text-white" ng-if="showPreview == 1">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 mx-auto text-center">
-                    <h3 class="section-heading"><font color=#bbbbbb>{{preview.title}}</font></h3>
-                    <hr class="my-4">
-                    <p class="mb-5" align="left" ng-bind-html="preview.report | unsafe">
-                    </p>
-				<div align="right"><small><i>by {{preview.author}}</i></small></div>
-            </div>
-        </div>
+	<section class="bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mx-auto text-center">
+                    <input type="text" ng-model="password" class="form-control" placeholder="Password" required="true" /><br>
+                    <center>
+                    <table class="table-hover table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td><font color=yellow><small>ID</small></font></td>
+                                <td><font color=yellow><small>Title</small></font></td>
+                                <td><font color=yellow><small>Author</small></font></td>
+                                <td colspan="2"><font color=yellow><small>Actions</small></font></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="report in reports">
+                                <td>{{report.id}}</td>
+                                <td>{{report.title}}</td>
+                                <td>{{report.author}}</td>
+                                <td>
+                                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="" ng-click="edit(report.id)">Edit</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="" ng-click="remove(report.id)">Remove</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="blog_add.html">Add an Entry</a>
+                    </center>
+                </div>
+			</div>
+		</div>
 	</section>
 
     <section class="text-white" id="copyright">
@@ -255,7 +252,7 @@
                     <p class="mb-5">
                         {{texts[15]}} {{texts[16]}}
                         <br>
-                        <br> Copyright © 2018 Vita3K team
+                        <br> Copyright � 2018 Vita3K team
                         <br> {{texts[17]}} Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
                     </p>
                 </div>
