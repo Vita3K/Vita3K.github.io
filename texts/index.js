@@ -35,7 +35,9 @@ texts.push([
 	"PlayStation and PS Vita are trademarks of Sony Interactive Entertainment Inc.", // 30
 	"The emulator is not related to or endorsed by Sony, or derived from confidential materials belonging to Sony.", // 31
 	"Logo by", // 32
-	"Select Language" // 33
+	"Select Language", // 33
+	"What's new", // 34
+	"We have a blog where we publish monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
 ])
 
 // Italian (translation provided by Rinnegatamante)
@@ -73,7 +75,9 @@ texts.push([
 	"PlayStation e PS Vita sono marchi registrati di Sony Interactive Entertainment Inc.", // 30
 	"L'emulatore non è correlato o certificato da Sony, nè derivato da materiale confidenziale appartenente alla Sony.", // 31
 	"Logo creato da", // 32
-	"Seleziona Lingua" // 33
+	"Seleziona Lingua", // 33
+	"Cosa c'è di nuovo", // 34
+	"E' disponibile un blog nel quale pubblichiamo mensilmente un resoconto dettagliato inerente gli ultimi progressi nell'emulatore. Corri a leggere cosa c'è di nuovo!" // 35
 ])
 
 // French (translation provided by Drayano)
@@ -111,7 +115,9 @@ texts.push([
 	"PlayStation et PS Vita sont des marques déposées par Sony Interactive Entertainment Inc.", // 30
 	"Vita3K n'est pas lié ou approuvé par Sony, ou dérivé de documents confidentiels appartenant à Sony.", // 31
 	"Logo fait par", // 32
-	"Choisissez votre langue" // 33
+	"Choisissez votre langue", // 33
+	"What's new", // 34
+	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
 ])
 
 // Arabic (translation provided by IllusionMan1212)
@@ -149,7 +155,9 @@ texts.push([
 	"PlayStation و PS Vita هما علامتين تجاريتين لشركة Sony Interactive Entertainment Inc.", // 30
 	"المحاكي غير مرتبط او مؤيد من ٍSony, او مأخوذ من مستندات سرية تنتمي الى Sony. ", // 31
 	"الشعار من قبل", // 32
-	"اختر اللغة" // 33
+	"اختر اللغة", // 33
+	"What's new", // 34
+	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
 ])
 
 // Greek (translation provided by VelocityRa)
@@ -164,7 +172,7 @@ texts.push([
 	"Ο πρώτος εξομοιωτής για το PlayStation Vita στον κόσμο.", // 7
 	"Μάθετε περισσότερα", // 8
 	"Σχετικά με το Vita3K", // 9
-	"Το Vita3K είναι ο πρώτος πειραματικός εξομοιωτής PlayStation Vita ανοικτού κώδικα για Windows και macOS", // 10
+	"Το Vita3K είναι ο πρώτος πειραματικός εξομοιωτής PlayStation Vita ανοικτού κώδικα για Windows και Mac OS", // 10
 	"Σημειώστε ότι ο σκοπός του εξομοιωτή δεν είναι να επιτρέπει την παράνομη δραστηριότητα.", // 11
 	"Πάρτε το build σας!", // 12
 	"Σύντομα!", // 13
@@ -187,7 +195,9 @@ texts.push([
 	"Το PlayStation και το PS Vita είναι εμπορικά σήματα της Sony Interactive Entertainment Inc.", // 30
 	"Ο εξομοιωτής δεν σχετίζεται με την Sony ούτε προέρχεται από εμπιστευτικά υλικά που ανήκουν στη Sony.", // 31
 	"Λογότυπο από", // 32
-	"Επιλογή γλώσσας" // 33
+	"Επιλογή γλώσσας", // 33
+	"What's new", // 34
+	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
 ])
 
 // Vietnamese (Translation provided by Bentokun)
@@ -225,7 +235,9 @@ texts.push([
 	"Playstation và PS Vita đều là thương hiệu của Sony Interactive Entertainment Inc.", // 30
 	"Trình giả lập không liên quan hay được xác nhận bởi Sony, không dựa trên nền tảng những chương trình hay tài liệu mật thuộc về Sony.", // 31
 	"Logo bởi", // 32
-	"Chọn ngôn ngữ" // 33
+	"Chọn ngôn ngữ", // 33
+	"What's new", // 34
+	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
 ])
 
 // Dutch (Translation provided by jelle619)
@@ -263,7 +275,9 @@ texts.push([
 	"PlayStation en PS Vita zijn handelsmerken van Sony Interactive Entertainment Inc.", // 30
 	"Deze emulator wordt niet ondersteund en staat los van Sony en is niet afgeleid van vertrouwelijk materiaal in het bezit van Sony.", // 31
 	"Logo door", // 32
-	"Selecteer Taal" // 33
+	"Selecteer Taal", // 33
+	"What's new", // 34
+	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
 ])
 
 // Polish (Translation provided by MAX0342)
@@ -301,5 +315,7 @@ texts.push([
 	"PlayStation and PS Vita są znakami towarowymi Sony Interactive Entertainment Inc.", // 30
 	"Emulator nie jest powiązany z Sony ani nie jest przez niego wspierany ani nie pochodzi z poufnych materiałów należących do firmy Sony.", // 31
 	"Logo stworzone przez", // 32
-	"Wybierz język" // 33
+	"Wybierz język", // 33
+	"What's new", // 34
+	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
 ])
