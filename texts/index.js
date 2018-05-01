@@ -316,6 +316,6 @@ texts.push([
 	"Emulator nie jest powiązany z Sony ani nie jest przez niego wspierany ani nie pochodzi z poufnych materiałów należących do firmy Sony.", // 31
 	"Logo stworzone przez", // 32
 	"Wybierz język", // 33
-	"What's new", // 34
-	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
+	"Co nowego", // 34
+	"Mamy bloga gdzie my publikujemy miesięczne szczegółowe raporty z najnowszym progresem. Przeczytaj co nowego!" // 35
 ])
