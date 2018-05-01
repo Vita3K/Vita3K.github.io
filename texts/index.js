@@ -276,8 +276,8 @@ texts.push([
 	"Deze emulator wordt niet ondersteund en staat los van Sony en is niet afgeleid van vertrouwelijk materiaal in het bezit van Sony.", // 31
 	"Logo door", // 32
 	"Selecteer Taal", // 33
-	"What's new", // 34
-	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
+	"Wat nieuw is", // 34
+	"We hebben een blog waar we maandelijks nieuwe gedetaileerde rapporten publiceren met het laatst geboekte voortgang in ons werk. Neem een bezoekje om te kijken wat nieuw is!" // 35
 ])
 
 // Polish (Translation provided by MAX0342)
