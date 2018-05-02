@@ -394,3 +394,37 @@ header.masthead p {
 .btn-primary:active, .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
+
+@media only screen and (max-width: 425px) {
+
+  body {
+     font-size: 0.7em;
+  }
+  h1 {
+    font-size: 1.3em;
+  }
+  h2 {
+    font-size: 1.15em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  h4 {
+    font-size: 0.9em;
+  }
+  h5 {
+    font-size: 0.85em;
+  }
+
+  #blog-container {
+    font-size: 12px;
+    max-width: 90%;
+  }
+  .stackedit__html {
+    max-width: 100% !important;
+    margin-bottom: 50px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+}
