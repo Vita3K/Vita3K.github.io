@@ -183,12 +183,17 @@ img::-moz-selection {
   color: #f05f40;
 }
 
+#mainNav .navbar-nav {
+  margin-top: 0px;
+}
+
 #mainNav .navbar-nav > li.nav-item > a.nav-link,
 #mainNav .navbar-nav > li.nav-item > a.nav-link:focus {
   font-size: .9rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #212529;
+  text-decoration: none;
 }
 
 #mainNav .navbar-nav > li.nav-item > a.nav-link:hover,
