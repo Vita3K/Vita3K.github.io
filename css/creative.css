@@ -426,5 +426,8 @@ header.masthead p {
     padding-left: 8px !important;
     padding-right: 8px !important;
   }
+  .stackedit__html>h1 {
+    font-size: 1.3rem;
+  }
 
 }
