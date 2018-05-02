@@ -395,10 +395,10 @@ header.masthead p {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 800px) {
 
   body {
-     font-size: 0.7em;
+     font-size: 0.8em;
   }
   h1 {
     font-size: 1.3em;
