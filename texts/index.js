@@ -156,8 +156,8 @@ texts.push([
 	"المحاكي غير مرتبط او مؤيد من ٍSony, او مأخوذ من مستندات سرية تنتمي الى Sony. ", // 31
 	"الشعار من قبل", // 32
 	"اختر اللغة", // 33
-	"What's new", // 34
-	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
+	"ماذا جديد", // 34
+	"!لدينا مدونة حيث نكتب شهريا تقريرا مفصلا بأحدث التطورات في عملنا. تعالوا اقرؤا ماذا جديد"// 35
 ])
 
 // Greek (translation provided by VelocityRa)
