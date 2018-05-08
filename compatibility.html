@@ -87,6 +87,9 @@
             } else if (lang == "pl") {
                 $scope.texts = texts[7]
                 $scope.lang = "pl"
+            } else if (lang == "br") {
+                $scope.texts = texts[8]
+                $scope.lang = "br"
             } else {
                 var lang = window.navigator.language || window.navigator.userLanguage;
                 if (lang.startsWith('it')) {
@@ -110,6 +113,9 @@
                 } else if (lang.startsWith('pl')) {
                     $scope.texts = texts[7]
                     $scope.lang = 'pl'
+                } else if (lang.startsWith('pt')) {
+                    $scope.texts = texts[8]
+                    $scope.lang = 'br'
                 } else {
                     $scope.texts = texts[0]
                     $scope.lang = "en"
@@ -193,6 +199,9 @@
                 } else if (field == 8) {
                     $scope.texts = texts[5]
                     $scope.lang = "vn"
+                } else if (field == 9) {
+                    $scope.texts = texts[8]
+                    $scope.lang = "br"
                 }
                 lang = $scope.lang
             }
@@ -222,6 +231,7 @@
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#language">
                             <span ng-if="lang == 'ar'"><span class="flag-icon flag-icon-sa"></span> AR</span>
+                            <span ng-if="lang == 'br'"><span class="flag-icon flag-icon-br"></span> BR</span>
                             <span ng-if="lang == 'en'"><span class="flag-icon flag-icon-gb"></span> EN</span>
                             <span ng-if="lang == 'fr'"><span class="flag-icon flag-icon-fr"></span> FR</span>
                             <span ng-if="lang == 'gr'"><span class="flag-icon flag-icon-gr"></span> GR</span>
@@ -229,7 +239,7 @@
                             <span ng-if="lang == 'nl'"><span class="flag-icon flag-icon-nl"></span> NL</span>
                             <span ng-if="lang == 'pl'"><span class="flag-icon flag-icon-pl"></span> PL</span>
                             <span ng-if="lang == 'vn'"><span class="flag-icon flag-icon-vn"></span> VN</span>
-                        </a>
+                            </a>
                     </li>
                 </ul>
             </div>
@@ -247,7 +257,9 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                   <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-sa"></span> العربية</a>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-sa"></span> العربية</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(9)"><span class="flag-icon flag-icon-br"></span> Brasileiro</a>
                     <br>
                     <a href="#" data-dismiss="modal" ng-click="changeLang(2)"><span class="flag-icon flag-icon-gb"></span> English</a>
                     <br>
