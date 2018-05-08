@@ -191,3 +191,26 @@ texts.push([
 	"Szukaj", // 18
 	"Wybierz język" // 19
 ])
+
+texts.push([
+	"Desconhecido", // 0
+	"Quebrando", // 1
+	"Bugado", // 2
+	"Lento", // 3
+	"Jogável", // 4
+	"Todos", // 5
+	"Pagina Inicial", // 6
+	"Lista de Compatibilidade", // 7
+	"Marcadores", // 8
+	"A Homebrew quebra o emulador.", // 9
+	"A Homebrew funciona com bugs ou falhas.", // 10
+	"A Homebrew funciona ,mas com baixos quadros por segundo.", // 11
+	"A Homebrew é perfeitamente jogavel.", // 12
+	"Nome da entrada", // 13
+	"Estado", // 14
+	"PlayStation e PS Vita são marcas registradas da Sony Interactive Entertainment Inc. ", // 15
+	"O emulador não é relacionado com ou endossado pela Sony ou derivado de materiais confidenciais pertencentes a Sony.", // 16
+	"Logo por", // 17
+	"Procurar", // 18
+	"Selecione o Idioma" // 19
+])

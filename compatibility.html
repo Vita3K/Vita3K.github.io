@@ -87,6 +87,9 @@
             } else if (lang == "pl") {
                 $scope.texts = texts[7]
                 $scope.lang = "pl"
+            } else if (lang == "br") {
+                $scope.texts = texts[8]
+                $scope.lang = "br"
             } else {
                 var lang = window.navigator.language || window.navigator.userLanguage;
                 if (lang.startsWith('it')) {
@@ -110,6 +113,9 @@
                 } else if (lang.startsWith('pl')) {
                     $scope.texts = texts[7]
                     $scope.lang = 'pl'
+                } else if (lang.startsWith('pt')) {
+                    $scope.texts = texts[8]
+                    $scope.lang = 'br'
                 } else {
                     $scope.texts = texts[0]
                     $scope.lang = "en"
@@ -193,6 +199,9 @@
                 } else if (field == 8) {
                     $scope.texts = texts[5]
                     $scope.lang = "vn"
+                } else if (field == 9) {
+                    $scope.texts = texts[8]
+                    $scope.lang = "br"
                 }
                 lang = $scope.lang
             }
@@ -229,7 +238,7 @@
                             <span ng-if="lang == 'nl'"><span class="flag-icon flag-icon-nl"></span> NL</span>
                             <span ng-if="lang == 'pl'"><span class="flag-icon flag-icon-pl"></span> PL</span>
                             <span ng-if="lang == 'vn'"><span class="flag-icon flag-icon-vn"></span> VN</span>
-                        </a>
+                            <span ng-if="lang == 'br'"><span class="flag-icon flag-icon-br"></span> BR</span>
                     </li>
                 </ul>
             </div>
@@ -262,6 +271,8 @@
                     <a href="#" data-dismiss="modal" ng-click="changeLang(7)"><span class="flag-icon flag-icon-pl"></span> Polski</a>
                     <br>
                     <a href="#" data-dismiss="modal" ng-click="changeLang(8)"><span class="flag-icon flag-icon-vn"></span> Tiếng Việt</a>
+                    <br>
+                    <a href="#" data-dismiss="modal" ng-click="changeLang(9)"><span class="flag-icon flag-icon-br"></span> Português Brasileiro</a>
                 </div>
             </div>
         </div>

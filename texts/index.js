@@ -319,3 +319,42 @@ texts.push([
 	"Co nowego", // 34
 	"Mamy bloga gdzie my publikujemy miesięczne szczegółowe raporty z najnowszym progresem. Przeczytaj co nowego!" // 35
 ])
+
+texts.push([
+	"Sobre", // 0
+	"Baixar", // 1
+	"Comunidade", // 2
+	"Compatibilidade", // 3
+	"Mostruário", // 4
+	"Contribua", // 5
+	"Doação", // 6
+	"O primeiro emulador de PlayStation Vita do mundo.", // 7
+	"Descubra mais", // 8
+	"Sobre Vita3K", // 9
+	"Vita3K é o primeiro emulador experimental codigo aberto de PlayStation Vita no mundo para Windows e macOS.", // 10
+	"Tenha em mente que o propósito do emulador não é permitir atividades ilegais.", // 11
+	"Pegue sua versão!", // 12
+	"Em breve!", // 13
+	"Pegar no", // 14
+	"Entre em contato conosco", // 15
+	"Entre em contato com os desenvolvedores e outro usuarios sempre que quiser. Nos prefirimos nosso servidor no Discord, mas a escolha é sua!", // 16
+	"Junte-se agora", // 17
+	"Olhe o que está rodando!", // 18
+	"O emulador ainda não roda <b>nenhum jogo comercial</b>.<br>Varios jogos homebrew são suportados. Por favor olhe a <a href=\"compatibility.html?lang=en\">lista de compatibilidade</a> para maiores detalhes!", // 19
+	"Porte de Jogo Homebrew", // 20
+	"Jogo Homebrew", // 21
+	"Homebrew de Utilidade", // 22
+	"Ajude-nos a melhorar!", // 23
+	"Você pode contribuir para o emulador das seguintes maneiras:", // 24
+	"Reporte um problema ou faça um Pull Requests no nosso <a href=\"https://github.com/Vita3K/Vita3K\">repositório do GitHub</a>.", // 25
+	"Atualizar o  <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">Banco de dados de compatibilidade de homebrews</a>.", // 26
+	"Mostre-nos seu amor!", // 27
+	"Se você gostaria de mostra seu carinho e até mesmo quer ajudar a financiar, o projeto tem uma <a href=\"https://www.patreon.com/Vita3K\">Pagina no Patreon</a>.", // 28
+	"Entre no Patron", // 29
+	"PlayStation e PS Vita são marcas registradas da Sony Interactive Entertainment Inc.", // 30
+	"O emulador não é relacionado com ou endossado pela Sony ou derivado de materiais confidenciais pertencentes a Sony.", // 31
+	"Logo por", // 32
+	"Selecione o Idioma", // 33
+	"O que há de novo.", // 34
+	"Nós temos um blog onde nos postamos mensalmente um detalhado relatorio do nossos ultimos progreços no nosso trabalho. Venha ler o que há de novo!" // 35
+])
