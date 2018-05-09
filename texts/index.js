@@ -320,6 +320,7 @@ texts.push([
 	"Mamy bloga gdzie my publikujemy miesięczne szczegółowe raporty z najnowszym progresem. Przeczytaj co nowego!" // 35
 ])
 
+// Brazilian Portuguese (Translation provided by mjsf12)
 texts.push([
 	"Sobre", // 0
 	"Baixar", // 1
@@ -340,7 +341,7 @@ texts.push([
 	"Entre em contato com os desenvolvedores e outro usuarios sempre que quiser. Nos prefirimos nosso servidor no Discord, mas a escolha é sua!", // 16
 	"Junte-se agora", // 17
 	"Olhe o que está rodando!", // 18
-	"O emulador ainda não roda <b>nenhum jogo comercial</b>.<br>Varios jogos homebrew são suportados. Por favor olhe a <a href=\"compatibility.html?lang=en\">lista de compatibilidade</a> para maiores detalhes!", // 19
+	"O emulador ainda não roda <b>nenhum jogo comercial</b>.<br>Varios jogos homebrew são suportados. Por favor olhe a <a href=\"compatibility.html?lang=br\">lista de compatibilidade</a> para maiores detalhes!", // 19
 	"Porte de Jogo Homebrew", // 20
 	"Jogo Homebrew", // 21
 	"Homebrew de Utilidade", // 22
