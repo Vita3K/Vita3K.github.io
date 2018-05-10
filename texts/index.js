@@ -216,7 +216,7 @@ texts.push([
 	"Xin hãy chú ý rằng mục đích của trình giả lập này không phải là đẩy mạnh hoạt động trái pháp luật.", // 11
 	"Chọn build của bạn!", // 12
 	"Sắp ra mắt!", // 13
-	"Láy từ", // 14
+	"Lấy từ", // 14
 	"Liên lạc với chúng tôi!", // 15
 	"Liên lạc với các lập trình viên và các người dùng khác lúc nào bạn muốn. Chúng tôi ưu tiên sever Discord, nhưng bạn là người quyết định!", // 16
 	"Tham gia ngay hôm nay!", // 17
@@ -231,7 +231,7 @@ texts.push([
 	"Giúp cập nhật <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">danh sách tương thích</a>.", // 26
 	"Thể hiện tình yêu với chúng tôi!", // 27
 	"Nếu bạn muốn thể hiện lòng cảm kích và quyên góp cho chúng tôi, dự án có một <a href=\"https://www.patreon.com/Vita3K\">Trang Patreon</a>.", // 28
-	"Trở thành một Patreon", // 29
+	"Trở thành một Patron", // 29
 	"Playstation và PS Vita đều là thương hiệu của Sony Interactive Entertainment Inc.", // 30
 	"Trình giả lập không liên quan hay được xác nhận bởi Sony, không dựa trên nền tảng những chương trình hay tài liệu mật thuộc về Sony.", // 31
 	"Logo bởi", // 32
@@ -320,6 +320,7 @@ texts.push([
 	"Mamy bloga gdzie my publikujemy miesięczne szczegółowe raporty z najnowszym progresem. Przeczytaj co nowego!" // 35
 ])
 
+// Brazilian Portuguese (Translation provided by mjsf12)
 texts.push([
 	"Sobre", // 0
 	"Baixar", // 1
@@ -340,7 +341,7 @@ texts.push([
 	"Entre em contato com os desenvolvedores e outro usuarios sempre que quiser. Nos prefirimos nosso servidor no Discord, mas a escolha é sua!", // 16
 	"Junte-se agora", // 17
 	"Olhe o que está rodando!", // 18
-	"O emulador ainda não roda <b>nenhum jogo comercial</b>.<br>Varios jogos homebrew são suportados. Por favor olhe a <a href=\"compatibility.html?lang=en\">lista de compatibilidade</a> para maiores detalhes!", // 19
+	"O emulador ainda não roda <b>nenhum jogo comercial</b>.<br>Varios jogos homebrew são suportados. Por favor olhe a <a href=\"compatibility.html?lang=br\">lista de compatibilidade</a> para maiores detalhes!", // 19
 	"Porte de Jogo Homebrew", // 20
 	"Jogo Homebrew", // 21
 	"Homebrew de Utilidade", // 22

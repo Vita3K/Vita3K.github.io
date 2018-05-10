@@ -192,6 +192,7 @@ texts.push([
 	"Wybierz język" // 19
 ])
 
+// Brazilian Portuguese (Translation provided by mjsf12)
 texts.push([
 	"Desconhecido", // 0
 	"Quebrando", // 1
