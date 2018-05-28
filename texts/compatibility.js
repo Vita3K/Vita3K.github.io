@@ -205,8 +205,8 @@ texts.push([
 	"Marcadores", // 8
 	"A Homebrew quebra o emulador.", // 9
 	"A Homebrew funciona com bugs ou falhas.", // 10
-	"A Homebrew funciona ,mas com baixos quadros por segundo.", // 11
-	"A Homebrew é perfeitamente jogavel.", // 12
+	"A Homebrew funciona, mas com baixos quadros por segundo.", // 11
+	"A Homebrew é perfeitamente jogável.", // 12
 	"Nome da entrada", // 13
 	"Estado", // 14
 	"PlayStation e PS Vita são marcas registradas da Sony Interactive Entertainment Inc. ", // 15
