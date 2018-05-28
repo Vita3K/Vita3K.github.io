@@ -92,7 +92,7 @@ section {
 
 #blog-container {
   font-size: 16px;
-  max-width: 55%;
+  max-width: 60%;
 }
 
 .blog-post {
@@ -114,6 +114,8 @@ section {
 
 .blog-post-body {
   margin-bottom: 0px !important;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .blog-post-author {
@@ -401,30 +403,48 @@ header.masthead p {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1024px) {
 
-  body {
-     font-size: 0.8em;
+  #blog-container {
+    font-size: 15px;
+    max-width: 90%;
+  }
+  .stackedit__html {
+    max-width: 100% !important;
+    margin-bottom: 50px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
+  body p {
+     font-size: 1.1em;
   }
   h1 {
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
   h2 {
-    font-size: 1.15em;
+    font-size: 1.4em;
   }
   h3 {
-    font-size: 1em;
+    font-size: 1.3em;
   }
   h4 {
-    font-size: 0.9em;
+    font-size: 1.2em;
   }
   h5 {
-    font-size: 0.85em;
+    font-size: 1.15em;
   }
 
   #blog-container {
     font-size: 12px;
-    max-width: 90%;
+    max-width: 100%;
+  }
+  .blog-body {
+    padding: 3rem 0;
+    padding-bottom: 20px;
   }
   .stackedit__html {
     max-width: 100% !important;
