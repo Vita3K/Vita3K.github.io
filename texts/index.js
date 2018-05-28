@@ -37,7 +37,7 @@ texts.push([
 	"Logo by", // 32
 	"Select Language", // 33
 	"What's new", // 34
-	"We have a blog where we publish monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
+	"We have a blog where we regularly publish detailed reports with the latest progress in our work. Come to read what's new!" // 35
 ])
 
 // Italian (translation provided by Rinnegatamante)
