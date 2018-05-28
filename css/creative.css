@@ -86,12 +86,12 @@ section {
 }
 
 #blog-header {
-  padding: 2rem 0 !important;
+  padding: 1rem 0 !important;
   padding-bottom: 50px;
 }
 
 #blog-container {
-  font-size: 15px;
+  font-size: 16px;
   max-width: 55%;
 }
 
@@ -102,13 +102,14 @@ section {
 }
 
 .blog-body {
-  padding: 8rem 0;
+  padding: 4rem 0;
   padding-bottom: 50px;
 }
 
 .blog-post-title {
   padding-top: 50px !important;
-  padding-bottom: 50px !important;
+  padding-bottom: 20px !important;
+  margin-bottom: 0px !important;
 }
 
 .blog-post-body {
