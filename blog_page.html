@@ -140,7 +140,7 @@
 
             var id = get('id');
             $scope.reports = []
-            $http.post('get_reports.php').then(function(res) {
+            $http.post('https://vita3k.rinnegatamante.it/get_reports.php').then(function(res) {
                 for (i = 0; i < res.data.length; i++) {
                     if (res.data[i].id == id) {
                         $scope.reports.push(res.data[i])
