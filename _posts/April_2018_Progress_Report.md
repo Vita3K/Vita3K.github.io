@@ -1,4 +1,7 @@
-﻿
+---
+layout: post
+title: Progress Report: April 2018
+---
 # Introduction
 Welcome to our *first* progress report!
 
