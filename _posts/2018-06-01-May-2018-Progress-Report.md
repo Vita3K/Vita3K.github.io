@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Progress Report: May 2018
+title: "Progress Report: May 2018"
 ---
 # Introduction
 Welcome to May's Progress Report! This month Vita3K saw numerous improvements across core components and usability, bringing it that much closer to its ultimate goal of allowing commercial games to be playable. Additionally there were several optimizations done to help ease testing.
