@@ -1,4 +1,7 @@
-﻿
+---
+layout: post
+title: Progress Report: Summer 2018
+---
 # Introduction
 Welcome to this summer's progress report! _It's been a while._
 
