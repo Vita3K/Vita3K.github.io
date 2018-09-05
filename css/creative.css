@@ -104,6 +104,7 @@ section {
   background: hsl(210, 11%, 17%);
   border-radius: 25px;
   -moz-border-radius: 25px;
+  margin-bottom: 20px;
 }
 
 .blog-body {
