@@ -56,6 +56,11 @@ a {
   background-color: #00000000;
 }
 
+persona {
+  color:#FFD700;
+  font-weight: 500;
+}
+
 a:hover {
   color: #f05f40;
 }
@@ -91,7 +96,7 @@ section {
 }
 
 #blog-container {
-  font-size: 16px;
+  font-size: 15px;
   max-width: 60%;
 }
 
@@ -131,18 +136,20 @@ section {
   margin-bottom: 50px !important;
 }
 
-.stackedit__html>p {
+.stackedit__html>p, .stackedit__html>ul {
   color: rgb(210, 210, 210);
+  font-weight: 350;
 }
 
 .stackedit__html>h1 {
   margin-bottom: 30px;
+  padding-top: 12px;
   font-size: 2.1rem;
 }
 .stackedit__html>h2 {
   margin-top: 60px;
   margin-bottom: 30px;
-  font-size: 1.9rem;
+  font-size: 1.82rem;
 }
 .stackedit__html>h3 {
   margin-bottom: 20px;
@@ -384,7 +391,7 @@ header.masthead p {
 
 @media (min-width: 768px) {
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
-    font-size: 16px;
+    font-size: 14px;
   }
   .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
     font-size: 22px;
