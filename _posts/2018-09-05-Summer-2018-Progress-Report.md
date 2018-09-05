@@ -28,11 +28,11 @@ When starting the project, we knew _nothing_ about the ISA and the encoding of t
 So the only other option is for us is to _make_ that documentation ourselves. Understand the part of the GPU we need by [reverse engineering](https://www.wikiwand.com/en/Reverse_engineering) it outselves. Developer [motoharu](https://github.com/motoharu-gosuto) has took on this tedious task and is bringing us closer and closer to understanding the Vita's shaders. His work is published [here](https://wiki.henkaku.xyz/vita/SGX543).
 
 For Vita3K, we have decided to recompile (transform) Vita shaders to a standardized intermediate shader language that is close to low-level assembly, called [SPIR-V](https://www.khronos.org/opengl/wiki/SPIR-V).
-After this, we use already existing [tools](https://github.com/KhronosGroup/SPIRV-Cross) to convert this language to GLSL, a higher-level language that graphics drivers understand (newer hardware undertands SPIR-V too, but we wish to be as compatible as possible with older hardware).
+After this, we use already existing [tools](https://github.com/KhronosGroup/SPIRV-Cross) to convert this language to GLSL, a higher-level language that graphics drivers understand (newer hardware understands SPIR-V too, but we wish to be as compatible as possible with older hardware).
 
 Most modern emulators forgo this intermediate approach, in favor of directly transpiling to GLSL or similar high-level shader languages themselves, but we thought it was in our best interest to do it this way for various reasons we won't delve into here.
 
-This PR implements very simple, preliminary/stub shader generation, using the `GXP -> SPIR-V -> GLSL` method described. So, while not directly affecting games yet, this work is essential for displaying anything in Vita3K, without taking 'shortcuts' by hardcoding shaders as we've been doing.
+This Pull Request implements very simple, preliminary/stub shader generation, using the `GXP -> SPIR-V -> GLSL` method described. So, while not directly affecting games yet, this work is essential for displaying anything in Vita3K, without taking 'shortcuts' by hardcoding shaders as we've been doing.
 
 Following PRs by VelocityRa improve on this work and lots more work is expected to follow as we understand more about the Vita's shaders and its graphics API and make use of this knowledge in the form of a recompiler.
 
@@ -152,25 +152,28 @@ This _'Dstroy'_ port now boots, but can't go in-game because of a touch-related 
 Roadmap
 ===
 Here's a rough list of major tasks we're prioritizing at the moment, other than fixing bugs. They will likely be explained in more detail once implemented.
-- **[LLE support for decrypted OS modules](https://github.com/Vita3K/Vita3K/pull/316)**
-- **Shader reversing/recompilation**
-- **Callback system**
 
+- **[LLE support for decrypted OS modules](https://github.com/Vita3K/Vita3K/pull/316)**
+
+- **Shader reversing/recompilation**
+
+- **Callback system**
 	It is common for Vita functions to work with [callbacks](https://www.wikiwand.com/en/Callback_(computer_programming)) instead of blocking execution. We don't have such a system for callbacks yet, so we can't implement all those functions properly.
+
 -  **Sync primitive improvements**
 	- Timeouts
 	- More sync primitive implementations
+
 - **Variadic function bridging support**
-
 	Some functions from the Vita's OS modules use functions that accept an _arbitrary number of parameters_. Currently there is no support for this in our system that bridges Vita (`ARMv7`) function calls to host (`x86-64`) calls, so we can't fully implement those Vita functions.
+
 - **Fonts**
-
 	Every homebrew that uses SceFont (a lot of them) can't boot at the moment, it's one of the most important modules needed for homebrew to work.
+
 - **Dialogs**
-
 	There has been some initial work on this using our new GUI, but more is needed.
-- **'Dynarmic' integration (replace 'unicorn')**
 
+- **'Dynarmic' integration (replace 'unicorn')**
 	We currently use [unicorn-engine](https://github.com/unicorn-engine/unicorn) to run ARM code, but we plan to switch to [dynarmic](https://github.com/MerryMage/dynarmic) at some point (same JIT that is used by Citra and Yuzu), for reasons that will be covered once it happens.
 
 Closing Words
@@ -184,5 +187,6 @@ This post was written by [VelocityRa](https://github.com/VelocityRa), a develope
 The past three months, [**6 contributors**](https://github.com/Vita3K/Vita3K/graphs/contributors?from=2018-06-01&to=2018-08-31&type=c) pushed [191 commits](https://github.com/Vita3K/Vita3K/compare/master@%7B06-01-2018%7D...master@%7B08-31-2018%7D) in **39 Pull Requests**, introducing **5,397** added lines and **3,076** deletions in **132 files**.
 
 ---
-
 That’s all for now, thanks for reading!
+
+_Discuss this post on [/r/emulation](https://redd.it/9dacan)_.
