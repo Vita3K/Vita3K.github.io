@@ -421,6 +421,10 @@ header.masthead p {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
 
+#blog-container img{
+    max-width: 100%;
+}
+
 @media only screen and (max-width: 1024px) {
 
   #blog-container {
