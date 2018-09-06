@@ -436,8 +436,8 @@ header.masthead p {
 @media only screen and (max-width: 1024px) {
 
   iframe {
-    width: 82vw;
-    height: 45.125vw;
+    width: 80vw;
+    height: 44.125vw;
   }
 
   #blog-container {
@@ -506,6 +506,6 @@ header.masthead p {
 }
 
 iframe {
-  width: 52vw;
-  height: 29vw;
+  min-width: 52vw;
+  min-height: 29vw;
 }
