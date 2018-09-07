@@ -435,6 +435,11 @@ header.masthead p {
 
 @media only screen and (max-width: 1024px) {
 
+  iframe {
+    width: 80vw;
+    height: 44.125vw;
+  }
+
   #blog-container {
     font-size: 15px;
     max-width: 90%;
@@ -447,7 +452,12 @@ header.masthead p {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 414px) {
+
+  iframe {
+    width: 86vw;
+    height: 47.8125vw;
+  }
 
   body p {
      font-size: 1.1em;
@@ -486,4 +496,16 @@ header.masthead p {
     font-size: 1.3rem;
   }
 
+}
+
+@media only screen and (max-width: 768px) and (min-width: 415px) {
+  iframe {
+    width: 80vw;
+    height: 45vw;
+  }
+}
+
+iframe {
+  min-width: 52vw;
+  min-height: 29vw;
 }
