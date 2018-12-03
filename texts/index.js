@@ -280,9 +280,9 @@ texts.push([
 	"We hebben een blog waar we maandelijks nieuwe gedetaileerde rapporten publiceren met het laatst geboekte voortgang in ons werk. Neem een bezoekje om te kijken wat nieuw is!" // 35
 ])
 
-// Polish (Translation provided by MAX0342)
+// Polish (Translation provided by circl)
 texts.push([
-	"O...", // 0
+	"O Vita3K", // 0
 	"Pobierz", // 1
 	"Społeczność", // 2
 	"Kompatybilność", // 3
@@ -305,7 +305,7 @@ texts.push([
 	"Port gry homebrew", // 20
 	"Gra homebrew", // 21
 	"Program homebrew", // 22
-	"Pomóż nam się ulpszać!", // 23
+	"Pomóż nam się ulepszać!", // 23
 	"Możesz współpracować z nami w takie sposoby:", // 24
 	"Zgłoś problem lub rób Pull Request-y na naszym <a href=\"https://github.com/Vita3K/Vita3K\">Githubie</a>.", // 25
 	"Aktualizuj <a href=\"https://github.com/Vita3K/homebrew-compatibility/issues\">listę kompatybilnośći homebrew</a>.", // 26
