@@ -292,7 +292,7 @@ texts.push([
 	"Pierwszy emulator PlayStation Vity na świecie.", // 7
 	"Dowiedz się więcej", // 8
 	"O Vita3K", // 9
-	"Vita3K to pierwszy na świecie experymentalny emulator PlayStation Vity z otwartym kodem źródłowym dla Windowsa i macOS.", // 10
+	"Vita3K to pierwszy na świecie eksperymentalny emulator PlayStation Vity z otwartym kodem źródłowym dla Windowsa i macOS.", // 10
 	"Pamietaj, że celem tego emulatora nie jest umożliwienie nielegalnej aktywnośći.", // 11
 	"Wybierz wersję dla swojego systemu!", // 12
 	"Dostępne wkrótce!", // 13
