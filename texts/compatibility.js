@@ -168,25 +168,25 @@ texts.push([
 	"Selecteer Taal" // 19
 ])
 
-// Polish (Translation provided by MAX0342)
+// Polish (Translation provided by MAX0342, corrected by kacek)
 texts.push([
 	"Nieznane", // 0
-	"Crashuje", // 1
-	"Nie stabilne", // 2
+	"Niestabilny", // 1
+	"Błędy", // 2
 	"Wolne", // 3
 	"Grywalne", // 4
 	"Wszystkie", // 5
 	"Strona główna", // 6
 	"Lista kompatybilnośći", // 7
 	"Tagi", // 8
-	"Homebrew, które crashuje emulator.", // 9
+	"Homebrew, które powoduje zatrzymanie emulatora.", // 9
 	"Homebrew, które mają błędy i awarie.", // 10
-	"Homebrew, które działają z bardzo małymi klatkami", // 11
-	"Homebrew, które działają perekcyjnie.", // 12
+	"Homebrew, które działają z niską ilością klatek na sekundę", // 11
+	"Homebrew, które działają perfekcyjnie.", // 12
 	"Nazwa gry", // 13
 	"Status", // 14
 	"PlayStation and PS Vita są znakami towarowymi Sony Interactive Entertainment Inc.", // 15
-	"Emulator nie jest powiązany z Sony ani nie jest przez niego wspierany ani nie pochodzi z poufnych materiałów należących do firmy Sony.", // 16
+	"Emulator nie jest powiązany z firmą Sony, nie jest przez nią wspierany ani nie korzysta z poufnych materiałów należących do firmy Sony.", // 16
 	"Logo stworzone przez", // 17
 	"Szukaj", // 18
 	"Wybierz język" // 19
