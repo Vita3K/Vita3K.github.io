@@ -117,7 +117,7 @@ texts.push([
 	"Logo fait par", // 32
 	"Choisissez votre langue", // 33
 	"What's new", // 34
-	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
+	"We have a blog were we push detailed reports with the latest progress in our work. Come to read what's new!" // 35
 ])
 
 // Arabic (translation provided by IllusionMan1212)
@@ -162,17 +162,17 @@ texts.push([
 
 // Greek (translation provided by VelocityRa)
 texts.push([
-	"Περί", // 0
-	"Κατεβάσε", // 1
-	"Κοινότητα", // 2
-	"Συμβατότητα", // 3
-	"Γκαλερί", // 4
-	"Βοηθήστε", // 5
-	"Δωρεά", // 6
-	"Ο πρώτος εξομοιωτής για το PlayStation Vita στον κόσμο.", // 7
+	"Περι", // 0
+	"Κατεβασε", // 1
+	"Κοινοτητα", // 2
+	"Συμβατοτητα", // 3
+	"Γκαλερι", // 4
+	"Βοηθηστε", // 5
+	"Δωρεα", // 6
+	"Ο πρώτος λειτουργικός εξομοιωτής για το PlayStation Vita στον κόσμο.", // 7
 	"Μάθετε περισσότερα", // 8
 	"Σχετικά με το Vita3K", // 9
-	"Το Vita3K είναι ο πρώτος πειραματικός εξομοιωτής PlayStation Vita ανοικτού κώδικα για Windows και macOS", // 10
+	"Το Vita3K είναι ο πρώτος λειτουργικός πειραματικός εξομοιωτής PlayStation Vita ανοικτού κώδικα για Windows και macOS", // 10
 	"Σημειώστε ότι ο σκοπός του εξομοιωτή δεν είναι να επιτρέπει την παράνομη δραστηριότητα.", // 11
 	"Πάρτε το build σας!", // 12
 	"Σύντομα!", // 13
@@ -196,8 +196,8 @@ texts.push([
 	"Ο εξομοιωτής δεν σχετίζεται με την Sony ούτε προέρχεται από εμπιστευτικά υλικά που ανήκουν στη Sony.", // 31
 	"Λογότυπο από", // 32
 	"Επιλογή γλώσσας", // 33
-	"What's new", // 34
-	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
+	"Νέα", // 34
+	"Έχουμε blog στο οποίο αναρτούμε νέες εξελίξεις. Ελάτε να δείτε τι είναι νέο!" // 35
 ])
 
 // Vietnamese (Translation provided by Bentokun)
