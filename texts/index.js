@@ -329,10 +329,10 @@ texts.push([
 	"Mostruário", // 4
 	"Contribua", // 5
 	"Doação", // 6
-	"O primeiro emulador de PlayStation Vita do mundo.", // 7
+	"O primeiro emulador funcional de PlayStation Vita do mundo.", // 7
 	"Descubra mais", // 8
 	"Sobre Vita3K", // 9
-	"Vita3K é o primeiro emulador experimental código aberto de PlayStation Vita no mundo para Windows e macOS.", // 10
+	"Vita3K é o primeiro emulador funcional experimental código aberto de PlayStation Vita no mundo para Windows e macOS.", // 10
 	"Tenha em mente que o propósito do emulador não é permitir atividades ilegais.", // 11
 	"Pegue sua versão!", // 12
 	"Em breve!", // 13
