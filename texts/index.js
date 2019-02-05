@@ -357,7 +357,7 @@ texts.push([
 	"Logo por", // 32
 	"Selecione o Idioma", // 33
 	"O que há de novo.", // 34
-	"Nós temos um blog onde nós postamos mensalmente um detalhado relatorio dos nossos ultimos progressos no nosso trabalho. Venha ler o que há de novo!" // 35
+	"Nós temos um blog onde nós postamos relatorios detalhados dos nossos ultimos progressos no nosso trabalho. Venha ler o que há de novo!" // 35
 ])
 
 // Russian (Translation provided by DumF0rGaming)
