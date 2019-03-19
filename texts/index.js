@@ -289,16 +289,16 @@ texts.push([
 	"Wyróżnione", // 4
 	"Współpracuj", // 5
 	"Złóż donację", // 6
-	"Pierwszy emulator PlayStation Vity na świecie.", // 7
+	"Pierwszy emulator konsoli PlayStation Vita na świecie.", // 7
 	"Dowiedz się więcej", // 8
 	"O Vita3K", // 9
-	"Vita3K to pierwszy na świecie eksperymentalny emulator PlayStation Vity z otwartym kodem źródłowym dla Windowsa i macOS.", // 10
-	"Pamietaj, że celem tego emulatora nie jest umożliwienie nielegalnej aktywnośći.", // 11
+	"Vita3K to pierwszy na świecie eksperymentalny emulator PlayStation Vita z otwartym kodem źródłowym dla Windowsa i macOS.", // 10
+	"Pamiętaj, że celem tego emulatora nie jest umożliwienie nielegalnej aktywnośći.", // 11
 	"Wybierz wersję dla swojego systemu!", // 12
 	"Dostępne wkrótce!", // 13
 	"Pobierz z", // 14
 	"Skontaktuj się z nami!", // 15
-	"Skontaktuj się z deweloperami i innymi urzytkownikami kiedy tylko chcesz. Wolimy Discord, ale to twój wybór!", // 16
+	"Skontaktuj się z deweloperami i innymi użytkownikami kiedy tylko chcesz. Wolimy Discord, ale to twój wybór!", // 16
 	"Dołącz!", // 17
 	"Sprawdź co działa!", // 18
 	"Ten emulator jeszcze nie obsługuje <b>żadnych gier komercyjnych</b>.Wiele gier homebrew jest obsługiwane. Proszę sprawdzić <a href=\"compatibility.html?lang=pl\">listę kompatybilnośći</a> po więcej szczegółów!", // 19
