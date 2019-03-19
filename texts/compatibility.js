@@ -168,7 +168,7 @@ texts.push([
 	"Selecteer Taal" // 19
 ])
 
-// Polish (Translation provided by MAX0342, corrected by kacek)
+// Polish (Translation provided by circl, corrected by kacek)
 texts.push([
 	"Nieznane", // 0
 	"Niestabilny", // 1
