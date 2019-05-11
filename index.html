@@ -1,544 +1,240 @@
-<!DOCTYPE html>
-<html ng-app="Vita3K">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
-
-    <!-- Texts -->
-    <script src="texts/index.js"></script>
-
-    <script>
-        function get(name) {
-            if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
-                return decodeURIComponent(name[1]);
-        }
-
-        angular.module('Vita3K', []).controller("angularController", function($scope, $filter, $sce) {
-
-            // Multilanguage setup
-            var lang = get('lang');
-            if (lang == "en") {
-                $scope.texts = texts[0]
-                $scope.lang = "en"
-            } else if (lang == "it") {
-                $scope.texts = texts[1]
-                $scope.lang = "it"
-            } else if (lang == "fr") {
-                $scope.texts = texts[2]
-                $scope.lang = "fr"
-            } else if (lang == "ar") {
-                $scope.texts = texts[3]
-                $scope.lang = "ar"
-            } else if (lang == "gr") {
-                $scope.texts = texts[4]
-                $scope.lang = "gr"
-            } else if (lang == "vn") {
-                $scope.texts = texts[5]
-                $scope.lang = "vn"
-            } else if (lang == "nl") {
-                $scope.texts = texts[6]
-                $scope.lang = "nl"
-            } else if (lang == "pl") {
-                $scope.texts = texts[7]
-                $scope.lang = "pl"
-            } else if (lang == "br") {
-                $scope.texts = texts[8]
-                $scope.lang = "br"
-            } else if (lang == "ru") {
-                $scope.texts = texts[9]
-                $scope.lang = "ru"
-            } else {
-                var lang = window.navigator.language || window.navigator.userLanguage;
-                if (lang.startsWith('it')) {
-                    $scope.texts = texts[1]
-                    $scope.lang = "it"
-                } else if (lang.startsWith('ar')) {
-                    $scope.texts = texts[3]
-                    $scope.lang = "ar"
-                } else if (lang.startsWith('fr')) {
-                    $scope.texts = texts[2]
-                    $scope.lang = "fr"
-                } else if (lang.startsWith('el')) {
-                    $scope.texts = texts[4]
-                    $scope.lang = "gr"
-                } else if (lang.startsWith('vi')) {
-                    $scope.texts = texts[5]
-                    $scope.lang = "vn"
-                } else if (lang.startsWith('nl')) {
-                    $scope.texts = texts[6]
-                    $scope.lang = "nl"
-                } else if (lang.startsWith('pl')) {
-                    $scope.texts = texts[7]
-                    $scope.lang = "pl"
-                } else if (lang.startsWith('pt')) {
-                    $scope.texts = texts[8]
-                    $scope.lang = "br"
-                } else if (lang.startsWith('ru')) {
-                    $scope.texts = texts[9]
-                    $scope.lang = "ru"
-                } else {
-                    $scope.texts = texts[0]
-                    $scope.lang = "en"
-                }
-            }
-
-            lang = $scope.lang
-
-            $scope.changeLang = function(field) {
-                if (field == 1) {
-                    $scope.texts = texts[3]
-                    $scope.lang = "ar"
-                } else if (field == 2) {
-                    $scope.texts = texts[8]
-                    $scope.lang = "br"
-                } else if (field == 3) {
-                    $scope.texts = texts[0]
-                    $scope.lang = "en"
-                } else if (field == 4) {
-                    $scope.texts = texts[2]
-                    $scope.lang = "fr"
-                } else if (field == 5) {
-                    $scope.texts = texts[4]
-                    $scope.lang = "gr"
-                } else if (field == 6) {
-                    $scope.texts = texts[1]
-                    $scope.lang = "it"
-                } else if (field == 7) {
-                    $scope.texts = texts[6]
-                    $scope.lang = "nl"
-                } else if (field == 8) {
-                    $scope.texts = texts[7]
-                    $scope.lang = "pl"
-                } else if (field == 9) {
-                    $scope.texts = texts[9]
-                    $scope.lang = "ru"
-                } else if (field == 10) {
-                    $scope.texts = texts[5]
-                    $scope.lang = "vn"
-                }
-                lang = $scope.lang
-            }
-
-        }).filter('unsafe', function($sce) {
-            return function(val) {
-                return $sce.trustAsHtml(val);
-            };
-        });
-    </script>
-
-    <title>Vita3K - An Experimental PSVita Emulator</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <link href="flag-icon/css/flag-icon.css" rel="stylesheet">
-
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/creative.css" rel="stylesheet">
-
-    <link rel="shortcut icon" href="favicon.ico">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118291431-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-118291431-1');
-    </script>
-
-</head>
-
-<body id="page-top" ng-controller="angularController">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="logo" src="img/logo.svg" width="32" height="32" title="Logo by Gordon Mackay" /></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#about">{{texts[0]}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#download">{{texts[1]}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#community">{{texts[2]}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#compatibility">{{texts[3]}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#showcase">{{texts[4]}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contribute">{{texts[5]}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#donate">{{texts[6]}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#" data-toggle="modal" data-target="#language">
-                            <span ng-if="lang == 'ar'"><span class="flag-icon flag-icon-sa"></span> AR</span>
-                            <span ng-if="lang == 'br'"><span class="flag-icon flag-icon-br"></span> BR</span>
-                            <span ng-if="lang == 'en'"><span class="flag-icon flag-icon-gb"></span> EN</span>
-                            <span ng-if="lang == 'fr'"><span class="flag-icon flag-icon-fr"></span> FR</span>
-                            <span ng-if="lang == 'gr'"><span class="flag-icon flag-icon-gr"></span> GR</span>
-                            <span ng-if="lang == 'it'"><span class="flag-icon flag-icon-it"></span> IT</span>
-                            <span ng-if="lang == 'nl'"><span class="flag-icon flag-icon-nl"></span> NL</span>
-                            <span ng-if="lang == 'pl'"><span class="flag-icon flag-icon-pl"></span> PL</span>
-                            <span ng-if="lang == 'ru'"><span class="flag-icon flag-icon-ru"></span> RU</span>
-                            <span ng-if="lang == 'vn'"><span class="flag-icon flag-icon-vn"></span> VN</span>
-                        </a>
-                    </li>
-                </ul>
+---
+layout: default
+texts: index
+nav: main
+---
+{% raw %}
+<header class="masthead text-center text-white d-flex">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1>
+          <strong>Vita3K</strong>
+        </h1>
+                <hr>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <p class="text-faded mb-5">{{texts[7]}}</p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">{{texts[8]}}</a>
             </div>
         </div>
-    </nav>
+    </div>
+</header>
+<section class="bg-primary" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading text-white">{{texts[9]}}</h2>
+                <hr class="light my-4">
+                <p class="text-faded mb-4">{{texts[10]}}
+                    <br> {{texts[11]}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- Language selection -->
-    <div class="modal fade language" id="language" tabindex="-1" role="dialog" aria-labelledby="language" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{{texts[33]}}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+<section class="bg-dark text-white" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading text-white">{{texts[34]}}</h2>
+                <hr class="light my-4">
+                <p class="text-faded mb-4">{{texts[35]}}<br><br>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="blog.html">Blog</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-white text-dark" id="download">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">{{texts[12]}}</h2>
+                <hr class="my-4">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center ml-auto mr-auto">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fab fa-4x fa-windows text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Windows Nightlies</h3>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://ci.appveyor.com/project/Vita3K/vita3k/branch/master/artifacts">{{texts[14]}} AppVeyor</a>
                 </div>
-                <div class="modal-body">
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(1)"><span class="flag-icon flag-icon-sa"></span> العربية</a>
-                    <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(2)"><span class="flag-icon flag-icon-br"></span> Brasileiro</a>
-                    <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(3)"><span class="flag-icon flag-icon-gb"></span> English</a>
-                    <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(4)"><span class="flag-icon flag-icon-fr"></span> Français</a>
-                    <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(5)"><span class="flag-icon flag-icon-gr"></span> Ελληνικά</a>
-                    <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(6)"><span class="flag-icon flag-icon-it"></span> Italiano</a>
-                    <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(7)"><span class="flag-icon flag-icon-nl"></span> Nederlands</a>
-                    <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(8)"><span class="flag-icon flag-icon-pl"></span> Polski</a>
-                    <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(9)"><span class="flag-icon flag-icon-ru"></span> Pусский</a>
-                    <br>
-                    <a href="#" data-dismiss="modal" ng-click="changeLang(10)"><span class="flag-icon flag-icon-vn"></span> Tiếng Việt</a>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center ml-auto mr-auto">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fab fa-4x fa-apple text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">macOS Nightlies</h3>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://github.com/Vita3K/Vita3K-builds/raw/master/Vita3K-mac-nightly.zip">{{texts[14]}} GitHub</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center ml-auto mr-auto">
+                <div class="service-box mt-5 mx-auto">
+                    <i class="fab fa-4x fa-linux text-primary mb-3 sr-icons"></i>
+                    <h3 class="mb-3">Linux Nightlies</h3>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://github.com/Vita3K/Vita3K-builds/raw/master/Vita3K-linux-nightly.zip">{{texts[14]}} Github</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <header class="masthead text-center text-white d-flex">
-        <div class="container my-auto">
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <h1>
-              <strong>Vita3K</strong>
-            </h1>
-                    <hr>
-                </div>
-                <div class="col-lg-8 mx-auto">
-                    <p class="text-faded mb-5">{{texts[7]}}</p>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">{{texts[8]}}</a>
-                </div>
+</section>
+<section class="bg-dark text-white" id="community">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">{{texts[15]}}</h2>
+                <hr class="my-4">
+                <p class="mb-5">{{texts[16]}}</p>
             </div>
         </div>
-    </header>
-
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading text-white">{{texts[9]}}</h2>
-                    <hr class="light my-4">
-                    <p class="text-faded mb-4">{{texts[10]}}
-                        <br> {{texts[11]}}
-                    </p>
-                </div>
+        <div class="row">
+            <div class="col-lg-4 ml-auto text-center">
+                <i class="fab fa-discord fa-3x mb-3 sr-contact"></i>
+                <p>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://discord.gg/6aGwQzh">{{texts[17]}}</a>
+                </p>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fa fa-comments fa-3x mb-3 sr-contact"></i>
+                <p>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://webchat.freenode.net/?channels=%23vita3k">{{texts[17]}}</a>
+                </p>
+            </div>
+            <div class="col-lg-4 mr-auto text-center">
+                <i class="fab fa-reddit-square fa-3x mb-3 sr-contact"></i>
+                <p>
+                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://www.reddit.com/r/vita3k/">{{texts[17]}}</a>
+                </p>
             </div>
         </div>
-    </section>
-	
-	<section class="bg-dark text-white" id="blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading text-white">{{texts[34]}}</h2>
-                    <hr class="light my-4">
-                    <p class="text-faded mb-4">{{texts[35]}}<br><br>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="blog.html">Blog</a>
-                    </p>
-                </div>
+    </div>
+</section>
+<section class="bg-white text-dark" id="compatibility">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">{{texts[18]}}</h2>
+                <hr class="my-4">
+                <p class="mb-5" ng-bind-html="texts[19] | unsafe">
+                </p>
             </div>
         </div>
-    </section>
-
-    <section class="bg-white text-dark" id="download">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">{{texts[12]}}</h2>
-                    <hr class="my-4">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center ml-auto mr-auto">
-                    <div class="service-box mt-5 mx-auto">
-                        <i class="fab fa-4x fa-windows text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">Windows Nightlies</h3>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://ci.appveyor.com/project/Vita3K/vita3k/branch/master/artifacts">{{texts[14]}} AppVeyor</a>
+    </div>
+</section>
+<section class="p-0" id="showcase">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/1.png">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/1.png" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Downwell
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center ml-auto mr-auto">
-                    <div class="service-box mt-5 mx-auto">
-                        <i class="fab fa-4x fa-apple text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">macOS Nightlies</h3>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://github.com/Vita3K/Vita3K-builds/raw/master/Vita3K-mac-nightly.zip">{{texts[14]}} GitHub</a>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/2.png">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/2.png" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                10 Second Ninja X
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center ml-auto mr-auto">
-                    <div class="service-box mt-5 mx-auto">
-                        <i class="fab fa-4x fa-linux text-primary mb-3 sr-icons"></i>
-                        <h3 class="mb-3">Linux Nightlies</h3>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://github.com/Vita3K/Vita3K-builds/raw/master/Vita3K-linux-nightly.zip">{{texts[14]}} Github</a>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/3.png">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/3.png" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Undertale
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-        </div>
-    </section>
-
-    <section class="bg-dark text-white" id="community">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">{{texts[15]}}</h2>
-                    <hr class="my-4">
-                    <p class="mb-5">{{texts[16]}}</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 ml-auto text-center">
-                    <i class="fab fa-discord fa-3x mb-3 sr-contact"></i>
-                    <p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://discord.gg/6aGwQzh">{{texts[17]}}</a>
-                    </p>
-                </div>
-                <div class="col-lg-4 mr-auto text-center">
-                    <i class="fa fa-comments fa-3x mb-3 sr-contact"></i>
-                    <p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://webchat.freenode.net/?channels=%23vita3k">{{texts[17]}}</a>
-                    </p>
-                </div>
-                <div class="col-lg-4 mr-auto text-center">
-                    <i class="fab fa-reddit-square fa-3x mb-3 sr-contact"></i>
-                    <p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="https://www.reddit.com/r/vita3k/">{{texts[17]}}</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white text-dark" id="compatibility">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">{{texts[18]}}</h2>
-                    <hr class="my-4">
-                    <p class="mb-5" ng-bind-html="texts[19] | unsafe">
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="p-0" id="showcase">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters popup-gallery">
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/1.png">
-                        <img class="img-fluid" src="img/portfolio/thumbnails/1.png" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    {{texts[20]}}
-                                </div>
-                                <div class="project-name">
-                                    vitaQuake
-                                </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/4.png">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/4.png" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Spellspire
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/2.png">
-                        <img class="img-fluid" src="img/portfolio/thumbnails/2.png" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    {{texts[20]}}
-                                </div>
-                                <div class="project-name">
-                                    Katawa Shoujo
-                                </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/5.png">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/5.png" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                VA-11 HALL-A
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/3.png">
-                        <img class="img-fluid" src="img/portfolio/thumbnails/3.png" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    {{texts[21]}}
-                                </div>
-                                <div class="project-name">
-                                    Happy Land
-                                </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a class="portfolio-box" href="img/portfolio/fullsize/6.png">
+                    <img class="img-fluid" src="img/portfolio/thumbnails/6.png" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                SwapQuest
                             </div>
                         </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/4.png">
-                        <img class="img-fluid" src="img/portfolio/thumbnails/4.png" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    {{texts[20]}}
-                                </div>
-                                <div class="project-name">
-                                    Vita Doom
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/5.png">
-                        <img class="img-fluid" src="img/portfolio/thumbnails/5.png" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    {{texts[21]}}
-                                </div>
-                                <div class="project-name">
-                                    Tactic Miner
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a class="portfolio-box" href="img/portfolio/fullsize/6.png">
-                        <img class="img-fluid" src="img/portfolio/thumbnails/6.png" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    {{texts[22]}}
-                                </div>
-                                <div class="project-name">
-                                    VitaTester
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
-    </section>
-
-    <section class="bg-dark text-white" id="contribute">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">{{texts[23]}}</h2>
-                    <hr class="my-4">
-                    <p class="mb-5">{{texts[24]}}
-                        <br>
-                        <ul>
-                            <li ng-bind-html="texts[25] | unsafe"></li>
-                            <li ng-bind-html="texts[26] | unsafe"></li>
-                        </ul>
-                    </p>
-                </div>
+    </div>
+</section>
+<section class="bg-dark text-white" id="contribute">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">{{texts[32]}}</h2>
+                <hr class="my-4">
+                <p class="mb-5">{{texts[24]}}
+                    <br>
+                    <ul>
+                        <li ng-bind-html="texts[33] | unsafe"></li>
+                        <li ng-bind-html="texts[26] | unsafe"></li>
+                    </ul>
+                </p>
             </div>
         </div>
-    </section>
-
-    <section class="bg-white text-dark" id="donate">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">{{texts[27]}}</h2>
-                    <hr class="my-4">
-                    <p class="mb-5" ng-bind-html="texts[28] | unsafe"></p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="container text-center">
-                    <i class="fab fa-patreon fa-3x mb-3 sr-contact"></i>
-                    <p><a class="btn btn-light btn-xl sr-button" href="https://www.patreon.com/bePatron?u=230097&redirect_uri=https%3A%2F%2Fvita3k.github.io%2F%23about&utm_medium=widget">{{texts[29]}}</a></p>
-                </div>
+    </div>
+</section>
+<section class="bg-white text-dark" id="donate">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="section-heading">{{texts[27]}}</h2>
+                <hr class="my-4">
+                <p class="mb-5" ng-bind-html="texts[28] | unsafe"></p>
             </div>
         </div>
-    </section>
-
-    <section class="bg-dark text-white" id="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="mb-5">
-                        {{texts[30]}} {{texts[31]}}
-                        <br>
-                        <br> Copyright © 2018 Vita3K team
-                        <br> {{texts[32]}} Gordon Mackay - <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a> - <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>
-                    </p>
-                </div>
+        <div class="row">
+            <div class="container text-center">
+                <i class="fab fa-patreon fa-3x mb-3 sr-contact"></i>
+                <p><a class="btn btn-light btn-xl sr-button" href="https://www.patreon.com/bePatron?u=230097&redirect_uri=https%3A%2F%2Fvita3k.github.io%2F%23about&utm_medium=widget">{{texts[29]}}</a></p>
             </div>
         </div>
-    </section>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/creative.min.js"></script>
-
-</body>
-
-</html>
+    </div>
+</section>
+{% endraw %}
