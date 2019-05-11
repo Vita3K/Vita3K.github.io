@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="Vita3K">
+    <head>
+    {% include head.html %}
+    </head>
+    <body id="page-top" ng-controller="angularController">
+        <script>
+            function get(name) {
+                if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
+                    return decodeURIComponent(name[1]);
+            }
+            angular.module('Vita3K', []).controller("angularController", function ($scope, $filter, $sce) {
+                {% include languagescript.js %}
+            }).filter('unsafe', function ($sce) {
+                return function (val) {
+                    return $sce.trustAsHtml(val);
+                };
+            });
+        </script>
+        {% include nav.html %}
+        {% include languageselection.html %}
+        {{ content }}
+        {% include footer.html %}
+    </body>
+</html>
