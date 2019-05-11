@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html ng-app="Vita3K">
+    <head>
+    {% include head.html %}
+    </head>
+    <body id="page-top" ng-controller="angularController">
+        {% include nav.html %}
+        {% include languageselection.html %}
+        {{ content }}
+        {% include footer.html %}
+    </body>
+</html>
