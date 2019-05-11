@@ -82,6 +82,30 @@ h6 {
   background-color: #212529 !important;
 }
 
+.bg-nothing {
+  background-color: #b60205;
+}
+
+.bg-bootable {
+  background-color: #621fa5;
+}
+
+.bg-intro {
+  background-color: #d93f0b;
+}
+
+.bg-menu {
+  background-color: #85def2;
+}
+
+.bg-ingame {
+  background-color: #fbca04;
+}
+
+.bg-playable {
+  background-color: #0e8a16;
+}
+
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
 }
