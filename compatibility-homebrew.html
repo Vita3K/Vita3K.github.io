@@ -8,8 +8,7 @@ nav: compat
         if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
             return decodeURIComponent(name[1]);
     }
-
-    angular.module('Vita3K', []).controller("angularController", function ($scope, $filter, $http) {
+    angular.module('Vita3K', []).controller("angularController", async function ($scope, $filter, $http) {
         $scope.views = []
         $scope.views.push([])
         $scope.views.push([])
@@ -19,10 +18,17 @@ nav: compat
 
         {% include languagescript.js %}
 
+        var numberOfPages = 0;
+        await $http.get("https://api.github.com/repos/Vita3K/homebrew-compatibility")
+            .success(function(json) {
+                var numberOfEntries = json.open_issues_count;
+                numberOfPages = Math.ceil(numberOfEntries / 100);
+            });
+
         var pagination = true
         var page = 1
         while (pagination) {
-            if (page == 3) pagination = false
+            if (page == numberOfPages) pagination = false
             $http.get("https://api.github.com/repos/Vita3K/homebrew-compatibility/issues?state=open&page=" + page + "&per_page=100")
                 .success(function (data) {
 
