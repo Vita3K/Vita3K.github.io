@@ -9,7 +9,19 @@
                 if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search))
                     return decodeURIComponent(name[1]);
             }
-            angular.module('Vita3K', []).controller("angularController", function ($scope, $filter, $sce) {
+            angular.module('Vita3K', []).controller("angularController", function ($scope, $filter, $sce, $http) {
+                $scope.$watch('$viewContentLoaded', function() {
+                    GetLatestReleases();
+                });
+
+                function GetLatestReleases() {
+                   $http.get("https://api.github.com/repos/Vita3K/Vita3K/releases/latest").success(function(json) {
+                        var linuxDownloadURL = json.assets[0].browser_download_url;
+                        var macOsDownloadURL = json.assets[1].browser_download_url;
+                        $("#macosURL").attr("href", macOsDownloadURL);
+                        $("#linuxURL").attr("href", linuxDownloadURL)
+                   });
+                }
                 {% include languagescript.js %}
             }).filter('unsafe', function ($sce) {
                 return function (val) {
