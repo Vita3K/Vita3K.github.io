@@ -16,8 +16,12 @@
 
                 function GetLatestReleases() {
                    $http.get("https://api.github.com/repos/Vita3K/Vita3K/releases/latest").success(function(json) {
-                        var linuxDownloadURL = json.assets[0].browser_download_url;
-                        var macOsDownloadURL = json.assets[1].browser_download_url;
+                        var linuxDownloadURL = json.assets.filter((release) => {
+                            return release.name.startsWith("master-linux");
+                        }).pop().browser_download_url;
+                        var macOsDownloadURL = json.assets.filter((release) => {
+                            return release.name.startsWith("master-osx");
+                        }).pop().browser_download_url;
                         $("#macosURL").attr("href", macOsDownloadURL);
                         $("#linuxURL").attr("href", linuxDownloadURL)
                    });
