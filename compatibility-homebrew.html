@@ -29,7 +29,7 @@ nav: compat
         var page = 1
         while (pagination) {
             if (page == numberOfPages) pagination = false
-            $http.get("https://api.github.com/repos/Vita3K/homebrew-compatibility/issues?state=open&page=" + page + "&per_page=100")
+            await $http.get("https://api.github.com/repos/Vita3K/homebrew-compatibility/issues?state=open&page=" + page + "&per_page=100")
                 .success(function (data) {
 
                 var i = 0,
@@ -80,6 +80,11 @@ nav: compat
                 if (val == undefined) return true;
                 return (entry.title.toLowerCase().indexOf(val.toLowerCase() || '') !== -1);
             }
+        }
+        var game = get("g");
+        if (game) {
+            $scope.field = game;
+            $scope.$apply();
         }
     })
 </script>
