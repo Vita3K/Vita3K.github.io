@@ -52,6 +52,15 @@ a {
   transition: all 0.2s;
 }
 
+.reqs p {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.reqs > div:first-of-type {
+  filter: invert(48%) sepia(95%) saturate(2625%) hue-rotate(338deg) brightness(100%) contrast(89%);
+}
+
 .progress {
   background-color: #00000000;
 }

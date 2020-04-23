@@ -13,6 +13,9 @@
                     <a class="nav-link js-scroll-trigger" href="#about">{{texts[0]}}</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/quickstart.html">Quickstart</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#blog">Blog</a>
                 </li>
                 <li class="nav-item">
@@ -34,7 +37,7 @@
                     <a class="nav-link js-scroll-trigger" href="#donate">{{texts[6]}}</a>
                 </li>
                 {% endraw %}
-                {% elsif page.nav == "compat" or page.nav == "blog" or layout.nav == "blog" %}
+                {% else %}
                 {% raw %}
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="/index.html?lang={{lang}}">{{texts[12]}}</a>
