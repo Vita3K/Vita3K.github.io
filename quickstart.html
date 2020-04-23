@@ -1,0 +1,177 @@
+---
+layout: default
+texts: compatibility
+---
+<section class="text-center text-white d-flex">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1>
+                    <strong>Quickstart</strong>
+                </h1>
+                <br>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <p class="text-faded mb-1">Get started with Vita3K and play your favorite PSVita games!</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-dark text-white pb-5">
+    <div class="container">
+        <div>
+            <h1 class="text-center">Hardware Requirements</h1>
+            <div class="my-5">
+            <h5>The emulator performance and accuracy varies depending on your hardware. We cannot guarantee it will perform well if your PC barely meets the minimum requirements. 
+                For the best experience make sure you're within the recommended requirements as most of the reported games are tested with such requirements.</h5>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 d-flex flex-column">
+                    <h4 class="my-4"><b>Minimum requirements</b></h4>
+                    <div class="row no-gutters reqs">
+                        <div class="col-2 col-sm-1 col-lg-1 mx-2" style="background: url('img/icons/opengl.svg') no-repeat center"></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>GPU that supports OpenGL 4.1 (some games' graphics might be broken)</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs my-3">
+                        <div class="col-2 col-sm-1 col-lg-1 mx-2" style="background: url('img/icons/cpu.svg') no-repeat center"></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>CPU with the AVX instruction set</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs">
+                        <div class="col-2 col-sm-1 col-lg-1 mx-2" style="background: url('img/icons/ram.svg') no-repeat center"></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>Minimum of 4GB RAM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex flex-column">
+                    <h4 class="my-4"><b>Recommended requirements</b></h4>
+                    <div class="row no-gutters reqs">
+                        <div class="col-2 col-sm-1 col-lg-1 mx-2" style="background: url('img/icons/opengl.svg') no-repeat center"></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>GPU that supports OpenGL 4.3 and above</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs mt-3">
+                        <div class="col-2 col-sm-1 col-lg-1 mx-2" style="background: url('img/icons/gpu.svg') no-repeat center"></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>GPU that supports shader interlock</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs my-3">
+                        <div class="col-2 col-sm-1 col-lg-1 mx-2" style="background: url('img/icons/cpu.svg') no-repeat center"></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>CPU with the AVX instruction set</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs">
+                        <div class="col-2 col-sm-1 col-lg-1 mx-2" style="background: url('img/icons/ram.svg') no-repeat center"></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>8GB of RAM or greater</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="mt-5 pt-5">
+                <h1 class="text-center">Other Requirements</h1>
+                <div class="mt-5">
+                    <h4><b>Microsoft Redistributable</b></h4>
+                    <p>If you're having trouble running Vita3K and it complains about <code>VCRUNTME140_1.dll was not found</code>, 
+                        download and install the <a href="https://aka.ms/vs/16/release/vc_redist.x64.exe">Visual C++ 2015-2019 Redistributable</a></p>
+                    <h4><b>Operating System</b></h4>
+                    <p>You need to be running a 64-bit operating system in order for Vita3K to work.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-dark text-white">
+    <div class="container">
+        <h1 class="text-center mb-5">Installing the firmware</h1>
+        <div>
+            <p>Some games require the system modules be present for Vita3K to (low level) emulate them. This can be done by installing the PS Vita firmware through Vita3K.</p>
+            <p>The firmware can be downloaded from the official <a href="https://www.playstation.com/en-us/support/system-updates/ps-vita/">Playstation website</a>,
+            there's also an additional firmware package that contains the system fonts that needs to be installed. 
+            The font firmware package can be downloaded straight from the <a id="systemdata" href="">Playstation servers</a>.</p>
+            <p>Install <b>both</b> firmware packages using the <code>File > Install Firmware</code> menu option.</p>
+        </div>
+        <div class="mt-5">
+            <h4><b>Managing Modules</b></h4>
+            <p>System modules can be managed in the <code>Configuration > Settings > Core</code> tab of the emulator, 
+                we recommend loading <code>libpgf, libpvf, libatrac and libsas</code> for now as almost all other modules either cause crashes or don't work yet. 
+                And if you have doubts some modules are causing crashes you can try to remove <code>libsas and libatrac</code>.</p>
+        </div>
+    </div>
+</section>
+<section class="bg-dark text-white pt-5">
+    <div class="container">
+        <h1 class="text-center mb-5">Dumping Games</h1>
+        <p>Vita3K does <b class="text-danger">not</b> condone piracy, therefore, you are required to dump your own games.</p>
+        <p>Currently, Vita3K only supports maidumps, FAGDec, or manually decrypted games (Vitamin dumps are not supported).
+            The games should be in a .zip or .vpk format if you want to install them from the emulator, or if you prefer to copy them yourself,
+            you can drag and drop the game folder in your <code>pref_path/ux0/app</code> folder.</p>
+        <p><code>pref_path</code> defaults to:
+            <br><code>%Appdata%/Roaming/Vita3K/Vita3K</code> on windows
+            <br><code>~/.local/share/Vita3K/Vita3K</code> on linux
+            <br><code>~/Library/Application Support/Vita3K</code> on macOS
+        </p>
+        <div class="my-5">
+            <h3>How to dump your games</h3>
+            <p class="my-3">These are the several ways to dump and get decrypted games in order of their accuracy.</p>
+            <ul class="my-2 px-0" type="none">
+                <li class="my-3"><h5>Using <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> and 
+                    <a href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build">FAGDec</a></h5></li>
+                <ol>
+                    <li>Download <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> and 
+                        <a href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build">FAGDec</a> and install them to your PS Vita</li>
+                    <li>
+                        <ol type="A">
+                            <li>If you're dumping from a cartridge:</li>
+                            <p>Launch Vitashell and navigate to <code>gro0:app</code></p>
+                            <li>If you're dumping a digital game:</li>
+                            <p>Launch Vitashell and navigate to <code>ux0:app</code> (or wherever your games are) and choose a game you want to dump</p>
+                        </ol>
+                    </li>
+                    <li>Hover over your game's folder and press <code>△</code> then choose <code>Open decrypted</code></li>
+                    <li>Now copy everything inside the game's folder and paste it in a folder of your choosing</li>
+                    <p class="my-2">That's the game files done, now we need to use FAGDec to decrypt the selfs.</p>
+                    <li>Launch FAGDec and scroll down until you find the game you want to dump</li>
+                    <li>Hover on the game and press the <code>✖</code> button, wait for FAGDec to find all the modules and then select <code>DECRYPT ALL</code></li>
+                    <li>You will see that the modules have been listed on the right side of the screen. Now go back to the main menu and press <code>Start</code></li>
+                    <li>You will see two options here, select the one that says <code>[START] START DECRYPT(SELF)</code></li>
+                    <li>Now just wait until it finishes decrypting the game modules</li>
+                    <li>You can find the output files in <code>ux0:FAGDec/app/'title_id'</code></li>
+                    <p class="my-3">Now all you gotta do is take the files that FAGDec outputted and put them in the previously copied folder from VitaShell, 
+                        if asked to replace some files, confirm the replacement.</p>
+                    <p><b>It's very <u class="text-danger">important</u> that the folder containing the game files be named as the game's Title ID. Otherwise your game won't boot.</b></p>
+                </ol>
+                <li class="my-3"><h5>Using <a href="https://github.com/LioMajor/MaiDumpToolEN/releases">Maidump</a> 
+                    (and optionally <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a>)</h5></li>
+                <ol class="my-3">
+                    <p>It's recommended you use Vitashell with maidump here as it's more stable this way.</p>
+                    <li>Install maidump</li>
+                    <li>Launch maidump and select <code>Extract/Decrypt content</code></li>
+                    <li>Choose the game you want to dump and press the <code>◯</code> button</li>
+                    <li>
+                        <ol type="A">
+                        <li>If you're using Vitashell:</li>
+                        <p class="my-2">Select <code>Decrypt eboot only(incl. suprx)</code> and wait for it to decrypt.</p>
+                        <p class="my-2">Then dump the game files using Vitashell by following the steps in the first method from steps 2-4.</p>
+                        <p>Copy the dumped files from <code>ux0:mai/'title_id'</code> into your previously copied folder from VitaShell.</p>
+                        <li>If you're not using Vitashell:</li>
+                        <p class="my-2">Select <code>Extract the game and decrypt eboot (incl. suprx)</code>.</p>
+                        <p class="my-2">Wait for the game to finish dumping (dumping sometimes fails since maidump is unstable).</p>
+                        <p>You can find your dumped game in <code>ux0:mai/'title_id'</code>.</p>
+                        </ol>
+                    </li>
+                </ol>
+            </ul>
+            <small class="my-5">Note: .pkg installation coming soon™</small>
+        </div>
+    </div>
+</section>

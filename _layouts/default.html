@@ -12,6 +12,7 @@
             angular.module('Vita3K', []).controller("angularController", function ($scope, $filter, $sce, $http) {
                 $scope.$watch('$viewContentLoaded', function() {
                     GetLatestReleases();
+                    GetFirmware();
                 });
 
                 function GetLatestReleases() {
@@ -25,6 +26,16 @@
                         $("#macosURL").attr("href", macOsDownloadURL);
                         $("#linuxURL").attr("href", linuxDownloadURL)
                    });
+                }
+
+                function GetFirmware() {
+                    $http.get("https://cors-anywhere.herokuapp.com/fus01.psp2.update.playstation.net/update/psp2/list/us/psp2-updatelist.xml")
+                    .success(function(xml) {
+                        let parser = new DOMParser();
+                        xmldoc = parser.parseFromString(xml, "text/xml")
+                        let sysdataURL = xmldoc.getElementsByTagName("recovery")[0].childNodes[1].childNodes[0].nodeValue
+                        $("#systemdata").attr("href", sysdataURL);
+                    })
                 }
                 {% include languagescript.js %}
             }).filter('unsafe', function ($sce) {
