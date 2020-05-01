@@ -266,7 +266,7 @@ texts.push([
 	"Spellen die van begin tot eind kunnen worden gespeeld met speelbare prestaties en geen spelvervelende glitches.", // 33
 ])
 
-// Polish (Translation provided by MAX0342, corrected by kacek)
+// Polish (Translation provided by circl, corrected by kacek)
 texts.push([
 	"Nieznane", // 0
 	"Niestabilny", // 1
