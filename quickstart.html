@@ -128,119 +128,128 @@ texts: compatibility
         <div class="my-5">
             <h3>How to dump your games</h3>
             <p class="my-3">These are the several ways to dump and get decrypted games in order of their accuracy.</p>
-            <ul class="my-2 px-0" type="none">
-                <div class="accordion">
-                    <div class="accordion-item" id="fagdec">
-                        <a class="accordion-link" href="#fagdec">
+            <div class="accordion md-accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="accordion-item">
+                    <div role="tab" id="fagdecHeader">
+                        <a class="accordion-link collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false"
+                        aria-controls="fagdec" href="#fagdec">
                         FAGDec + Vitashell
                         <i class="icon ion-md-add-circle"></i>
                         <i class="icon ion-md-remove-circle"></i>
                         </a>
-                        <div class="answer">
-                            <div class="padding-wrapper">
-                            <li class="my-3"><h5>Using <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> and 
-                                <a href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build">FAGDec</a></h5></li>
-                            <ol>
-                                <li>Download <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> and 
-                                    <a href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build">FAGDec</a> and install them to your PS Vita</li>
-                                <li>
-                                    <ol type="A">
-                                        <li>If you're dumping from a cartridge:</li>
-                                        <p>Launch Vitashell and navigate to <code>gro0:app</code></p>
-                                        <li>If you're dumping a digital game:</li>
-                                        <p>Launch Vitashell and navigate to <code>ux0:app</code> (or wherever your games are) and choose a game you want to dump</p>
-                                    </ol>
-                                </li>
-                                <li>Hover over your game's folder and press <code>△</code> then choose <code>Open decrypted</code></li>
-                                <li>Now copy everything inside the game's folder and paste it in a folder of your choosing</li>
-                                <p class="my-2">That's the game files done, now we need to use FAGDec to decrypt the selfs.</p>
-                                <li>Launch FAGDec and scroll down until you find the game you want to dump</li>
-                                <li>Hover on the game and press the <code>✖</code> button, wait for FAGDec to find all the modules and then select <code>DECRYPT ALL</code></li>
-                                <li>You will see that the modules have been listed on the right side of the screen. Now go back to the main menu and press <code>Start</code></li>
-                                <li>You will see two options here, select the one that says <code>[START] START DECRYPT(SELF)</code></li>
-                                <li>Now just wait until it finishes decrypting the game modules</li>
-                                <li>You can find the output files in <code>ux0:FAGDec/app/'title_id'</code></li>
-                                <p class="my-3">Now all you gotta do is take the files that FAGDec outputted and put them in the previously copied folder from VitaShell, 
-                                    if asked to replace some files, confirm the replacement.</p>
-                                <p><b>It's very <u class="text-danger">important</u> that the folder containing the game files be named as the game's Title ID. Otherwise your game won't boot.</b></p>
-                            </ol>
-                        </div>
-                        </div>
                     </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item" id="nonpdrm">
-                        <a class="accordion-link" href="#nonpdrm">
-                        NoNpDrm
-                        <i class="icon ion-md-add-circle"></i>
-                        <i class="icon ion-md-remove-circle"></i>
-                        </a>
+                    <div class="collapse" id="fagdec" role="tabpanel" aria-labelledby="fagdecHeader" data-parent="#accordion">
                         <div class="answer">
                             <div class="padding-wrapper">
-                            <li class="my-3"><h5>Using <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> with 
-                                <a href="https://github.com/TheOfficialFloW/NoNpDrm/releases">NoNpDrm</a></h5></li>
-                            <ol>
-                                <li>Download <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> and install it to your PS Vita</li>
-                                <li>
-                                    <p>Download the latest <a href="https://github.com/TheOfficialFloW/NoNpDrm/releases">nonpdrm.skprx</a>, copy it to <code>ux0:tai</code> and modify the <code>ux0:tai/config.txt</code> file to add the path to the module under <code>*KERNEL</code> as follows
-                                        <p><code>*KERNEL<br>
-                                        ux0:tai/nonpdrm.skprx</code></p>
-                                        Don't forget to reboot your device, otherwise the plugin will have no effect yet.
-                                        If you know what you are doing, you may change this path to an arbitrary location as long as it matches the exact location of the module. You may also edit the <code>ur0:tai/config.txt</code> instead assuming you do not have a config.txt file inside the <code>ux0:tai/</code> folder
-                                        </p>
-                                        <li>Now you have to generate a license key. In order to generate a fake license file containing the application's rif key, you must first launch the application with the NoNpDrm plugin enabled.
-                                        The fake licenses for the applications will then be stored at <br>
-                                        
-                                        <code>ux0:nonpdrm/license/app/TITLE_ID/6488b73b912a753a492e2714e9b38bc7.rif <br>
-                                        ux0:nonpdrm/license/addcont/TITLE_ID/DLC_FOLDER/6488b73b912a753a492e2714e9b38bc7.rif (for additional content)</code></li>
-                                </li>
-                                <li>Transfer the content of <code>gro0:app/TITLE_ID</code> or <code>ux0:app/TITLE_ID</code> to your PC and copy the fake license <code>ux0:nonpdrm/license/app/TITLE_ID/6488b73b912a753a492e2714e9b38bc7.rif</code> file as <code>TITLE_ID/sce_sys/package/work.bin</code><br><b>You need to overwrite the original work.bin</b></li>
-                                <li>Go inside of the <code>TITLE_ID</code>, select all the contents and compress them into a .zip format.</li>
-                                <li>Open Vita3k, click on the File entry in the menubar and click Install .vpk/.zip. Select your <code>TITLE_ID.zip</code> file and confirm. The game will begin installing (This might take a long time for large games).</li>
-                                <div class="my-2">For DLC</div>
-                                    <li>You can also install DLC from <code>ux0:addcont/TITLE_ID/DLC_FOLDER</code> or, on selected card games, from <code>grw0:addcont/TITLE_ID/DLC_FOLDER</code> (ONE AT A TIME)
-                                        <br>To do so, copy the fake license <code>ux0:nonpdrm/license/addcont/TITLE_ID/DLC_FOLDER/6488b73b912a753a492e2714e9b38bc7.rif</code> to <code>DLC_FOLDER/sce_sys/package/work.bin</code> and transfer it to your pc. <br><b>You need to overwrite the original work.bin</b>.</li>
-                                        <li>Go inside of the <code>DLC_FOLDER</code>, select all the contents and compress them into a .zip format.</li>
-                                <li>Open Vita3k, click on the File entry in the menubar and click Install .vpk/.zip. Select your <code>DLC_FOLDER.zip</code> file and confirm. The DLC will begin installing.</li>
-                            </ol>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item" id="maidump">
-                        <a class="accordion-link" href="#maidump">
-                        Maidump (+Vitashell)
-                        <i class="icon ion-md-add-circle"></i>
-                        <i class="icon ion-md-remove-circle"></i>
-                        </a>
-                        <div class="answer">
-                            <div class="padding-wrapper">
-                            <li class="my-3"><h5>Using <a href="https://github.com/LioMajor/MaiDumpToolEN/releases">Maidump</a> 
-                                (and optionally <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a>)</h5></li>
-                            <ol class="my-3">
-                                <p>It's recommended you use Vitashell with maidump here as it's more stable this way.</p>
-                                <li>Install maidump</li>
-                                <li>Launch maidump and select <code>Extract/Decrypt content</code></li>
-                                <li>Choose the game you want to dump and press the <code>◯</code> button</li>
-                                <li>
-                                    <ol type="A">
-                                    <li>If you're using Vitashell:</li>
-                                    <p class="my-2">Select <code>Decrypt eboot only(incl. suprx)</code> and wait for it to decrypt.</p>
-                                    <p class="my-2">Then dump the game files using Vitashell by following the steps in the first method from steps 2-4.</p>
-                                    <p>Copy the dumped files from <code>ux0:mai/'title_id'</code> into your previously copied folder from VitaShell.</p>
-                                    <li>If you're not using Vitashell:</li>
-                                    <p class="my-2">Select <code>Extract the game and decrypt eboot (incl. suprx)</code>.</p>
-                                    <p class="my-2">Wait for the game to finish dumping (dumping sometimes fails since maidump is unstable).</p>
-                                    <p>You can find your dumped game in <code>ux0:mai/'title_id'</code>.</p>
-                                    </ol>
-                                </li>
+                                <p class="my-3"><h5>Using <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> and 
+                                    <a href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build">FAGDec</a></h5></p>
+                                <ol>
+                                    <li>Download <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> and 
+                                        <a href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build">FAGDec</a> and install them to your PS Vita</li>
+                                    <li>
+                                        <ol type="A">
+                                            <li>If you're dumping from a cartridge:</li>
+                                            <p>Launch Vitashell and navigate to <code>gro0:app</code></p>
+                                            <li>If you're dumping a digital game:</li>
+                                            <p>Launch Vitashell and navigate to <code>ux0:app</code> (or wherever your games are) and choose a game you want to dump</p>
+                                        </ol>
+                                    </li>
+                                    <li>Hover over your game's folder and press <code>△</code> then choose <code>Open decrypted</code></li>
+                                    <li>Now copy everything inside the game's folder and paste it in a folder of your choosing</li>
+                                    <p class="my-2">That's the game files done, now we need to use FAGDec to decrypt the selfs.</p>
+                                    <li>Launch FAGDec and scroll down until you find the game you want to dump</li>
+                                    <li>Hover on the game and press the <code>✖</code> button, wait for FAGDec to find all the modules and then select <code>DECRYPT ALL</code></li>
+                                    <li>You will see that the modules have been listed on the right side of the screen. Now go back to the main menu and press <code>Start</code></li>
+                                    <li>You will see two options here, select the one that says <code>[START] START DECRYPT(SELF)</code></li>
+                                    <li>Now just wait until it finishes decrypting the game modules</li>
+                                    <li>You can find the output files in <code>ux0:FAGDec/app/'title_id'</code></li>
+                                    <p class="my-3">Now all you gotta do is take the files that FAGDec outputted and put them in the previously copied folder from VitaShell, 
+                                        if asked to replace some files, confirm the replacement.</p>
+                                    <p><b>It's very <u class="text-danger">important</u> that the folder containing the game files be named as the game's Title ID. Otherwise your game won't boot.</b></p>
+                                </ol>
                             </div>
                         </div>
                     </div>
                 </div>
-                </ol>
-            </ul>
+                <div class="accordion-item">
+                    <div role="tab" id="nonpdrmHeader">
+                        <a class="accordion-link collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false"
+                        aria-controls="nonpdrm" href="#nonpdrm">
+                        NoNpDrm
+                        <i class="icon ion-md-add-circle"></i>
+                        <i class="icon ion-md-remove-circle"></i>
+                        </a>
+                    </div>
+                    <div class="collapse" id="nonpdrm" role="tabpanel" aria-labelledby="nonpdrmHeader" data-parent="#accordion">
+                        <div class="answer">
+                            <div class="padding-wrapper">
+                                <p class="my-3"><h5>Using <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> with 
+                                    <a href="https://github.com/TheOfficialFloW/NoNpDrm/releases">NoNpDrm</a></h5></p>
+                                <ol>
+                                    <li>Download <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a> and install it to your PS Vita</li>
+                                    <li>
+                                        <p>Download the latest <a href="https://github.com/TheOfficialFloW/NoNpDrm/releases">nonpdrm.skprx</a>, copy it to <code>ux0:tai</code> and modify the <code>ux0:tai/config.txt</code> file to add the path to the module under <code>*KERNEL</code> as follows
+                                            <p><code>*KERNEL<br>
+                                            ux0:tai/nonpdrm.skprx</code></p>
+                                            Don't forget to reboot your device, otherwise the plugin will have no effect yet.
+                                            If you know what you are doing, you may change this path to an arbitrary location as long as it matches the exact location of the module. You may also edit the <code>ur0:tai/config.txt</code> instead assuming you do not have a config.txt file inside the <code>ux0:tai/</code> folder
+                                            </p>
+                                            <li>Now you have to generate a license key. In order to generate a fake license file containing the application's rif key, you must first launch the application with the NoNpDrm plugin enabled.
+                                            The fake licenses for the applications will then be stored at <br>
+
+                                            <code>ux0:nonpdrm/license/app/TITLE_ID/6488b73b912a753a492e2714e9b38bc7.rif <br>
+                                            ux0:nonpdrm/license/addcont/TITLE_ID/DLC_FOLDER/6488b73b912a753a492e2714e9b38bc7.rif (for additional content)</code></li>
+                                    </li>
+                                    <li>Transfer the content of <code>gro0:app/TITLE_ID</code> or <code>ux0:app/TITLE_ID</code> to your PC and copy the fake license <code>ux0:nonpdrm/license/app/TITLE_ID/6488b73b912a753a492e2714e9b38bc7.rif</code> file as <code>TITLE_ID/sce_sys/package/work.bin</code><br><b>You need to overwrite the original work.bin</b></li>
+                                    <li>Go inside of the <code>TITLE_ID</code>, select all the contents and compress them into a .zip format.</li>
+                                    <li>Open Vita3k, click on the File entry in the menubar and click Install .vpk/.zip. Select your <code>TITLE_ID.zip</code> file and confirm. The game will begin installing (This might take a long time for large games).</li>
+                                    <div class="my-2">For DLC</div>
+                                        <li>You can also install DLC from <code>ux0:addcont/TITLE_ID/DLC_FOLDER</code> or, on selected card games, from <code>grw0:addcont/TITLE_ID/DLC_FOLDER</code> (ONE AT A TIME)
+                                            <br>To do so, copy the fake license <code>ux0:nonpdrm/license/addcont/TITLE_ID/DLC_FOLDER/6488b73b912a753a492e2714e9b38bc7.rif</code> to <code>DLC_FOLDER/sce_sys/package/work.bin</code> and transfer it to your pc. <br><b>You need to overwrite the original work.bin</b>.</li>
+                                            <li>Go inside of the <code>DLC_FOLDER</code>, select all the contents and compress them into a .zip format.</li>
+                                    <li>Open Vita3k, click on the File entry in the menubar and click Install .vpk/.zip. Select your <code>DLC_FOLDER.zip</code> file and confirm. The DLC will begin installing.</li>
+                                </ol>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div role="tab" id="maidumpHeader">
+                        <a class="accordion-link collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false"
+                        aria-controls="maidump" href="#maidump">
+                        Maidump (+Vitashell)
+                        <i class="icon ion-md-add-circle"></i>
+                        <i class="icon ion-md-remove-circle"></i>
+                        </a>
+                    </div>
+                    <div class="collapse" id="maidump" role="tabpanel" aria-labelledby="maidumpHeader" data-parent="#accordion">
+                        <div class="answer">
+                            <div class="padding-wrapper">
+                                <p class="my-3"><h5>Using <a href="https://github.com/LioMajor/MaiDumpToolEN/releases">Maidump</a> 
+                                    (and optionally <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a>)</h5></p>
+                                <ol class="my-3">
+                                    <p>It's recommended you use Vitashell with maidump here as it's more stable this way.</p>
+                                    <li>Install maidump</li>
+                                    <li>Launch maidump and select <code>Extract/Decrypt content</code></li>
+                                    <li>Choose the game you want to dump and press the <code>◯</code> button</li>
+                                    <li>
+                                        <ol type="A">
+                                        <li>If you're using Vitashell:</li>
+                                        <p class="my-2">Select <code>Decrypt eboot only(incl. suprx)</code> and wait for it to decrypt.</p>
+                                        <p class="my-2">Then dump the game files using Vitashell by following the steps in the first method from steps 2-4.</p>
+                                        <p>Copy the dumped files from <code>ux0:mai/'title_id'</code> into your previously copied folder from VitaShell.</p>
+                                        <li>If you're not using Vitashell:</li>
+                                        <p class="my-2">Select <code>Extract the game and decrypt eboot (incl. suprx)</code>.</p>
+                                        <p class="my-2">Wait for the game to finish dumping (dumping sometimes fails since maidump is unstable).</p>
+                                        <p>You can find your dumped game in <code>ux0:mai/'title_id'</code>.</p>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

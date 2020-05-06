@@ -576,12 +576,7 @@ iframe {
   padding: .5rem;
 }
 
-.accordion-item .ion-md-remove-circle{
-  display: none;
-}
-
 .answer{
-  max-height: 0;
   overflow: hidden;
   position: relative;
   transition: max-height 1500ms;
@@ -602,14 +597,15 @@ iframe {
   padding: 2rem;
 }
 
-.accordion-item:target .answer{
-  max-height: 100rem;
+.accordion-item [data-toggle="collapse"].collapsed > .ion-md-add-circle {
+  display: inline-block;
 }
-
-.accordion-item:target .accordion-link .ion-md-add-circle{
+.accordion-item [data-toggle="collapse"].collapsed > .ion-md-remove-circle {
   display: none;
 }
-
-.accordion-item:target .accordion-link .ion-md-remove-circle{
-  display: block;
+.accordion-item [data-toggle="collapse"] > .ion-md-add-circle {
+  display: none;
+}
+.accordion-item [data-toggle="collapse"] > .ion-md-remove-circle {
+  display: inline-block;
 }
