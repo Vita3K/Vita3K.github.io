@@ -1,0 +1,33 @@
+{
+  "name": "vita3k.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.26.12",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-header": "^2.0.9",
+    "jquery": "^3.5.1",
+    "magnific-popup": "^1.1.0",
+    "scrollreveal": "^4.0.7",
+    "gulp-rename": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vita3K/Vita3K.github.io.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vita3K/Vita3K.github.io/issues"
+  },
+  "homepage": "https://github.com/Vita3K/Vita3K.github.io#readme"
+}
