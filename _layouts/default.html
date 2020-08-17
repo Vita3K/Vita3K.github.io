@@ -16,15 +16,13 @@
                 });
 
                 function GetLatestReleases() {
-                   $http.get("https://api.github.com/repos/Vita3K/Vita3K/releases/latest").success(function(json) {
-                        var linuxDownloadURL = json.assets.filter((release) => {
-                            return release.name.startsWith("master-linux");
-                        }).pop().browser_download_url;
-                        var macOsDownloadURL = json.assets.filter((release) => {
-                            return release.name.startsWith("master-osx");
-                        }).pop().browser_download_url;
-                        $("#macosURL").attr("href", macOsDownloadURL);
-                        $("#linuxURL").attr("href", linuxDownloadURL)
+                   $http.get("https://api.github.com/repos/Vita3K/Vita3K/releases/tags/continous").success(function(json) {
+                        ['ubuntu', 'macos', 'windows'].forEach(os => {
+                            const downloadURL = json.assets.filter((release) => {
+                                return release.name === os + "-latest.zip";
+                            }).pop().browser_download_url;
+                            $(`#${os}URL`).attr("href", `${downloadURL}?time=${Date.now().toString()}`);
+                        });
                    });
                 }
 
