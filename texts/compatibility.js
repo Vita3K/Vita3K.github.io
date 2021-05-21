@@ -35,7 +35,10 @@ texts.push([
 	"Games that work properly but can't enter Ingame.", // 30
 	"Games that go ingame but have major issues that prevents it from going further early on.", // 31
 	"Games that go far ingame but have glitches that render the game unplayable or have non-playable performance.", // 32
-	"Games that can be played from start to finish with playable performance and no game breaking glitches." // 33
+	"Games that can be played from start to finish with playable performance and no game breaking glitches.", // 33
+	"The emulator is currently undergoing great changes of its backend which are greatly improving compatibility with games. \
+	This compatibility list doesn't reflect the state of the emulator anymore and everyone interested in the emulator is \
+	encouraged to re-test their games with the latest emulator builds every few weeks to update the compatibility reports." // 34
 ])
 
 // Italian (translation provided by Rinnegatamante)
@@ -74,6 +77,9 @@ texts.push([
 	"Giochi che vanno in gioco, ma hanno problemi importanti che impediscono di andare più avanti.", // 31
 	"Giochi che vanno in gioco ma hanno problemi che rendono il gioco non riproducibile o hanno prestazioni non riproducibili.", // 32
 	"Giochi che possono essere giocati dall'inizio alla fine con prestazioni giocabili e nessun problema di rottura del gioco.", // 33
+	"L'emulatore è attualmente in fase di grandi cambiamenti del suo backend che stanno migliorando notevolmente la compatibilità con i giochi. \
+	Questa lista di compatibilità non riflette più lo stato dell'emulatore e tutti coloro che sono interessati all'emulatore sono incoraggiati a \
+	testare nuovamente i loro giochi con le ultime build dell'emulatore ogni poche settimane per aggiornare i rapporti di compatibilità." // 34 (translated using DeepL)
 ])
 
 // French (translation provided by Drayano)
@@ -112,6 +118,9 @@ texts.push([
 	"Les jeux qui vont en jeu ont des problèmes majeurs qui l’empêchent d’aller plus loin.", // 31
 	"Les jeux qui vont loin dans le jeu, mais ont des problèmes qui rendent le jeu injouable ou ont des performances non jouables.", // 32
 	"Des jeux qui peuvent être joués du début à la fin avec des performances jouables sans aucun problème.", // 33
+	"L'émulateur subit actuellement de grands changements de son backend qui améliorent considérablement la compatibilité avec les jeux. \
+	Cette liste de compatibilité ne reflète plus l'état de l'émulateur et toute personne intéressée par l'émulateur est \
+	encouragés à re-tester leurs jeux avec les dernières versions de l'émulateur toutes les quelques semaines pour mettre à jour les rapports de compatibilité." // 34
 ])
 
 // Arabic (translation provided by IllusionMan1212)
@@ -150,6 +159,9 @@ texts.push([
 	"الالعاب التي تدخل داخل اللعبة ولكن لديها مشاكل كبيرة تمنعها من المضي قدماً في وقت مبكر", // 31
 	"الالعاب التي تدخل داخل اللعبة ولكن بها اعطال تجعل اللعبة غير قابلة للعب او تكون ذات اداء غير قابل للعب", // 32
 	"الألعاب التي يمكن لعبها من البداية إلى النهاية بأداء قابل للعب وعدم وجود أي خلل في اللعبة", // 33
+	"هذا المحاكي يخضع لتغييرات كبيرة حاليا لتحسين توافق الألعاب.\
+	قائمة التوافق هذه لم تعد تعكس حالة المحاكي بعد الآن ونحن ننصح كل\
+	 المهتمين بالمحاكي أن يعيدوا تجريب ألعابهم مع الإصدارات الجديدة كل عدة أسابيع لتحديث تقارير التوافق.", // 34
 ])
 
 // Greek (translation by VelocityRa)
@@ -188,6 +200,9 @@ texts.push([
 	"Παιχνίδια που πηγαίνουν στο παιχνίδι, αλλά έχουν σημαντικά ζητήματα που εμποδίζουν την περαιτέρω εξέλιξη.", // 31
 	"Παιχνίδια που πηγαίνουν πολύ στο παιχνίδι, αλλά έχουν δυσλειτουργίες που καθιστούν το παιχνίδι ακατάλληλο για αναπαραγωγή ή δεν έχουν δυνατότητα αναπαραγωγής.", // 32
 	"Παιχνίδια που μπορούν να παιχτούν από την αρχή μέχρι το τέλος με δυνατότητα αναπαραγωγής και δυσλειτουργίες.", // 33
+	"Ο εξομοιωτής υφίσταται επί του παρόντος μεγάλες αλλαγές στο backend του, οι οποίες βελτιώνουν σημαντικά τη συμβατότητα με τα παιχνίδια. Αυτή η λίστα συμβατότητας \
+	δεν αντικατοπτρίζει πλέον την κατάσταση του εξομοιωτή και όλοι όσοι ενδιαφέρονται για τον εξομοιωτή ενθαρρύνονται να δοκιμάζουν εκ νέου τα παιχνίδια τους με τα τελευταία \
+	builds του εξομοιωτή κάθε λίγες εβδομάδες για να ενημερώνονται οι αναφορές συμβατότητας." // 34 (translated using DeepL)
 ])
 
 // Vietnamese (translation provided by Bentokun)
@@ -226,6 +241,9 @@ texts.push([
 	"Các trò chơi đi vào ingame nhưng có vấn đề lớn ngăn cản nó tiến xa hơn.", // 31
 	"Các trò chơi đi vào ingame nhưng có trục trặc khiến trò chơi không thể chơi được hoặc có hiệu suất không thể chơi được.", // 32
 	"Các trò chơi có thể được chơi từ đầu đến cuối với hiệu suất có thể chơi và không có sự cố nào xảy ra.", // 33
+	"Trình giả lập hiện đang trải qua những thay đổi lớn về phần phụ trợ của nó, giúp cải thiện đáng kể khả năng tương thích với các trò chơi. \
+	Danh sách khả năng tương thích này không phản ánh trạng thái của trình giả lập nữa và mọi người quan tâm đến trình giả lập được khuyến khích \
+	kiểm tra lại trò chơi của họ với các bản dựng trình giả lập mới nhất vài tuần một lần để cập nhật báo cáo tương thích. " // 34 (translated using Google Translate)
 ])
 
 // Dutch (Translation provided by jelle619)
@@ -264,6 +282,10 @@ texts.push([
 	"Spellen die ingame zijn, maar grote problemen hebben die het onmogelijk maken om verder te gaan.", // 31
 	"Spellen die ingame zijn, maar glitches hebben die de game onspeelbaar maken of slechte prestaties leveren.", // 32
 	"Spellen die van begin tot eind kunnen worden gespeeld met speelbare prestaties en geen spelvervelende glitches.", // 33
+	"De emulator ondergaat momenteel vele aanpassingen die spelcompatibiliteit moeten doen verbeteren. Deze lijst van \
+	compatibiliteiten geeft niet langer een juist beeld van de huidige emulatiestaat. Eenieder die interesse heeft in de \
+	emulator, wordt geadviseerd om hun games elke paar weken opnieuw te testen met de laatste build van de emulator, om \
+	zo de compatibiliteitenrapporten up-to-date te houden." // 34
 ])
 
 // Polish (Translation provided by circl, corrected by kacek)
@@ -302,6 +324,9 @@ texts.push([
 	"Gry, które grają w grze, ale mają poważne problemy, które uniemożliwiają kontynuowanie gry.", // 31
 	"Gry, które grają, ale mają wady, które powodują, że gra jest nie do odzyskania lub działa nieprawidłowo.", // 32
 	"Gry, które można grać od początku do końca, z grywalną wydajnością i brakiem zakłóceń gry.", // 33
+	"Emulator przechodzi obecnie wielkie zmiany w swoim backendzie, które znacznie poprawiają kompatybilność z grami. \
+	Lista kompatybilności nie odzwierciedla stanu emulatora i wszystkich zainteresowanych emulatorem zachęcamy do ponownego \
+	przetestowania swoich gier z najnowszymi buildami emulatora co kilka tygodni w celu aktualizacji raportów kompatybilności." // 34 (translated using DeepL)
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
@@ -340,6 +365,9 @@ texts.push([
 	"Jogos que vão no jogo, mas têm grandes problemas que o impedem de ir mais longe.", // 31
 	"Jogos que vão longe no jogo mas têm falhas que tornam o jogo impossível de jogar ou têm um desempenho não jogável.", // 32
 	"Jogos que podem ser jogados do início ao fim com desempenho jogável e sem falhas no jogo.", // 33
+	"O emulador está atualmente passando por grandes mudanças de seu backend que estão melhorando muito a compatibilidade com os jogos. \
+	Esta lista de compatibilidade não reflete mais o estado do emulador e todos os interessados no emulador são encorajados a testar \
+	novamente seus jogos com os mais recentes emuladores construídos a cada poucas semanas para atualizar os relatórios de compatibilidade." // 34 (translated using DeepL)
 ])
 
 // Russian (Translation provided by DumF0rGaming)
@@ -378,6 +406,9 @@ texts.push([
 	"Игры, которые идут в игру, но имеют серьезные проблемы, которые мешают ему идти дальше.", // 31
 	"Игры, которые идут далеко в игре, но имеют глюки, которые делают игру непригодной для игры или имеют неиграбельную производительность.", // 32
 	"Игры, в которые можно играть от начала до конца, с хорошей производительностью и без каких-либо проблем.", // 33
+	"Эмулятор в настоящее время претерпевает множество изменений в своем коде, которые значительно улучшают производительность в играх. \
+	Этот список совместимости больше не отражает текущее состояние эмулятора, и всем, кто интересуется эмулятором, рекомендуется повторно \
+	тестировать свои игры с последними сборками эмулятора каждые несколько недель, чтобы обновлять отчеты о совместимости." // 34
 ])
 
 // Chinese
@@ -415,5 +446,7 @@ texts.push([
 	"运行正常但无法正常游玩的游戏。", // 30
 	"在运行时会出现一些问题，这些问题会使游戏无法继续运行。", // 31
 	"存在一些小问题，导致游戏不可玩或保持在一个无法游玩的性能状态。", // 32
-	"可以从头到尾玩的游戏，具有正常的游戏性能，游戏中没有中断故障。" // 33
+	"可以从头到尾玩的游戏，具有正常的游戏性能，游戏中没有中断故障。", // 33
+	"该模拟器目前正在经历其后台的巨大变化，这大大改善了与游戏的兼容性。这个兼容性列表不再反映模拟器的状态，\
+	我们鼓励每个对模拟器感兴趣的人每隔几周用最新的模拟器版本重新测试他们的游戏，以更新兼容性报告。" // 34 (translated using DeepL)
 ])
