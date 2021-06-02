@@ -27,10 +27,10 @@
                 }
 
                 function GetFirmware() {
-                    $http.get("https://cors-anywhere.herokuapp.com/fus01.psp2.update.playstation.net/update/psp2/list/us/psp2-updatelist.xml")
-                    .success(function(xml) {
+                    $http.get("https://api.allorigins.win/get?url=http://fus01.psp2.update.playstation.net/update/psp2/list/us/psp2-updatelist.xml")
+                    .success(function(response) {
                         let parser = new DOMParser();
-                        xmldoc = parser.parseFromString(xml, "text/xml")
+                        xmldoc = parser.parseFromString(response.contents, "text/xml")
                         let sysdataURL = xmldoc.getElementsByTagName("recovery")[0].childNodes[1].childNodes[0].nodeValue
                         $("#systemdata").attr("href", sysdataURL);
                     })
