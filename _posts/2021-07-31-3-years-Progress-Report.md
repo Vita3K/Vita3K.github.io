@@ -1,3 +1,8 @@
+---
+layout: post
+title: "3 years Progress Report"
+---
+
 Welcome to the 3 years progress report. Since the last report, three years have passed, however, from there, no more reports were submitted. Many people thought the project was dead, many came to the communication channels like Discord server for an answer. So what happened between this long gap?
 
 First, let's get to the report. It's obvious everyone wants to hear more about what has improved over the last three years. The answer to the question above, will be answered later in the report, with an announcement following...
@@ -200,16 +205,15 @@ Currently developer Zangetsu is still working very hard to add more wanted featu
 
 A little while back, we put up a quick video showcase with the compatibility report and some short footage. While we do not have the resources at the moment to put up another nice video, we will share some videos from the tester.
 
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/fvgoCMTz7rI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fvgoCMTz7rI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/jTj05d_ZyAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jTj05d_ZyAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/-xFi2SzLquk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-xFi2SzLquk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/R5Fb0B1n4S4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R5Fb0B1n4S4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/x0tnbQGXpec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>&lt;/iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x0tnbQGXpec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # Donation money transition
 
