@@ -12,7 +12,7 @@ texts.push([
 	"The world's first functional PlayStation Vita emulator.", // 7
 	"Find Out More", // 8
 	"About Vita3K", // 9
-	"Vita3K is the world's first functional experimental open-source PlayStation Vita emulator for Windows, Linux and macOS.", // 10
+	"Vita3K is the world's first functional experimental open-source PlayStation Vita emulator for Windows and Linux.", // 10
 	"Please note that the purpose of the emulator is not to enable illegal activity.", // 11
 	"Pick up your build!", // 12
 	"Coming Soon!", // 13
@@ -52,7 +52,7 @@ texts.push([
 	"Il primo emulatore Playstation Vita del mondo.", // 7
 	"Scopri di più", // 8
 	"Riguardo Vita3K", // 9
-	"Vita3K è il primo emulatore sperimentale PlayStation Vita del mondo per Windows, Linux e macOS.", // 10
+	"Vita3K è il primo emulatore sperimentale PlayStation Vita del mondo per Windows e Linux.", // 10
 	"Nota bene che lo scopo dell'emulatore non è quello di abilitare attività illecite.", // 11
 	"Scegli la tua piattaforma!", // 12
 	"Prossimamente!", // 13
@@ -92,7 +92,7 @@ texts.push([
 	"Le premier émulateur au monde pour la PlayStation Vita.", // 7
 	"En savoir plus", // 8
 	"À propos de Vita3K", // 9
-	"Vita3K est le tout premier émulateur open-source pour la PlayStation Vita compatible avec Windows, Linux et macOS.", // 10
+	"Vita3K est le tout premier émulateur open-source pour la PlayStation Vita compatible avec Windows et Linux.", // 10
 	"Cet émulateur n'a pas pour but de permettre l'activité illégale.", // 11
 	"Choisissez votre version !", // 12
 	"Bientôt !", // 13
@@ -132,7 +132,7 @@ texts.push([
 	"اول محاكي لنظام بلايستايشن فيتا في العالم", // 7
 	"اعرف المزيد", // 8
 	"حول Vita3K", // 9
-	"Vita3K هو اول محاكي تجريبي مفتوح المصدر لنظام بلايستايشن فيتا في العالم لنظام تشغيل Windows, Linux و macOS", // 10
+	"Vita3K هو اول محاكي تجريبي مفتوح المصدر لنظام بلايستايشن فيتا في العالم لنظام تشغيل Windows و Linux", // 10
 	"ارجو الملاحظة ان الغاية من المحاكي هو عدم تمكين النشاطات الغير قانونية", // 11
 	"اختر اصدارك", // 12
 	"قريبا", // 13
@@ -172,7 +172,7 @@ texts.push([
 	"Ο πρώτος λειτουργικός εξομοιωτής για το PlayStation Vita στον κόσμο.", // 7
 	"Μάθετε περισσότερα", // 8
 	"Σχετικά με το Vita3K", // 9
-	"Το Vita3K είναι ο πρώτος λειτουργικός πειραματικός εξομοιωτής PlayStation Vita ανοικτού κώδικα για Windows, Linux και macOS", // 10
+	"Το Vita3K είναι ο πρώτος λειτουργικός πειραματικός εξομοιωτής PlayStation Vita ανοικτού κώδικα για Windows και Linux.", // 10
 	"Σημειώστε ότι ο σκοπός του εξομοιωτή δεν είναι να επιτρέπει την παράνομη δραστηριότητα.", // 11
 	"Πάρτε το build σας!", // 12
 	"Σύντομα!", // 13
@@ -212,7 +212,7 @@ texts.push([
 	"Trình giả lập Playstation Vita đầu tiên trên thế giới.", // 7
 	"Tìm hiểu thêm", // 8
 	"Về Vita3K", // 9
-	"Vita3K là trình giả lập Playstation thử nghiệm đầu tiên mã nguồn mở dành cho Windows, Linux và macOS.", // 10
+	"Vita3K là trình giả lập Playstation thử nghiệm đầu tiên mã nguồn mở dành cho Windows và Linux.", // 10
 	"Xin hãy chú ý rằng mục đích của trình giả lập này không phải là đẩy mạnh hoạt động trái pháp luật.", // 11
 	"Chọn build của bạn!", // 12
 	"Sắp ra mắt!", // 13
@@ -252,7 +252,7 @@ texts.push([
 	"’s Werelds eerste PlayStation Vita emulator.", // 7
 	"Kom Meer Te Weten", // 8
 	"Over Vita3K", // 9
-	"Vita3K is ‘s werelds eerste experimentele open-source PlayStation Vita emulator voor Windows, Linux en macOS.", // 10
+	"Vita3K is ‘s werelds eerste experimentele open-source PlayStation Vita emulator voor Windows en Linux.", // 10
 	"Wees ervan bewust dat het in staat stellen van illegale activiteiten niet de bedoeling van deze emulator is.", // 11
 	"Kies een passende versie!", // 12
 	"Binnenkort!", // 13
@@ -292,7 +292,7 @@ texts.push([
 	"Pierwszy emulator konsoli PlayStation Vita na świecie.", // 7
 	"Dowiedz się więcej", // 8
 	"O Vita3K", // 9
-	"Vita3K to pierwszy na świecie eksperymentalny emulator PlayStation Vita z otwartym kodem źródłowym dla Windowsa, Linux i macOS.", // 10
+	"Vita3K to pierwszy na świecie eksperymentalny emulator PlayStation Vita z otwartym kodem źródłowym dla Windowsa i Linux.", // 10
 	"Pamiętaj, że celem tego emulatora nie jest umożliwienie nielegalnej aktywnośći.", // 11
 	"Wybierz wersję dla swojego systemu!", // 12
 	"Dostępne wkrótce!", // 13
@@ -332,7 +332,7 @@ texts.push([
 	"O primeiro emulador funcional de PlayStation Vita do mundo.", // 7
 	"Descubra mais", // 8
 	"Sobre Vita3K", // 9
-	"Vita3K é o primeiro emulador funcional experimental código aberto de PlayStation Vita no mundo para Windows, Linux e macOS.", // 10
+	"Vita3K é o primeiro emulador funcional experimental código aberto de PlayStation Vita no mundo para Windows e Linux.", // 10
 	"Tenha em mente que o propósito do emulador não é permitir atividades ilegais.", // 11
 	"Pegue sua versão!", // 12
 	"Em breve!", // 13
@@ -372,7 +372,7 @@ texts.push([
 	"Первопроходец среди эмуляторов PlayStation Vita.", // 7
 	"Узнайте больше", // 8
 	"О Vita3K", // 9
-	"Vita3K - это первый в мире, экспериментальный эмулятор PlayStation Vita с открытым исходным кодом для Windows, Linux и macOS.", // 10
+	"Vita3K - это первый в мире, экспериментальный эмулятор PlayStation Vita с открытым исходным кодом для Windows и Linux.", // 10
 	"Учтите, эмулятор не был задуман с целью совершения противоправных действий.", // 11
 	"Выберите сборку!", // 12
 	"Скоро!", // 13
@@ -400,7 +400,7 @@ texts.push([
 	"У нас есть блог, в котором мы регулярно публикуем подробные отчеты о текущем прогрессе в нашем деле. Заходите почитать о нововведениях!" // 35
 ])
 
-// Chinese (Translation provided by HikaruChang)
+// Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
 texts.push([
 	"关于", // 0
 	"下载", // 1
@@ -412,30 +412,30 @@ texts.push([
 	"全世界首个可用的PlayStation Vita模拟器。", // 7
 	"了解更多", // 8
 	"关于Vita3K", // 9
-	"Vita3K是世界上首个可以在Windows、Linux和macOS上运行，且开放源代码的PlayStation Vita模拟器。", // 10
-	"请注意，不可使用此模拟器用于非法活动。", // 11
-	"挑选适合你的编译版本", // 12
+	"Vita3K是世界上首个在Windows和Linux上的实验性开源PlayStation Vita模拟器。", // 10
+	"请注意，模拟器的目的不是用于非法活动。", // 11
+	"获得对应您的构建版本！", // 12
 	"敬请期待！", // 13
 	"立即获取", // 14
 	"与我们交流！", // 15
 	"随时与开发人员和其他用户交流。我们更喜欢通过我们的Discord服务器来交流，但我们尊重您的选择！", // 16
 	"立即加入！", // 17
-	"查看当前可以运行的程序", // 18
-	"模拟器目前可以运行一些<b>商业游戏</b>！<br>点击查看<a href=\"/compatibility.html?lang=zh\">兼容列表<a>。<br><br>并且也支持一些自制游戏。点击查看<a href=\"compatibility-homebrew.html?lang=zh\">兼容列表</a>来了解更多详情。", // 19
-	"自制游戏接口", // 20
+	"查看当前可运行的内容！", // 18
+	"模拟器目前可以运行一些<b>商业游戏</b>！<br>点击查看<a href=\"/compatibility.html?lang=zh\">兼容性列表<a>。<br><br>并且也支持一些自制程序。点击查看<a href=\"compatibility-homebrew.html?lang=zh\">兼容性列表</a>来了解更多详情。", // 19
+	"自制游戏端口", // 20
 	"PlayStation 和 PS Vita 是 Sony Interactive Entertainment Inc.（索尼互动娱乐）的注册商标。", // 21
 	"此模拟器与索尼公司无关，也没有获得索尼公司的认可，更没有包含索尼公司的机密资料。", // 22
 	"LOGO设计", // 23
 	"您可以通过以下方式为模拟器做出贡献：", // 24
 	"选择语言", // 25
-	"更新<a href=\"https://github.com/Vita3K/compatibility/issues\">兼容列表数据库</a>.", // 26 // do this for every lang also line // 19 for every lang
-	"示你所爱！", // 27
-	"如果你想表达你对项目的感谢，并且想要提供基金帮助项目开发，可以访问<a href=\"https://www.patreon.com/Vita3K\">Patreon页面</a>.", // 28
+	"为<a href=\"https://github.com/Vita3K/compatibility/issues\">兼容性列表</a>更新数据库。", // 26 // do this for every lang also line // 19 for every lang
+	"向我们展示您的爱!", // 27
+	"如果您想表达您对项目的感谢，并且想要提供资助项目开发，可以访问<a href=\"https://www.patreon.com/Vita3K\">Patreon页面</a>捐赠。", // 28
 	"成为一名Patron", // 29
 	"自制游戏", // 30
 	"自制程序", // 31
 	"帮助我们变得更好！", // 32
-	"提出讨论或者提交一个合并请求到我们的<a href=\"https://github.com/Vita3K/Vita3K\">GitHub项目库</a>.", // 33
+	"提出讨论或者提交一个合并请求到我们的<a href=\"https://github.com/Vita3K/Vita3K\">GitHub项目库</a>。", // 33
 	"最新资讯", // 34
-	"我们有一个博客，并且定期发布详细的工作进展报告。来看看有什么新鲜事！" // 35
+	"我们这里有一个博客，定期发布我们工作最新进展的详细报告。来看看有什么新鲜事！" // 35
 ])
