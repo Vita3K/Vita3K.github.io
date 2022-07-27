@@ -169,9 +169,26 @@ texts: compatibility
                                 </ol>
                             </div>
                         </div>
+                        
+                        <div class="answer">
+                            <div class="padding-wrapper">
+                                <h5 class="my-3">Building a .vpk file</h5>
+                                <p class="my-3">
+                                    After dumping your game, you can optionally package it into a .vpk file for Vita3K to install. By packaging your dump into a .vpk, you can drag and drop it directly into the Vita3K window to install it.
+                                </p>
+                                <ol>
+                                    <li>Download <a href="https://github.com/vitaorganizer/vitaorganizer/releases">VitaOrganizer</a> and run the application on your PC.</li>
+                                    <li>Click <code>File</code> -> <code>Create vpk from maidump folder...</code></li>
+                                    <li>Select the <code>EBOOT.BIN</code> file inside of your dump folder.</li>
+                                    <p>The progress of the vpk creation will be shown at the bottom of the VitaOrganizer window. Once it's completed, open Vita3K and drag the vpk onto the Vita3K window.</p>
+                                </ol>
+                            </div>
+                        </div>
+                    
+                    
                     </div>
                 </div>
-                <div class="accordion-item" style="display: none;">
+                <div class="accordion-item">
                     <div role="tab" id="nonpdrmHeader">
                         <a class="accordion-link collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false"
                         aria-controls="nonpdrm" href="#nonpdrm">
@@ -215,18 +232,6 @@ texts: compatibility
                 </div>
             </div>
         <div class="my-5">
-            <h3>Building a .vpk file</h3>
-            <p class="my-3">After dumping your game, you can optionally package it into a .vpk file for Vita3K to install. By packaging your dump into a .vpk, you can drag and drop it directly into the Vita3K window to install it.</p>
-            <div class="answer">
-                <div class="padding-wrapper">
-                    <ol>
-                        <li>Download <a href="https://github.com/vitaorganizer/vitaorganizer/releases">VitaOrganizer</a> and run the application on your PC.</li>
-                        <li>Click <code>File</code> -> <code>Create vpk from maidump folder...</code></li>
-                        <li>Select the <code>EBOOT.BIN</code> file inside of your dump folder.</li>
-                        <p>The progress of the vpk creation will be shown at the bottom of the VitaOrganizer window. Once it's completed, open Vita3K and drag the vpk onto the Vita3K window.</p>
-                    </ol>
-                </div>
-            </div>
         </div>
     </div>
 </section>
