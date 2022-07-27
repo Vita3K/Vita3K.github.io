@@ -116,8 +116,8 @@ texts: compatibility
 <section class="bg-dark text-white pt-5">
     <div class="container">
         <h1 class="text-center mb-5">Dumping Games</h1>
-        <p>Vita3K does <b class="text-danger">not</b> condone piracy, therefore, you are required to dump your own games.</p>
-        <p>Currently, Vita3K supports maidumps, .pkg, NoNpDrm, FAGDec, or manually decrypted games (Vitamin dumps are not supported).
+        <p>Vita3K does <b class="text-danger">not</b> condone piracy, therefore, you are required to dump your own games.  Currently, it is preferred to dump your games on a Vita or Vita TV (PS TV) using HENkaku <b class="text-danger">3.60 - 3.65</b>.</p>
+        <p>Currently, Vita3K supports .pkg, NoNpDrm, FAGDec, or manually decrypted games (Vitamin dumps are not supported and Maidump is unstable).
             The games should be in a .zip or .vpk format if you want to install them from the emulator, or if you prefer to copy them yourself,
             you can drag and drop the game folder in your <code>pref_path/ux0/app</code> folder (not applicable for NoNpDrm dumps/.pkg files).</p>
         <p><code>pref_path</code> defaults to:
@@ -169,6 +169,22 @@ texts: compatibility
                                 </ol>
                             </div>
                         </div>
+                        
+                        <div class="answer">
+                            <div class="padding-wrapper">
+                                <h5 class="my-3">Building a .vpk file</h5>
+                                <p class="my-3">
+                                    After dumping your game, you can optionally package it into a .vpk file for Vita3K to install. By packaging your dump into a .vpk, you can drag and drop it directly into the Vita3K window to install it.
+                                </p>
+                                <ol>
+                                    <li>Download <a href="https://github.com/vitaorganizer/vitaorganizer/releases">VitaOrganizer</a> and run the application on your PC.</li>
+                                    <li>Click <code>File</code> -> <code>Create vpk from maidump folder...</code></li>
+                                    <li>Select the <code>EBOOT.BIN</code> file inside of your dump folder.</li>
+                                    <p>The progress of the vpk creation will be shown at the bottom of the VitaOrganizer window. Once it's completed, open Vita3K and drag the vpk onto the Vita3K window.</p>
+                                </ol>
+                            </div>
+                        </div>
+                    
                     </div>
                 </div>
                 <div class="accordion-item">
@@ -210,42 +226,6 @@ texts: compatibility
                                     <li>Open Vita3k, click on the File entry in the menubar and click Install .vpk/.zip. Select your <code>DLC_FOLDER.zip</code> file and confirm. The DLC will begin installing.</li>
                                 </ol>
                         </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div role="tab" id="maidumpHeader">
-                        <a class="accordion-link collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="false"
-                        aria-controls="maidump" href="#maidump">
-                        Maidump (+Vitashell)
-                        <i class="icon ion-md-add-circle"></i>
-                        <i class="icon ion-md-remove-circle"></i>
-                        </a>
-                    </div>
-                    <div class="collapse" id="maidump" role="tabpanel" aria-labelledby="maidumpHeader" data-parent="#accordion">
-                        <div class="answer">
-                            <div class="padding-wrapper">
-                                <p class="my-3"><h5>Using <a href="https://github.com/LioMajor/MaiDumpToolEN/releases">Maidump</a> 
-                                    (and optionally <a href="https://github.com/TheOfficialFloW/VitaShell/releases">Vitashell</a>)</h5></p>
-                                <ol class="my-3">
-                                    <p>It's recommended you use Vitashell with maidump here as it's more stable this way.</p>
-                                    <li>Install maidump</li>
-                                    <li>Launch maidump and select <code>Extract/Decrypt content</code></li>
-                                    <li>Choose the game you want to dump and press the <code>◯</code> button</li>
-                                    <li>
-                                        <ol type="A">
-                                        <li>If you're using Vitashell:</li>
-                                        <p class="my-2">Select <code>Decrypt eboot only(incl. suprx)</code> and wait for it to decrypt.</p>
-                                        <p class="my-2">Then dump the game files using Vitashell by following the steps in the first method from steps 2-4.</p>
-                                        <p>Copy the dumped files from <code>ux0:mai/'title_id'</code> into your previously copied folder from VitaShell.</p>
-                                        <li>If you're not using Vitashell:</li>
-                                        <p class="my-2">Select <code>Extract the game and decrypt eboot (incl. suprx)</code>.</p>
-                                        <p class="my-2">Wait for the game to finish dumping (dumping sometimes fails since maidump is unstable).</p>
-                                        <p>You can find your dumped game in <code>ux0:mai/'title_id'</code>.</p>
-                                        </ol>
-                                    </li>
-                                </ol>
-                            </div>
                         </div>
                     </div>
                 </div>
