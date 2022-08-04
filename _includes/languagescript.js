@@ -115,7 +115,7 @@ $scope.changeLang = function (field) {
         $scope.lang = "zh"
     } else if (field == 12) {
         $scope.texts = texts[11]
-        $scope.lang = "ja"
+        $scope.lang = "jp"
     }
     lang = $scope.lang
 }
