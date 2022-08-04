@@ -98,22 +98,22 @@ $scope.changeLang = function (field) {
     } else if (field == 6) {
         $scope.texts = texts[1]
         $scope.lang = "it"
-    } else if (field == 8) {
+    } else if (field == 7) {
         $scope.texts = texts[6]
         $scope.lang = "nl"
-    } else if (field == 9) {
+    } else if (field == 8) {
         $scope.texts = texts[7]
         $scope.lang = "pl"
-    } else if (field == 10) {
+    } else if (field == 9) {
         $scope.texts = texts[9]
         $scope.lang = "ru"
-    } else if (field == 11) {
+    } else if (field == 10) {
         $scope.texts = texts[5]
         $scope.lang = "vn"
-    } else if (field == 12) {
+    } else if (field == 11) {
         $scope.texts = texts[10]
         $scope.lang = "zh"
-    } else if (field == 7) {
+    } else if (field == 12) {
         $scope.texts = texts[11]
         $scope.lang = "ja"
     }
