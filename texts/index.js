@@ -449,7 +449,7 @@ texts.push([
 	"見本", // 4
 	"貢献", // 5
 	"寄付", // 6
-	"世界初の動作するPlayStation Vitaエミュレーター.", // 7
+	"世界初の動作するPlayStation Vitaエミュレーター", // 7
 	"くわしく", // 8
 	"Vita3Kとは", // 9
 	"Vita3Kは、世界初の機能的かつ実験的なオープンソースのWindowsおよびLinux用PlayStation®Vitaエミュレータです。", // 10
@@ -459,23 +459,23 @@ texts.push([
 	"Grab from", // 14
 	"お問い合わせはこちら", // 15
 	"開発者や他のユーザーと好きな時に連絡を取ることができます。私たちはDiscordサーバーを使うことを希望しますが、選択はあなた次第です。", // 16
-	"加わる", // 17
+	"参加", // 17
 	"現在動作するものを調べる", // 18
-	"エミュレーターは現在いくつかの<b>商用ゲーム</b>が動作可能です。<br><a href=\"/compatibility.html?lang=en\">互換性リスト<a>をご確認ください。<br><br>いくつかの自作ソフトも動作可能です。<a href=\"compatibility-homebrew.html?lang=en\">互換性リスト</a>で詳細をご確認ください", // 19
+	"エミュレーターは現在いくつかの<b>商用ゲーム</b>が動作可能です。<br><a href=\"/compatibility.html?lang=en\">互換性リスト<a>をご確認ください。<br><br>いくつかの自作ソフトも動作可能です。<a href=\"compatibility-homebrew.html?lang=en\">互換性リスト</a>で詳細をご確認ください。", // 19
 	"Homebrew Game Port", // 20
 	"PlayStation および PS Vita は株式会社ソニー・インタラクティブエンタテインメントの商標です。", // 21
 	"このエミュレータはソニーと関係がなく、またソニーが保証するものでもなく、ソニーに帰属する機密資料から派生したものでもありません。", // 22
 	"Logo by", // 23
 	"エミュレータへの貢献は、以下の方法で行うことができます。:", // 24
 	"言語を選択", // 25
-	"<a href=\"https://github.com/Vita3K/compatibility/issues\">互換性データベース</a>の更新.", // 26 // do this for every lang also line // 19 for every lang
+	"<a href=\"https://github.com/Vita3K/compatibility/issues\">互換性データベース</a>の更新", // 26 // do this for every lang also line // 19 for every lang
 	"愛を示してください!", // 27
 	"感謝の気持ちを表し、開発資金を援助したい方は<a href=\"https://www.patreon.com/Vita3K\">Patreon Page</a>がプロジェクトには存在します。", // 28
 	"Patronになる", // 29
 	"自作ソフト", // 30
 	"Homebrew Utility", // 31
 	"改善にご協力ください", // 32
-	"問題の報告やプルリクエストの作成を<a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>で行う。", // 33
+	"問題の報告やプルリクエストの作成を<a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>で行う", // 33
 	"新着情報", // 34
 	"私たちはブログで、定期的に仕事の最新の進捗状況を詳しく報告しています。新着情報を読みにきてください！" // 35
 ])
