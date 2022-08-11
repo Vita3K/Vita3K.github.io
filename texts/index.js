@@ -16,7 +16,7 @@ texts.push([
 	"Please note that the purpose of the emulator is not to enable illegal activity.", // 11
 	"Pick up your build!", // 12
 	"Coming Soon!", // 13
-	"Grab from", // 14
+	"Grab from GitHub", // 14
 	"Get in touch with us!", // 15
 	"Get in touch with the developers and other users whenever you want. We prefer via our Discord server, but the choice is up to you!", // 16
 	"Join now!", // 17
@@ -56,7 +56,7 @@ texts.push([
 	"Nota bene che lo scopo dell'emulatore non è quello di abilitare attività illecite.", // 11
 	"Scegli la tua piattaforma!", // 12
 	"Prossimamente!", // 13
-	"Scarica da", // 14
+	"Scarica da GitHub", // 14
 	"Contattaci!", // 15
 	"Mettiti in contatto con i programmatori e con altri utenti quando preferisci. Preferiamo l'utilizzo del server Discord ma la scelta spetta a te!", // 16
 	"Unisciti ora!", // 17
@@ -96,7 +96,7 @@ texts.push([
 	"Cet émulateur n'a pas pour but de permettre l'activité illégale.", // 11
 	"Choisissez votre version !", // 12
 	"Bientôt !", // 13
-	"Obtenir depuis", // 14
+	"Obtenir depuis GitHub", // 14
 	"Contactez nous !", // 15
 	"Vous pouvez contacter les développeurs ainsi que les autres utilisateurs quand vous le voulez. Nous préférons notre serveur Discord mais le choix est vôtre !", // 16
 	"Rejoignez nous !", // 17
@@ -136,7 +136,7 @@ texts.push([
 	"ارجو الملاحظة ان الغاية من المحاكي هو عدم تمكين النشاطات الغير قانونية", // 11
 	"اختر اصدارك", // 12
 	"قريبا", // 13
-	"اختر من", // 14
+	"اختر من GitHub", // 14
 	"تواصل معنا", // 15
 	"تواصل مع المطورين و المستخدمين حينما تريد, نفضل استخدام Discord ولكن الخيار لك", // 16
 	"!انضم الان", // 17
@@ -176,7 +176,7 @@ texts.push([
 	"Σημειώστε ότι ο σκοπός του εξομοιωτή δεν είναι να επιτρέπει την παράνομη δραστηριότητα.", // 11
 	"Πάρτε το build σας!", // 12
 	"Σύντομα!", // 13
-	"Πάρτο απ'το", // 14
+	"Πάρτο απ'το GitHub", // 14
 	"Ελάτε σε επαφή μαζί μας!", // 15
 	"Ελάτε σε επαφή με τους προγραμματιστές και τους άλλους χρήστες όποτε θέλετε. Προτιμούμε το Discord αλλά η επιλογή εξαρτάται από εσάς!", // 16
 	"Εγγραφείτε τώρα!", // 17
@@ -216,7 +216,7 @@ texts.push([
 	"Xin hãy chú ý rằng mục đích của trình giả lập này không phải là đẩy mạnh hoạt động trái pháp luật.", // 11
 	"Chọn build của bạn!", // 12
 	"Sắp ra mắt!", // 13
-	"Lấy từ", // 14
+	"Lấy từ GitHub", // 14
 	"Liên lạc với chúng tôi!", // 15
 	"Liên lạc với các lập trình viên và các người dùng khác lúc nào bạn muốn. Chúng tôi ưu tiên sever Discord, nhưng bạn là người quyết định!", // 16
 	"Tham gia ngay hôm nay!", // 17
@@ -256,7 +256,7 @@ texts.push([
 	"Wees ervan bewust dat het in staat stellen van illegale activiteiten niet de bedoeling van deze emulator is.", // 11
 	"Kies een passende versie!", // 12
 	"Binnenkort!", // 13
-	"Haal op via", // 14
+	"Haal op via GitHub", // 14
 	"Neem contact met ons op!", // 15
 	"Neem contact op met de ontwikkelaars en andere gebruikers wanneer je maar wilt. Doe dit het liefst via Discord, maar de keuze ligt bij jou!", // 16
 	"Doe mee!", // 17
@@ -296,7 +296,7 @@ texts.push([
 	"Pamiętaj, że celem tego emulatora nie jest umożliwienie nielegalnej aktywnośći.", // 11
 	"Wybierz wersję dla swojego systemu!", // 12
 	"Dostępne wkrótce!", // 13
-	"Pobierz z", // 14
+	"Pobierz z GitHub", // 14
 	"Skontaktuj się z nami!", // 15
 	"Skontaktuj się z deweloperami i innymi użytkownikami kiedy tylko chcesz. Wolimy Discord, ale to twój wybór!", // 16
 	"Dołącz!", // 17
@@ -336,7 +336,7 @@ texts.push([
 	"Tenha em mente que o propósito do emulador não é permitir atividades ilegais.", // 11
 	"Pegue sua versão!", // 12
 	"Em breve!", // 13
-	"Pegar no", // 14
+	"Pegar no GitHub", // 14
 	"Entre em contato conosco", // 15
 	"Entre em contato com os desenvolvedores e outro usuários sempre que quiser. Nós preferimos nosso servidor no Discord, mas a escolha é sua!", // 16
 	"Junte-se agora", // 17
@@ -376,7 +376,7 @@ texts.push([
 	"Учтите, эмулятор не был задуман с целью совершения противоправных действий.", // 11
 	"Выберите сборку!", // 12
 	"Скоро!", // 13
-	"Загрузить с", // 14
+	"Загрузить с GitHub", // 14
 	"Свяжитесь с нами!", // 15
 	"Поддерживайте контакт с разработчиками и другими пользователями когда захотите. Мы предпочитаем наш сервер Discord, но выбор за вами!", // 16
 	"Присоединиться!", // 17
@@ -416,7 +416,7 @@ texts.push([
 	"请注意，模拟器的目的不是用于非法活动。", // 11
 	"获得对应您的构建版本！", // 12
 	"敬请期待！", // 13
-	"立即获取", // 14
+	"立即获取GitHub", // 14
 	"与我们交流！", // 15
 	"随时与开发人员和其他用户交流。我们更喜欢通过我们的Discord服务器来交流，但我们尊重您的选择！", // 16
 	"立即加入！", // 17
@@ -456,7 +456,7 @@ texts.push([
 	"エミュレータの目的は違法行為を可能にすることではありませんのでご注意ください。", // 11
 	"ビルドを手に入れよう!", // 12
 	"近日公開!", // 13
-	"Grab from", // 14
+	"GitHubからダウンロード", // 14
 	"お問い合わせはこちら", // 15
 	"開発者や他のユーザーと好きな時に連絡を取ることができます。私たちはDiscordサーバーを使うことを希望しますが、選択はあなた次第です。", // 16
 	"参加", // 17
