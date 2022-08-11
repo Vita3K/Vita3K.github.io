@@ -38,6 +38,8 @@ texts.push([
 	"File issues or make Pull Requests on our <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 33
 	"What's new", // 34
 	"We have a blog where we regularly publish detailed reports with the latest progress in our work. Come to read what's new!" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Italian (translation provided by Rinnegatamante)
@@ -78,6 +80,8 @@ texts.push([
 	"Riporta problemi o prepara delle Pull Request sulla nostra <a href=\"https://github.com/Vita3K/Vita3K\">repository GitHub</a>.", // 33
 	"Cosa c'è di nuovo", // 34
 	"E' disponibile un blog nel quale pubblichiamo mensilmente un resoconto dettagliato inerente gli ultimi progressi nell'emulatore. Corri a leggere cosa c'è di nuovo!" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // French (translation provided by Drayano)
@@ -118,6 +122,8 @@ texts.push([
 	"Reportez les bugs ou faites des Pulls Requests sur <a href=\"https://github.com/Vita3K/Vita3K\">GitHub</a>.", // 33
 	"What's new", // 34
 	"We have a blog were we push detailed reports with the latest progress in our work. Come to read what's new!" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Arabic (translation provided by IllusionMan1212)
@@ -158,6 +164,8 @@ texts.push([
 	"اكتب مشاكل او اصنع Pull Requests علي <a href=\"https://github.com/Vita3K/Vita3K\">Github.", // 33
 	"ماذا جديد", // 34
 	"!لدينا مدونة حيث نكتب شهريا تقريرا مفصلا بأحدث التطورات في عملنا. تعالوا اقرؤا ماذا جديد"// 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Greek (translation provided by VelocityRa)
@@ -198,6 +206,8 @@ texts.push([
 	"Απαίτηση αρχείων ή δημιουργία αιτήσεων έλξης στο <a href=\"https://github.com/Vita3K/Vita3K\"> αποθετήριο GitHub </a>.", // 33
 	"Νέα", // 34
 	"Έχουμε blog στο οποίο αναρτούμε νέες εξελίξεις. Ελάτε να δείτε τι είναι νέο!" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Vietnamese (Translation provided by Bentokun)
@@ -238,6 +248,8 @@ texts.push([
 	"Mở các Issues hoặc Pull Request tại <a href=\"https://github.com/Vita3K/Vita3K\">Kho mã nguồn trên GitHub</a>.", // 33
 	"What's new", // 34
 	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Dutch (Translation provided by jelle619)
@@ -278,6 +290,8 @@ texts.push([
 	"Licht ons in over problemen of maak Pull Requests op onze <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 33
 	"Wat nieuw is", // 34
 	"We hebben een blog waar we maandelijks nieuwe gedetaileerde rapporten publiceren met het laatst geboekte voortgang in ons werk. Neem een bezoekje om te kijken wat nieuw is!" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Polish (Translation provided by circl, corrected by kacek)
@@ -318,6 +332,8 @@ texts.push([
 	"Zgłoś problem lub zaproponuj zmiany w kodzie na naszym <a href=\"https://github.com/Vita3K/Vita3K\">Githubie</a>.", // 33
 	"Co nowego", // 34
 	"Prowadzimy bloga gdzie publikujemy miesięczne szczegółowe raporty z najnowszym postępem. Przeczytaj co nowego!" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
@@ -358,6 +374,8 @@ texts.push([
 	"Reporte um problema ou faça um Pull Requests no nosso <a href=\"https://github.com/Vita3K/Vita3K\">repositório no GitHub</a>.", // 33
 	"O que há de novo.", // 34
 	"Nós temos um blog onde nós postamos relatorios detalhados dos nossos ultimos progressos no nosso trabalho. Venha ler o que há de novo!" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Russian (Translation provided by DumF0rGaming)
@@ -398,6 +416,8 @@ texts.push([
 	"Отчитывайтесь о неполадках и предлагайте код в нашем <a href=\"https://github.com/Vita3K/Vita3K\">репозитории на GitHub</a>.", // 33
 	"Что нового", // 34
 	"У нас есть блог, в котором мы регулярно публикуем подробные отчеты о текущем прогрессе в нашем деле. Заходите почитать о нововведениях!" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
@@ -438,6 +458,8 @@ texts.push([
 	"提出讨论或者提交一个合并请求到我们的<a href=\"https://github.com/Vita3K/Vita3K\">GitHub项目库</a>。", // 33
 	"最新资讯", // 34
 	"我们这里有一个博客，定期发布我们工作最新进展的详细报告。来看看有什么新鲜事！" // 35
+	"Quickstart", // 36
+	"Blog", // 37
 ])
 
 // Japanese (Translation provided by nishinji)
@@ -478,4 +500,6 @@ texts.push([
 	"問題の報告やプルリクエストの作成を<a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>で行う", // 33
 	"新着情報", // 34
 	"私たちはブログで、定期的に仕事の最新の進捗状況を詳しく報告しています。新着情報を読みにきてください！" // 35
+	"クイックスタート", // 36
+	"ブログ", // 37
 ])
