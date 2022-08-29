@@ -16,7 +16,7 @@ texts.push([
 	"Please note that the purpose of the emulator is not to enable illegal activity.", // 11
 	"Pick up your build!", // 12
 	"Coming Soon!", // 13
-	"Grab from", // 14
+	"Grab from GitHub", // 14
 	"Get in touch with us!", // 15
 	"Get in touch with the developers and other users whenever you want. We prefer via our Discord server, but the choice is up to you!", // 16
 	"Join now!", // 17
@@ -37,7 +37,9 @@ texts.push([
 	"Help us get better!", // 32
 	"File issues or make Pull Requests on our <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 33
 	"What's new", // 34
-	"We have a blog where we regularly publish detailed reports with the latest progress in our work. Come to read what's new!" // 35
+	"We have a blog where we regularly publish detailed reports with the latest progress in our work. Come to read what's new!", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Italian (translation provided by Rinnegatamante)
@@ -56,7 +58,7 @@ texts.push([
 	"Nota bene che lo scopo dell'emulatore non è quello di abilitare attività illecite.", // 11
 	"Scegli la tua piattaforma!", // 12
 	"Prossimamente!", // 13
-	"Scarica da", // 14
+	"Scarica da GitHub", // 14
 	"Contattaci!", // 15
 	"Mettiti in contatto con i programmatori e con altri utenti quando preferisci. Preferiamo l'utilizzo del server Discord ma la scelta spetta a te!", // 16
 	"Unisciti ora!", // 17
@@ -77,7 +79,9 @@ texts.push([
 	"Aiutaci a migliorare!", // 32
 	"Riporta problemi o prepara delle Pull Request sulla nostra <a href=\"https://github.com/Vita3K/Vita3K\">repository GitHub</a>.", // 33
 	"Cosa c'è di nuovo", // 34
-	"E' disponibile un blog nel quale pubblichiamo mensilmente un resoconto dettagliato inerente gli ultimi progressi nell'emulatore. Corri a leggere cosa c'è di nuovo!" // 35
+	"E' disponibile un blog nel quale pubblichiamo mensilmente un resoconto dettagliato inerente gli ultimi progressi nell'emulatore. Corri a leggere cosa c'è di nuovo!", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // French (translation provided by Drayano)
@@ -96,7 +100,7 @@ texts.push([
 	"Cet émulateur n'a pas pour but de permettre l'activité illégale.", // 11
 	"Choisissez votre version !", // 12
 	"Bientôt !", // 13
-	"Obtenir depuis", // 14
+	"Obtenir depuis GitHub", // 14
 	"Contactez nous !", // 15
 	"Vous pouvez contacter les développeurs ainsi que les autres utilisateurs quand vous le voulez. Nous préférons notre serveur Discord mais le choix est vôtre !", // 16
 	"Rejoignez nous !", // 17
@@ -117,7 +121,9 @@ texts.push([
 	"Aidez nous à nous améliorer !", // 32
 	"Reportez les bugs ou faites des Pulls Requests sur <a href=\"https://github.com/Vita3K/Vita3K\">GitHub</a>.", // 33
 	"What's new", // 34
-	"We have a blog were we push detailed reports with the latest progress in our work. Come to read what's new!" // 35
+	"We have a blog were we push detailed reports with the latest progress in our work. Come to read what's new!", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Arabic (translation provided by IllusionMan1212)
@@ -136,7 +142,7 @@ texts.push([
 	"ارجو الملاحظة ان الغاية من المحاكي هو عدم تمكين النشاطات الغير قانونية", // 11
 	"اختر اصدارك", // 12
 	"قريبا", // 13
-	"اختر من", // 14
+	"اختر من GitHub", // 14
 	"تواصل معنا", // 15
 	"تواصل مع المطورين و المستخدمين حينما تريد, نفضل استخدام Discord ولكن الخيار لك", // 16
 	"!انضم الان", // 17
@@ -157,7 +163,9 @@ texts.push([
 	"ساعدنا لنصبح افضل", // 32
 	"اكتب مشاكل او اصنع Pull Requests علي <a href=\"https://github.com/Vita3K/Vita3K\">Github.", // 33
 	"ماذا جديد", // 34
-	"!لدينا مدونة حيث نكتب شهريا تقريرا مفصلا بأحدث التطورات في عملنا. تعالوا اقرؤا ماذا جديد"// 35
+	"!لدينا مدونة حيث نكتب شهريا تقريرا مفصلا بأحدث التطورات في عملنا. تعالوا اقرؤا ماذا جديد", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Greek (translation provided by VelocityRa)
@@ -176,7 +184,7 @@ texts.push([
 	"Σημειώστε ότι ο σκοπός του εξομοιωτή δεν είναι να επιτρέπει την παράνομη δραστηριότητα.", // 11
 	"Πάρτε το build σας!", // 12
 	"Σύντομα!", // 13
-	"Πάρτο απ'το", // 14
+	"Πάρτο απ'το GitHub", // 14
 	"Ελάτε σε επαφή μαζί μας!", // 15
 	"Ελάτε σε επαφή με τους προγραμματιστές και τους άλλους χρήστες όποτε θέλετε. Προτιμούμε το Discord αλλά η επιλογή εξαρτάται από εσάς!", // 16
 	"Εγγραφείτε τώρα!", // 17
@@ -197,7 +205,9 @@ texts.push([
 	"Βοηθήστε μας να γίνουμε καλύτεροι!", // 32
 	"Απαίτηση αρχείων ή δημιουργία αιτήσεων έλξης στο <a href=\"https://github.com/Vita3K/Vita3K\"> αποθετήριο GitHub </a>.", // 33
 	"Νέα", // 34
-	"Έχουμε blog στο οποίο αναρτούμε νέες εξελίξεις. Ελάτε να δείτε τι είναι νέο!" // 35
+	"Έχουμε blog στο οποίο αναρτούμε νέες εξελίξεις. Ελάτε να δείτε τι είναι νέο!", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Vietnamese (Translation provided by Bentokun)
@@ -216,7 +226,7 @@ texts.push([
 	"Xin hãy chú ý rằng mục đích của trình giả lập này không phải là đẩy mạnh hoạt động trái pháp luật.", // 11
 	"Chọn build của bạn!", // 12
 	"Sắp ra mắt!", // 13
-	"Lấy từ", // 14
+	"Lấy từ GitHub", // 14
 	"Liên lạc với chúng tôi!", // 15
 	"Liên lạc với các lập trình viên và các người dùng khác lúc nào bạn muốn. Chúng tôi ưu tiên sever Discord, nhưng bạn là người quyết định!", // 16
 	"Tham gia ngay hôm nay!", // 17
@@ -237,7 +247,9 @@ texts.push([
 	"Giúp chúng tôi tốt hơn nữa!", // 32
 	"Mở các Issues hoặc Pull Request tại <a href=\"https://github.com/Vita3K/Vita3K\">Kho mã nguồn trên GitHub</a>.", // 33
 	"What's new", // 34
-	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!" // 35
+	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Dutch (Translation provided by jelle619)
@@ -256,7 +268,7 @@ texts.push([
 	"Wees ervan bewust dat het in staat stellen van illegale activiteiten niet de bedoeling van deze emulator is.", // 11
 	"Kies een passende versie!", // 12
 	"Binnenkort!", // 13
-	"Haal op via", // 14
+	"Haal op via GitHub", // 14
 	"Neem contact met ons op!", // 15
 	"Neem contact op met de ontwikkelaars en andere gebruikers wanneer je maar wilt. Doe dit het liefst via Discord, maar de keuze ligt bij jou!", // 16
 	"Doe mee!", // 17
@@ -277,7 +289,9 @@ texts.push([
 	"Help ons beter worden!", // 32
 	"Licht ons in over problemen of maak Pull Requests op onze <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 33
 	"Wat nieuw is", // 34
-	"We hebben een blog waar we maandelijks nieuwe gedetaileerde rapporten publiceren met het laatst geboekte voortgang in ons werk. Neem een bezoekje om te kijken wat nieuw is!" // 35
+	"We hebben een blog waar we maandelijks nieuwe gedetaileerde rapporten publiceren met het laatst geboekte voortgang in ons werk. Neem een bezoekje om te kijken wat nieuw is!", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Polish (Translation provided by circl, corrected by kacek)
@@ -296,7 +310,7 @@ texts.push([
 	"Pamiętaj, że celem tego emulatora nie jest umożliwienie nielegalnej aktywnośći.", // 11
 	"Wybierz wersję dla swojego systemu!", // 12
 	"Dostępne wkrótce!", // 13
-	"Pobierz z", // 14
+	"Pobierz z GitHub", // 14
 	"Skontaktuj się z nami!", // 15
 	"Skontaktuj się z deweloperami i innymi użytkownikami kiedy tylko chcesz. Wolimy Discord, ale to twój wybór!", // 16
 	"Dołącz!", // 17
@@ -317,7 +331,9 @@ texts.push([
 	"Pomóż nam się ulepszać!", // 32
 	"Zgłoś problem lub zaproponuj zmiany w kodzie na naszym <a href=\"https://github.com/Vita3K/Vita3K\">Githubie</a>.", // 33
 	"Co nowego", // 34
-	"Prowadzimy bloga gdzie publikujemy miesięczne szczegółowe raporty z najnowszym postępem. Przeczytaj co nowego!" // 35
+	"Prowadzimy bloga gdzie publikujemy miesięczne szczegółowe raporty z najnowszym postępem. Przeczytaj co nowego!", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
@@ -336,7 +352,7 @@ texts.push([
 	"Tenha em mente que o propósito do emulador não é permitir atividades ilegais.", // 11
 	"Pegue sua versão!", // 12
 	"Em breve!", // 13
-	"Pegar no", // 14
+	"Pegar no GitHub", // 14
 	"Entre em contato conosco", // 15
 	"Entre em contato com os desenvolvedores e outro usuários sempre que quiser. Nós preferimos nosso servidor no Discord, mas a escolha é sua!", // 16
 	"Junte-se agora", // 17
@@ -357,7 +373,9 @@ texts.push([
 	"Ajude-nos a melhorar!", // 32
 	"Reporte um problema ou faça um Pull Requests no nosso <a href=\"https://github.com/Vita3K/Vita3K\">repositório no GitHub</a>.", // 33
 	"O que há de novo.", // 34
-	"Nós temos um blog onde nós postamos relatorios detalhados dos nossos ultimos progressos no nosso trabalho. Venha ler o que há de novo!" // 35
+	"Nós temos um blog onde nós postamos relatorios detalhados dos nossos ultimos progressos no nosso trabalho. Venha ler o que há de novo!", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Russian (Translation provided by DumF0rGaming)
@@ -376,7 +394,7 @@ texts.push([
 	"Учтите, эмулятор не был задуман с целью совершения противоправных действий.", // 11
 	"Выберите сборку!", // 12
 	"Скоро!", // 13
-	"Загрузить с", // 14
+	"Загрузить с GitHub", // 14
 	"Свяжитесь с нами!", // 15
 	"Поддерживайте контакт с разработчиками и другими пользователями когда захотите. Мы предпочитаем наш сервер Discord, но выбор за вами!", // 16
 	"Присоединиться!", // 17
@@ -397,7 +415,9 @@ texts.push([
 	"Помогите нам совершенствоваться!", // 32
 	"Отчитывайтесь о неполадках и предлагайте код в нашем <a href=\"https://github.com/Vita3K/Vita3K\">репозитории на GitHub</a>.", // 33
 	"Что нового", // 34
-	"У нас есть блог, в котором мы регулярно публикуем подробные отчеты о текущем прогрессе в нашем деле. Заходите почитать о нововведениях!" // 35
+	"У нас есть блог, в котором мы регулярно публикуем подробные отчеты о текущем прогрессе в нашем деле. Заходите почитать о нововведениях!", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
@@ -416,7 +436,7 @@ texts.push([
 	"请注意，模拟器的目的不是用于非法活动。", // 11
 	"获得对应您的构建版本！", // 12
 	"敬请期待！", // 13
-	"立即获取", // 14
+	"立即获取GitHub", // 14
 	"与我们交流！", // 15
 	"随时与开发人员和其他用户交流。我们更喜欢通过我们的Discord服务器来交流，但我们尊重您的选择！", // 16
 	"立即加入！", // 17
@@ -437,7 +457,9 @@ texts.push([
 	"帮助我们变得更好！", // 32
 	"提出讨论或者提交一个合并请求到我们的<a href=\"https://github.com/Vita3K/Vita3K\">GitHub项目库</a>。", // 33
 	"最新资讯", // 34
-	"我们这里有一个博客，定期发布我们工作最新进展的详细报告。来看看有什么新鲜事！" // 35
+	"我们这里有一个博客，定期发布我们工作最新进展的详细报告。来看看有什么新鲜事！", // 35
+	"Quickstart", // 36
+	"Blog" // 37
 ])
 
 // Japanese (Translation provided by nishinji)
@@ -456,10 +478,10 @@ texts.push([
 	"エミュレータの目的は違法行為を可能にすることではありませんのでご注意ください。", // 11
 	"ビルドを手に入れよう!", // 12
 	"近日公開!", // 13
-	"Grab from", // 14
-	"お問い合わせはこちら", // 15
+	"GitHubからダウンロード", // 14
+	"お問い合わせ", // 15
 	"開発者や他のユーザーと好きな時に連絡を取ることができます。私たちはDiscordサーバーを使うことを希望しますが、選択はあなた次第です。", // 16
-	"参加", // 17
+	"参加する", // 17
 	"現在動作するものを調べる", // 18
 	"エミュレーターは現在いくつかの<b>商用ゲーム</b>が動作可能です。<br><a href=\"/compatibility.html?lang=ja\">互換性リスト<a>をご確認ください。<br><br>いくつかの自作ソフトも動作可能です。<a href=\"compatibility-homebrew.html?lang=ja\">互換性リスト</a>で詳細をご確認ください。", // 19
 	"Homebrew Game Port", // 20
@@ -477,5 +499,7 @@ texts.push([
 	"改善にご協力ください", // 32
 	"問題の報告やプルリクエストの作成を<a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>で行う", // 33
 	"新着情報", // 34
-	"私たちはブログで、定期的に仕事の最新の進捗状況を詳しく報告しています。新着情報を読みにきてください！" // 35
+	"私たちはブログで、定期的に仕事の最新の進捗状況を詳しく報告しています。新着情報を読みにきてください！", // 35
+	"クイックスタート", // 36
+	"ブログ" // 37
 ])
