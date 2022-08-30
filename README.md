@@ -6,5 +6,6 @@ The source code for https://vita3k.org
 
 ```
 gem install bundler jekyll
+bundle install
 bundle exec jekyll serve
 ```
