@@ -609,3 +609,33 @@ iframe {
 .accordion-item [data-toggle="collapse"] > .ion-md-remove-circle {
   display: inline-block;
 }
+
+/* return top button */
+#page_top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: rgb(0 0 0 / 40%) 0 10px 32px 0;
+    background: #F05F40;
+    border-radius: 50%;
+}
+
+/* Font Awesome */
+#page_top::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f062'; /*icon*/
+    font-size: 20px;
+    color: rgb(255, 255, 255); /*icon color*/
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
