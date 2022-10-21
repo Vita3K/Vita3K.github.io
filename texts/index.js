@@ -21,7 +21,7 @@ texts.push([
 	"Get in touch with the developers and other users whenever you want. We prefer via our Discord server, but the choice is up to you!", // 16
 	"Join now!", // 17
 	"Check out what currently runs!", // 18
-	"The emulator can run some <b>commercial games!</b><br>Check out their <a href=\"/compatibility.html?lang=en\">compatibility list.<a><br><br>Several homebrew games are also supported. Check the <a href=\"compatibility-homebrew.html?lang=en\">compatibility list</a> for further details.", // 19
+	"The emulator can run some <b>commercial games!</b><br>Check out their <a href=\"/compatibility.html?lang=en\">compatibility list<a>.<br><br>Several homebrew games are also supported. Check the <a href=\"compatibility-homebrew.html?lang=en\">homebrew compatibility list</a> for further details.", // 19
 	"Homebrew Game Port", // 20
 	"PlayStation and PS Vita are trademarks of Sony Interactive Entertainment Inc.", // 21
 	"The emulator is not related to or endorsed by Sony, or derived from confidential materials belonging to Sony.", // 22
@@ -63,7 +63,7 @@ texts.push([
 	"Mettiti in contatto con i programmatori e con altri utenti quando preferisci. Preferiamo l'utilizzo del server Discord ma la scelta spetta a te!", // 16
 	"Unisciti ora!", // 17
 	"Controlla cosa funziona attualmente!", // 18
-	"L'emulatore può attualmente eseguire alcuni <b>giochi commerciali!</b>.<br>Controlla la loro <a href=\"compatibility.html?lang=it\">lista di compatibilità</a>.<br><br>Tuttavia diverse homebrew sono supportate anche. Controlla la <a href=\"compatibility-homebrew.html?lang=it\">lista di compatibilità</a> per ulteriori dettagli!", // 19
+	"L'emulatore può attualmente eseguire alcuni <b>giochi commerciali!</b>.<br>Controlla la loro <a href=\"compatibility.html?lang=it\">lista di compatibilità</a>.<br><br>Tuttavia diverse homebrew sono supportate anche. Controlla la <a href=\"compatibility-homebrew.html?lang=it\">lista di compatibilità homebrew</a> per ulteriori dettagli!", // 19
 	"Port Amatoriale", // 20
 	"PlayStation e PS Vita sono marchi registrati di Sony Interactive Entertainment Inc.", // 21
 	"L'emulatore non è correlato o certificato da Sony, nè derivato da materiale confidenziale appartenente alla Sony.", // 22
@@ -105,7 +105,7 @@ texts.push([
 	"Vous pouvez contacter les développeurs ainsi que les autres utilisateurs quand vous le voulez. Nous préférons notre serveur Discord mais le choix est vôtre !", // 16
 	"Rejoignez nous !", // 17
 	"Découvrez ce qui tourne actuellement !", // 18
-	"L'émulateur peut actuellement exécuter certains <b>jeux commerciaux!</b><br>Consultez leur <a href=\"compatibility.html?lang=fr\">liste de compatibilité</a>.<br><br>Plusieurs jeux 'homebrew' sont également supportés. Consultez la <a href=\"compatibility-homebrew.html?lang=fr\">liste de compatibilité</a> pour plus de détails!", // 19
+	"L'émulateur peut actuellement exécuter certains <b>jeux commerciaux!</b><br>Consultez leur <a href=\"compatibility.html?lang=fr\">liste de compatibilité</a>.<br><br>Plusieurs jeux 'homebrew' sont également supportés. Consultez la <a href=\"compatibility-homebrew.html?lang=fr\">liste de compatibilité homebrew</a> pour plus de détails!", // 19
 	"Port de jeu Homebrew", // 20
 	"PlayStation et PS Vita sont des marques déposées par Sony Interactive Entertainment Inc.", // 21
 	"Vita3K n'est pas lié ou approuvé par Sony, ou dérivé de documents confidentiels appartenant à Sony.", // 22
@@ -147,7 +147,7 @@ texts.push([
 	"تواصل مع المطورين و المستخدمين حينما تريد, نفضل استخدام Discord ولكن الخيار لك", // 16
 	"!انضم الان", // 17
 	"!تفقد ماذا يتوافق الان", // 18
-	"!المحاكي يستطيع تشغيل بعض <b>الالعاب التجارية</b><br>تفقد <a href=\"compatibility.html?lang=ar\">قائمة التوافق</a> الخاصة بهم<br><br>بعض الالعاب المنزلية تشتغل ايضاً. تفقد <a href=\"compatibility-homebrew.html?lang=ar\"> قائمة التوافق<a/> لمزيد من التفاصيل ", // 19
+	"!المحاكي يستطيع تشغيل بعض <b>الالعاب التجارية</b><br>تفقد <a href=\"compatibility.html?lang=ar\">قائمة التوافق</a> الخاصة بهم<br><br>بعض الالعاب المنزلية تشتغل ايضاً. تفقد <a href=\"compatibility-homebrew.html?lang=ar\"> قائمة توافق الالعاب المنزلية<a/> لمزيد من التفاصيل ", // 19
 	"لعبة منزلية محوّلة", // 20
 	"PlayStation و PS Vita هما علامتين تجاريتين لشركة Sony Interactive Entertainment Inc.", // 21
 	"المحاكي غير مرتبط او مؤيد من ٍSony, او مأخوذ من مستندات سرية تنتمي الى Sony. ", // 22
@@ -189,7 +189,7 @@ texts.push([
 	"Ελάτε σε επαφή με τους προγραμματιστές και τους άλλους χρήστες όποτε θέλετε. Προτιμούμε το Discord αλλά η επιλογή εξαρτάται από εσάς!", // 16
 	"Εγγραφείτε τώρα!", // 17
 	"Δείτε τι τρέχει τώρα!", // 18
-	"O εξομοιωτής μπορεί να τρέξει μερικά <b>εμπορικά παιχνίδια!</b><br>Eλέγξτε τη <a href=\"compatibility.html?lang=gr\">λίστα συμβατότητας</a>.<br><br>Υποστηρίζονται επίσης πολλοί homebrews. Eλέγξτε τη <a href=\"compatibility-homebrew.html?lang=gr\">λίστα συμβατότητας</a> για περισσότερες λεπτομέρειες.", // 19
+	"O εξομοιωτής μπορεί να τρέξει μερικά <b>εμπορικά παιχνίδια!</b><br>Eλέγξτε τη <a href=\"compatibility.html?lang=gr\">λίστα συμβατότητας</a>.<br><br>Υποστηρίζονται επίσης πολλοί homebrews. Eλέγξτε τη <a href=\"compatibility-homebrew.html?lang=gr\">homebrew λίστα συμβατότητας</a> για περισσότερες λεπτομέρειες.", // 19
 	"Μετατρεμμένο παιχνίδι Homebrew", // 20
 	"Το PlayStation και το PS Vita είναι εμπορικά σήματα της Sony Interactive Entertainment Inc.", // 21
 	"Ο εξομοιωτής δεν σχετίζεται με την Sony ούτε προέρχεται από εμπιστευτικά υλικά που ανήκουν στη Sony.", // 22
@@ -231,7 +231,7 @@ texts.push([
 	"Liên lạc với các lập trình viên và các người dùng khác lúc nào bạn muốn. Chúng tôi ưu tiên sever Discord, nhưng bạn là người quyết định!", // 16
 	"Tham gia ngay hôm nay!", // 17
 	"Hãy xem hiện tại trình giả lập chạy được những gì!", // 18
-	"Trình giả lập hiện có thể chạy một số <b>trò chơi thương mại!</b><br>Kiểm tra <a href=\"compatibility.html?lang=vn\">danh sách tương thích</a> của họ.<br><br>Một số trò chơi homebrew cũng được hỗ trợ. Truy cập <a href=\"compatibility-homebrew.html?lang=vn\">danh sách tương thích</a> để biết thêm chi tiết.", // 19
+	"Trình giả lập hiện có thể chạy một số <b>trò chơi thương mại!</b><br>Kiểm tra <a href=\"compatibility.html?lang=vn\">danh sách tương thích</a> của họ.<br><br>Một số trò chơi homebrew cũng được hỗ trợ. Truy cập <a href=\"compatibility-homebrew.html?lang=vn\">danh sách tương thích homebrew</a> để biết thêm chi tiết.", // 19
 	"Game Homebrew được Port", // 20
 	"Playstation và PS Vita đều là thương hiệu của Sony Interactive Entertainment Inc.", // 21
 	"Trình giả lập không liên quan hay được xác nhận bởi Sony, không dựa trên nền tảng những chương trình hay tài liệu mật thuộc về Sony.", // 22
@@ -273,7 +273,7 @@ texts.push([
 	"Neem contact op met de ontwikkelaars en andere gebruikers wanneer je maar wilt. Doe dit het liefst via Discord, maar de keuze ligt bij jou!", // 16
 	"Doe mee!", // 17
 	"Kijk wat we aan het doen zijn!", // 18
-	"De emulator kan enkele <b>commerciële spellen</b> spelen!<br>Bekijk hun <a href=\"compatibility.html?lang=nl\">compatibiliteitslijst</a>.<br><br>Een paar homebrew-spellen worden ook ondersteund. Zie de <a href=\"compatibility-homebrew.html?lang=nl\">compatibiliteitslijst</a> voor meer informatie.", // 19
+	"De emulator kan enkele <b>commerciële spellen</b> spelen!<br>Bekijk hun <a href=\"compatibility.html?lang=nl\">compatibiliteitslijst</a>.<br><br>Een paar homebrew-spellen worden ook ondersteund. Zie de <a href=\"compatibility-homebrew.html?lang=nl\">homebrew compatibiliteitslijst</a> voor meer informatie.", // 19
 	"Homebrew Game Port", // 20
 	"PlayStation en PS Vita zijn handelsmerken van Sony Interactive Entertainment Inc.", // 21
 	"Deze emulator wordt niet ondersteund en staat los van Sony en is niet afgeleid van vertrouwelijk materiaal in het bezit van Sony.", // 22
@@ -315,7 +315,7 @@ texts.push([
 	"Skontaktuj się z deweloperami i innymi użytkownikami kiedy tylko chcesz. Wolimy Discord, ale to twój wybór!", // 16
 	"Dołącz!", // 17
 	"Sprawdź co działa!", // 18
-	"Ten emulator może grać w kilka <b>gier komercyjnych!</b><br>Sprawdź <a href=\"compatibility.html?lang=pl\">listę kompatybilności</a><br><br>Wiele gier homebrew jest również obsługiwane. Sprawdzić <a href=\"compatibility-homebrew.html?lang=pl\">listę kompatybilnośći</a> po więcej szczegółów!", // 19
+	"Ten emulator może grać w kilka <b>gier komercyjnych!</b><br>Sprawdź <a href=\"compatibility.html?lang=pl\">lista kompatybilnośći</a><br><br>Wiele gier homebrew jest również obsługiwane. Sprawdzić <a href=\"compatibility-homebrew.html?lang=pl\">lista kompatybilnośći homebrew</a> po więcej szczegółów!", // 19
 	"Port gry homebrew", // 20
 	"PlayStation and PS Vita są znakami towarowymi Sony Interactive Entertainment Inc.", // 21
 	"Emulator nie jest powiązany z firmą Sony, nie jest przez nią wspierany ani nie korzysta z poufnych materiałów należących do firmy Sony.", // 22
@@ -357,7 +357,7 @@ texts.push([
 	"Entre em contato com os desenvolvedores e outro usuários sempre que quiser. Nós preferimos nosso servidor no Discord, mas a escolha é sua!", // 16
 	"Junte-se agora", // 17
 	"Olhe o que está rodando!", // 18
-	"O emulador pode rodar alguns <b>jogos comerciais!</b><br>Verifique sua <a href=\"compatibility.html?lang=br\">lista de compatibilidade</a>.<br><br>Vários jogos homebrew também são suportados. Olhe a <a href=\"compatibility-homebrew.html?lang=br\">lista de compatibilidade</a> para maiores detalhes", // 19
+	"O emulador pode rodar alguns <b>jogos comerciais!</b><br>Verifique sua <a href=\"compatibility.html?lang=br\">lista de compatibilidade</a>.<br><br>Vários jogos homebrew também são suportados. Olhe a <a href=\"compatibility-homebrew.html?lang=br\">lista de compatibilidade de homebrew</a> para maiores detalhes", // 19
 	"Porte de Jogo Homebrew", // 20
 	"PlayStation e PS Vita são marcas registradas da Sony Interactive Entertainment Inc.", // 21
 	"O emulador não é relacionado com ou endossado pela Sony ou derivado de materiais confidenciais pertencentes a Sony.", // 22
@@ -399,7 +399,7 @@ texts.push([
 	"Поддерживайте контакт с разработчиками и другими пользователями когда захотите. Мы предпочитаем наш сервер Discord, но выбор за вами!", // 16
 	"Присоединиться!", // 17
 	"Оцените перечень запускаемого!", // 18
-	"Эмулятор может играть в некоторые <b>коммерческие игры!</b><br>Проверьте их <a href=\"compatibility.html?lang=ru\">список совместимости</a>.<br><br>Несколько самодельных игр также поддерживаются. Cверьтесь со <a href=\"compatibility-homebrew.html?lang=ru\">списком совместимости</a> для больших подробностей", // 19
+	"Эмулятор может играть в некоторые <b>коммерческие игры!</b><br>Проверьте их <a href=\"compatibility.html?lang=ru\">список совместимости</a>.<br><br>Несколько самодельных игр также поддерживаются. Cверьтесь со <a href=\"compatibility-homebrew.html?lang=ru\">самоделки список совместимости</a> для больших подробностей", // 19
 	"Самодельный порт игры", // 20
 	"Торговые марки PlayStation и PS Vita принадлежат Sony Interactive Entertainment Inc.", // 21
 	"Эмулятор разрабатывается независимо и без одобрения от Sony, не основываясь на конфиденциальных материалах, принадлежащих Sony.", // 22
@@ -441,7 +441,7 @@ texts.push([
 	"随时与开发人员和其他用户交流。我们更喜欢通过我们的Discord服务器来交流，但我们尊重您的选择！", // 16
 	"立即加入！", // 17
 	"查看当前可运行的内容！", // 18
-	"模拟器目前可以运行一些<b>商业游戏</b>！<br>点击查看<a href=\"/compatibility.html?lang=zh\">兼容性列表<a>。<br><br>并且也支持一些自制程序。点击查看<a href=\"compatibility-homebrew.html?lang=zh\">兼容性列表</a>来了解更多详情。", // 19
+	"模拟器目前可以运行一些<b>商业游戏</b>！<br>点击查看<a href=\"/compatibility.html?lang=zh\">兼容性列表<a>。<br><br>并且也支持一些自制程序。点击查看<a href=\"compatibility-homebrew.html?lang=zh\">自制程序兼容性列表</a>来了解更多详情。", // 19
 	"自制游戏端口", // 20
 	"PlayStation 和 PS Vita 是 Sony Interactive Entertainment Inc.（索尼互动娱乐）的注册商标。", // 21
 	"此模拟器与索尼公司无关，也没有获得索尼公司的认可，更没有包含索尼公司的机密资料。", // 22
@@ -483,7 +483,7 @@ texts.push([
 	"開発者や他のユーザーと好きな時に連絡を取ることができます。私たちはDiscordサーバーを使うことを希望しますが、選択はあなた次第です。", // 16
 	"参加する", // 17
 	"現在動作するものを調べる", // 18
-	"エミュレーターは現在いくつかの<b>商用ゲーム</b>が動作可能です。<br><a href=\"/compatibility.html?lang=ja\">互換性リスト<a>をご確認ください。<br><br>いくつかの自作ソフトも動作可能です。<a href=\"compatibility-homebrew.html?lang=ja\">互換性リスト</a>で詳細をご確認ください。", // 19
+	"エミュレーターは現在いくつかの<b>商用ゲーム</b>が動作可能です。<br><a href=\"/compatibility.html?lang=ja\">互換性リスト<a>をご確認ください。<br><br>いくつかの自作ソフトも動作可能です。<a href=\"compatibility-homebrew.html?lang=ja\">自作互換性リスト</a>で詳細をご確認ください。", // 19
 	"Homebrew Game Port", // 20
 	"PlayStation および PS Vita は株式会社ソニー・インタラクティブエンタテインメントの商標です。", // 21
 	"このエミュレータはソニーと関係がなく、またソニーが保証するものでもなく、ソニーに帰属する機密資料から派生したものでもありません。", // 22
