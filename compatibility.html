@@ -35,7 +35,7 @@ nav: compat
         var page = 1
         while (pagination) {
             if (page == numberOfPages) pagination = false
-            await $http.get("https://api.github.com/repos/Vita3K/compatibility/issues?state=open&page=" + page + "&per_page=100")
+            $http.get("https://api.github.com/repos/Vita3K/compatibility/issues?state=open&page=" + page++ + "&per_page=100")
                 .success(function (data) {
                 var i = 0,
                     j = 0
@@ -78,7 +78,6 @@ nav: compat
                 .error(function () {
                     pagination = false;
                 });
-            page++
         }
         $scope.changeView = function (field) {
             $scope.data = $scope.views[field]
@@ -177,7 +176,7 @@ nav: compat
                             </tr>
                             <tr>
                                 <td>
-                                    <small><font color=#fbca04>{{texts[10]}} ({{((views[7].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[32]}}</font></small>
+                                    <small><font color=#fbca04>{{texts[10]}} ({{((views[10].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[32]}}</font></small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
