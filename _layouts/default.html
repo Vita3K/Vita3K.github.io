@@ -17,7 +17,7 @@
 
                 function GetLatestReleases() {
                    $http.get("https://api.github.com/repos/Vita3K/Vita3K/releases/tags/continuous").success(function(json) {
-                        ['windows', 'ubuntu'].forEach(os => {
+                        ['ubuntu', 'macos', 'windows'].forEach(os => {
                             const downloadURL = json.assets.filter((release) => {
                                 return release.name === os + "-latest.zip";
                             }).pop().browser_download_url;
