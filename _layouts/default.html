@@ -17,13 +17,21 @@
 
                 function GetLatestReleases() {
                    $http.get("https://api.github.com/repos/Vita3K/Vita3K/releases/tags/continuous").success(function(json) {
-                        ['ubuntu', 'macos', 'windows'].forEach(os => {
+                        ['ubuntu', 'windows'].forEach(os => {
                             const downloadURL = json.assets.filter((release) => {
                                 return release.name === os + "-latest.zip";
                             }).pop().browser_download_url;
                             $(`#${os}URL`).attr("href", `${downloadURL}?time=${Date.now().toString()}`);
                         });
                    });
+                    $http.get("https://api.github.com/repos/Vita3K/Vita3K/releases/tags/continuous").success(function (json) {
+                        ['macos'].forEach(os => {
+                            const downloadURL = json.assets.filter((release) => {
+                                return release.name === os + "-latest.dmg";
+                            }).pop().browser_download_url;
+                            $(`#${os}URL`).attr("href", `${downloadURL}?time=${Date.now().toString()}`);
+                        });
+                    });
                 }
 
                 function GetFirmware() {
