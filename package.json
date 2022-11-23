@@ -8,7 +8,7 @@
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^4.3.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "gulp-header": "^2.0.9",
     "jquery": "^3.5.1",
