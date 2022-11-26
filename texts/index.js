@@ -39,7 +39,8 @@ texts.push([
 	"What's new", // 34
 	"We have a blog where we regularly publish detailed reports with the latest progress in our work. Come to read what's new!", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"Not yet", // 38
 ])
 
 // Italian (translation provided by Rinnegatamante)
@@ -81,7 +82,8 @@ texts.push([
 	"Cosa c'è di nuovo", // 34
 	"E' disponibile un blog nel quale pubblichiamo mensilmente un resoconto dettagliato inerente gli ultimi progressi nell'emulatore. Corri a leggere cosa c'è di nuovo!", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"Non ancora", // 38(made by nishinji, translated by deepl)
 ])
 
 // French (translation provided by Drayano)
@@ -123,7 +125,8 @@ texts.push([
 	"What's new", // 34
 	"We have a blog were we push detailed reports with the latest progress in our work. Come to read what's new!", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"Pas encore", // 38(made by nishinji, translated by deepl)
 ])
 
 // Arabic (translation provided by IllusionMan1212)
@@ -165,7 +168,8 @@ texts.push([
 	"ماذا جديد", // 34
 	"!لدينا مدونة حيث نكتب شهريا تقريرا مفصلا بأحدث التطورات في عملنا. تعالوا اقرؤا ماذا جديد", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"ليس بعد", // 38(made by nishinji, translated by Googletranslate)
 ])
 
 // Greek (translation provided by VelocityRa)
@@ -207,7 +211,8 @@ texts.push([
 	"Νέα", // 34
 	"Έχουμε blog στο οποίο αναρτούμε νέες εξελίξεις. Ελάτε να δείτε τι είναι νέο!", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"Όχι ακόμα", // 38(made by nishinji, translated by deepl)
 ])
 
 // Vietnamese (Translation provided by Bentokun)
@@ -249,7 +254,8 @@ texts.push([
 	"What's new", // 34
 	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"Vẫn chưa", // 38(made by nishinji, translated by googletranslate)
 ])
 
 // Dutch (Translation provided by jelle619)
@@ -291,7 +297,8 @@ texts.push([
 	"Wat nieuw is", // 34
 	"We hebben een blog waar we maandelijks nieuwe gedetaileerde rapporten publiceren met het laatst geboekte voortgang in ons werk. Neem een bezoekje om te kijken wat nieuw is!", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"Nog niet", // 38(made by nishinji, translated by deepl)
 ])
 
 // Polish (Translation provided by circl, corrected by kacek)
@@ -333,7 +340,8 @@ texts.push([
 	"Co nowego", // 34
 	"Prowadzimy bloga gdzie publikujemy miesięczne szczegółowe raporty z najnowszym postępem. Przeczytaj co nowego!", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"Jeszcze nie", // 38(made by nishinji, translated by deepl)
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
@@ -375,7 +383,8 @@ texts.push([
 	"O que há de novo.", // 34
 	"Nós temos um blog onde nós postamos relatorios detalhados dos nossos ultimos progressos no nosso trabalho. Venha ler o que há de novo!", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"Ainda não", // 38(made by nishinji, translated by deepl)
 ])
 
 // Russian (Translation provided by DumF0rGaming)
@@ -417,7 +426,8 @@ texts.push([
 	"Что нового", // 34
 	"У нас есть блог, в котором мы регулярно публикуем подробные отчеты о текущем прогрессе в нашем деле. Заходите почитать о нововведениях!", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"Пока нет", // 38(made by nishinji, translated by deepl)
 ])
 
 // Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
@@ -459,7 +469,8 @@ texts.push([
 	"最新资讯", // 34
 	"我们这里有一个博客，定期发布我们工作最新进展的详细报告。来看看有什么新鲜事！", // 35
 	"Quickstart", // 36
-	"Blog" // 37
+	"Blog", // 37
+	"还没有", // 38(made by nishinji, translated by deepl)
 ])
 
 // Japanese (Translation provided by nishinji)
@@ -501,5 +512,6 @@ texts.push([
 	"新着情報", // 34
 	"私たちはブログで、定期的に仕事の最新の進捗状況を詳しく報告しています。新着情報を読みにきてください！", // 35
 	"クイックスタート", // 36
-	"ブログ" // 37
+	"ブログ", // 37
+	"作業中", // 38
 ])
