@@ -427,7 +427,7 @@ texts.push([
 	"У нас есть блог, в котором мы регулярно публикуем подробные отчеты о текущем прогрессе в нашем деле. Заходите почитать о нововведениях!", // 35
 	"Руководство", // 36
 	"Блог", // 37
-	"Пока не готовы", // 38(made by nishinji, translated by Dum4G)
+	"Пока не готово", // 38(made by nishinji, translated by Dum4G)
 ])
 
 // Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
