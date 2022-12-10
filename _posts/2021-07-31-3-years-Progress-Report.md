@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "3 years Progress Report"
+title: "3 years Progress Report: Summer 2021"
 ---
 
 Welcome to the 3 years progress report. Since the last report, three years have passed, however, from there, no more reports were submitted. Many people thought the project was dead, many came to the communication channels like Discord server for an answer. So what happened between this long gap?
@@ -240,3 +240,6 @@ Will there be any more progress reports frequently after this? With the progress
 However, you can still keep track of the current progress and changes in the Discord, which is where most of the news is being talked about. With the new bounty system being introduced, we hope other people will spend their time and talent contributing to the emulator.
 
 We do not consider ourself to be in a race, we are just chilling developers doing the work sometimes.
+
+### Github Statistics
+The past three years, [**47 contributors**](https://github.com/Vita3K/Vita3K/graphs/contributors?from=2018-08-31&to=2021-07-31&type=c) pushed [1633 commits](https://github.com/Vita3K/Vita3K/compare/master@%7B08-31-2018%7D...master@%7B07-31-2021%7D), introducing **129,379** added lines and **121,988** deletions in **1,305 files**.
