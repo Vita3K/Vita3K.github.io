@@ -387,7 +387,7 @@ texts.push([
 	"Ainda não", // 38(made by nishinji, translated by deepl)
 ])
 
-// Russian (Translation provided by DumF0rGaming, Kane)
+// Russian (Translation provided by Dum4G, Kane)
 texts.push([
 	"ОБ Vita3K", // 0
 	"Скачать", // 1
@@ -425,9 +425,9 @@ texts.push([
 	"Отчитывайтесь о неполадках и предлагайте код в нашем <a href=\"https://github.com/Vita3K/Vita3K\">репозитории на GitHub</a>.", // 33
 	"Что нового", // 34
 	"У нас есть блог, в котором мы регулярно публикуем подробные отчеты о текущем прогрессе в нашем деле. Заходите почитать о нововведениях!", // 35
-	"Быстрый Старт", // 36
+	"Руководство", // 36
 	"Блог", // 37
-	"Пока нет", // 38(made by nishinji, translated by deepl)
+	"Пока не готово", // 38
 ])
 
 // Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
