@@ -389,7 +389,7 @@ texts.push([
 
 // Russian (Translation provided by Dum4G, Kane)
 texts.push([
-	"ОБ Vita3K", // 0
+	"О Vita3K", // 0
 	"Скачать", // 1
 	"Сообщество", // 2
 	"Совместимость", // 3
