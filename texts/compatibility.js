@@ -82,7 +82,7 @@ texts.push([
 	testare nuovamente i loro giochi con le ultime build dell'emulatore ogni poche settimane per aggiornare i rapporti di compatibilità." // 34 (translated using DeepL)
 ])
 
-// French (translation provided by Drayano)
+// French (translation provided by Drayano, small correction by Zangetsu38)
 texts.push([
 	"Inconnu", // 0
 	"Crash", // 1
@@ -93,8 +93,8 @@ texts.push([
 	"Amorçable", // 6
 	"Intro", // 7
 	"Menu", // 8
-	"Dans Jeu -", // 9
-	"Dans Jeu +", // 10
+	"En Jeu -", // 9
+	"En Jeu +", // 10
 	"Tout", // 11
 	"Page d'accueil", // 12
 	"Liste de Compatibilité Homebrew", // 13
