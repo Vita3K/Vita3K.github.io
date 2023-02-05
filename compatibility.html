@@ -110,19 +110,19 @@ nav: compat
                     <input style="display:inline-block;vertical-align:middle;" type="text" ng-model="field" class="form-control" placeholder="{{texts[24]}}..." required="true" />
                     <br>
                     <br>{{texts[14]}}:
-                    <a href="#" class="plate" ng-click="changeView(5)" style="background-color: red">{{texts[5]}} ({{views[5].length}})</a>
-                    <a href="#" class="plate" ng-click="changeView(6)" style="background-color: #621fa5">{{texts[6]}} ({{views[6].length}})</a>
-                    <a href="#" class="plate" ng-click="changeView(7)" style="background-color: #d93f0b">{{texts[7]}} ({{views[7].length}})</a>
-                    <a href="#" class="plate" ng-click="changeView(8)" style="background-color: #85def2">{{texts[8]}} ({{views[8].length}})</a>
-                    <a href="#" class="plate" ng-click="changeView(9)" style="background-color: #fbca04">{{texts[9]}} ({{views[9].length}})</a>
+                    <a href="#" class="plate" ng-click="changeView(5)" style="background-color: #e02020">{{texts[5]}} ({{views[5].length}})</a>
+                    <a href="#" class="plate" ng-click="changeView(6)" style="background-color: #7030b0">{{texts[6]}} ({{views[6].length}})</a>
+                    <a href="#" class="plate" ng-click="changeView(7)" style="background-color: #c71585">{{texts[7]}} ({{views[7].length}})</a>
+                    <a href="#" class="plate" ng-click="changeView(8)" style="background-color: #1e64dc">{{texts[8]}} ({{views[8].length}})</a>
+                    <a href="#" class="plate" ng-click="changeView(9)" style="background-color: #e08a1e">{{texts[9]}} ({{views[9].length}})</a>
                     <a href="#" class="plate" ng-click="changeView(10)" style="background-color: #fbca04">{{texts[10]}} ({{views[10].length}})</a>
                     <a href="#" class="plate" ng-click="changeView(4)" style="background-color: #0e8a16">{{texts[4]}} ({{views[4].length}})</a>
-                    <a href="#" class="plate" ng-click="changeView(0)" style="background-color: blue">{{texts[11]}} ({{views[0].length}})</a>
+                    <a href="#" class="plate" ng-click="changeView(0)" style="background-color: #3030ff">{{texts[11]}} ({{views[0].length}})</a>
                     <center>
                         <table>
                             <tr>
                                 <td>
-                                    <small><font color=red>{{texts[5]}} ({{((views[5].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[27]}}</font></small></td>
+                                    <small><font color=#ff2020>{{texts[5]}} ({{((views[5].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[27]}}</font></small></td>
                                 <td width="25%">
                                     <div class="progress">
                                         <div class="progress-bar progress-bar-striped progress-bar-animated bg-nothing" style="width:{{(views[5].length/views[0].length)*100}}%">
@@ -132,7 +132,7 @@ nav: compat
                             </tr>
                             <tr>
                                 <td>
-                                    <small><font color=#621fa5>{{texts[6]}} ({{((views[6].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[28]}}</font></small>
+                                    <small><font color=#a060ff>{{texts[6]}} ({{((views[6].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[28]}}</font></small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
@@ -143,7 +143,7 @@ nav: compat
                             </tr>
                             <tr>
                                 <td>
-                                    <small><font color=#d93f0b>{{texts[7]}} ({{((views[7].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[29]}}</font></small>
+                                    <small><font color=#e632aa>{{texts[7]}} ({{((views[7].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[29]}}</font></small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
@@ -154,7 +154,7 @@ nav: compat
                             </tr>
                             <tr>
                                 <td>
-                                    <small><font color=#85def2>{{texts[8]}} ({{((views[8].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[30]}}</font></small>
+                                    <small><font color=#50a0fa>{{texts[8]}} ({{((views[8].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[30]}}</font></small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
@@ -165,18 +165,18 @@ nav: compat
                             </tr>
                             <tr>
                                 <td>
-                                    <small><font color=#fbca04>{{texts[9]}} ({{((views[9].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[31]}}</font></small>
+                                    <small><font color=#f0a000>{{texts[9]}} ({{((views[9].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[31]}}</font></small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-ingame" style="width:{{(views[9].length/views[0].length)*100}}%">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-" style="width:{{(views[9].length/views[0].length)*100}}%">
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <small><font color=#fbca04>{{texts[10]}} ({{((views[10].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[32]}}</font></small>
+                                    <small><font color=#ffd250>{{texts[10]}} ({{((views[10].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[32]}}</font></small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
@@ -187,7 +187,7 @@ nav: compat
                             </tr>
                             <tr>
                                 <td>
-                                    <small><font color=#0e8a16>{{texts[4]}} ({{((views[4].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[33]}}</font></small>
+                                    <small><font color=#28AA28>{{texts[4]}} ({{((views[4].length/views[0].length)*100).toFixed(2)}}%):</font> <font color=#ffffff>{{texts[33]}}</font></small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
