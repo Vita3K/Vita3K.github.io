@@ -92,23 +92,27 @@ h6 {
 }
 
 .bg-nothing {
-  background-color: #b60205;
+  background-color: #ff1010;
 }
 
 .bg-bootable {
-  background-color: #621fa5;
+  background-color: #7030b0;
 }
 
 .bg-intro {
-  background-color: #d93f0b;
+  background-color: #c71585;
 }
 
 .bg-menu {
-  background-color: #85def2;
+  background-color: #1e64dc;
+}
+
+.bg-ingame- {
+  background-color: #e08a1e;
 }
 
 .bg-ingame {
-  background-color: #fbca04;
+  background-color: #ffd250;
 }
 
 .bg-playable {
