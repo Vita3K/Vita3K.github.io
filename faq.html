@@ -18,7 +18,7 @@ texts: compatibility
                 <br>
             </div>
             <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-1">Frequently asked questions</p>
+                <p class="text-faded mb-1">Frequently asked questions.</p>
             </div>
         </div>
     </div>
@@ -28,39 +28,54 @@ texts: compatibility
         <h3>What are the system requirements I need to run it?</h3>
         <div class="my-5">
             <h6>
-               The requirements for running Vita3K are still not fully known and may change a lot during its current development stage. The absolute minimum requirements for running the program are:<br /><br />
-               <li>CPU: An x64 CPU</li>
-               <li>GPU: An OpenGL 4.4 capable graphics</li>
-               <li>OS: Windows 8/10/11, macOS and Linux (Must be a 64-bits OS)</li><br />
-               See the <a href="/quickstart.html">Quickstart</a> for more information.
+                The requirements for running Vita3K are still not fully known and may change a lot during its current development stage. 
+                The absolute minimum requirements for running the program are:<br /><br />
+            </h6>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 d-flex flex-column">
+                    <strong>PC</strong>
+                    <li>CPU: CPU with the AVX instruction set</li>
+                    <li>GPU: An OpenGL 4.4 capable graphics</li>
+                    <li>RAM: Minimum of 4GB RAM</li>
+                    <li>OS: Windows 8/10/11, macOS and Linux (Must be a 64-bits OS)</li><br />
+                </div>
+                <div class="col-lg-6 d-flex flex-column">
+                    <strong>Android</strong>
+                    <li>CPU: An AArch64 CPU</li>
+                    <li>GPU: Vulkan 1.0 support</li>
+                    <li>OS: Android 7+</li><br />
+                </div>
+            </div>
+            <h6>
+                See the <a href="/quickstart.html">Quickstart</a> for more information.
             </h6>
         </div>
         <h3>What is Vita3K and where can I get it?</h3>
         <div class="my-5">
             <h6>
-               Vita3K is an open-source experimental Sony PlayStation Vita emulator for Windows, macOS and Linux written in C++. It is currently capable of booting and playing commercial games. Please check the <a href="/compatibility.html">Compatibility List</a>.
-               The source code for Vita3K is hosted here on <a href="https://github.com/Vita3K/Vita3K/">GitHub</a>. You may grab the latest compiled revisions in <a href="/index.html">Home Page</a>.
-            </h6>
-        </div>
-        <h3>How can I get Vita3K Android?</h3>
-        <div class="my-5">
-            <h6>
-               There is <strong>No Vita3K version for Android</strong> at the moment. Any links you find for .apk's are FAKE. Android version is under development.
-               There is no ETA on this, and there will be many bugs and it will take a while until it's ready to begin porting. Again, there is <strong>NO Vita3K Android</strong>.
+                Vita3K is an open-source experimental Sony PlayStation Vita emulator for Windows, macOS, Linux and Android written in C++. 
+                It is currently capable of booting and playing commercial games. Please check the <a href="/compatibility.html">Compatibility List</a>.
+                The source code for Vita3K is hosted here on <a href="https://github.com/Vita3K/Vita3K/">GitHub</a>. 
+                You may grab the latest compiled revisions in <a href="/index.html">Home Page</a>.
             </h6>
         </div>
         <h3>Does Vita3K support commercial games?</h3>
         <div class="my-5">
             <h6>
-               <strong>Some</strong>. Please see <a href="/compatibility.html">Compatibility List</a>. The emulator is in an early stage of development and a lot of features required to run many commercial games haven't been implemented yet. Currently, many games made with GameMaker Engine work flawlessly.
-                More games will be supported when the hardware/firmware emulation is accurate enough to run them. It all depends on the amount of developers working on this project, their skills, and free time, etc. Ignore any estimates and guesses you find out there.
+                <strong>Some</strong>. Please see <a href="/compatibility.html">Compatibility List</a>.
+                The emulator is in an early stage of development and a lot of features required to run many commercial games haven't been implemented yet. 
+                Currently, many games made with GameMaker Engine work flawlessly.
+                More games will be supported when the hardware/firmware emulation is accurate enough to run them. 
+                It all depends on the amount of developers working on this project, their skills, and free time, etc. Ignore any estimates and guesses you find out there.
             </h6>
         </div>
         <h3>How to get games?</h3>
         <div class="my-5">
             <h6>
-               For homebrew, get them via <a href="https://vitadb.rinnegatamante.it/">VitaDB</a>.
-               For commercial games, dump them with <a href="https://github.com/TheOfficialFloW/NoNpDrm/releases">NoNpDrm</a>. If the game is known to not work with NoNpDrm, you can optionally replace the executable with a <a href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build">FAGDec</a> dump. Vitamin dumps are <strong>not</strong> supported.
+                For homebrew, get them via <a href="https://vitadb.rinnegatamante.it/">VitaDB</a>. 
+                For commercial games, dump them with <a href="https://github.com/TheOfficialFloW/NoNpDrm/releases">NoNpDrm</a>. 
+                If the game is known to not work with NoNpDrm, you can optionally replace the executable with a <a href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build">FAGDec</a> dump. 
+                Vitamin dumps are <strong>not</strong> supported.
             </h6>
         </div>
         <h3>How to run games?</h3>
@@ -73,7 +88,7 @@ texts: compatibility
                 Windows:<br />
                 Right click on a <code>.vpk</code>, go to Properties and click "Change..." to associate <code>Vita3K.exe</code> with <code>.vpk</code> files. Double-clicking them should work after that.
                 Alternatively, drag and drop games to <code>Vita3K.exe</code>.<br /><br />
-                Windows/Linux/macOS:<br />
+                Windows/Linux/macOS/Android:<br />
                 Games can be installed via the emulator directly through the <code>File > Install .pkg</code> or <code>File > Install .zip .vpk</code>.<br />
                 Alternatively, supply them as a command-line argument to the executable or install them manually by unzipping the <code>.vpk</code>  to Vita3K's home directory (see below).
             </h6>
@@ -83,22 +98,34 @@ texts: compatibility
             <h6>
                 They are installed in the Vita3K home directory, in <code><Vita3K_home_dir>/ux0/app/<Title_ID></code>.
                 Defaults are:<br />
-                Windows: <code>C:/Users/<username>/AppData/Roaming/Vita3K/Vita3k</code><br />
+                Windows: <code>C:/Users/"username"/AppData/Roaming/Vita3K/Vita3k</code><br />
                 Linux: <code>~/.local/share/Vita3K/Vita3K</code><br />
+                Android: <code>Android/data/org.vita3k.emulator/files</code>
                 You can change it by editing <code>config.yml</code>'s "<code>pref-path</code>" entry.
+            </h6>
+        </div>
+        <h3>What is vitamin dump and how does it differ from a regular dump?</h3>
+        <div class="my-5">
+            <h6>
+                Vitamin is (or rather was) a software for dumping PS Vita games from the cartridge or from the internal storage.
+                They generally have the <code>.vpk</code> extension. Vitamin dumps aren't allowed/don't work, because the data inside isn't properly ripped.
+                According to the developers of Vitamin, the software shouldn't be used because it contains bugs that can sometimes corrupt game data or corrupt your save file. 
+                The Recommended dumping way is to use <a href="https://github.com/TheOfficialFloW/NoNpDrm/releases">NoNpDrm</a> or <a href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build">FAGDec</a> with <a href="https://github.com/TheOfficialFloW/VitaShell/releases/tag/v2.02">VitaShell</a>. See the <a href="https://vita3k.org/quickstart.html">QuickStart guide</a>.
             </h6>
         </div>
         <h3>Why can't I play Vita3K?</h3>
         <div class="my-5">
             <h6>
-                See the <a href="/quickstart.html">Quickstart</a> for more information. If the Quick Start Guide and here do not solve your problem, please ask in the <strong>#help</strong> channel on the <a href="https://discord.gg/n8HV3dN">Discord</a> Server.
+                See the <a href="/quickstart.html">Quickstart</a> for more information. 
+                If the Quick Start Guide and here do not solve your problem, please ask in the <strong>#help</strong> channel on the <a href="https://discord.gg/n8HV3dN">Discord</a> Server.
                 Be sure to report your OS, Vita3K version, and PC configuration when you do so.
             </h6>
         </div>
         <h3>What input devices can I use with Vita3K?</h3>
         <div class="my-5">
             <h6>
-                We currently support keyboard / mouse inputs and <strong>SDL2</strong>-compliant devices can be used. DualShock4 and DualSense are usually recommended. The rear touchpad is realized with right click.
+                We currently support keyboard / mouse inputs and <strong>SDL2</strong>-compliant devices can be used. 
+                DualShock4 and DualSense are usually recommended. The rear touchpad is realized with right click.
             </h6>
         </div>
         <h3>Can I play multiplayer games online with real consoles or other Vita3K users?</h3>
@@ -158,7 +185,8 @@ texts: compatibility
                 <li>Search older issues/forum threads to see if your issue was already submitted.</li>
                 <li>Use understandable English. It doesn't need to be perfect, but clear enough to understand your message.</li>
                 <li>While reporting issues, don't forget to include details about your system (OS, CPU, GPU, etc.), as well as the Vita3K.log file.</li>
-                <li>Please do not post individual game issues. Please post them in the <a href="https://github.com/Vita3K/compatibility/issues">compatibility repository</a>. There are currently so many games with problems that it is difficult to accept them all.</li>
+                <li>Please do not post individual game issues. Please post them in the <a href="https://github.com/Vita3K/compatibility/issues">compatibility repository</a>. 
+                There are currently so many games with problems that it is difficult to accept them all.</li>
             </h6>
         </div>
     </div>
