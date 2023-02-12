@@ -82,7 +82,7 @@ texts.push([
 	testare nuovamente i loro giochi con le ultime build dell'emulatore ogni poche settimane per aggiornare i rapporti di compatibilità." // 34 (translated using DeepL)
 ])
 
-// French (translation provided by Drayano)
+// French (translation provided by Drayano, small correction by Zangetsu38)
 texts.push([
 	"Inconnu", // 0
 	"Crash", // 1
@@ -93,8 +93,8 @@ texts.push([
 	"Amorçable", // 6
 	"Intro", // 7
 	"Menu", // 8
-	"Dans Jeu -", // 9
-	"Dans Jeu +", // 10
+	"En Jeu -", // 9
+	"En Jeu +", // 10
 	"Tout", // 11
 	"Page d'accueil", // 12
 	"Liste de Compatibilité Homebrew", // 13
@@ -478,7 +478,7 @@ texts.push([
 	"このエミュレータはソニーとは無関係であり、ソニーが保証するものでもなく、ソニーに帰属する機密資料から派生したものでもありません。", // 22
 	"Logo by", // 23
 	"検索", // 24
-	"言語選択", // 25
+	"言語を選択", // 25
 	"互換性リスト", // 26
 	"FPSカウンターのある初期画面を表示せず、全く起動しないゲーム", // 27
 	"起動はするが、FPSカウンター付きの黒い画面しか表示されないゲーム", // 28
