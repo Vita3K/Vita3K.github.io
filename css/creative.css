@@ -643,3 +643,12 @@ iframe {
     margin: auto;
     text-align: center;
 }
+
+.fa-coffee::after {
+    content: '\f004';
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    margin: 9px 0 0 -44px;
+}

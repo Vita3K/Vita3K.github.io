@@ -30,8 +30,8 @@ texts.push([
 	"Select Language", // 25
 	"Update the <a href=\"https://github.com/Vita3K/compatibility/issues\">compatibility database</a>.", // 26 // do this for every lang also line // 19 for every lang
 	"Show us your love!", // 27
-	"If you would like to show your appreciation and even help fund development, the project has a <a href=\"https://www.patreon.com/Vita3K\">Patreon Page</a>.", // 28
-	"Become a Patron", // 29
+	"If you would like to show your appreciation and even help fund development, the project has a <a href=\"https://ko-fi.com/vita3k\">Ko-fi Page</a>.", // 28
+	"Become a Supporter", // 29
 	"Homebrew Game", // 30
 	"Homebrew Utility", // 31
 	"Help us get better!", // 32
@@ -73,8 +73,8 @@ texts.push([
 	"Seleziona Lingua", // 25
 	"Aggiorna il <a href=\"https://github.com/Vita3K/compatibility/issues\">database di compatibilità</a>.", // 26
 	"Mostraci il tuo amore!", // 27
-	"Se vuoi dimostrarci il tuo apprezzamento e finanziare lo sviluppo, il progetto ha una <a href=\"https://www.patreon.com/Vita3K\">pagina Patreon</a>.", // 28
-	"Diventa un Patron", // 29
+	"Se vuoi dimostrarci il tuo apprezzamento e finanziare lo sviluppo, il progetto ha una <a href=\"https://ko-fi.com/vita3k\">pagina Ko-fi</a>.", // 28
+	"Diventa un sostenitore", // 29
 	"Gioco Homebrew", // 30
 	"Tool Homebrew", // 31
 	"Aiutaci a migliorare!", // 32
@@ -116,8 +116,8 @@ texts.push([
 	"Choisissez votre langue", // 25
 	"Mettre à jour la <a href=\"https://github.com/Vita3K/compatibility/issues\">base de données de compatibilité</a>.", // 26
 	"Faire une donation !", // 27
-	"Si vous souhaitez aider à financer le développement, vous pouvez faire un don sur la <a href=\"https://www.patreon.com/Vita3K\">Page Patreon</a> du projet.", // 28
-	"Devenir un Patron", // 29
+	"Si vous souhaitez aider à financer le développement, vous pouvez faire un don sur la <a href=\"https://ko-fi.com/vita3k\">Page Ko-fi</a> du projet.", // 28
+	"Devenir un supporter", // 29
 	"Jeu Homebrew", // 30
 	"Homebrew Utilitaire", // 31
 	"Aidez nous à nous améliorer !", // 32
@@ -159,8 +159,8 @@ texts.push([
 	"اختر اللغة", // 25
 	"حدّث <a href=\"https://github.com/Vita3K/compatability/issues\">قاعدة بيانات الالعاب</a>.", //26
 	"اظهر لنا حبك", // 27
-	"اذا كنت ترغب في إظهار تقديرك وحتى مساعدة تنمية الأموال, لدى المشروع <a href=\"https://www.patreon.com/Vita3k\">صفحة Patreon</a>.", // 28
-	"اصبح داعم", // 29
+	"اذا كنت ترغب في إظهار تقديرك وحتى مساعدة تنمية الأموال, لدى المشروع <a href=\"https://ko-fi.com/vita3k\">صفحة Ko-fi</a>.", // 28
+	"كن مؤيدا", // 29
 	"لعبة منزلية", // 30
 	"برنامج منزلي", // 31
 	"ساعدنا لنصبح افضل", // 32
@@ -202,8 +202,8 @@ texts.push([
 	"Επιλογή γλώσσας", // 25
 	"Ενημερώστε τη <a href=\"https://github.com/Vita3K/compatibility/issues\">βάση δεδομένων συμβατότητας</a>.", // 26
 	"Δείξε μας την αγάπη σας!", // 27
-	"Εάν θέλετε να δείξετε την εκτίμησή σας και ακόμη και να βοηθήσετε την ανάπτυξη των πόρων, το έργο έχει <a href=\"https://www.patreon.com/Vita3K\">Σελίδα Patreon</a>.", // 28
-	"Γίνετε Patreon", // 29
+	"Εάν θέλετε να δείξετε την εκτίμησή σας και ακόμη και να βοηθήσετε την ανάπτυξη των πόρων, το έργο έχει <a href=\"https://ko-fi.com/vita3k\">Σελίδα Ko-fi</a>.", // 28
+	"Γίνετε Supporter", // 29
 	"Παιχνίδι Homebrew", // 30
 	"Βοηθητικό πρόγραμμα Homebrew", // 31
 	"Βοηθήστε μας να γίνουμε καλύτεροι!", // 32
@@ -245,8 +245,8 @@ texts.push([
 	"Chọn ngôn ngữ", // 25
 	"Giúp cập nhật <a href=\"https://github.com/Vita3K/compatibility/issues\">cơ sở dữ liệu tương thích</a>.", // 26
 	"Thể hiện tình yêu với chúng tôi!", // 27
-	"Nếu bạn muốn thể hiện lòng cảm kích và quyên góp cho chúng tôi, dự án có một <a href=\"https://www.patreon.com/Vita3K\">Trang Patreon</a>.", // 28
-	"Trở thành một Patron", // 29
+	"Nếu bạn muốn thể hiện lòng cảm kích và quyên góp cho chúng tôi, dự án có một <a href=\"https://ko-fi.com/vita3k\">Trang Ko-fi</a>.", // 28
+	"Trở thành một Supporter", // 29
 	"Game Homebrew", // 30
 	"Homebrew trợ giúp", // 31
 	"Giúp chúng tôi tốt hơn nữa!", // 32
@@ -288,8 +288,8 @@ texts.push([
 	"Selecteer Taal", // 25
 	"Update de <a href=\"https://github.com/Vita3K/compatibility/issues\">compatibiliteitslijst</a>.", // 26
 	"Toon ons je liefde!", // 27
-	"Indien jij je waardering wilt tonen en zelfs de ontwikkeling wilt financieren, kun je een kijkje nemen op de <a href=\"https://www.patreon.com/Vita3K\">Patreon-pagina</a> van dit project.", // 28
-	"Wordt een Patron", // 29
+	"Indien jij je waardering wilt tonen en zelfs de ontwikkeling wilt financieren, kun je een kijkje nemen op de <a href=\"https://ko-fi.com/vita3k\">Ko-fi-pagina</a> van dit project.", // 28
+	"Word een Supporter", // 29
 	"Homebrew Game", // 30
 	"Homebrew Hulpmiddel", // 31
 	"Help ons beter worden!", // 32
@@ -331,8 +331,8 @@ texts.push([
 	"Wybierz język", // 25
 	"Aktualizuj <a href=\"https://github.com/Vita3K/compatibility/issues\">listę kompatybilnośći</a>.", // 26
 	"Pokaż nam swoją miłość!", // 27
-	"Jeżeli chcesz pokazać nam swój szacunek i pomóc nam sfinansować rozwój tego projektu mamy <a href=\"https://www.patreon.com/Vita3K\">Patreona</a>.", // 28
-	"Stań się patronem", // 29
+	"Jeżeli chcesz pokazać nam swój szacunek i pomóc nam sfinansować rozwój tego projektu mamy <a href=\"https://ko-fi.com/vita3k\">Ko-fi</a>.", // 28
+	"Zostań wspierającym", // 29
 	"Gra homebrew", // 30
 	"Program homebrew", // 31
 	"Pomóż nam się ulepszać!", // 32
@@ -374,8 +374,8 @@ texts.push([
 	"Selecione o Idioma", // 25
 	"Atualizar o  <a href=\"https://github.com/Vita3K/compatibility/issues\">Banco de dados de compatibilidade</a>.", // 26
 	"Mostre-nos seu amor!", // 27
-	"Se você gostaria de mostrar seu carinho e até mesmo quer ajudar a nos financiar, o projeto tem uma <a href=\"https://www.patreon.com/Vita3K\">Página no Patreon</a>.", // 28
-	"Entre no Patron", // 29
+	"Se você gostaria de mostrar seu carinho e até mesmo quer ajudar a nos financiar, o projeto tem uma <a href=\"https://ko-fi.com/vita3k\">Página no Ko-fi</a>.", // 28
+	"Torne-se um apoiador", // 29
 	"Jogo Homebrew", // 30
 	"Homebrew de Utilidade", // 31
 	"Ajude-nos a melhorar!", // 32
@@ -417,8 +417,8 @@ texts.push([
 	"Выберите язык", // 25
 	"Обновляйте <a href=\"https://github.com/Vita3K/compatibility/issues\">список совместимости</a>.", // 26
 	"Проявите свою любовь!", // 27
-	"Если желаете проявить благодарность и проспонсировать разработку, проект имеет <a href=\"https://www.patreon.com/Vita3K\">Страницу на Patreon</a>.", // 28
-	"Стать Патроном", // 29
+	"Если желаете проявить благодарность и проспонсировать разработку, проект имеет <a href=\"https://ko-fi.com/vita3k\">Страницу на Ko-fi</a>.", // 28
+	"Γίνετε Υποστηρικτής", // 29
 	"Самодельная игра", // 30
 	"Самодельная утилита", // 31
 	"Помогите нам совершенствоваться!", // 32
@@ -460,8 +460,8 @@ texts.push([
 	"选择语言", // 25
 	"为<a href=\"https://github.com/Vita3K/compatibility/issues\">兼容性列表</a>更新数据库。", // 26 // do this for every lang also line // 19 for every lang
 	"向我们展示您的爱!", // 27
-	"如果您想表达您对项目的感谢，并且想要提供资助项目开发，可以访问<a href=\"https://www.patreon.com/Vita3K\">Patreon页面</a>捐赠。", // 28
-	"成为一名Patron", // 29
+	"如果您想表达您对项目的感谢，并且想要提供资助项目开发，可以访问<a href=\"https://ko-fi.com/vita3k\">Ko-fi页面</a>捐赠。", // 28
+	"成为一名Supporter", // 29
 	"自制游戏", // 30
 	"自制程序", // 31
 	"帮助我们变得更好！", // 32
@@ -503,8 +503,8 @@ texts.push([
 	"言語を選択", // 25
 	"<a href=\"https://github.com/Vita3K/compatibility/issues\">互換性データベース</a>の更新", // 26 // do this for every lang also line // 19 for every lang
 	"愛を示してください!", // 27
-	"感謝の気持ちを表し、開発資金を援助したい方は<a href=\"https://www.patreon.com/Vita3K\">Patreon Page</a>がプロジェクトには存在します。", // 28
-	"Patronになる", // 29
+	"感謝の気持ちを表し、開発資金を援助したい方は<a href=\"https://ko-fi.com/vita3k\">Ko-fi</a>がプロジェクトには存在します。", // 28
+	"サポーターになる", // 29
 	"自作ソフト", // 30
 	"Homebrew Utility", // 31
 	"改善にご協力ください", // 32
