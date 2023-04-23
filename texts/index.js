@@ -37,7 +37,7 @@ texts.push([
 	"Help us get better!", // 32
 	"File issues or make Pull Requests on our <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 33
 	"What's new", // 34
-	"We have a blog where we regularly publish detailed reports with the latest progress in our work. Come to read what's new!", // 35
+	"We have a blog where we irregularly publish detailed reports with the latest progress in our work. Come to read what's new!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
 	"Not yet", // 38
@@ -80,7 +80,7 @@ texts.push([
 	"Aiutaci a migliorare!", // 32
 	"Riporta problemi o prepara delle Pull Request sulla nostra <a href=\"https://github.com/Vita3K/Vita3K\">repository GitHub</a>.", // 33
 	"Cosa c'è di nuovo", // 34
-	"E' disponibile un blog nel quale pubblichiamo mensilmente un resoconto dettagliato inerente gli ultimi progressi nell'emulatore. Corri a leggere cosa c'è di nuovo!", // 35
+	"E' disponibile un blog nel quale pubblichiamo irregolarmente un resoconto dettagliato inerente gli ultimi progressi nell'emulatore. Corri a leggere cosa c'è di nuovo!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
 	"Non ancora", // 38(made by nishinji, translated by deepl)
@@ -123,7 +123,7 @@ texts.push([
 	"Aidez nous à nous améliorer !", // 32
 	"Reportez les bugs ou faites des Pulls Requests sur <a href=\"https://github.com/Vita3K/Vita3K\">GitHub</a>.", // 33
 	"What's new", // 34
-	"We have a blog were we push detailed reports with the latest progress in our work. Come to read what's new!", // 35
+	"Nous avons un blog où nous publions irrégulièrement des rapports détaillés sur les dernières avancées de notre travail. Venez lire les nouveautés !", // 35
 	"Quickstart", // 36
 	"Blog", // 37
 	"Pas encore", // 38(made by nishinji, translated by deepl)
@@ -166,7 +166,7 @@ texts.push([
 	"ساعدنا لنصبح افضل", // 32
 	"اكتب مشاكل او اصنع Pull Requests علي <a href=\"https://github.com/Vita3K/Vita3K\">Github.", // 33
 	"ماذا جديد", // 34
-	"!لدينا مدونة حيث نكتب شهريا تقريرا مفصلا بأحدث التطورات في عملنا. تعالوا اقرؤا ماذا جديد", // 35
+	"!لدينا مدونة حيث نكتب بشكل غير منتظم تقريرا مفصلا بأحدث التطورات في عملنا. تعالوا اقرؤا ماذا جديد", // 35
 	"Quickstart", // 36
 	"Blog", // 37
 	"ليس بعد", // 38(made by nishinji, translated by Googletranslate)
@@ -252,7 +252,7 @@ texts.push([
 	"Giúp chúng tôi tốt hơn nữa!", // 32
 	"Mở các Issues hoặc Pull Request tại <a href=\"https://github.com/Vita3K/Vita3K\">Kho mã nguồn trên GitHub</a>.", // 33
 	"What's new", // 34
-	"We have a blog were we push monthly a detailed report with latest progresses in our work. Come to read what's new!", // 35
+	"We have a blog were we irregularly publish detailed report with latest progresses in our work. Come to read what's new!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
 	"Vẫn chưa", // 38(made by nishinji, translated by googletranslate)
@@ -295,7 +295,7 @@ texts.push([
 	"Help ons beter worden!", // 32
 	"Licht ons in over problemen of maak Pull Requests op onze <a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>.", // 33
 	"Wat nieuw is", // 34
-	"We hebben een blog waar we maandelijks nieuwe gedetaileerde rapporten publiceren met het laatst geboekte voortgang in ons werk. Neem een bezoekje om te kijken wat nieuw is!", // 35
+	"We hebben een blog waar we onregelmatig nieuwe gedetaileerde rapporten publiceren met het laatst geboekte voortgang in ons werk. Neem een bezoekje om te kijken wat nieuw is!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
 	"Nog niet", // 38(made by nishinji, translated by deepl)
@@ -338,7 +338,7 @@ texts.push([
 	"Pomóż nam się ulepszać!", // 32
 	"Zgłoś problem lub zaproponuj zmiany w kodzie na naszym <a href=\"https://github.com/Vita3K/Vita3K\">Githubie</a>.", // 33
 	"Co nowego", // 34
-	"Prowadzimy bloga gdzie publikujemy miesięczne szczegółowe raporty z najnowszym postępem. Przeczytaj co nowego!", // 35
+	"Prowadzimy bloga gdzie publikujemy irreguralnie szczegółowe raporty z najnowszym postępem. Przeczytaj co nowego!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
 	"Jeszcze nie", // 38(made by nishinji, translated by deepl)
@@ -424,7 +424,7 @@ texts.push([
 	"Помогите нам совершенствоваться!", // 32
 	"Отчитывайтесь о неполадках и предлагайте код в нашем <a href=\"https://github.com/Vita3K/Vita3K\">репозитории на GitHub</a>.", // 33
 	"Что нового", // 34
-	"У нас есть блог, в котором мы регулярно публикуем подробные отчеты о текущем прогрессе в нашем деле. Заходите почитать о нововведениях!", // 35
+	"У нас есть блог, в котором мы нерегулярно публикуем подробные отчеты о текущем прогрессе в нашем деле. Заходите почитать о нововведениях!", // 35
 	"Руководство", // 36
 	"Блог", // 37
 	"Пока не готово", // 38
@@ -467,7 +467,7 @@ texts.push([
 	"帮助我们变得更好！", // 32
 	"提出讨论或者提交一个合并请求到我们的<a href=\"https://github.com/Vita3K/Vita3K\">GitHub项目库</a>。", // 33
 	"最新资讯", // 34
-	"我们这里有一个博客，定期发布我们工作最新进展的详细报告。来看看有什么新鲜事！", // 35
+	"我们这里有一个博客，不定期发布我们工作最新进展的详细报告。来看看有什么新鲜事！", // 35
 	"Quickstart", // 36
 	"Blog", // 37
 	"还没有", // 38(made by nishinji, translated by deepl)
@@ -510,7 +510,7 @@ texts.push([
 	"改善にご協力ください", // 32
 	"問題の報告やプルリクエストの作成を<a href=\"https://github.com/Vita3K/Vita3K\">GitHub repository</a>で行う", // 33
 	"新着情報", // 34
-	"私たちはブログで、定期的に仕事の最新の進捗状況を詳しく報告しています。新着情報を読みにきてください！", // 35
+	"私たちはブログで、不定期に仕事の最新の進捗状況を詳しく報告しています。新着情報を読みにきてください！", // 35
 	"クイックスタート", // 36
 	"ブログ", // 37
 	"作業中", // 38
