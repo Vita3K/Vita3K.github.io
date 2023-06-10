@@ -303,7 +303,7 @@ texts.push([
 	"W grze +", // 10
 	"Wszystkie", // 11
 	"Strona główna", // 12
-	"Lista kompatybilnośći Homebrew", // 13
+	"Lista kompatybilności Homebrew", // 13
 	"Tagi", // 14
 	"Homebrew, które powoduje zatrzymanie emulatora.", // 15
 	"Homebrew, które mają błędy i awarie.", // 16
