@@ -288,7 +288,7 @@ texts.push([
 	zo de compatibiliteitenrapporten up-to-date te houden." // 34
 ])
 
-// Polish (Translation provided by circl, corrected by kacek)
+// Polish (Translation provided by circl, corrected by kacek, and once again fixed by HackZy)
 texts.push([
 	"Nieznane", // 0
 	"Niestabilne", // 1
@@ -326,7 +326,7 @@ texts.push([
 	"Gry, w które można zagrać od początku do końca, z przeciętną wydajnością i brakiem zakłóceń.", // 33
 	"Emulator przechodzi obecnie wielkie zmiany w swoim backendzie, które znacznie poprawiają kompatybilność z grami. \
 	Lista kompatybilności nie odzwierciedla stanu emulatora i wszystkich zainteresowanych emulatorem zachęcamy do ponownego \
-	przetestowania swoich gier z najnowszymi wersjami emulatora co parę tygodni w celu aktualizacji raportów kompatybilności." // 34 (translated using DeepL)
+	przetestowania swoich gier z najnowszymi wersjami emulatora co parę tygodni w celu aktualizacji raportów kompatybilności." // 34
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
