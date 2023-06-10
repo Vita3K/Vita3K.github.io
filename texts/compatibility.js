@@ -291,12 +291,12 @@ texts.push([
 // Polish (Translation provided by circl, corrected by kacek)
 texts.push([
 	"Nieznane", // 0
-	"Niestabilny", // 1
+	"Niestabilne", // 1
 	"Błędy", // 2
-	"Wolne", // 3
+	"Powolne", // 3
 	"Grywalne", // 4
 	"Nic", // 5
-	"Bootowalny", // 6
+	"Uruchamialne", // 6
 	"Intro", // 7
 	"Menu", // 8
 	"W grze -", // 9
@@ -307,26 +307,26 @@ texts.push([
 	"Tagi", // 14
 	"Homebrew, które powoduje zatrzymanie emulatora.", // 15
 	"Homebrew, które mają błędy i awarie.", // 16
-	"Homebrew, które działają z niską ilością klatek na sekundę", // 17
+	"Homebrew, które działają ze słabą wydajnością", // 17
 	"Homebrew, które działają perfekcyjnie.", // 18
-	"Nazwa gry", // 19
+	"Nazwa Gry", // 19
 	"Status", // 20
 	"PlayStation and PS Vita są znakami towarowymi Sony Interactive Entertainment Inc.", // 21
 	"Emulator nie jest powiązany z firmą Sony, nie jest przez nią wspierany ani nie korzysta z poufnych materiałów należących do firmy Sony.", // 22
 	"Logo stworzone przez", // 23
 	"Szukaj", // 24
 	"Wybierz język", // 25
-	"Lista kompatybilnośći", // 26
-	"Gry, które w ogóle się nie uruchamiają, nie wyświetlają początkowego czarnego ekranu z licznikiem FPS.", // 27
+	"Lista kompatybilności", // 26
+	"Gry, które się nie uruchamiają ani nie wyświetlają początkowego czarnego ekranu z licznikiem FPS.", // 27
 	"Gry, które uruchamiają się, ale wyświetlają tylko czarny ekran z licznikiem FPS.", // 28
-	"Gry, które wyświetlają dowolny obraz na ekranie, ale nie docierają do menu.", // 29
-	"Gry, które działają poprawnie, ale nie mogą wejść do gry.", // 30
-	"Gry, które grają w grze, ale mają poważne problemy, które uniemożliwiają kontynuowanie gry.", // 31
-	"Gry, które grają, ale mają wady, które powodują, że gra jest nie do odzyskania lub działa nieprawidłowo.", // 32
-	"Gry, które można grać od początku do końca, z grywalną wydajnością i brakiem zakłóceń gry.", // 33
+	"Gry, które wyświetlają jakiś obraz na ekranie, ale nie docierają do menu głównego.", // 29
+	"Gry, które docierają do menu, ale nie umożliwiają rozgrywki", // 30
+	"Gry, w które można zagrać, ale mają poważne problemy, które uniemożliwiają kontynuowanie gry.", // 31
+	"Gry, w które można zagrać, ale w trakce rozgrywki występują błędy, które sprawiają, że gra jest nie do odzyskania lub działa nieprawidłowo.", // 32
+	"Gry, w które można zagrać od początku do końca, z przeciętną wydajnością i brakiem zakłóceń.", // 33
 	"Emulator przechodzi obecnie wielkie zmiany w swoim backendzie, które znacznie poprawiają kompatybilność z grami. \
 	Lista kompatybilności nie odzwierciedla stanu emulatora i wszystkich zainteresowanych emulatorem zachęcamy do ponownego \
-	przetestowania swoich gier z najnowszymi buildami emulatora co kilka tygodni w celu aktualizacji raportów kompatybilności." // 34 (translated using DeepL)
+	przetestowania swoich gier z najnowszymi wersjami emulatora co parę tygodni w celu aktualizacji raportów kompatybilności." // 34 (translated using DeepL)
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
