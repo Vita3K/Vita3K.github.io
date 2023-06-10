@@ -342,7 +342,7 @@ texts.push([
 	"Prowadzimy bloga gdzie nieregularnie publikujemy szczegółowe raporty z najnowszym postępem. Serdecznie zachęcamy do przeczytania!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
-	"Jeszcze nie dostępne", // 38(made by nishinji, translated by deepl)
+	"Jeszcze nie dostępne", // 38
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
