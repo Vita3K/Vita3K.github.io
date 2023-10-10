@@ -114,7 +114,9 @@ nav: compat
             $scope.orderBy('name');
 
             res.list.forEach((e) => {
-                $scope.views[e.status].push(e);
+                // Unknown already has all games, no need to add it twice
+                if(e.status != 'Unknown')
+                    $scope.views[e.status].push(e);
             });
         });
 
