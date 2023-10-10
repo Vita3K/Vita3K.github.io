@@ -107,7 +107,7 @@ nav: compat
             $scope.currentOrder = v;
         }
 
-        await $http.get('http://vita3k-api.pedro.moe/list/commercial')
+        await $http.get('https://vita3k-api.pedro.moe/list/commercial')
         .success((res) => {
             $scope.views['Unknown'] = res.list;
             $scope.data = $scope.views['Unknown'];
