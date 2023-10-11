@@ -109,6 +109,11 @@ nav: compat
 
         await $http.get('https://vita3k-api.pedro.moe/list/commercial')
         .success((res) => {
+
+            const updatedAtStr = new Date(res.date*1000).toLocaleString();
+
+            document.getElementById('lastUpdatedAt').textContent = updatedAtStr;
+
             $scope.views['Unknown'] = res.list;
             $scope.data = $scope.views['Unknown'];
             $scope.orderBy('name');
@@ -228,6 +233,8 @@ nav: compat
                             </tr>
                         </table>
                         <br>
+                        <p>Last Updated at: </p>
+                        <p id="lastUpdatedAt"></p>
                         <br>
                         <table class="table-hover table-bordered table-striped">
                             <thead>
