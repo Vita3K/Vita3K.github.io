@@ -492,3 +492,43 @@ texts.push([
 	数週間ごとに最新版のエミュレータでゲームをテストし、互換性レポートの更新に参加することをお勧めします。" // 34
 ])
 
+// Indonesia (Translation provided by ikhoeyZX)
+texts.push([
+    "Tidak diketahui", // 0
+    "Tidak berfungsi", // 1
+    "Bermasalah", // 2
+    "Lambat", // 3
+    "Dapat dimainkan", // 4
+    "Tidak ada", // 5
+    "Masuk saja", // 6
+    "Judul saja", // 7
+    "Menu", // 8
+    "Dalam permainan -", // 9
+    "Dalam permainan +", // 10
+    "Semua", // 11
+    "Halaman Utama", // 12
+    "Daftar dukungan Homebrew", // 13
+    "Tag", // 14
+    "Homebrew yang membuat emulator gagal berfungsi", // 15
+    "Homebrew yang dapat berfungsi tapi memiliki masalah bug atau ganguan lainnya.", // 16
+    "Homebrew yang dapat berfungsi tapi performa terlalu lambat.", // 17
+    "Homebrew yang dapat berfungsi tanpa masalah.", // 18
+    "Nama Masukan", // 19
+    "Kondisi", // 20
+    "PlayStation dan PS Vita merupakan merek dagang dari Sony Interactive Entertainment Inc.", // 21
+    "Emulator ini tidak berkaitan atau didukung oleh Sony atau berasal dari konten rahasia yang dimiliki oleh Sony.", // 22
+    "Dilabeli oleh", // 23
+    "Cari", // 24
+    "Pilih bahasa", // 25
+    "Daftar dukungan", // 26
+    "Permainan yang tidak dapat dimainkan sama sekali, tidak muncul layar hitam yang menampilkan Frame Gambar Perdetik (FPS).", // 27
+    "Permainan yang dapat berjalan tapi tidak menampilkan apapun selain layar hitam dan Frame Gambar Perdetik (FPS).", // 28
+    "Permainan yang dapat menampilkan gambar apapun tapi tidak bisa sampai menu permainan.", // 29
+    "Permainan yang dapat masuk menu tapi tidak bisa dimainkan sama sakali.", // 30
+    "Permainan yang dapat bisa dimainkan tapi memiliki banyak basalah sehingga tidak dapat dimainkan lebih lanjut.", // 31
+    "Permainan yang dapat dimainkan tapi memiliki gangguan gambar yang membuatnya menjadi tidak dapat dimainkan atau memiliki performa yang buruk.", // 32
+    "Permainan yang dapat dimainkan mulai dari awal hingga selesai tanpa ada masalah apapun.", // 33
+    "Saat ini emulator dalam tahap perubahan data dan infrastruktur yang dimana memberikan daftar pembaruan dukungan permainan. \
+    Daftar dukungan ini tidak hanya mencerminkan kondisi emulator saja dan siapapun yang tertarik dengan emulator ini \
+    dapat mendukung untuk menguji coba kembali permainan dengan emulator versi terbaru yang rilis setiap minggu untuk memperbarui daftar dukungan permainan." // 34
+])

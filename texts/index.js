@@ -516,3 +516,46 @@ texts.push([
 	"ブログ", // 37
 	"作業中", // 38
 ])
+
+// Indonesian (Translation provided by ikhoeyZX)
+texts.push([
+    "Tentang", // 0
+    "Unduh", // 1
+    "Komunitas", // 2
+    "Dukungan", // 3
+    "Pameran", // 4
+    "Kontribusi", // 5
+    "Donasi", // 6
+    "Emulator PlayStation Vita yang berfungsi pertama kali didunia.", // 7
+    "Temukan lebih banyak", // 8
+    "Tentang Vita3K", // 9
+    "Vita3K merupakan eksperimen emulator sumber terbuka pertama didunia untuk Windows, Linux, macOS dan Android.", // 10
+    "Harap dicatat bahwa kegunaan meulator ini tidak untuk kegiatan ilegal.", // 11
+    "Pilih versi buatan untukmu!", // 12
+    "Segera hadir!", // 13
+    "Ambil dari GitHub", // 14
+    "Hubungi kami!", // 15
+    "Hubungi kami dengan para pengembang dan pengguna lainnya kapan pun maumu melalui server Discord kami, tapi pilihan tetap ada padamu!.", // 16
+    "Bergabung sekarang!", // 17
+    "Periksa apa yang dapat berjalan saat ini!", // 18
+    "Emulator juga dapat menjalankan beberapa <b>game komersial!</b><br>Yuk cek di <a href=\"/compatibility.html?lang=id\">daftar dukungan permainan<a>.<br><br>Beberapa permainan homebrew kami dukung juga. Yuk cek juga di <a href=\"compatibility-homebrew.html?lang=id\">daftar dukungan homebrew</a> untuk detail lebih lanjut.", // 19
+    "Port permainan Homebrew", // 20
+    "PlayStation dan PS Vita merupakan merek dari Sony Interactive Entertainment Inc.", // 21
+    "Emulator ini tidak berkaitan atau didukung oleh Sony atau berasal dari konten rahasia yang dimiliki oleh Sony.", // 22
+    "Dilabeli oleh", // 23'
+	"Kalian dapat berkontribusi ke emulator dengan cara berikut:", // 24
+    "Pilih bahasa", // 25
+    "Perbarui <a href=\"https://github.com/Vita3K/compatibility/issues/\">daftar dukungan permainan</a>.", // 26 // do this for every lang also line // 19 for every lang
+    "Berikan rasa kasih kalian!", // 27
+    "Kalau kalian ingin memberikan rasa apresiasi dan mungkin ingin mendukung finansial para pengembang, projek ini memiliki <a href=\"https://ko-fi.com/vita3k/\">halaman Ko-fi</a>.", // 28
+    "Jadi Pendukung", // 29
+    "Permainan Homebrew", // 30
+    "Manfaat Homebrew", // 31
+    "Dukung kami menjadi lebih baik!", // 32
+    "Berkas yang bermasalah atau kalian ingin membuat permintaan baru (Pull Requests) bisa dilakukan <a href=\"https://github.com/Vita3K/Vita3K/\">dipenyimpanan GitHub</a> kami.", // 33
+    "Apa yang baru", // 34
+    "Kami memiliki blog yang setiap saat kami publikasikan laporan secara detail dengan perkembangan kami sampai saat ini. Yuk lihat apa yang baru disana!", // 35
+    "Mulai cepat", // 36
+    "Blog", // 37
+    "belum tersedia", // 38
+])
