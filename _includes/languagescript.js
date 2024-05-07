@@ -127,4 +127,9 @@ $scope.changeLang = function (field) {
         $scope.lang = "ja"
     }
     lang = $scope.lang
+    if ('URLSearchParams' in window) {
+        var searchParams = new URLSearchParams(window.location.search);
+        searchParams.set('lang', lang);
+        window.location.search = searchParams.toString();
+    }
 }

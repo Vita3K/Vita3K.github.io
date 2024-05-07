@@ -9,6 +9,7 @@ nav: compat
             return decodeURIComponent(name[1]);
     }
     angular.module('Vita3K', []).controller("angularController", async function ($scope, $filter, $http) {
+    {% include languagescript.js %}
         $scope.views = []
         $scope.views['Unknown'] = []
         $scope.views['Crashes'] = []
@@ -22,7 +23,6 @@ nav: compat
         $scope.views['Ingame -'] = []
         $scope.views['Ingame +'] = []
 
-        {% include languagescript.js %}
 
         $scope.changeView = function (field) {
             $scope.data = $scope.views[field];
@@ -120,8 +120,18 @@ nav: compat
 
             res.list.forEach((e) => {
                 // Unknown already has all games, no need to add it twice
-                if(e.status != 'Unknown')
+                if (e.status != 'Unknown') {
+                    switch (e.status) {
+                        case 'Nothing': e.translatedStatus = $scope.texts[5]; break;
+                        case 'Bootable': e.translatedStatus = $scope.texts[6]; break;
+                        case 'Intro': e.translatedStatus = $scope.texts[7]; break;
+                        case 'Menu': e.translatedStatus = $scope.texts[8]; break;
+                        case 'Ingame -': e.translatedStatus = $scope.texts[9]; break;
+                        case 'Ingame +': e.translatedStatus = $scope.texts[10]; break;
+                        case 'Playable': e.translatedStatus = $scope.texts[4]; break;
+                    }
                     $scope.views[e.status].push(e);
+                }
             });
         });
 
@@ -248,7 +258,7 @@ nav: compat
                                 <tr ng-repeat="entry in data | filter: filterEntries(field) track by $index">
                                     <td align="left"><b><small>{{entry.titleId}}</small></b></td>
                                     <td align="left"><a href="https://github.com/Vita3K/compatibility/issues/{{entry.issueId}}"><small>{{entry.name}}</small></a></td>
-                                    <td bgcolor="{{entry.color}}"><font color="white"><small>{{entry.status}}</small></font></td>
+                                    <td bgcolor="{{entry.color}}"><font color="white"><small>{{entry.translatedStatus}}</small></font></td>
                                 </tr>
                             </tbody>
                         </table>
