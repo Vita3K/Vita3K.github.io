@@ -41,6 +41,7 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"Not yet", // 38
+	"FAQs", // 39
 ])
 
 // Italian (translation provided by Rinnegatamante)
@@ -84,6 +85,7 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"Non ancora", // 38(made by nishinji, translated by deepl)
+	"FAQs", // 39
 ])
 
 // French (translation provided by Drayano)
@@ -127,6 +129,7 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"Pas encore", // 38(made by nishinji, translated by deepl)
+	"FAQs", // 39
 ])
 
 // Arabic (translation provided by IllusionMan1212)
@@ -170,6 +173,7 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"ليس بعد", // 38(made by nishinji, translated by Googletranslate)
+	"FAQs", // 39
 ])
 
 // Greek (translation provided by VelocityRa)
@@ -213,6 +217,7 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"Όχι ακόμα", // 38(made by nishinji, translated by deepl)
+	"FAQs", // 39
 ])
 
 // Vietnamese (Translation provided by Bentokun)
@@ -256,6 +261,7 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"Vẫn chưa", // 38(made by nishinji, translated by googletranslate)
+	"FAQs", // 39
 ])
 
 // Dutch (Translation provided by jelle619)
@@ -299,6 +305,7 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"Nog niet", // 38(made by nishinji, translated by deepl)
+	"FAQs", // 39
 ])
 
 
@@ -343,6 +350,7 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"Jeszcze nie dostępne", // 38
+	"FAQs", // 39
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
@@ -386,6 +394,7 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"Ainda não", // 38(made by nishinji, translated by deepl)
+	"FAQs", // 39
 ])
 
 // Russian (Translation provided by Dum4G, Kane)
@@ -429,6 +438,7 @@ texts.push([
 	"Руководство", // 36
 	"Блог", // 37
 	"Пока не готово", // 38
+	"FAQs", // 39
 ])
 
 // Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
@@ -469,9 +479,10 @@ texts.push([
 	"提出讨论或者提交一个合并请求到我们的<a href=\"https://github.com/Vita3K/Vita3K\">GitHub项目库</a>。", // 33
 	"最新资讯", // 34
 	"我们这里有一个博客，不定期发布我们工作最新进展的详细报告。来看看有什么新鲜事！", // 35
-	"Quickstart", // 36
-	"Blog", // 37
+	"快速入门", // 36
+	"博客", // 37
 	"还没有", // 38(made by nishinji, translated by deepl)
+	"常见问题", // 39
 ])
 
 // Japanese (Translation provided by nishinji)
@@ -515,6 +526,7 @@ texts.push([
 	"クイックスタート", // 36
 	"ブログ", // 37
 	"作業中", // 38
+	"FAQs", // 39
 ])
 
 // Indonesian (Translation provided by ikhoeyZX)
