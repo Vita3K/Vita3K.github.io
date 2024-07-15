@@ -116,7 +116,7 @@ This was featured in our latest report, but a user recorded a video and as you c
 ### Reality Fighters
 This game progressed, but crashes at the loading screen.
 #### Screenshot
-![](https://cdn.discordapp.com/attachments/418026683015233546/484480601760727040/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-09-05/unknown.png)
 
 ### Uncanny Valley
 
@@ -124,7 +124,7 @@ This game progressed, but crashes at the loading screen.
 The game now advances further, it shows a cut-scene and dialogue before freezing.
 
 ## Screenshots
-![](https://cdn.discordapp.com/attachments/397953966668906528/475326604755599360/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-09-05/unknown(1).png)
 
 ![](https://user-images.githubusercontent.com/20528385/44298024-99e69b80-a2a9-11e8-91c4-fca594b0e5e0.png)
 
@@ -138,16 +138,16 @@ Here’s a few other screeshots showing homebrews that either boot or are playab
 ### Another Metroid 2 Remake (AM2R)
 This well-known homebrew remake of _'Metroid II: Return of Samus'_ now goes in-game!
 #### Screenshot
-![](https://cdn.discordapp.com/attachments/418026683015233546/484446835226837012/unknown.png)
-![](https://cdn.discordapp.com/attachments/418026683015233546/484446991271854106/unknown.png)
-![](https://cdn.discordapp.com/attachments/418026683015233546/484447285925904425/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-09-05/unknown(2).png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-09-05/unknown(3).png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-09-05/unknown(4).png)
 
 ### DstroyVita
 
 This _'Dstroy'_ port now boots, but can't go in-game because of a touch-related bug.
 #### Screenshots
-![](https://cdn.discordapp.com/attachments/418026683015233546/481606857765552128/unknown.png)
-![](https://cdn.discordapp.com/attachments/418026683015233546/481607023851601921/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-09-05/unknown(5).png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-09-05/unknown(6).png)
 
 Roadmap
 ===
