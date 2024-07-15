@@ -83,9 +83,9 @@ Probably the first game to go in-game with graphics (hand-crafted shaders aren't
 
 #### Screenshots
 
-![](https://media.discordapp.net/attachments/418026683015233546/443683525330337802/unknown.png?width=1006&height=627)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown.png)
 
-![](https://media.discordapp.net/attachments/418026683015233546/443683899864907786/unknown.png?width=1006&height=627)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(1).png)
 
 #### Video
 [![](https://img.youtube.com/vi/Odro8wrLrlQ/0.jpg)](https://www.youtube.com/watch?v=Odro8wrLrlQ)
@@ -105,21 +105,21 @@ Probably the first game to go in-game with graphics (hand-crafted shaders aren't
 ![](https://user-images.githubusercontent.com/36709480/40811855-4aa3333e-6533-11e8-8db2-62aba7e13e18.png?width=1006&height=627)
 
 ### Alone With You
-![](https://cdn.discordapp.com/attachments/418026683015233546/444417654346874882/unknown.png?width=1006&height=627)
-![](https://cdn.discordapp.com/attachments/418026683015233546/444417782432530443/unknown.png?width=1006&height=627)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(2).png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(3).png)
 
 ### Siralim
-![](https://media.discordapp.net/attachments/418026683015233546/445028313925156882/unknown.png?width=1006&height=627)
-![](https://cdn.discordapp.com/attachments/418026683015233546/445028347508949013/unknown.png?width=1006&height=627)
-![](https://cdn.discordapp.com/attachments/418026683015233546/445028675100868619/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(4).png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(5).png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(6).png)
 
 Saving works as well:
-![](https://cdn.discordapp.com/attachments/418026683015233546/445031922968690688/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(7).png)
 
 ### Darius Burst: Chronicle Saviours
 
 No shaders written for this one, but it boots:
-![](https://media.discordapp.net/attachments/418026683015233546/445578443384553472/unknown.png?width=1006&height=627)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(8).png)
 
 ## Homebrew
 
@@ -127,7 +127,7 @@ Here’s a few other screeshots showing homebrews that either boot or are playab
 
 ### Vita Hexen II
 
-![](https://cdn.discordapp.com/attachments/418026683015233546/446013333619867649/unknown.png?width=1006&height=627)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(9).png)
 
 ### GNU Robbo ([#234](https://github.com/vita3k/vita3k/pull/234))
 

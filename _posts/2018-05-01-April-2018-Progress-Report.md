@@ -23,9 +23,6 @@ It’s important to note that *frangarcj* was able to implement this thanks to t
 ---
 Unfortunately, it will be a while before we’ll get graphical output from commercial games, since we’re still in the process of reversing the [shader format](https://wiki.henkaku.xyz/vita/SGX543) of the Vita’s GPU. After that, we’ll need to translate those shaders to a host format, which is a challenge in and of itself. There *are* possible workarounds for this until we get to that point, but we haven't explored them yet as games crash because of reasons unrelated to graphics.
 
-### Logs
-#### [Downwell](https://hastebin.com/raw/uzugaqisuy)
-
 ## Kernel Synchronization Primitives ([#170](https://github.com/Vita3K/Vita3K/pull/170), [#159](https://github.com/Vita3K/Vita3K/pull/159), [#157](https://github.com/Vita3K/Vita3K/pull/157), [#190](https://github.com/Vita3K/Vita3K/pull/190))
 An important part of operating system [kernel](https://www.wikiwand.com/en/Kernel_(operating_system)), is to provide its user-mode programs ways to cooperate in a way that guarantees no [race-conditions](https://www.wikiwand.com/en/Race_condition) happen.
 
@@ -39,48 +36,48 @@ Fortunately, after the refactoring and improvements introduced by [#170](https:/
 
 #### OpenSyobon
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439138000992206858/opensyobon.PNG)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/opensyobon.png)
 
 #### Minicraft
 
-![](https://media.discordapp.net/attachments/437723202630844417/439138216549941269/minicraft.PNG)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/minicraft.png)
 
 #### Labyrinth 3D
 
-![](https://media.discordapp.net/attachments/437723202630844417/439138986318102558/labyrinth3d.PNG)  
-![](https://media.discordapp.net/attachments/437723202630844417/439138884085874688/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/labyrinth3d.png) 
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown.png)
 
 #### flppy Bird
 
-![](https://media.discordapp.net/attachments/437723202630844417/439139287167139843/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown(1).png)
 
 #### HOTA
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439139733898133504/hota.PNG)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/hota.png)
 
 #### HandyVita
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439140005084921876/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown(2).png)
 
 #### milieTetris
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439140546968289300/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown(3).png)
 
 #### Blockout
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439135758087880722/blockout1.PNG)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/blockout1.png)
 
 #### Katawa Shoujo
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439135963080294402/katawashoujo.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/katawashoujo.png)
 
 #### ZeldaROTH
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439135974954369024/zeldaROTH.PNG)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/zeldaROTH.png)
 
 #### ZeldaNSQ
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439137746821447690/zeldaNSQ.PNG)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/zeldaNSQ.png)
 
 ### GUI/Debugger ([#147](https://github.com/Vita3K/Vita3K/pull/147))
 
@@ -90,7 +87,7 @@ Booting games is still only possible by supplying them as command-line arguments
 
 #### Debugger UI
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439147218788679680/unknown.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown(4).png)
 
 Progress Screenshots
 ====================
@@ -99,15 +96,15 @@ Here’s a few other screeshots showing homebrews that either boot or are playab
 
 #### Flood it ([#152](https://github.com/Vita3K/Vita3K/pull/152))
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439135510393389076/floodit.PNG)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/floodit.png)
 
 #### Numpty Physics ([#163](https://github.com/Vita3K/Vita3K/pull/163))
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439135636293681164/numpty.PNG)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/numpty.png)
 
 #### ZeldaNSQ ([#159](https://github.com/Vita3K/Vita3K/pull/159))
 
-![](https://cdn.discordapp.com/attachments/437723202630844417/439137746821447690/zeldaNSQ.PNG)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/zeldaNSQ.png)
 
 Roadmap
 ===
