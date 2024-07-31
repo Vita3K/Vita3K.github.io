@@ -14,7 +14,7 @@ Developer [Macdu](https://github.com/Macdu) is interested in everything but the 
 
 The most important contribution thus far is the addition of the [Vulkan](https://en.wikipedia.org/wiki/Vulkan) API -- a cross-platform 3D graphics and computing API, to the emulator. Being able to use a more modern and widely-adapted standard has made it possible to bring back (somewhat) active support for MacOS, as well as the ability to port the emulator to Android!Vulkan is a modern graphics API that offers many advantages such as higher speeds and more precise control. However, its rigidity makes it prone to crashes (OpenGL can ignore inaccuracies and continue rendering) and it is not the default renderer, but if you have a GPU that supports Vulkan, we recommend switching to Vulkan.
 
-![](./img/2024-07-31/image(5).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(5).webp)
 
 **A major step forward in history. This is the first image of vulkan renderer. Where's happy meal?**
 
@@ -36,7 +36,7 @@ The PS Vita has a unified memory layout, meaning that both the CPU and GPU have 
 
 "Memory mapping" is an improved way to simulate the unified memory layout of the PS Vita (there are actually multiple implementations for it available on Android, each with its upsides and downsides: native buffer, double buffer...). It results in greatly improved performances and much improved accuracy.
 
-![](./img/2024-07-31/one_after.jpg)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/one_after.jpg)
 
 <!-- <iframe id="juxtapose-frame" frameborder="0" class="juxtapose" width="100%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=cfe50540-4d35-11ef-9396-d93975fe8866"></iframe> -->
 
@@ -48,13 +48,13 @@ The PS Vita GPU is what is called a tiled renderer. This differs significantly f
 
 Framebuffer fetch is not something that is cost-free for immediate renderers and can be really hard to simulate without the right tools. One of the (only) tool to do so is called Shader Interlock.  Shader Interlock is available on most modern GPUs (except AMD GPUs on Windows so far because AMD developers [don't want to implement it...](https://github.com/GPUOpen-Drivers/AMDVLK/issues/108#issuecomment-524159358)). Implementing it on the Vulkan renderer (it was already implemented on the OpenGL renderer) fixes many transparency and overlapping issues like boxing graphics.
 
-![](./img/2024-07-31/mortal_after.jpg)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/mortal_after.jpg)
 
 <!-- <iframe id="juxtapose-frame" frameborder="0" class="juxtapose" width="100%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=4557c9fc-4d36-11ef-9396-d93975fe8866"></iframe> -->
 
 **Ingame scene from Mortal Kombat; This game has some enthusiastic fans.**
 
-![](./img/2024-07-31/soul_after.webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/soul_after.webp)
 
 <!-- <iframe id="juxtapose-frame" frameborder="0" class="juxtapose" width="100%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=951b581c-4e7d-11ef-9396-d93975fe8866"></iframe> -->
 
@@ -78,7 +78,7 @@ There is an option to enable/disable this option which can also be modified whil
 
 Keeping with the punches, [Macdu](https://github.com/Macdu) also introduced support for texture replacement and (proper) texture dumping to the emulator. This feature allows you to replace textures in games with your own textures -- such as HD texture packs. Using texture replacement to its fullest can improve the graphical fidelity of a game far past what the Vita was originally capable of. This introduction brings many new ways for Vita games to be played, as well as assisting texture and translation patch creators in their works. Alternatively, you could replace every texture in a game with the color red if you'd like!
 
-![](./img/2024-07-31/image(3).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(3).webp)
 
 **Ingame scene from English patched Tales of Hearts R Infinite Evolve. As you know, Macdu is a big fan of JRPGs.**
 
@@ -131,7 +131,7 @@ If your language is not in the emulator, please open a Pull Request or contact u
 
 Developer [EXtremeExploit](https://github.com/EXtremeExploit) has been working hard on web features -- trying to get as close to console as possible -- and has implemented most of the features in [#1676](https://github.com/Vita3K/Vita3K/pull/1676). New contributor [edwinr](https://github.com/edwinr) also dropped by and implemented various `sceNet` functions in [#2255](https://github.com/Vita3K/Vita3K/pull/2255). This has allowed for Vita Homebrew Browser to load, as well as emulated `libcurl` functions such as the ones used by [VitaSDK](https://vitasdk.org) to work properly.
 
-![](./img/2024-07-31/image(1).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(1).webp)
 
 ## Improve input ([#2628](https://github.com/Vita3K/Vita3K/pull/2628]) & [#2904](https://github.com/Vita3K/Vita3K/pull/2904))
 
@@ -145,7 +145,7 @@ With these two PR's, [Macdu](https://github.com/Macdu) and [Zangetsu](https://gi
 
 [Zangetsu](https://github.com/Zangetsu38), [dima-xd](https://github.com/dima-xd) and [nn9dev](https://github.com/nn9dev) implemented controller remapping, which allows you to remap the controller buttons to your liking. This is a great feature for those who are not comfortable with the default button layout. It is worth noting that due to how SDL handles certain inputs, anything deemed an "axis" (i.e. analog sticks, analog triggers) are not yet supported for remapping.
 
-![](./img/2024-07-31/image(10).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(10).webp)
 
 **Remap your controller buttons to your liking!**
 
@@ -153,7 +153,7 @@ With these two PR's, [Macdu](https://github.com/Macdu) and [Zangetsu](https://gi
 
 Some games utilized unloading or re-loading certain [modules](https://wiki.henkaku.xyz/vita/Modules) (PS Vita Libraries), which was not previously accounted for. Notably, **Final Fantasy X** utilized this functionality, which would result in the game softlocking. Developer [Macdu](https://github.com/Macdu) implemented the appropriate functions and behavior, which pushed the game to the Playable state. What a jump!
 
-![](./img/2024-07-31/image(4).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(4).webp)
 
 **First ingame Final Fantasy X screenshot from Macdu.**
 
@@ -181,7 +181,7 @@ Developer [bookmist](https://github.com/bookmist) has also brought many code opt
 
 # Compatibility
 
-![](./img/2024-07-31/chart.png)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/chart.png)
 
 **Yes, I only spent a few minutes on this diagram.**
 
@@ -191,23 +191,23 @@ Compatibility is still not perfect, though our volunteer developers are always w
 
 Screenshots of some impressive games are shown below.
 
-![](./img/2024-07-31/image(11).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(11).webp)
 
 **Ingame scene from Persona 4 Dancing; KING CRAZY.**
 
-![](./img/2024-07-31/image(6).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(6).webp)
 
 **Ingame scene from Uncharted; It has a bug where you can't save, so it's not playable, but you can see great graphics!**
 
-![](./img/2024-07-31/image(9).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(9).webp)
 
 **Ingame scene from Attack on titan; A lot of koei games fixed by memory mapping.**
 
-![](./img/2024-07-31/image(8).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(8).webp)
 
 **Ingame scene from Ratchet & Clank; Shadow bug is fixed in [#3262](https://github.com/Vita3K/Vita3K/pull/3262).**
 
-![](./img/2024-07-31/image(2).webp)
+![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(2).webp)
 
 **Ingame scene from Minecraft; Must be OpenGL to play.**
 
