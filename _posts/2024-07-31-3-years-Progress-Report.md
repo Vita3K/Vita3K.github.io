@@ -94,7 +94,7 @@ Anisotropic filtering is a technique used in computer graphics to improve image 
 
 # Audio library (NGS) Changes
 
-The audio library has been one of the biggest roadblocks thus far in improving the emulator. One major remaining problem was the complete lack of AAC decoder support three years ago. First [1whatletay](https://github.com/1whatleytay) worked on the basic implementation at [#808](https://github.com/Vita3K/Vita3K/pull/808), then [Zangetsu](https://github.com/Zangetsu38) improved it with the help of [Macdu](https://github.com/Macdu) at [#1686](https://github.com/Vita3K/Vita3K/pull/1686). Many games use atrac, but since AAC is also used as part of mp4, these implementations have improved compatibility for many games.
+The audio library has been one of the biggest roadblocks thus far in improving the emulator. One major remaining problem was the complete lack of AAC decoder support three years ago. First [1whatletay](https://github.com/1whatleytay) worked on the basic implementation at [#808](https://github.com/Vita3K/Vita3K/pull/808), then [Zangetsu](https://github.com/Zangetsu38) improved it with the help of [Macdu](https://github.com/Macdu) at [#1686](https://github.com/Vita3K/Vita3K/pull/1686). Many games use atrac9, but this implementations have improved compatibility for some games like LittleBigPlanet, TALES games, wipeout and so on.
 
 Its inner machinations haven't been completely solved, but are far better understood than they were three years ago. [Macdu](https://github.com/Macdu) has been working hard on this issue and -- while not everything is fixed yet -- Pull [#2668](https://github.com/Vita3K/Vita3K/pull/2668) has made significant improvements. Notably, this PR eliminates crackling in the Persona dancing games, pushing them all to a Playable status.
 
@@ -133,7 +133,7 @@ Developer [EXtremeExploit](https://github.com/EXtremeExploit) has been working h
 
 ![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2024-07-31/image(1).webp)
 
-## Improve input ([#2628](https://github.com/Vita3K/Vita3K/pull/2628]) & [#2904](https://github.com/Vita3K/Vita3K/pull/2904))
+## Improve input ([#2628](https://github.com/Vita3K/Vita3K/pull/2628) & [#2904](https://github.com/Vita3K/Vita3K/pull/2904))
 
 With these two PR's, [Macdu](https://github.com/Macdu) and [Zangetsu](https://github.com/Zangetsu38) bring support for motion/gyroscope controls as well as more precise touchpad support. Those with compatible controllers (ex. DualShock4, Dualsense) can use these features just like on console.
 
@@ -141,7 +141,7 @@ With these two PR's, [Macdu](https://github.com/Macdu) and [Zangetsu](https://gi
 
 **Gravity Rush gets a lot of mileage out of this, huh?**
 
-## Implement controller remapping ([#2875](https://github.com/Vita3K/Vita3K/pull/2875))
+## Implement controller remapping ([#2875](https://github.com/Vita3K/Vita3K/pull/2875) & [#2898](https://github.com/Vita3K/Vita3K/pull/2898))
 
 [Zangetsu](https://github.com/Zangetsu38), [dima-xd](https://github.com/dima-xd) and [nn9dev](https://github.com/nn9dev) implemented controller remapping, which allows you to remap the controller buttons to your liking. This is a great feature for those who are not comfortable with the default button layout. It is worth noting that due to how SDL handles certain inputs, anything deemed an "axis" (i.e. analog sticks, analog triggers) are not yet supported for remapping.
 
