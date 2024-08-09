@@ -39,6 +39,9 @@ if (lang == "en") {
 } else if (lang == "id") {
     $scope.texts = texts[12]
     $scope.lang = "id"
+} else if (lang == "ch") {
+    $scope.texts = texts[13]
+    $scope.lang = "ch"
 } else {
     var lang = window.navigator.language || window.navigator.userLanguage;
     if (lang.startsWith('it')) {
@@ -77,6 +80,9 @@ if (lang == "en") {
     } else if (lang.startsWith('id')) {
         $scope.texts = texts[12]
         $scope.lang = "id"
+    } else if (lang.startsWith('ch')) {
+        $scope.texts = texts[13]
+        $scope.lang = "ch"
     } else {
         $scope.texts = texts[0]
         $scope.lang = "en"
@@ -123,6 +129,9 @@ $scope.changeLang = function (field) {
         $scope.texts = texts[10]
         $scope.lang = "zh"
     } else if (field == 13) {
+        $scope.texts = texts[13]
+        $scope.lang = "ch"
+    } else if (field == 14) {
         $scope.texts = texts[11]
         $scope.lang = "ja"
     }
