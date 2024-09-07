@@ -42,6 +42,7 @@ texts.push([
 	"Blog", // 37
 	"Not yet", // 38
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Older Versions</a>", // 40
 ])
 
 // Italian (translation provided by Rinnegatamante)
@@ -85,7 +86,8 @@ texts.push([
 	"Quickstart", // 36
 	"Blog", // 37
 	"Non ancora", // 38(made by nishinji, translated by deepl)
-	"FAQs", // 39
+	"FAQs", // 39"
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versioni precedenti</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // French (translation provided by Drayano)
@@ -130,6 +132,7 @@ texts.push([
 	"Blog", // 37
 	"Pas encore", // 38(made by nishinji, translated by deepl)
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versions antérieures</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // Arabic (translation provided by IllusionMan1212)
@@ -174,6 +177,7 @@ texts.push([
 	"Blog", // 37
 	"ليس بعد", // 38(made by nishinji, translated by Googletranslate)
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">الإصدارات الأقدم</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // Greek (translation provided by VelocityRa)
@@ -218,6 +222,7 @@ texts.push([
 	"Blog", // 37
 	"Όχι ακόμα", // 38(made by nishinji, translated by deepl)
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Παλαιότερες εκδόσεις</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // Vietnamese (Translation provided by Bentokun)
@@ -262,6 +267,7 @@ texts.push([
 	"Blog", // 37
 	"Vẫn chưa", // 38(made by nishinji, translated by googletranslate)
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Older Versions</a>", // 40
 ])
 
 // Dutch (Translation provided by jelle619)
@@ -306,6 +312,7 @@ texts.push([
 	"Blog", // 37
 	"Nog niet", // 38(made by nishinji, translated by deepl)
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Ältere Versionen</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 
@@ -351,6 +358,7 @@ texts.push([
 	"Blog", // 37
 	"Jeszcze nie dostępne", // 38
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Starsze wersje</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
@@ -395,6 +403,7 @@ texts.push([
 	"Blog", // 37
 	"Ainda não", // 38(made by nishinji, translated by deepl)
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versões mais antigas</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // Russian (Translation provided by Dum4G, Kane)
@@ -439,6 +448,7 @@ texts.push([
 	"Блог", // 37
 	"Пока не готово", // 38
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Старые версии</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
@@ -483,6 +493,7 @@ texts.push([
 	"博客", // 37
 	"还没有", // 38(made by nishinji, translated by deepl)
 	"常见问题", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">旧版本</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // Japanese (Translation provided by nishinji)
@@ -527,6 +538,7 @@ texts.push([
 	"ブログ", // 37
 	"作業中", // 38
 	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">旧バージョン</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // Indonesian (Translation provided by ikhoeyZX)
@@ -570,4 +582,6 @@ texts.push([
     "Mulai cepat", // 36
     "Blog", // 37
     "belum tersedia", // 38
+    "FAQs", // 39
+    "<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versi Lama</a>", // 40(made by nishinji, translated by deepl)
 ])
