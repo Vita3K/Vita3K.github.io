@@ -85,9 +85,9 @@ texts.push([
 	"E' disponibile un blog nel quale pubblichiamo irregolarmente un resoconto dettagliato inerente gli ultimi progressi nell'emulatore. Corri a leggere cosa c'è di nuovo!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
-	"Non ancora", // 38(made by nishinji, translated by deepl)
-	"FAQs", // 39"
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versioni precedenti</a>", // 40(made by nishinji, translated by deepl)
+	"Non ancora", // 38 (made by nishinji, translated by deepl)
+	"FAQs", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versioni precedenti</a>", // 40 (made by nishinji, translated by deepl)
 ])
 
 // French (translation provided by Drayano)
@@ -130,9 +130,9 @@ texts.push([
 	"Nous avons un blog où nous publions irrégulièrement des rapports détaillés sur les dernières avancées de notre travail. Venez lire les nouveautés !", // 35
 	"Quickstart", // 36
 	"Blog", // 37
-	"Pas encore", // 38(made by nishinji, translated by deepl)
+	"Pas encore", // 38 (made by nishinji, translated by deepl)
 	"FAQs", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versions antérieures</a>", // 40(made by nishinji, translated by deepl)
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versions antérieures</a>", // 40 (made by nishinji, translated by deepl)
 ])
 
 // Arabic (translation provided by IllusionMan1212)
@@ -175,9 +175,9 @@ texts.push([
 	"!لدينا مدونة حيث نكتب بشكل غير منتظم تقريرا مفصلا بأحدث التطورات في عملنا. تعالوا اقرؤا ماذا جديد", // 35
 	"Quickstart", // 36
 	"Blog", // 37
-	"ليس بعد", // 38(made by nishinji, translated by Googletranslate)
+	"ليس بعد", // 38 (made by nishinji, translated by Googletranslate)
 	"FAQs", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">الإصدارات الأقدم</a>", // 40(made by nishinji, translated by deepl)
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">الإصدارات الأقدم</a>", // 40 (made by nishinji, translated by deepl)
 ])
 
 // Greek (translation provided by VelocityRa)
@@ -220,9 +220,9 @@ texts.push([
 	"Έχουμε blog στο οποίο αναρτούμε νέες εξελίξεις. Ελάτε να δείτε τι είναι νέο!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
-	"Όχι ακόμα", // 38(made by nishinji, translated by deepl)
+	"Όχι ακόμα", // 38 (made by nishinji, translated by deepl)
 	"FAQs", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Παλαιότερες εκδόσεις</a>", // 40(made by nishinji, translated by deepl)
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Παλαιότερες εκδόσεις</a>", // 40 (made by nishinji, translated by deepl)
 ])
 
 // Vietnamese (Translation provided by Bentokun)
@@ -265,7 +265,7 @@ texts.push([
 	"We have a blog were we irregularly publish detailed report with latest progresses in our work. Come to read what's new!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
-	"Vẫn chưa", // 38(made by nishinji, translated by googletranslate)
+	"Vẫn chưa", // 38 (made by nishinji, translated by googletranslate)
 	"FAQs", // 39
 	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Older Versions</a>", // 40
 ])
@@ -310,9 +310,9 @@ texts.push([
 	"We hebben een blog waar we onregelmatig nieuwe gedetaileerde rapporten publiceren met het laatst geboekte voortgang in ons werk. Neem een bezoekje om te kijken wat nieuw is!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
-	"Nog niet", // 38(made by nishinji, translated by deepl)
+	"Nog niet", // 38 (made by nishinji, translated by deepl)
 	"FAQs", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Ältere Versionen</a>", // 40(made by nishinji, translated by deepl)
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Ältere Versionen</a>", // 40 (made by nishinji, translated by deepl)
 ])
 
 
@@ -358,7 +358,7 @@ texts.push([
 	"Blog", // 37
 	"Jeszcze nie dostępne", // 38
 	"FAQs", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Starsze wersje</a>", // 40(made by nishinji, translated by deepl)
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Starsze wersje</a>", // 40 (made by nishinji, translated by deepl)
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
@@ -401,9 +401,8 @@ texts.push([
 	"Nós temos um blog onde nós postamos relatorios detalhados dos nossos ultimos progressos no nosso trabalho. Venha ler o que há de novo!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
-	"Ainda não", // 38(made by nishinji, translated by deepl)
+	"Ainda não", // 38 (made by nishinji, translated by deepl)
 	"FAQs", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versões mais antigas</a>", // 40(made by nishinji, translated by deepl)
 ])
 
 // Russian (Translation provided by Dum4G, Kane)
@@ -448,10 +447,10 @@ texts.push([
 	"Блог", // 37
 	"Пока не готово", // 38
 	"FAQs", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Старые версии</a>", // 40(made by nishinji, translated by deepl)
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Старые версии</a>", // 40 (made by nishinji, translated by deepl)
 ])
 
-// Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
+// Simplified Chinese (Translation provided by Hikaruchang, corrected by Croden1999)
 texts.push([
 	"关于", // 0
 	"下载", // 1
@@ -460,11 +459,11 @@ texts.push([
 	"展示", // 4
 	"贡献", // 5
 	"捐赠", // 6
-	"全世界首个可用的PlayStation Vita模拟器。", // 7
+	"全球首个可用的PlayStation Vita模拟器。", // 7
 	"了解更多", // 8
 	"关于Vita3K", // 9
-	"Vita3K是世界上首个在Windows、Linux、macOS和Android上的实验性开源PlayStation Vita模拟器。", // 10
-	"请注意，模拟器的目的不是用于非法活动。", // 11
+	"Vita3K是全球首个在Windows、Linux、macOS和Android上的实验性开源PlayStation Vita模拟器。", // 10
+	"请注意，模拟器的目的不是用于非法行为。", // 11
 	"获得对应您的构建版本！", // 12
 	"敬请期待！", // 13
 	"立即获取GitHub", // 14
@@ -474,15 +473,15 @@ texts.push([
 	"查看当前可运行的内容！", // 18
 	"模拟器目前可以运行一些<b>商业游戏</b>！<br>点击查看<a href=\"/compatibility.html?lang=zh\">兼容性列表<a>。<br><br>并且也支持一些自制程序。点击查看<a href=\"compatibility-homebrew.html?lang=zh\">自制程序兼容性列表</a>来了解更多详情。", // 19
 	"自制游戏端口", // 20
-	"PlayStation 和 PS Vita 是 Sony Interactive Entertainment Inc.（索尼互动娱乐）的注册商标。", // 21
+	"PlayStation 和 PS Vita 是 Sony Interactive Entertainment Inc.（索尼互动娱乐有限公司）的注册商标。", // 21
 	"此模拟器与索尼公司无关，也没有获得索尼公司的认可，更没有包含索尼公司的机密资料。", // 22
-	"LOGO设计", // 23
+	"LOGO设计由", // 23
 	"您可以通过以下方式为模拟器做出贡献：", // 24
 	"选择语言", // 25
-	"为<a href=\"https://github.com/Vita3K/compatibility/issues\">兼容性列表</a>更新数据库。", // 26 // do this for every lang also line // 19 for every lang
+	"为<a href=\"https://github.com/Vita3K/compatibility/issues\">兼容性列表</a>更新数据库。", // 26
 	"向我们展示您的爱!", // 27
-	"如果您想表达您对项目的感谢，并且想要提供资助项目开发，可以访问<a href=\"https://ko-fi.com/vita3k\">Ko-fi页面</a>捐赠。", // 28
-	"成为一名Supporter", // 29
+	"如果您想对项目表达感谢，并且想要提供资助项目开发，可以访问<a href=\"https://ko-fi.com/vita3k\">Ko-fi页面</a>捐赠。", // 28
+	"成为一名支持者", // 29
 	"自制游戏", // 30
 	"自制程序", // 31
 	"帮助我们变得更好！", // 32
@@ -491,9 +490,9 @@ texts.push([
 	"我们这里有一个博客，不定期发布我们工作最新进展的详细报告。来看看有什么新鲜事！", // 35
 	"快速入门", // 36
 	"博客", // 37
-	"还没有", // 38(made by nishinji, translated by deepl)
+	"尚未公布", // 38
 	"常见问题", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">旧版本</a>", // 40(made by nishinji, translated by deepl)
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">历史版本</a>", // 40
 ])
 
 // Japanese (Translation provided by nishinji)
@@ -524,7 +523,7 @@ texts.push([
 	"Logo by", // 23
 	"エミュレータへの貢献は、以下の方法で行うことができます。:", // 24
 	"言語を選択", // 25
-	"<a href=\"https://github.com/Vita3K/compatibility/issues\">互換性データベース</a>の更新", // 26 // do this for every lang also line // 19 for every lang
+	"<a href=\"https://github.com/Vita3K/compatibility/issues\">互換性データベース</a>の更新", // 26
 	"愛を示してください!", // 27
 	"感謝の気持ちを表し、開発資金を援助したい方は<a href=\"https://ko-fi.com/vita3k\">Ko-fi</a>がプロジェクトには存在します。", // 28
 	"サポーターになる", // 29
@@ -538,50 +537,95 @@ texts.push([
 	"ブログ", // 37
 	"作業中", // 38
 	"FAQs", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">旧バージョン</a>", // 40(made by nishinji, translated by deepl)
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">旧バージョン</a>", // 40 (made by nishinji, translated by deepl)
 ])
 
 // Indonesian (Translation provided by ikhoeyZX)
 texts.push([
-    "Tentang", // 0
-    "Unduh", // 1
-    "Komunitas", // 2
-    "Dukungan", // 3
-    "Pameran", // 4
-    "Kontribusi", // 5
-    "Donasi", // 6
-    "Emulator PlayStation Vita yang berfungsi pertama kali didunia.", // 7
-    "Pelajari lebih lanjut", // 8
-    "Tentang Vita3K", // 9
-    "Vita3K merupakan eksperimen emulator sumber terbuka pertama didunia untuk Windows, Linux, macOS dan Android.", // 10
-    "Harap dicatat bahwa kegunaan emulator ini tidak untuk kegiatan ilegal.", // 11
-    "Pilih versi buatan untukmu!", // 12
-    "Segera hadir!", // 13
-    "Ambil dari GitHub", // 14
-    "Hubungi kami!", // 15
-    "Kalian dapat menghubungi kami para pengembang dan pengguna lainnya kapan pun maumu melalui server Discord kami, tapi semua itu tetap ada pada pilihanmu!", // 16
-    "Bergabung sekarang!", // 17
-    "Periksa apa yang dapat berjalan saat ini!", // 18
-    "Emulator ini juga dapat menjalankan beberapa <b>game komersial!</b><br>Yuk cek di <a href=\"/compatibility.html?lang=id\">daftar dukungan permainan<a>.<br><br>Beberapa permainan homebrew kami dukung juga. Yuk cek juga di <a href=\"compatibility-homebrew.html?lang=id\">daftar dukungan homebrew</a> untuk detail lebih lanjut.", // 19
-    "Port permainan Homebrew", // 20
-    "PlayStation dan PS Vita merupakan merek dari Sony Interactive Entertainment Inc.", // 21
-    "Emulator ini tidak berkaitan atau didukung oleh Sony atau berasal dari konten rahasia yang dimiliki oleh Sony.", // 22
-    "Dilabeli oleh", // 23'
-    "Kalian dapat berkontribusi ke emulator dengan cara berikut:", // 24
-    "Pilih bahasa", // 25
-    "Memperbarui <a href=\"https://github.com/Vita3K/compatibility/issues/\">daftar dukungan permainan</a>.", // 26 // do this for every lang also line // 19 for every lang
-    "Berikan rasa kasih kalian!", // 27
-    "Kalau kalian ingin memberikan rasa apresiasi dan mungkin ingin mendukung finansial para pengembang, projek ini memiliki <a href=\"https://ko-fi.com/vita3k/\">halaman Ko-fi</a>.", // 28
-    "Jadi Pendukung", // 29
-    "Permainan Homebrew", // 30
-    "Manfaat Homebrew", // 31
-    "Dukung kami menjadi lebih baik!", // 32
-    "Berkas yang bermasalah atau kalian ingin membuat permintaan baru (Pull Requests) bisa dilakukan <a href=\"https://github.com/Vita3K/Vita3K/\">dipenyimpanan GitHub</a> kami.", // 33
-    "Apa yang baru", // 34
-    "Kami memiliki blog yang setiap saat kami publikasikan laporan secara detail dengan perkembangan kami sampai saat ini. Yuk lihat apa yang baru disana!", // 35
-    "Mulai cepat", // 36
-    "Blog", // 37
-    "belum tersedia", // 38
-    "FAQs", // 39
-    "<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versi Lama</a>", // 40(made by nishinji, translated by deepl)
+	"Tentang", // 0
+	"Unduh", // 1
+	"Komunitas", // 2
+	"Dukungan", // 3
+	"Pameran", // 4
+	"Kontribusi", // 5
+	"Donasi", // 6
+	"Emulator PlayStation Vita yang berfungsi pertama kali didunia.", // 7
+	"Pelajari lebih lanjut", // 8
+	"Tentang Vita3K", // 9
+	"Vita3K merupakan eksperimen emulator sumber terbuka pertama didunia untuk Windows, Linux, macOS dan Android.", // 10
+	"Harap dicatat bahwa kegunaan emulator ini tidak untuk kegiatan ilegal.", // 11
+	"Pilih versi buatan untukmu!", // 12
+	"Segera hadir!", // 13
+	"Ambil dari GitHub", // 14
+	"Hubungi kami!", // 15
+	"Kalian dapat menghubungi kami para pengembang dan pengguna lainnya kapan pun maumu melalui server Discord kami, tapi semua itu tetap ada pada pilihanmu!", // 16
+	"Bergabung sekarang!", // 17
+	"Periksa apa yang dapat berjalan saat ini!", // 18
+	"Emulator ini juga dapat menjalankan beberapa <b>game komersial!</b><br>Yuk cek di <a href=\"/compatibility.html?lang=id\">daftar dukungan permainan<a>.<br><br>Beberapa permainan homebrew kami dukung juga. Yuk cek juga di <a href=\"compatibility-homebrew.html?lang=id\">daftar dukungan homebrew</a> untuk detail lebih lanjut.", // 
+	"Port permainan Homebrew", // 20
+	"PlayStation dan PS Vita merupakan merek dari Sony Interactive Entertainment Inc.", // 21
+	"Emulator ini tidak berkaitan atau didukung oleh Sony atau berasal dari konten rahasia yang dimiliki oleh Sony.", // 22
+	"Dilabeli oleh", // 23'
+	"Kalian dapat berkontribusi ke emulator dengan cara berikut:", // 24
+	"Pilih bahasa", // 25
+	"Memperbarui <a href=\"https://github.com/Vita3K/compatibility/issues/\">daftar dukungan permainan</a>.", // 26
+	"Berikan rasa kasih kalian!", // 27
+	"Kalau kalian ingin memberikan rasa apresiasi dan mungkin ingin mendukung finansial para pengembang, projek ini memiliki <a href=\"https://ko-fi.com/vita3k/\">halaman Ko-fi</a>.", // 28
+	"Jadi Pendukung", // 29
+	"Permainan Homebrew", // 30
+	"Manfaat Homebrew", // 31
+	"Dukung kami menjadi lebih baik!", // 32
+	"Berkas yang bermasalah atau kalian ingin membuat permintaan baru (Pull Requests) bisa dilakukan <a href=\"https://github.com/Vita3K/Vita3K/\">dipenyimpanan GitHub</a> kami.", // 33
+	"Apa yang baru", // 34
+	"Kami memiliki blog yang setiap saat kami publikasikan laporan secara detail dengan perkembangan kami sampai saat ini. Yuk lihat apa yang baru disana!", // 35
+	"Mulai cepat", // 36
+	"Blog", // 37
+	"belum tersedia", // 38
+	"FAQs", // 39
+    "<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Versi Lama</a>", // 40 (made by nishinji, translated by deepl)
+])
+
+// Traditional Chinese (Translation by Croden1999)
+texts.push([
+	"關於", // 0
+	"下載", // 1
+	"社區", // 2
+	"相容性", // 3
+	"展示", // 4
+	"貢獻", // 5
+	"捐贈", // 6
+	"全球首個可用的PlayStation Vita模擬器。", // 7
+	"瞭解更多", // 8
+	"關於Vita3K", // 9
+	"Vita3K是全球首個在Windows、Linux、macOS和Android上的實驗性開源PlayStation Vita模擬器。", // 10
+	"請注意，模擬器的目的不是用於非法行為。", // 11
+	"獲得對應您的構建版本！", // 12
+	"敬請期待！", // 13
+	"立即獲取GitHub", // 14
+	"與我們交流！", // 15
+	"隨時與開發人員和其他用戶交流。我們更喜歡通過我們的Discord伺服器來交流，但我們尊重您的選擇！", // 16
+	"立即加入！", // 17
+	"查看當前可運行的內容！", // 18
+	"模擬器目前可以運行一些<b>商業遊戲</b>！<br>點擊查看<a href=\"/compatibility.html?lang=ch\">相容性列表<a>。<br><br>並且也支援一些自製程式。點擊查看<a href=\"compatibility-homebrew.html?lang=ch\">自製程式兼容性列表</a>來瞭解更多詳情。", // 19
+	"自製遊戲端口", // 20
+	"PlayStation 和 PS Vita 是 Sony Interactive Entertainment Inc.（索尼互動娛樂有限公司）的注冊商標。", // 21
+	"此模擬器與索尼公司無關，也沒有獲得索尼公司的認可，更沒有包含索尼公司的機密資料。", // 22
+	"LOGO設計由", // 23
+	"您可以通過以下方式為模擬器做出貢獻：", // 24
+	"選擇語言", // 25
+	"為<a href=\"https://github.com/Vita3K/compatibility/issues\">相容性列表</a>更新資料庫。", // 26
+	"向我們展示您的愛！", // 27
+	"如果您想對項目表達感謝，並且想要提供資助項目開發，可以訪問<a href=\"https://ko-fi.com/vita3k\">Ko-fi頁面</a>捐贈。", // 28
+	"成為一名支持者", // 29
+	"自製遊戲", // 30
+	"自製程式", // 31
+	"幫助我們變得更好！", // 32
+	"提出討論或者提交一個合併請求到我們的<a href=\"https://github.com/Vita3K/Vita3K\">GitHub項目庫</a>。", // 33
+	"最新資訊", // 34
+	"我們這裡有一個博客，不定期發佈我們工作最新進展的詳細報告。來看看有什麼新鮮事！", // 35
+	"快速入門", // 36
+	"博客", // 37
+	"尚未公佈", // 38
+	"常見問題", // 39
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">履歷版本</a>", // 40
 ])
