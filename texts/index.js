@@ -325,40 +325,40 @@ texts.push([
 	"Galeria", // 4
 	"Współpracuj", // 5
 	"Wesprzyj", // 6
-	"Pierwszy emulator konsoli PlayStation Vita na świecie.", // 7
+	"Pierwszy na świecie funkcjonalny emulator PlayStation Vita.", // 7
 	"Dowiedz się więcej", // 8
 	"Informacje o Vita3K", // 9
-	"Vita3K to pierwszy na świecie eksperymentalny emulator PlayStation Vita z otwartym kodem źródłowym dla Windows, Linux, macOS i Android.", // 10
-	"Pamiętaj, że celem tego emulatora nie jest umożliwienie nielegalnej aktywnośći.", // 11
-	"Wybierz wersję dla swojego systemu!", // 12
-	"Dostępne wkrótce!", // 13
+	"Vita3K to pierwszy na świecie funkcjonalny, eksperymentalny, open-source'owy emulator PlayStation Vita dla Windowsa, Linuxa, macOSa i Androida", // 10
+	"Pamiętaj, że ten emulator nie ma na celu umożliwienia nielegalnych działań.", // 11
+	"Wybierz wersję", // 12
+	"Dostępne już wkrótce!", // 13
 	"Pobierz z GitHub", // 14
 	"Skontaktuj się z nami!", // 15
-	"Skontaktuj się z deweloperami i innymi użytkownikami kiedy tylko chcesz. Wolimy Discorda, ale wybór należy do Ciebie!", // 16
+	"Skontaktuj się z deweloperami i innymi użytkownikami, kiedy tylko chcesz. Preferujemy nasz serwer Discord, ale wybór należy do Ciebie!", // 16
 	"Dołącz", // 17
 	"Sprawdź jakie gry aktualnie działają!", // 18
 	"Na tym emulatorze można już zagrać już w <b>parę dobrych gier!</b><br>Sprawdź <a href=\"compatibility.html?lang=pl\">listę kompatybilności</a><br><br>Wiele gier homebrew jest również obsługiwanych. Sprawdź <a href=\"compatibility-homebrew.html?lang=pl\">listę kompatybilnośći homebrew</a> aby dowiedzieć się więcej!", // 19
 	"Port gry homebrew", // 20
 	"PlayStation i PS Vita są znakami towarowymi Sony Interactive Entertainment Inc.", // 21
 	"Nasz emulator nie jest powiązany z firmą Sony, nie jest przez nią wspierany ani nie korzysta z poufnych materiałów należących do niej.", // 22
-	"Twórcą naszego logo jest", // 23
-	"Możesz pomagać nam w następujące sposoby:", // 24
-	"Wybierz swój język", // 25
+	"Logo autorstwa", // 23
+	"Możesz nas wspomóc w następujące sposoby:", // 24
+	"Wybierz język", // 25
 	"Pomóż nam i innym graczom dodawając gry do <a href=\"https://github.com/Vita3K/compatibility/issues\">listy kompatybilnośći</a>", // 26
-	"Okaż nam swą miłość!", // 27
-	"Jeśli chcielibyście okazać swoje wsparcie, a nawet pomóc w finansowaniu rozwoju naszego projektu, mamy stronę <a href=\"https://ko-fi.com/vita3k\">Ko-fi</a>", // 28
+	"Pomóż nam rozwinąć skrzydła", // 27
+	"Jeśli chcielibyście okazać swoje wsparcie i pomóc w finansowaniu rozwoju, projekt ma <a href=\"https://ko-fi.com/vita3k\">stronę Ko-fi</a>", // 28
 	"Zostań wspierającym", // 29
 	"Gra homebrew", // 30
 	"Aplikacja homebrew", // 31
 	"Dołóż swoją cegięłke!", // 32
-	"Zgłoś problem lub zaproponuj zmiany w kodzie na naszym <a href=\"https://github.com/Vita3K/Vita3K\">Githubie</a>.", // 33
+	"Zgłoś problem lub zaproponuj zmiany w kodzie na naszej <a href=\"https://github.com/Vita3K/Vita3K\">stronie Github</a>.", // 33
 	"Sprawdź co nowego", // 34
 	"Prowadzimy bloga gdzie nieregularnie publikujemy szczegółowe raporty z najnowszym postępem. Serdecznie zachęcamy do przeczytania!", // 35
 	"Quickstart", // 36
 	"Blog", // 37
 	"Jeszcze nie dostępne", // 38
 	"FAQs", // 39
-	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Starsze wersje</a>", // 40 (made by nishinji, translated by deepl)
+	"<a href=\"https://github.com/Vita3K/Vita3K-builds/releases\">Starsze</a>", // 40 (made by nishinji, translated by deepl)
 ])
 
 // Brazilian Portuguese (Translation provided by mjsf12)
