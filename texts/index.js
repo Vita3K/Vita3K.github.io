@@ -328,7 +328,7 @@ texts.push([
 	"Pierwszy na świecie funkcjonalny emulator PlayStation Vita.", // 7
 	"Dowiedz się więcej", // 8
 	"Informacje o Vita3K", // 9
-	"Vita3K to pierwszy na świecie funkcjonalny, eksperymentalny, open-source'owy emulator PlayStation Vita dla Windowsa, Linuxa, macOSa i Androida", // 10
+	"Vita3K to pierwszy na świecie funkcjonalny, eksperymentalny, otwarto-źródłowy emulator PlayStation Vita dla Windowsa, Linuxa, macOSa i Androida", // 10
 	"Pamiętaj, że ten emulator nie ma na celu umożliwienia nielegalnych działań.", // 11
 	"Wybierz wersję", // 12
 	"Dostępne już wkrótce!", // 13
