@@ -333,11 +333,11 @@ texts.push([
 	"Wybierz wersję", // 12
 	"Dostępne już wkrótce!", // 13
 	"Pobierz z GitHub", // 14
-	"Skontaktuj się z nami!", // 15
+	"Skontaktuj się z nami", // 15
 	"Skontaktuj się z deweloperami i innymi użytkownikami, kiedy tylko chcesz. Preferujemy nasz serwer Discord, ale wybór należy do Ciebie!", // 16
 	"Dołącz", // 17
 	"Sprawdź jakie gry aktualnie działają!", // 18
-	"Na tym emulatorze można już zagrać już w <b>parę dobrych gier!</b><br>Sprawdź <a href=\"compatibility.html?lang=pl\">listę kompatybilności</a><br><br>Wiele gier homebrew jest również obsługiwanych. Sprawdź <a href=\"compatibility-homebrew.html?lang=pl\">listę kompatybilnośći homebrew</a> aby dowiedzieć się więcej!", // 19
+	"Na tym emulatorze można już zagrać już w <b>parę imponujących gier!</b><br>Sprawdź <a href=\"compatibility.html?lang=pl\">listę kompatybilności</a><br><br>Wiele gier homebrew jest również obsługiwanych. Sprawdź <a href=\"compatibility-homebrew.html?lang=pl\">listę kompatybilnośći homebrew</a> aby dowiedzieć się więcej!", // 19
 	"Port gry homebrew", // 20
 	"PlayStation i PS Vita są znakami towarowymi Sony Interactive Entertainment Inc.", // 21
 	"Nasz emulator nie jest powiązany z firmą Sony, nie jest przez nią wspierany ani nie korzysta z poufnych materiałów należących do niej.", // 22
@@ -350,7 +350,7 @@ texts.push([
 	"Zostań wspierającym", // 29
 	"Gra homebrew", // 30
 	"Aplikacja homebrew", // 31
-	"Dołóż swoją cegięłke!", // 32
+	"Dołóż swoją cegięłke", // 32
 	"Zgłoś problem lub zaproponuj zmiany w kodzie na naszej <a href=\"https://github.com/Vita3K/Vita3K\">stronie Github</a>.", // 33
 	"Sprawdź co nowego", // 34
 	"Prowadzimy bloga gdzie nieregularnie publikujemy szczegółowe raporty z najnowszym postępem. Serdecznie zachęcamy do przeczytania!", // 35
