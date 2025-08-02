@@ -4,7 +4,7 @@
   "description": "",
   "main": "gulpfile.js",
   "dependencies": {
-    "browser-sync": "^3.0.2",
+    "browser-sync": "^3.0.4",
     "font-awesome": "^4.7.0",
     "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
