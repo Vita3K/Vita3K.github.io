@@ -29,6 +29,12 @@
                             }).pop().browser_download_url;
                             $(`#${os}URL`).attr("href", `${downloadURL}?time=${Date.now().toString()}`);
                         });
+                        ['android'].forEach(os => {
+                            const downloadURL = json.assets.filter((release) => {
+                                return release.name === os + "-latest.apk";
+                            }).pop().browser_download_url;
+                            $(`#${os}URL`).attr("href", `${downloadURL}?time=${Date.now().toString()}`);
+                        });
                     });
                 }
 
