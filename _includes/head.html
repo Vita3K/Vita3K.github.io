@@ -20,6 +20,13 @@
 <meta name="theme-color" content="#ffa500"> <!-- orange -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<!-- Fix link path for fork repositories -->
+<script>
+  const base = document.createElement('base');
+  base.href = window.location.origin + '/Vita3K.github.io/';
+  document.head.appendChild(base);
+</script>
+
 <!-- AngularJS -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
 
@@ -53,9 +60,9 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118291431-1"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
 
-    gtag('config', 'UA-118291431-1');
+  gtag('config', 'UA-118291431-1');
 </script>
