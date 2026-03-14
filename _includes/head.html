@@ -20,6 +20,15 @@
 <meta name="theme-color" content="#ffa500"> <!-- orange -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<!-- Fix link path for fork repositories -->
+<script>
+    if (window.location.hostname !== 'vita3k.org') {
+      const base = document.createElement('base');
+      base.href = window.location.origin + '/Vita3K.github.io/';
+      document.head.appendChild(base);
+    }
+</script>
+
 <!-- AngularJS -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.min.js"></script>
 
