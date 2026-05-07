@@ -1,0 +1,474 @@
+<script lang="ts">
+    import AccordionItem from "$lib/components/AccordionItem.svelte";
+</script>
+
+<section class="text-center text-white d-flex">
+    <div class="container my-auto">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <h1>
+                    <strong>Quickstart</strong>
+                </h1>
+                <hr />
+                <br />
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <p class="text-faded mb-1">
+                    Get started with Vita3K and play your favorite PSVita games!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-dark text-white pb-5">
+    <div class="container">
+        <div>
+            <h1 class="text-center">Hardware Requirements</h1>
+            <div class="my-5">
+                <h5>
+                    The emulator performance and accuracy varies depending on
+                    your hardware. We cannot guarantee it will perform well if
+                    your PC barely meets the minimum requirements. For the best
+                    experience make sure you're within the recommended
+                    requirements as most of the reported games are tested with
+                    such requirements.
+                </h5>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 d-flex flex-column">
+                    <h4 class="my-4"><b>Minimum requirements</b></h4>
+                    <div class="row no-gutters reqs">
+                        <div
+                            class="col-2 col-sm-1 col-lg-1 mx-2"
+                            style="background: url('img/icons/opengl.svg') no-repeat center"
+                        ></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>GPU that supports OpenGL 4.4</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs my-3">
+                        <div
+                            class="col-2 col-sm-1 col-lg-1 mx-2"
+                            style="background: url('img/icons/cpu.svg') no-repeat center"
+                        ></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>Any x86_64 CPU</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs">
+                        <div
+                            class="col-2 col-sm-1 col-lg-1 mx-2"
+                            style="background: url('img/icons/ram.svg') no-repeat center"
+                        ></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>Minimum of 4GB RAM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex flex-column">
+                    <h4 class="my-4"><b>Recommended requirements</b></h4>
+                    <div class="row no-gutters reqs">
+                        <div
+                            class="col-2 col-sm-1 col-lg-1 mx-2"
+                            style="background: url('img/icons/vulkan.svg') no-repeat center"
+                        ></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>GPU that supports Vulkan</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs mt-3">
+                        <div
+                            class="col-2 col-sm-1 col-lg-1 mx-2"
+                            style="background: url('img/icons/gpu.svg') no-repeat center"
+                        ></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>GPU that supports shader interlock</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs my-3">
+                        <div
+                            class="col-2 col-sm-1 col-lg-1 mx-2"
+                            style="background: url('img/icons/cpu.svg') no-repeat center"
+                        ></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>x86_64 CPU with the AVX instruction set</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters reqs">
+                        <div
+                            class="col-2 col-sm-1 col-lg-1 mx-2"
+                            style="background: url('img/icons/ram.svg') no-repeat center"
+                        ></div>
+                        <div class="col-9 col-sm-10 col-lg-10">
+                            <p>8GB of RAM or greater</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="mt-5 pt-5">
+                <h1 class="text-center">Software Requirements</h1>
+                <div class="mt-5">
+                    <h4><b>Microsoft Redistributable</b></h4>
+                    <p>
+                        If you're having trouble running Vita3K and it complains
+                        about <code>VCRUNTME140_1.dll was not found</code>,
+                        download and install the
+                        <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe"
+                            >Visual C++ 2015-2022 Redistributable</a
+                        >.
+                    </p>
+                    <h4><b>Operating System</b></h4>
+                    <p>
+                        You need to be running a 64-bit operating system in
+                        order for Vita3K to work.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-dark text-white">
+    <div class="container">
+        <h1 class="text-center mb-5">Installing the firmware</h1>
+        <div>
+            <p>
+                Some games require the system modules be present for Vita3K to
+                (low level) emulate them. This can be done by installing the PS
+                Vita firmware through Vita3K.
+            </p>
+            <p>
+                The firmware can be downloaded from the official <a
+                    href="https://www.playstation.com/en-us/support/hardware/psvita/system-software/"
+                    >PlayStation website</a
+                >, there's also an additional firmware package that contains the
+                system fonts that needs to be installed. The font firmware
+                package can be downloaded straight from the
+                <a id="systemdata" href="">PlayStation servers</a>.
+            </p>
+            <p>
+                Install <b>both</b> firmware packages using the
+                <code>File > Install Firmware</code> menu option.
+            </p>
+        </div>
+        <div class="mt-5">
+            <h4><b>Managing Modules</b></h4>
+            <p>
+                System modules can be managed in the <code
+                    >Configuration > Settings > Core</code
+                >
+                tab of the emulator, we recommend
+                <code>Modules Mode > Automatic</code>. And if you have doubts
+                some modules are causing crashes you can try to remove them.
+            </p>
+        </div>
+    </div>
+</section>
+<section class="bg-dark text-white pt-5">
+    <div class="container">
+        <h1 class="text-center mb-5">Dumping Games</h1>
+        <p>
+            Vita3K does <b class="text-danger">not</b> condone piracy,
+            therefore, you are required to dump your own games. Currently, it is
+            preferred to dump your games on a Vita or Vita TV (PS TV) using
+            HENkaku <b class="text-danger">3.60 - 3.65</b>.
+        </p>
+        <p>
+            Currently, Vita3K supports .pkg, NoNpDrm, FAGDec, or manually
+            decrypted games (Vitamin dumps are not supported and Maidump is
+            unstable). The games should be in a .zip or .vpk format if you want
+            to install them from the emulator, or if you prefer to copy them
+            yourself, you can drag and drop the game folder in your <code
+                >pref_path/ux0/app</code
+            > folder (not applicable for NoNpDrm dumps/.pkg files).
+        </p>
+        <p>
+            <code>pref_path</code> defaults to:
+            <br /><code>%Appdata%/Roaming/Vita3K/Vita3K</code> on windows
+            <br /><code>~/.local/share/Vita3K/Vita3K</code> on linux
+            <br /><code>~/Library/Application Support/Vita3K</code> on macOS
+        </p>
+        <div class="my-5">
+            <h3>How to dump your games</h3>
+            <p class="my-3">
+                These are the several ways to dump and get decrypted games in
+                order of their accuracy.
+            </p>
+
+            <AccordionItem
+                id="fagdec"
+                title="FAGDec + Vitashell"
+                initiallyOpen={false}
+            >
+                <div class="answer">
+                    <div class="padding-wrapper">
+                        <p class="my-3"></p>
+                        <h5>
+                            Using <a
+                                href="https://github.com/TheOfficialFloW/VitaShell/releases"
+                                >Vitashell</a
+                            >
+                            and
+                            <a
+                                href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build"
+                                >FAGDec</a
+                            >
+                        </h5>
+
+                        <ol>
+                            <li>
+                                Download <a
+                                    href="https://github.com/TheOfficialFloW/VitaShell/releases"
+                                    >Vitashell</a
+                                >
+                                and
+                                <a
+                                    href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build"
+                                    >FAGDec</a
+                                > and install them to your PS Vita
+                            </li>
+                            <li>
+                                <ol type="A">
+                                    <li>If you're dumping from a cartridge:</li>
+                                    <p>
+                                        Launch Vitashell and navigate to <code
+                                            >gro0:app</code
+                                        >
+                                    </p>
+                                    <li>If you're dumping a digital game:</li>
+                                    <p>
+                                        Launch Vitashell and navigate to <code
+                                            >ux0:app</code
+                                        > (or wherever your games are) and choose
+                                        a game you want to dump
+                                    </p>
+                                </ol>
+                            </li>
+                            <li>
+                                Hover over your game's folder and press <code
+                                    >△</code
+                                >
+                                then choose <code>Open decrypted</code>
+                            </li>
+                            <li>
+                                Now copy everything inside the game's folder and
+                                paste it in a folder of your choosing
+                            </li>
+                            <p class="my-2">
+                                That's the game files done, now we need to use
+                                FAGDec to decrypt the selfs.
+                            </p>
+                            <li>
+                                Launch FAGDec and scroll down until you find the
+                                game you want to dump
+                            </li>
+                            <li>
+                                Hover on the game and press the <code>✖</code>
+                                button, wait for FAGDec to find all the modules and
+                                then select
+                                <code>DECRYPT ALL</code>
+                            </li>
+                            <li>
+                                You will see that the modules have been listed
+                                on the right side of the screen. Now go back to
+                                the main menu and press <code>Start</code>
+                            </li>
+                            <li>
+                                You will see two options here, select the one
+                                that says <code
+                                    >[START] START DECRYPT(SELF)</code
+                                >
+                            </li>
+                            <li>
+                                Now just wait until it finishes decrypting the
+                                game modules
+                            </li>
+                            <li>
+                                You can find the output files in <code
+                                    >ux0:FAGDec/app/'title_id'</code
+                                >
+                            </li>
+                            <p class="my-3">
+                                Now all you gotta do is take the files that
+                                FAGDec outputted and put them in the previously
+                                copied folder from VitaShell, if asked to
+                                replace some files, confirm the replacement.
+                            </p>
+                            <p>
+                                <b
+                                    >It's very <u class="text-danger"
+                                        >important</u
+                                    > that the folder containing the game files be
+                                    named as the game's Title ID. Otherwise your
+                                    game won't boot.</b
+                                >
+                            </p>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="answer">
+                    <div class="padding-wrapper">
+                        <h5 class="my-3">Building a .vpk file</h5>
+                        <p class="my-3">
+                            After dumping your game, you can optionally package
+                            it into a .vpk file for Vita3K to install. By
+                            packaging your dump into a .vpk, you can drag and
+                            drop it directly into the Vita3K window to install
+                            it.
+                        </p>
+                        <ol>
+                            <li>
+                                Download <a
+                                    href="https://github.com/vitaorganizer/vitaorganizer/releases"
+                                    >VitaOrganizer</a
+                                > and run the application on your PC.
+                            </li>
+                            <li>
+                                Click <code>File</code> ->
+                                <code>Create vpk from maidump folder...</code>
+                            </li>
+                            <li>
+                                Select the <code>EBOOT.BIN</code> file inside of
+                                your dump folder.
+                            </li>
+                            <p>
+                                The progress of the vpk creation will be shown
+                                at the bottom of the VitaOrganizer window. Once
+                                it's completed, open Vita3K and drag the vpk
+                                onto the Vita3K window.
+                            </p>
+                        </ol>
+                    </div>
+                </div>
+            </AccordionItem>
+
+            <AccordionItem id="nonprdm" title="NoNpDrm" initiallyOpen={false}>
+                <div class="answer">
+                    <div class="padding-wrapper">
+                        <p class="my-3"></p>
+                        <h5>
+                            Using <a
+                                href="https://github.com/TheOfficialFloW/VitaShell/releases"
+                                >Vitashell</a
+                            >
+                            with
+                            <a
+                                href="https://github.com/TheOfficialFloW/NoNpDrm/releases"
+                                >NoNpDrm</a
+                            >
+                        </h5>
+                        <ol>
+                            <li>
+                                Download <a
+                                    href="https://github.com/TheOfficialFloW/VitaShell/releases"
+                                    >Vitashell</a
+                                > and install it to your PS Vita
+                            </li>
+                            <li>
+                                <p>
+                                    Download the latest <a
+                                        href="https://github.com/TheOfficialFloW/NoNpDrm/releases"
+                                        >nonpdrm.skprx</a
+                                    >, copy it to <code>ux0:tai</code>
+                                    and modify the
+                                    <code>ux0:tai/config.txt</code>
+                                    file to add the path to the module under
+                                    <code>*KERNEL</code>
+                                    as follows
+                                    <br />
+                                    <code
+                                        >*KERNEL<br />
+                                        ux0:tai/nonpdrm.skprx</code
+                                    ><br />
+                                    Don't forget to reboot your device, otherwise
+                                    the plugin will have no effect yet. If you know
+                                    what you are doing, you may change this path
+                                    to an arbitrary location as long as it matches
+                                    the exact location of the module. You may also
+                                    edit the
+                                    <code>ur0:tai/config.txt</code>
+                                    instead assuming you do not have a config.txt
+                                    file inside the
+                                    <code>ux0:tai/</code> folder
+                                </p>
+                            </li>
+                            <li>
+                                Now you have to generate a license key. In order
+                                to generate a fake license file containing the
+                                application's rif key, you must first launch the
+                                application with the NoNpDrm plugin enabled. The
+                                fake licenses for the applications will then be
+                                stored at <br />
+
+                                <code
+                                    >ux0:nonpdrm/license/app/TITLE_ID/6488b73b912a753a492e2714e9b38bc7.rif
+                                    <br />
+                                    ux0:nonpdrm/license/addcont/TITLE_ID/DLC_FOLDER/6488b73b912a753a492e2714e9b38bc7.rif
+                                    (for additional content)</code
+                                >
+                            </li>
+                            <li>
+                                Transfer the content of <code
+                                    >gro0:app/TITLE_ID</code
+                                >
+                                or <code>ux0:app/TITLE_ID</code> to your PC and
+                                copy the fake license
+                                <code
+                                    >ux0:nonpdrm/license/app/TITLE_ID/6488b73b912a753a492e2714e9b38bc7.rif</code
+                                >
+                                file as
+                                <code>TITLE_ID/sce_sys/package/work.bin</code
+                                ><br /><b
+                                    >You need to overwrite the original work.bin</b
+                                >
+                            </li>
+                            <li>
+                                Go inside of the <code>TITLE_ID</code>, select
+                                all the contents and compress them into a .zip
+                                format.
+                            </li>
+                            <li>
+                                Open Vita3k, click on the File entry in the
+                                menubar and click Install .vpk/.zip. Select your <code
+                                    >TITLE_ID.zip</code
+                                > file and confirm. The game will begin installing
+                                (This might take a long time for large games).
+                            </li>
+                            <div class="my-2">For DLC</div>
+                            <li>
+                                You can also install DLC from <code
+                                    >ux0:addcont/TITLE_ID/DLC_FOLDER</code
+                                >
+                                or, on selected card games, from
+                                <code>grw0:addcont/TITLE_ID/DLC_FOLDER</code>
+                                (ONE AT A TIME)
+                                <br />To do so, copy the fake license
+                                <code
+                                    >ux0:nonpdrm/license/addcont/TITLE_ID/DLC_FOLDER/6488b73b912a753a492e2714e9b38bc7.rif</code
+                                >
+                                to
+                                <code>DLC_FOLDER/sce_sys/package/work.bin</code>
+                                and transfer it to your pc. <br /><b
+                                    >You need to overwrite the original work.bin</b
+                                >.
+                            </li>
+                            <li>
+                                Go inside of the <code>DLC_FOLDER</code>
+                                , select all the contents and compress them into
+                                a .zip format.
+                            </li>
+                            <li>
+                                Open Vita3k, click on the File entry in the
+                                menubar and click Install .vpk/.zip. Select your <code
+                                    >DLC_FOLDER.zip</code
+                                > file and confirm. The DLC will begin installing.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </AccordionItem>
+        </div>
+    </div>
+</section>
