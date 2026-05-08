@@ -26,7 +26,7 @@
                 <div class="col-lg-12 mx-auto text-center">
                     <h2 class="blog-post-title section-heading">
                         <a href={post.url}>
-                            {post.title}
+                            {post.meta.title}
                         </a>
                     </h2>
                     <!-- Show a truncated preview (excerpt) of the HTML content -->

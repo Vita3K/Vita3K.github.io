@@ -16,7 +16,7 @@
             <div class="col-lg-8 mx-auto">
                 <p class="text-faded mb-5">{m.description()}</p>
                 <a
-                    class="btn btn-primary btn-xl js-scroll-trigger"
+                    class="btn btn-primary btn-xl"
                     href="#about">{m.find_out_more()}</a
                 >
             </div>
@@ -47,7 +47,7 @@
                 <p class="text-faded mb-4">
                     {m.blog_description()}<br /><br />
                     <a
-                        class="btn btn-primary btn-xl js-scroll-trigger"
+                        class="btn btn-primary btn-xl"
                         href={resolve("/blog")}>{m.blog()}</a
                     >
                 </p>

@@ -1,11 +1,14 @@
 .plate {
-    border-radius: 15px 50px 30px;
+    border-radius: 30px;
     color: white;
     text-align: center;
     font-weight: bold;
     padding-left: 5px;
     padding-right: 5px;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
     text-decoration: none;
+
+    @include sans-serif-font();
 
     &:hover {
         color: white;
@@ -13,34 +16,75 @@
     }
 }
 
+.progress {
+    background-color: $bg-color;
+}
+
+table {
+    @include sans-serif-font();
+}
+
+.status-field {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+}
+
+
 .title-name {
     color: $white;
+    text-decoration: none;
 }
 
 .bg-nothing {
-    background-color: #ff1010;
+    background-color: $nothing;
 }
 
 .bg-bootable {
-    background-color: #7030b0;
+    background-color: $bootable;
 }
 
 .bg-intro {
-    background-color: #c71585;
+    background-color: $intro;
 }
 
 .bg-menu {
-    background-color: #1e64dc;
+    background-color: $menu;
 }
 
-.bg-ingame- {
-    background-color: #e08a1e;
+.bg-ingame-minus {
+    background-color: $ingame_minus;
 }
 
-.bg-ingame {
-    background-color: #ffd250;
+.bg-ingame-plus {
+    background-color: $ingame_plus;
 }
 
 .bg-playable {
-    background-color: #0e8a16;
+    background-color: $playable;
+}
+
+.region {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+}
+
+.region- {
+
+    &USA {
+        background-color: #ff3838;
+    }
+
+    &JPN {
+        background-color: #ffffff;
+    }
+
+    &EUR {
+        background-color: #1e64dc;
+    }
+
+    &ASIA {
+        background-color: #3efd7e;
+    }
+
+    &UNK {
+        background-color: #000000;
+    }
 }

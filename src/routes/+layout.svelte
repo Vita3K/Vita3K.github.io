@@ -18,14 +18,10 @@
 
 <svelte:head>
     <!-- Plugin JavaScript -->
-    <script src="/vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="/vendor/jquery/jquery.min.js"></script> -->
     <!-- <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
-    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="/vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <!-- <script src="/js/creative.min.js"></script> -->
+    <!-- <script src="/vendor/jquery-easing/jquery.easing.min.js"></script> -->
+    <script src="/vendor/magnific-popup/jquery.magnific-popup.js"></script>
 
     <link rel="icon" href={favicon} />
 </svelte:head>
@@ -58,10 +54,12 @@
     rel="stylesheet"
     type="text/css"
 />
-<link href="/flag-icon/css/flag-icon.css" rel="stylesheet" />
 
 <!-- Plugin CSS -->
 <link href="/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
 {@render children()}
 
 <Footer />
+
+<!-- Page top button -->
+<a class="nav-link js-scroll-trigger" href="#" id="page_top"> </a>

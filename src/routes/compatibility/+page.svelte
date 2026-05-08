@@ -15,6 +15,8 @@
     type ORDER_FIELDS = "titleId" | "name" | "status";
     type ORDER_TYPE = "asc" | "desc";
 
+    type REGION = "JPN" | "USA" | "EUR" | "ASIA" | "UNK";
+
     let views = $state({
         Nothing: [],
         Bootable: [],
@@ -33,6 +35,7 @@
         color: string;
         issueId: number;
         translatedStatus?: string;
+        region?: REGION;
     };
 
     let data: CompatibilityEntry[] = $state([]);
@@ -62,12 +65,13 @@
         return "just now";
     }
 
+    // Change tag
     function changeView(field: FIELDS) {
         data = views[field];
         orderBy(currentField, false);
     }
 
-    // Angular filter
+    // Search query
     function filterEntries(entry: CompatibilityEntry) {
         if (searchQuery == undefined || searchQuery == "") return true;
         return (
@@ -140,7 +144,7 @@
                     );
                 } else {
                     data = data.sort(
-                        (b, a) =>
+                        (a, b) =>
                             reversedStatusOrder.indexOf(a.status) -
                             reversedStatusOrder.indexOf(b.status),
                     );
@@ -179,6 +183,7 @@
 
         data.forEach((e) => {
             // Unknown already has all games, no need to add it twice
+            e.translatedStatus = m.unknown();
             if (e.status != "Unknown") {
                 switch (e.status) {
                     case "Nothing":
@@ -205,6 +210,27 @@
                 }
                 views[e.status].push(e);
             }
+
+            if (e.titleId.startsWith("PCSA") || e.titleId.startsWith("PCSE")) {
+                e.region = "USA";
+            } else if (
+                e.titleId.startsWith("PCSB") ||
+                e.titleId.startsWith("PCSF")
+            ) {
+                e.region = "EUR";
+            } else if (
+                e.titleId.startsWith("PCSC") ||
+                e.titleId.startsWith("PCSG")
+            ) {
+                e.region = "JPN";
+            } else if (
+                e.titleId.startsWith("PCSD") ||
+                e.titleId.startsWith("PCSH")
+            ) {
+                e.region = "ASIA";
+            } else {
+                e.region = "UNK";
+            }
         });
     });
 </script>
@@ -230,53 +256,46 @@
                     <br />{m.tags()}:
                     <a
                         href="#"
-                        class="plate"
+                        class="plate bg-nothing"
                         onclick={() => changeView("Nothing")}
-                        style="background-color: #e02020"
-                        >{m.nothing()} ({views["Nothing"].length})</a
-                    >
+                        >{m.nothing()} ({views["Nothing"].length})
+                    </a>
                     <a
                         href="#"
-                        class="plate"
+                        class="plate bg-bootable"
                         onclick={() => changeView("Bootable")}
-                        style="background-color: #7030b0"
-                        >{m.bootable()} ({views["Bootable"].length})</a
-                    >
+                        >{m.bootable()} ({views["Bootable"].length})
+                    </a>
                     <a
                         href="#"
-                        class="plate"
+                        class="plate bg-intro"
                         onclick={() => changeView("Intro")}
-                        style="background-color: #c71585"
-                        >{m.intro()} ({views["Intro"].length})</a
-                    >
+                        >{m.intro()} ({views["Intro"].length})
+                    </a>
                     <a
                         href="#"
-                        class="plate"
+                        class="plate bg-menu"
                         onclick={() => changeView("Menu")}
-                        style="background-color: #1e64dc"
-                        >{m.menu()} ({views["Menu"].length})</a
-                    >
+                        >{m.menu()} ({views["Menu"].length})
+                    </a>
                     <a
                         href="#"
-                        class="plate"
+                        class="plate bg-ingame-minus"
                         onclick={() => changeView("Ingame -")}
-                        style="background-color: #e08a1e"
-                        >{m.ingame_minus()} ({views["Ingame -"].length})</a
-                    >
+                        >{m.ingame_minus()} ({views["Ingame -"].length})
+                    </a>
                     <a
                         href="#"
-                        class="plate"
+                        class="plate bg-ingame-plus"
                         onclick={() => changeView("Ingame +")}
-                        style="background-color: #fbca04"
-                        >{m.ingame_plus()} ({views["Ingame +"].length})</a
-                    >
+                        >{m.ingame_plus()} ({views["Ingame +"].length})
+                    </a>
                     <a
                         href="#"
-                        class="plate"
+                        class="plate bg-playable"
                         onclick={() => changeView("Playable")}
-                        style="background-color: #0e8a16"
-                        >{m.playable()} ({views["Playable"].length})</a
-                    >
+                        >{m.playable()} ({views["Playable"].length})
+                    </a>
                     <a
                         href="#"
                         class="plate"
@@ -539,11 +558,16 @@
                         <tbody>
                             {#each data.filter( (entry) => filterEntries(entry), ) as entry (entry.titleId)}
                                 <tr>
-                                    <td align="left">
+                                    <td
+                                        align="left"
+                                        class="{'region-' +
+                                            entry.region} region"
+                                    >
                                         <b><small>{entry.titleId}</small></b>
                                     </td>
                                     <td align="left">
-                                        <a class="title-name"
+                                        <a
+                                            class="title-name"
                                             href="https://github.com/Vita3K/compatibility/issues/{entry.issueId}"
                                         >
                                             <small>{entry.name}</small>
@@ -552,11 +576,12 @@
                                     <!-- In Svelte, we use the style attribute for dynamic colors -->
                                     <td
                                         style="background-color: #{entry.color}"
+                                        class="status-field"
                                     >
                                         <span style="color: white">
-                                            <small
-                                                >{entry.translatedStatus}</small
-                                            >
+                                            <div>
+                                                {entry.translatedStatus}
+                                            </div>
                                         </span>
                                     </td>
                                 </tr>

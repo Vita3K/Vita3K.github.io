@@ -24,13 +24,13 @@
         <h3 class="text-white">{name}</h3>
         <a
             download
-            class="btn btn-primary btn-xl js-scroll-trigger"
+            class="btn btn-primary btn-xl"
             href={linkTimed}>{primaryText}</a
         >
         {#if secondaryText}
             <a
                 download
-                class="btn btn-primary btn-xl js-scroll-trigger"
+                class="btn btn-primary btn-xl"
                 href={secondaryLinkTimed}>{secondaryText}</a
             >
         {/if}

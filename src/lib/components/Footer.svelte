@@ -57,5 +57,3 @@
     </div>
 </section>
 
-<!-- Page top button -->
-<a class="nav-link js-scroll-trigger" href="#" id="page_top"> </a>

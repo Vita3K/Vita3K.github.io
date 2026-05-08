@@ -7,21 +7,33 @@ export async function getAllPosts() {
     const posts = await Promise.all(Object.entries(modules).map(async ([file, raw]: any) => {
         // Extract frontmatter manually (YAML between ---)
         const match = /^---([\s\S]*?)---/.exec(raw);
-        let meta: { title?: string } = {};
+        const meta: { [key: string]: string } = {};
         let content = raw;
         if (match) {
             // Parse YAML frontmatter
             const yaml = match[1];
             content = raw.slice(match[0].length);
-            meta = Object.fromEntries(
-                yaml.split('\n').map(line => {
-                    const idx = line.indexOf(':');
-                    if (idx === -1) return null;
-                    const key = line.slice(0, idx).trim();
-                    const value = line.slice(idx + 1).trim().replace(/^"|"$/g, '');
-                    return [key, value];
-                }).filter(Boolean)
-            );
+            const lines = yaml.split('\n');
+
+            for (const line of lines) {
+                const separatorIndex = line.indexOf(':');
+
+                if (separatorIndex === -1) {
+                    continue; // Invalid line
+                }
+
+                const key = line.slice(0, separatorIndex).trim();
+                if (!key) {
+                    continue; // Skip if key is empty
+                }
+                const rawValue = line.slice(separatorIndex + 1).trim();
+
+                // Clean up the value by removing leading/trailing quotes
+                const cleanValue = rawValue.replace(/^"|"$/g, '');
+
+                // Only add to the object if a key actually exists
+                meta[key] = cleanValue;
+            }
             if (!meta.title) {
                 meta.title = file.split('/').pop()?.replace(/\.md$/, '');
             }
