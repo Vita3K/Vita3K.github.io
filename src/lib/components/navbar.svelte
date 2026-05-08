@@ -4,7 +4,10 @@
     import VerticalSeparator from "$lib/components/VerticalSeparator.svelte";
 </script>
 
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-dark" id="mainNav">
+<nav
+    class="navbar navbar-expand-lg navbar-light fixed-top bg-dark"
+    id="mainNav"
+>
     <div class="container">
         <a class="nav-link" href={resolve("/")}>
             <img
@@ -35,8 +38,9 @@
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
-                    <a class="nav-link js-scroll-trigger" href={resolve("/blog")}
-                        >{m.blog()}</a
+                    <a
+                        class="nav-link js-scroll-trigger"
+                        href={resolve("/blog")}>{m.blog()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -49,8 +53,9 @@
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
-                    <a class="nav-link js-scroll-trigger" href={resolve("/compatibility")}
-                        >{m.compatibility()}</a
+                    <a
+                        class="nav-link js-scroll-trigger"
+                        href={resolve("/compatibility")}>{m.compatibility()}</a
                     >
                 </li>
                 <VerticalSeparator />

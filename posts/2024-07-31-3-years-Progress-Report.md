@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "3 years Progress Report: Summer 2024"
 ---
 

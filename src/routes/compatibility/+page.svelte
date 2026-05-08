@@ -543,7 +543,7 @@
                                         <b><small>{entry.titleId}</small></b>
                                     </td>
                                     <td align="left">
-                                        <a
+                                        <a class="title-name"
                                             href="https://github.com/Vita3K/compatibility/issues/{entry.issueId}"
                                         >
                                             <small>{entry.name}</small>

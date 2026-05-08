@@ -1,0 +1,46 @@
+.plate {
+    border-radius: 15px 50px 30px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+
+    &:hover {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+.title-name {
+    color: $white;
+}
+
+.bg-nothing {
+    background-color: #ff1010;
+}
+
+.bg-bootable {
+    background-color: #7030b0;
+}
+
+.bg-intro {
+    background-color: #c71585;
+}
+
+.bg-menu {
+    background-color: #1e64dc;
+}
+
+.bg-ingame- {
+    background-color: #e08a1e;
+}
+
+.bg-ingame {
+    background-color: #ffd250;
+}
+
+.bg-playable {
+    background-color: #0e8a16;
+}

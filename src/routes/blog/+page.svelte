@@ -26,14 +26,16 @@
                 <div class="col-lg-12 mx-auto text-center">
                     <h2 class="blog-post-title section-heading">
                         <a href={post.url}>
-                            <font color="#bbbbbb">{post.title}</font>
+                            {post.title}
                         </a>
                     </h2>
                     <!-- Show a truncated preview (excerpt) of the HTML content -->
                     <div class="blog-post-body mb-5" align="left">
                         {@html post.excerpt}
                     </div>
-                    <div class="blog-post-author" align="right"><a href={post.url} class="read-more">Read More</a></div>
+                    <div class="blog-post-author" align="right">
+                        <a href={post.url} class="read-more">Read More</a>
+                    </div>
                 </div>
             </div>
         {/each}

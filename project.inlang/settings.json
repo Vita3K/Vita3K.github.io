@@ -9,6 +9,7 @@
 	},
 	"baseLocale": "en",
 	"locales": [
-		"en"
+        "en",
+        "pirate"
 	]
 }

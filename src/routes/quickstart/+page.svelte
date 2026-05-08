@@ -1,5 +1,36 @@
 <script lang="ts">
     import AccordionItem from "$lib/components/AccordionItem.svelte";
+    import { onMount } from "svelte";
+
+    // Initial value is just a placeholder just in case the request fails, it will be updated on the onMount function
+    let urlObtained = $state(false);
+
+    let sysdataURL = $state("");
+
+    onMount(async () => {
+        const f = await fetch(
+            "https://api.allorigins.win/get?url=http://fus01.psp2.update.playstation.net/update/psp2/list/us/psp2-updatelist.xml",
+        );
+
+        if (!f.ok) {
+            console.error(
+                "Failed to fetch the system data URL, using the fallback URL instead",
+            );
+            return;
+        }
+
+        const response = await f.json();
+
+        let parser = new DOMParser();
+
+        const xmldoc = parser.parseFromString(response.contents, "text/xml");
+
+        sysdataURL =
+            xmldoc.getElementsByTagName("recovery")[0].childNodes[1]
+                .childNodes[0].nodeValue ?? "";
+
+        urlObtained = sysdataURL !== ""; // If the URL is not empty, then we obtained it successfully
+    });
 </script>
 
 <section class="text-center text-white d-flex">
@@ -139,13 +170,25 @@
                 Vita firmware through Vita3K.
             </p>
             <p>
-                The firmware can be downloaded from the official <a
-                    href="https://www.playstation.com/en-us/support/hardware/psvita/system-software/"
-                    >PlayStation website</a
-                >, there's also an additional firmware package that contains the
+                <b>
+                    The firmware can be downloaded from the official <a
+                        href="https://www.playstation.com/en-us/support/hardware/psvita/system-software/"
+                        >PlayStation website</a
+                    >
+                </b>
+            </p>
+            <p>
+                There's also an additional firmware package that contains the
                 system fonts that needs to be installed. The font firmware
-                package can be downloaded straight from the
-                <a id="systemdata" href="">PlayStation servers</a>.
+                package can be downloaded straight from the PlayStation servers.
+                {#if urlObtained}
+                    You can download it
+                    <a id="systemdata" href={sysdataURL}>here</a>.
+                {:else}
+                    But we couldn't get the URL for it, so you will have to find
+                    it yourself. Or in the <b>discord server</b>, using the
+                    <code>-firmware</code> command.
+                {/if}
             </p>
             <p>
                 Install <b>both</b> firmware packages using the

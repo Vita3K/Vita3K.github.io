@@ -23,7 +23,6 @@
 		"eslint": "^10.2.0",
 		"eslint-plugin-svelte": "^3.17.0",
 		"globals": "^17.4.0",
-		"mdsvex": "^0.12.7",
 		"svelte": "^5.55.2",
 		"svelte-check": "^4.4.6",
 		"typescript": "^6.0.2",
@@ -31,7 +30,10 @@
 		"vite": "^8.0.7"
 	},
 	"dependencies": {
+		"bootstrap": "^5.3.8",
+		"mdsvex": "^0.12.7",
 		"remark": "^15.0.1",
-		"unist-util-visit": "^5.1.0"
+		"remark-html": "^16.0.1",
+		"sass-embedded": "^1.99.0"
 	}
 }

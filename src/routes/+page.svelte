@@ -1,6 +1,7 @@
 <script lang="ts">
     import { m } from "$lib/paraglide/messages.js";
     import { resolve } from "$app/paths";
+    import ShowcaseImage from "$lib/components/ShowcaseImage.svelte";
 </script>
 
 <header class="masthead text-center text-white d-flex">
@@ -79,113 +80,18 @@
         </div>
     </div>
 </section>
+
+<!-- SHOWCASE -->
+
 <section class="p-0" id="showcase">
     <div class="container-fluid p-0">
         <div class="row no-gutters popup-gallery">
-            <div class="col-lg-4 col-sm-6">
-                <a
-                    class="portfolio-box"
-                    href={resolve("/img/portfolio/fullsize/1.webp")}
-                >
-                    <img
-                        class="img-fluid"
-                        src={resolve("/img/portfolio/thumbnails/1.webp")}
-                        alt="Persona 4 Golden"
-                    />
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">Persona 4 Golden</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a
-                    class="portfolio-box"
-                    href={resolve("/img/portfolio/fullsize/2.webp")}
-                >
-                    <img
-                        class="img-fluid"
-                        src={resolve("/img/portfolio/thumbnails/2.webp")}
-                        alt="Freedom Wars"
-                    />
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">Freedom Wars</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a
-                    class="portfolio-box"
-                    href={resolve("/img/portfolio/fullsize/3.webp")}
-                >
-                    <img
-                        class="img-fluid"
-                        src={resolve("/img/portfolio/thumbnails/3.webp")}
-                        alt="Hatsune Miku Project DIVA X"
-                    />
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                Hatsune Miku Project DIVA X
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a
-                    class="portfolio-box"
-                    href={resolve("/img/portfolio/fullsize/4.webp")}
-                >
-                    <img
-                        class="img-fluid"
-                        src={resolve("/img/portfolio/thumbnails/4.webp")}
-                        alt="Muramasa Rebirth"
-                    />
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">Muramasa Rebirth</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a
-                    class="portfolio-box"
-                    href={resolve("/img/portfolio/fullsize/5.webp")}
-                >
-                    <img
-                        class="img-fluid"
-                        src={resolve("/img/portfolio/thumbnails/5.webp")}
-                        alt="Borderlands 2"
-                    />
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">Borderlands 2</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a
-                    class="portfolio-box"
-                    href={resolve("/img/portfolio/fullsize/6.webp")}
-                >
-                    <img
-                        class="img-fluid"
-                        src={resolve("/img/portfolio/thumbnails/6.webp")}
-                        alt=""
-                    />
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">Soul Sacrifice Delta</div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <ShowcaseImage name="Persona 4 Golden" imageLink="1.webp" />
+            <ShowcaseImage name="Freedom Wars" imageLink="2.webp" />
+            <ShowcaseImage name="Hatsune Miku Project DIVA X" imageLink="3.webp" />
+            <ShowcaseImage name="Muramasa Rebirth" imageLink="4.webp" />
+            <ShowcaseImage name="Borderlands 2" imageLink="5.webp" />
+            <ShowcaseImage name="Soul Sacrifice Delta" imageLink="6.webp" />
         </div>
     </div>
 </section>

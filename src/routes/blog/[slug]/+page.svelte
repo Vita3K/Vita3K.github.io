@@ -9,7 +9,7 @@
             <div class="container" id="blog-container">
               <div class="row blog-post">
                     <div class="col-lg-12 mx-auto text-center">
-                        <h2 class="blog-post-title section-heading"><font color="#bbbbbb">{post.title}</font></h2>
+                        <h2 class="blog-post-title section-heading"><font color="#bbbbbb">{post.meta.title}</font></h2>
                         <div class="stackedit__html blog-post-body mb-5" align="left">{@html post.html.body}</div>
                     </div>
                 </div>

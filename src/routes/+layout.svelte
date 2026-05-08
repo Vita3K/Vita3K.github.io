@@ -8,6 +8,9 @@
     import Navbar from "$lib/components/navbar.svelte";
     import Footer from "$lib/components/Footer.svelte";
 
+    import "bootstrap/scss/bootstrap.scss";
+    import "$lib/scss/creative.scss";
+
     let { children } = $props();
 </script>
 
@@ -16,13 +19,13 @@
 <svelte:head>
     <!-- Plugin JavaScript -->
     <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
     <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="/vendor/scrollreveal/scrollreveal.min.js"></script>
     <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="/js/creative.min.js"></script>
+    <!-- <script src="/js/creative.min.js"></script> -->
 
     <link rel="icon" href={favicon} />
 </svelte:head>
@@ -37,11 +40,8 @@
     {/each}
 </div>
 
-<!-- Bootstrap core CSS -->
-<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
 <!-- Custom styles for this template -->
-<link href="/css/creative.css" rel="stylesheet" />
+<!-- <link href="/css/creative.css" rel="stylesheet" /> -->
 
 <!-- Custom fonts for this template -->
 <link

@@ -23,7 +23,6 @@
                     <li><a href="https://github.com/Vita3K/Vita3K/pulls">Pull Requests</a></li>
                     <li><a href="https://github.com/Vita3K/Vita3K/graphs/contributors">Contributors</a></li>
                     <li><a href="https://github.com/Vita3K/Vita3K/commits/master">Commits</a></li>
-                    <li><a href="https://github.com/Vita3K/Vita3K/pulse">Insights</a></li>
                     <li><a href="https://github.com/Vita3K/Vita3K/issues">Issues</a></li>
                     <li><a href="https://github.com/Vita3K/Vita3K/wiki">Wiki</a></li>
                 </ul>
@@ -32,8 +31,6 @@
                 <h3>　Social</h3>
                 <ul>
                     <li><a href="https://discord.gg/6aGwQzh">Discord</a></li>
-                    <li><a href="https://webchat.freenode.net/?channels=%23vita3k">Webchat</a></li>
-                    <li><a href="https://www.reddit.com/r/vita3k/">Reddit</a></li>
                     <li><a href="https://twitter.com/vita3k">Twitter</a></li>
                 </ul>
             </div>
@@ -47,8 +44,8 @@
                 </ul>
             </div>
             <div class="col-lg-8 mx-auto text-center">
+                <hr class="my-4" />
                 <p class="mb-5">
-                    <!-- <hr class="my-4"> -->
                     <br>
                     {m.playstation_trademarks()} {m.the_emulator_is_not_related_to_sony()}
                     <br>
@@ -61,4 +58,4 @@
 </section>
 
 <!-- Page top button -->
-<a class="nav-link js-scroll-trigger" href="#" id="page_top">Up</a>
+<a class="nav-link js-scroll-trigger" href="#" id="page_top"> </a>
