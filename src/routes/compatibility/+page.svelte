@@ -529,7 +529,7 @@
                                         onclick={() => orderBy("name")}
                                         style="color:yellow"
                                         ><small id="nameHead"
-                                            >{m.compatibility_entry_name()}
+                                            >{m.compatibility_name()}
                                             {currentField === "name"
                                                 ? currentOrder === "asc"
                                                     ? "↓"

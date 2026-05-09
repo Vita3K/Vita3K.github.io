@@ -95,7 +95,9 @@
                             style="background: url('img/icons/ram.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.quickstart_minimum_of_4gb_of_ram()}</p>
+                            <p>{m.quickstart_minimum_of_Xgb_of_ram({
+                                amount: "4",
+                            })}</p>
                         </div>
                     </div>
                 </div>
@@ -138,7 +140,9 @@
                             style="background: url('img/icons/ram.quickstart_svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.quickstart_minimum_of_8gb_of_ram()}</p>
+                            <p>{m.quickstart_recommended_Xgb_of_ram({
+                                amount: "8",
+                            })}</p>
                         </div>
                     </div>
                 </div>
