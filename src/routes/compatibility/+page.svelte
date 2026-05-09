@@ -433,7 +433,7 @@
                                 <td width="25%">
                                     <div class="progress">
                                         <div
-                                            class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-"
+                                            class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-minus"
                                             style="width:{(views['Ingame -']
                                                 .length /
                                                 views['Unknown'].length) *
@@ -460,7 +460,7 @@
                                 <td width="25%">
                                     <div class="progress">
                                         <div
-                                            class="progress-bar progress-bar-striped progress-bar-animated bg-ingame"
+                                            class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-plus"
                                             style="width:{(views['Ingame +']
                                                 .length /
                                                 views['Unknown'].length) *
