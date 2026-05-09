@@ -1,5 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { m } from "$lib/paraglide/messages.js";
 
     const { data } = $props();
     const posts = data.posts;
@@ -30,11 +31,11 @@
                         </a>
                     </h2>
                     <!-- Show a truncated preview (excerpt) of the HTML content -->
-                    <div class="blog-post-body mb-5" align="left">
+                    <div class="blog-post-body mb-5">
                         {@html post.excerpt}
                     </div>
-                    <div class="blog-post-author" align="right">
-                        <a href={post.url} class="read-more">Read More</a>
+                    <div class="blog-post-author">
+                        <a href={post.url} class="read-more">{m.read_more()}</a>
                     </div>
                 </div>
             </div>

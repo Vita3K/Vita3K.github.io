@@ -4,6 +4,12 @@
     import { setLocale, getLocale, locales } from "$lib/paraglide/runtime";
     import { page } from "$app/state";
     import VerticalSeparator from "$lib/components/VerticalSeparator.svelte";
+
+    let selectedLocale = $state(getLocale());
+
+    $effect(() => {
+        setLocale(selectedLocale);
+    });
 </script>
 
 <nav
@@ -100,11 +106,10 @@
                     >
                 </li>
                 <VerticalSeparator />
-                <select>
+                <select bind:value={selectedLocale}>
                     {#each locales as locale (locale)}
                         <option
                             value={locale}
-                            onclick={() => setLocale(locale)}
                             selected={getLocale() === locale}
                         >
                             {m.lang({}, { locale: locale })}

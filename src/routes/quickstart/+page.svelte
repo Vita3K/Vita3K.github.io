@@ -1,6 +1,7 @@
 <script lang="ts">
     import AccordionItem from "$lib/components/AccordionItem.svelte";
     import { onMount } from "svelte";
+    import { m } from "$lib/paraglide/messages.js";
 
     // Initial value is just a placeholder just in case the request fails, it will be updated on the onMount function
     let urlObtained = $state(false);
@@ -33,19 +34,20 @@
     });
 </script>
 
+/* eslint-disable svelte/no-at-html-tags */
 <section class="text-center text-white d-flex">
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1>
-                    <strong>Quickstart</strong>
+                    <strong>{m.quickstart()}</strong>
                 </h1>
                 <hr />
                 <br />
             </div>
             <div class="col-lg-8 mx-auto">
                 <p class="text-faded mb-1">
-                    Get started with Vita3K and play your favorite PSVita games!
+                    {m.get_started()}
                 </p>
             </div>
         </div>
@@ -54,27 +56,26 @@
 <section class="bg-dark text-white pb-5">
     <div class="container">
         <div>
-            <h1 class="text-center">Hardware Requirements</h1>
+            <h1 class="text-center">{m.hardware_requirements()}</h1>
             <div class="my-5">
                 <h5>
-                    The emulator performance and accuracy varies depending on
-                    your hardware. We cannot guarantee it will perform well if
-                    your PC barely meets the minimum requirements. For the best
-                    experience make sure you're within the recommended
-                    requirements as most of the reported games are tested with
-                    such requirements.
+                    {m.hardware_requirements_desc()}
                 </h5>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-6 d-flex flex-column">
-                    <h4 class="my-4"><b>Minimum requirements</b></h4>
+                    <h4 class="my-4"><b>{m.minimum_requirements()}</b></h4>
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
                             style="background: url('img/icons/opengl.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>GPU that supports OpenGL 4.4</p>
+                            <p>
+                                {m.gpu_that_supports_opengl_version({
+                                    version: "4.4",
+                                })}
+                            </p>
                         </div>
                     </div>
                     <div class="row no-gutters reqs my-3">
@@ -83,7 +84,7 @@
                             style="background: url('img/icons/cpu.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>Any x86_64 CPU</p>
+                            <p>{m.any_x86_64_cpu()}</p>
                         </div>
                     </div>
                     <div class="row no-gutters reqs">
@@ -92,19 +93,19 @@
                             style="background: url('img/icons/ram.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>Minimum of 4GB RAM</p>
+                            <p>{m.minimum_of_4gb_of_ram()}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex flex-column">
-                    <h4 class="my-4"><b>Recommended requirements</b></h4>
+                    <h4 class="my-4"><b>{m.recommended_requirements()}</b></h4>
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
                             style="background: url('img/icons/vulkan.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>GPU that supports Vulkan</p>
+                            <p>{m.gpu_that_supports_vulkan()}</p>
                         </div>
                     </div>
                     <div class="row no-gutters reqs mt-3">
@@ -113,7 +114,7 @@
                             style="background: url('img/icons/gpu.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>GPU that supports shader interlock</p>
+                            <p>{m.gpu_that_supports_shader_interlock()}</p>
                         </div>
                     </div>
                     <div class="row no-gutters reqs my-3">
@@ -122,7 +123,7 @@
                             style="background: url('img/icons/cpu.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>x86_64 CPU with the AVX instruction set</p>
+                            <p>{m.x86_64_cpu_with_avx()}</p>
                         </div>
                     </div>
                     <div class="row no-gutters reqs">
@@ -131,7 +132,7 @@
                             style="background: url('img/icons/ram.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>8GB of RAM or greater</p>
+                            <p>{m.minimum_of_8gb_of_ram()}</p>
                         </div>
                     </div>
                 </div>
@@ -139,21 +140,17 @@
         </div>
         <div>
             <div class="mt-5 pt-5">
-                <h1 class="text-center">Software Requirements</h1>
+                <h1 class="text-center">{m.software_requirements()}</h1>
                 <div class="mt-5">
-                    <h4><b>Microsoft Redistributable</b></h4>
+                    <h4><b>{m.microsoft_redistributable()}</b></h4>
                     <p>
-                        If you're having trouble running Vita3K and it complains
-                        about <code>VCRUNTME140_1.dll was not found</code>,
-                        download and install the
-                        <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe"
-                            >Visual C++ 2015-2022 Redistributable</a
-                        >.
+                        {@html m.microsoft_redistributable_desc({
+                            link: "https://aka.ms/vs/17/release/vc_redist.x64.exe",
+                        })}
                     </p>
-                    <h4><b>Operating System</b></h4>
+                    <h4><b>{m.operating_system()}</b></h4>
                     <p>
-                        You need to be running a 64-bit operating system in
-                        order for Vita3K to work.
+                        {m.operating_system_desc()}
                     </p>
                 </div>
             </div>
@@ -162,48 +159,36 @@
 </section>
 <section class="bg-dark text-white">
     <div class="container">
-        <h1 class="text-center mb-5">Installing the firmware</h1>
+        <h1 class="text-center mb-5">{m.installing_the_firmware()}</h1>
         <div>
             <p>
-                Some games require the system modules be present for Vita3K to
-                (low level) emulate them. This can be done by installing the PS
-                Vita firmware through Vita3K.
+                {m.firmware_desc()}
             </p>
             <p>
                 <b>
-                    The firmware can be downloaded from the official <a
-                        href="https://www.playstation.com/en-us/support/hardware/psvita/system-software/"
-                        >PlayStation website</a
-                    >
+                    {@html m.firmware_download({
+                        link: "https://www.playstation.com/en-us/support/hardware/psvita/system-software/",
+                    })}
                 </b>
             </p>
             <p>
-                There's also an additional firmware package that contains the
-                system fonts that needs to be installed. The font firmware
-                package can be downloaded straight from the PlayStation servers.
+                {m.font_firmware_desc()}
                 {#if urlObtained}
-                    You can download it
-                    <a id="systemdata" href={sysdataURL}>here</a>.
+                    {@html m.you_can_download_it_here({
+                        link: sysdataURL,
+                    })}
                 {:else}
-                    But we couldn't get the URL for it, so you will have to find
-                    it yourself. Or in the <b>discord server</b>, using the
-                    <code>-firmware</code> command.
+                    {@html m.could_not_get_url()}
                 {/if}
             </p>
             <p>
-                Install <b>both</b> firmware packages using the
-                <code>File > Install Firmware</code> menu option.
+                {@html m.install_both_firmware_packages()}
             </p>
         </div>
         <div class="mt-5">
-            <h4><b>Managing Modules</b></h4>
+            <h4><b>{m.managing_modules()}</b></h4>
             <p>
-                System modules can be managed in the <code
-                    >Configuration > Settings > Core</code
-                >
-                tab of the emulator, we recommend
-                <code>Modules Mode > Automatic</code>. And if you have doubts
-                some modules are causing crashes you can try to remove them.
+                {@html m.managing_modules_desc()}
             </p>
         </div>
     </div>

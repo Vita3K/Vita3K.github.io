@@ -15,9 +15,8 @@
             </div>
             <div class="col-lg-8 mx-auto">
                 <p class="text-faded mb-5">{m.description()}</p>
-                <a
-                    class="btn btn-primary btn-xl"
-                    href="#about">{m.find_out_more()}</a
+                <a class="btn btn-primary btn-xl" href="#about"
+                    >{m.find_out_more()}</a
                 >
             </div>
         </div>
@@ -46,9 +45,8 @@
                 <hr class="light my-4" />
                 <p class="text-faded mb-4">
                     {m.blog_description()}<br /><br />
-                    <a
-                        class="btn btn-primary btn-xl"
-                        href={resolve("/blog")}>{m.blog()}</a
+                    <a class="btn btn-primary btn-xl" href={resolve("/blog")}
+                        >{m.blog()}</a
                     >
                 </p>
             </div>
@@ -88,7 +86,10 @@
         <div class="row no-gutters popup-gallery">
             <ShowcaseImage name="Persona 4 Golden" imageLink="1.webp" />
             <ShowcaseImage name="Freedom Wars" imageLink="2.webp" />
-            <ShowcaseImage name="Hatsune Miku Project DIVA X" imageLink="3.webp" />
+            <ShowcaseImage
+                name="Hatsune Miku Project DIVA X"
+                imageLink="3.webp"
+            />
             <ShowcaseImage name="Muramasa Rebirth" imageLink="4.webp" />
             <ShowcaseImage name="Borderlands 2" imageLink="5.webp" />
             <ShowcaseImage name="Soul Sacrifice Delta" imageLink="6.webp" />
@@ -104,7 +105,11 @@
             <div class="col-lg-8 mx-auto text-center">
                 <h2 class="section-heading">{m.show_us_your_love()}</h2>
                 <hr class="my-4" />
-                <p class="mb-5">{@html m.ko_fi_page()}</p>
+                <p class="mb-5">
+                    {@html m.ko_fi_page({
+                        link: "https://ko-fi.com/vita3k/",
+                    })}
+                </p>
             </div>
         </div>
         <div class="row">
