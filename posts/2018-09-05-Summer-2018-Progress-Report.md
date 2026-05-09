@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Progress Report: Summer 2018"
 ---
 # Introduction
