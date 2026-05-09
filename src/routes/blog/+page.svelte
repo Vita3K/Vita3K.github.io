@@ -10,16 +10,6 @@
     });
 </script>
 
-<!-- <section id="blog-header" class="text-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto text-center">
-                <h3>Blog</h3>
-            </div>
-        </div>
-    </div>
-</section> -->
-
 <section class="blog-body bg-dark text-white">
     <div class="container" id="blog-container">
         {#each posts as post (post.slug)}

@@ -10,6 +10,20 @@
     img {
         max-width: 100%;
     }
+
+
+    iframe {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 16/9;
+        border: none;
+        overflow: hidden;
+        display: block;
+        object-fit: contain;
+        pointer-events: auto;
+    }
+
+
 }
 
 .blog-post {

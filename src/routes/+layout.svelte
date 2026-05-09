@@ -8,21 +8,8 @@
     import Navbar from "$lib/components/navbar.svelte";
     import Footer from "$lib/components/Footer.svelte";
 
-    let gtmId = "UA-118291431-1"; // Replace with your GTM ID
-    let customData = {
-        event: "page_view",
-        page_path: page.url.pathname,
-        page_title: document.title,
-    };
-
-    onMount(() => {
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push(customData);
-    });
-
     import "bootstrap/scss/bootstrap.scss";
     import "$lib/scss/creative.scss";
-    import { onMount } from "svelte";
 
     let { children } = $props();
 </script>
@@ -30,10 +17,18 @@
 <Navbar />
 
 <svelte:head>
-    <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id={gtmId}"
-    ></script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "UA-118291431-1");
+    </script>
 
     <link rel="icon" href={favicon} />
     <!-- Custom fonts for this template -->
@@ -99,6 +94,17 @@
         >
     {/each}
 </div>
+
+<noscript>
+    <iframe
+        title="gtm"
+        src="https://www.googletagmanager.com/ns.html?id=UA-118291431-10"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+    >
+    </iframe>
+</noscript>
 
 {@render children()}
 

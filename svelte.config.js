@@ -10,12 +10,12 @@ const config = {
     },
     kit: { adapter: adapter() },
     preprocess: [
+        mdsvex({
+            extension: '.md'
+        }),
         vitePreprocess({
             style: true,
         }),
-        mdsvex({
-            extension: '.md',
-        })
     ],
 
     extensions: ['.svelte', '.md']

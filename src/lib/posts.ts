@@ -1,5 +1,5 @@
 import { remark } from 'remark';
-import html from 'remark-html';
+import remark_html from 'remark-html';
 
 export async function getAllPosts() {
     // Import all markdown files as raw text
@@ -39,7 +39,9 @@ export async function getAllPosts() {
             }
         }
         // Convert markdown to HTML
-        const processed = await remark().use(html).process(content);
+        const processed = await remark()
+            .use(remark_html, { sanitize: false })
+            .process(content);
         const htmlStr = processed.toString();
         const pMatch = htmlStr.match(/<p>([\s\S]*?)<\/p>/i);
         const excerpt = `<p>${pMatch ? pMatch[1] : 'Excerpt not available'}</p>`;
