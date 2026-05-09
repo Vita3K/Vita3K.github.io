@@ -102,6 +102,13 @@
                     <a
                         class="nav-link"
                         target="_blank"
+                        href="https://crowdin.com/project/Vita3k">{m.nav_translate()}</a
+                    >
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a
+                        class="nav-link"
+                        target="_blank"
                         href="https://ko-fi.com/vita3k">{m.nav_donate()}</a
                     >
                 </li>
