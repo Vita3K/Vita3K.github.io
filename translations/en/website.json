@@ -31,7 +31,7 @@
     "home_check_out_what_currently_runs": "Check out what currently runs!",
     "home_the_emulator_can_run_some_commercial_games": "The emulator can run some <b>commercial games!</b>",
     "home_check_out_their_compatibility_list": "Check out their <a href=\"{link}\">compatibility list</a>.",
-    "home_several_homebrew_games_are_also_supported": "Several homebrew games are also supported. Check the <a href=\"compatibility-homebrew.html?lang=en\">homebrew compatibility list</a> for further details.",
+    "home_several_homebrew_games_are_also_supported": "Several homebrew games are also supported. Check the <a href=\"{link}\">homebrew compatibility list</a> for further details.",
     "home_show_us_your_love": "Show us your love!",
     "home_ko_fi_page": "If you would like to show your appreciation and even help fund development, the project has a <a href=\"{link}\">Ko-fi Page</a>.",
     "home_become_a_supporter": "Become a Supporter",
