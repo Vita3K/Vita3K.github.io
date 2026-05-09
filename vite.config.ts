@@ -3,8 +3,12 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [
-		sveltekit(),
-		paraglideVitePlugin({ project: './project.inlang', outdir: './src/lib/paraglide' })
-	]
+    plugins: [
+        sveltekit(),
+        paraglideVitePlugin({
+            project: './project.inlang',
+            outdir: './src/lib/paraglide',
+            strategy: ["cookie", "globalVariable", "preferredLanguage", "baseLocale"],
+        })
+    ]
 });
