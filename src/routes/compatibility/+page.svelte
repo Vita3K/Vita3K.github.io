@@ -157,7 +157,7 @@
     }
 
     onMount(async () => {
-        document.title = m.compatibility_list();
+        document.title = m.compatibility_compatibility_list();
 
         const res = await fetch("https://vita3k-api.pedro.moe/list/commercial");
 
@@ -183,29 +183,29 @@
 
         data.forEach((e) => {
             // Unknown already has all games, no need to add it twice
-            e.translatedStatus = m.unknown();
+            e.translatedStatus = m.compatibility_unknown();
             if (e.status != "Unknown") {
                 switch (e.status) {
                     case "Nothing":
-                        e.translatedStatus = m.nothing();
+                        e.translatedStatus = m.compatibility_nothing();
                         break;
                     case "Bootable":
-                        e.translatedStatus = m.bootable();
+                        e.translatedStatus = m.compatibility_bootable();
                         break;
                     case "Intro":
-                        e.translatedStatus = m.intro();
+                        e.translatedStatus = m.compatibility_intro();
                         break;
                     case "Menu":
-                        e.translatedStatus = m.menu();
+                        e.translatedStatus = m.compatibility_menu();
                         break;
                     case "Ingame -":
-                        e.translatedStatus = m.ingame_minus();
+                        e.translatedStatus = m.compatibility_ingame_minus();
                         break;
                     case "Ingame +":
-                        e.translatedStatus = m.ingame_plus();
+                        e.translatedStatus = m.compatibility_ingame_plus();
                         break;
                     case "Playable":
-                        e.translatedStatus = m.playable();
+                        e.translatedStatus = m.compatibility_playable();
                         break;
                 }
                 views[e.status].push(e);
@@ -239,69 +239,69 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 mx-auto text-center">
-                <h2 class="section-heading">{m.compatibility_list()}</h2>
+                <h2 class="section-heading">{m.compatibility_compatibility_list()}</h2>
                 <hr class="my-4" />
-                {m.emulator_undergoing_changes()}
+                {m.compatibility_emulator_undergoing_changes()}
                 <br /><br />
                 <p class="mb-5">
                     <input
                         style="display:inline-block;vertical-align:middle;"
                         type="text"
                         class="form-control"
-                        placeholder="{m.search()}..."
+                        placeholder="{m.compatibility_search()}"
                         required={true}
                         bind:value={searchQuery}
                     />
                     <br />
-                    <br />{m.tags()}:
+                    <br />{m.compatibility_tags()}:
                     <a
                         href="#"
                         class="plate bg-nothing"
                         onclick={() => changeView("Nothing")}
-                        >{m.nothing()} ({views["Nothing"].length})
+                        >{m.compatibility_nothing()} ({views["Nothing"].length})
                     </a>
                     <a
                         href="#"
                         class="plate bg-bootable"
                         onclick={() => changeView("Bootable")}
-                        >{m.bootable()} ({views["Bootable"].length})
+                        >{m.compatibility_bootable()} ({views["Bootable"].length})
                     </a>
                     <a
                         href="#"
                         class="plate bg-intro"
                         onclick={() => changeView("Intro")}
-                        >{m.intro()} ({views["Intro"].length})
+                        >{m.compatibility_intro()} ({views["Intro"].length})
                     </a>
                     <a
                         href="#"
                         class="plate bg-menu"
                         onclick={() => changeView("Menu")}
-                        >{m.menu()} ({views["Menu"].length})
+                        >{m.compatibility_menu()} ({views["Menu"].length})
                     </a>
                     <a
                         href="#"
                         class="plate bg-ingame-minus"
                         onclick={() => changeView("Ingame -")}
-                        >{m.ingame_minus()} ({views["Ingame -"].length})
+                        >{m.compatibility_ingame_minus()} ({views["Ingame -"].length})
                     </a>
                     <a
                         href="#"
                         class="plate bg-ingame-plus"
                         onclick={() => changeView("Ingame +")}
-                        >{m.ingame_plus()} ({views["Ingame +"].length})
+                        >{m.compatibility_ingame_plus()} ({views["Ingame +"].length})
                     </a>
                     <a
                         href="#"
                         class="plate bg-playable"
                         onclick={() => changeView("Playable")}
-                        >{m.playable()} ({views["Playable"].length})
+                        >{m.compatibility_playable()} ({views["Playable"].length})
                     </a>
                     <a
                         href="#"
                         class="plate"
                         onclick={() => changeView("Unknown")}
                         style="background-color: #3030ff"
-                        >{m.all()} ({views["Unknown"].length})</a
+                        >{m.compatibility_all()} ({views["Unknown"].length})</a
                     >
                 </p>
                 <center>
@@ -311,14 +311,14 @@
                                 <td>
                                     <small
                                         ><font color="#ff2020"
-                                            >{m.nothing()} ({(
+                                            >{m.compatibility_nothing()} ({(
                                                 (views["Nothing"].length /
                                                     views["Unknown"].length) *
                                                 100
                                             ).toFixed(2)}%):</font
                                         >
                                         <font color="#ffffff"
-                                            >{m.nothing_desc()}</font
+                                            >{m.compatibility_nothing_desc()}</font
                                         ></small
                                     >
                                 </td>
@@ -338,14 +338,14 @@
                                 <td>
                                     <small
                                         ><font color="#a060ff"
-                                            >{m.bootable()} ({(
+                                            >{m.compatibility_bootable()} ({(
                                                 (views["Bootable"].length /
                                                     views["Unknown"].length) *
                                                 100
                                             ).toFixed(2)}%):</font
                                         >
                                         <font color="#ffffff"
-                                            >{m.bootable_desc()}</font
+                                            >{m.compatibility_bootable_desc()}</font
                                         ></small
                                     >
                                 </td>
@@ -365,14 +365,14 @@
                                 <td>
                                     <small
                                         ><font color="#e632aa"
-                                            >{m.intro()} ({(
+                                            >{m.compatibility_intro()} ({(
                                                 (views["Intro"].length /
                                                     views["Unknown"].length) *
                                                 100
                                             ).toFixed(2)}%):</font
                                         >
                                         <font color="#ffffff"
-                                            >{m.intro_desc()}</font
+                                            >{m.compatibility_intro_desc()}</font
                                         ></small
                                     >
                                 </td>
@@ -392,14 +392,14 @@
                                 <td>
                                     <small
                                         ><font color="#50a0fa"
-                                            >{m.menu()} ({(
+                                            >{m.compatibility_menu()} ({(
                                                 (views["Menu"].length /
                                                     views["Unknown"].length) *
                                                 100
                                             ).toFixed(2)}%):</font
                                         >
                                         <font color="#ffffff"
-                                            >{m.menu_desc()}</font
+                                            >{m.compatibility_menu_desc()}</font
                                         ></small
                                     >
                                 </td>
@@ -419,14 +419,14 @@
                                 <td>
                                     <small
                                         ><font color="#f0a000"
-                                            >{m.ingame_minus()} ({(
+                                            >{m.compatibility_ingame_minus()} ({(
                                                 (views["Ingame -"].length /
                                                     views["Unknown"].length) *
                                                 100
                                             ).toFixed(2)}%):</font
                                         >
                                         <font color="#ffffff"
-                                            >{m.ingame_minus_desc()}</font
+                                            >{m.compatibility_ingame_minus_desc()}</font
                                         ></small
                                     >
                                 </td>
@@ -446,14 +446,14 @@
                                 <td>
                                     <small
                                         ><font color="#ffd250"
-                                            >{m.ingame_plus()} ({(
+                                            >{m.compatibility_ingame_plus()} ({(
                                                 (views["Ingame +"].length /
                                                     views["Unknown"].length) *
                                                 100
                                             ).toFixed(2)}%):</font
                                         >
                                         <font color="#ffffff"
-                                            >{m.ingame_plus_desc()}</font
+                                            >{m.compatibility_ingame_plus_desc()}</font
                                         ></small
                                     >
                                 </td>
@@ -473,14 +473,14 @@
                                 <td>
                                     <small
                                         ><font color="#28AA28"
-                                            >{m.playable()} ({(
+                                            >{m.compatibility_playable()} ({(
                                                 (views["Playable"].length /
                                                     views["Unknown"].length) *
                                                 100
                                             ).toFixed(2)}%):</font
                                         >
                                         <font color="#ffffff"
-                                            >{m.playable_desc()}</font
+                                            >{m.compatibility_playable_desc()}</font
                                         ></small
                                     >
                                 </td>
@@ -529,7 +529,7 @@
                                         onclick={() => orderBy("name")}
                                         style="color:yellow"
                                         ><small id="nameHead"
-                                            >{m.entry_name()}
+                                            >{m.compatibility_entry_name()}
                                             {currentField === "name"
                                                 ? currentOrder === "asc"
                                                     ? "↓"
@@ -544,7 +544,7 @@
                                         onclick={() => orderBy("status")}
                                         style="color:yellow"
                                         ><small id="statusHead"
-                                            >{m.status()}
+                                            >{m.compatibility_status()}
                                             {currentField === "status"
                                                 ? currentOrder === "asc"
                                                     ? "↓"

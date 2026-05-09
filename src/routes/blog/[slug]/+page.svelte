@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { m } from '$lib/paraglide/messages.js';
+
     const { data } = $props();
     const post = data.post;
 </script>
@@ -21,7 +23,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 mx-auto text-center">
-                    <h1>Post not found</h1>
+                    <h1>{m.blog_post_not_found()}</h1>
                 </div>
             </div>
         </div>

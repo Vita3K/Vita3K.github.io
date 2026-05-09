@@ -25,7 +25,7 @@
                         {@html post.excerpt}
                     </div>
                     <div class="blog-post-author">
-                        <a href={post.url} class="read-more">{m.read_more()}</a>
+                        <a href={post.url} class="read-more">{m.blog_read_more()}</a>
                     </div>
                 </div>
             </div>

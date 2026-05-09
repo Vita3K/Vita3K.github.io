@@ -46,7 +46,7 @@
                     {page.url.pathname === resolve('/quickstart')
                             ? 'active'
                             : ''}"
-                        href={resolve("/quickstart")}>{m.quickstart()}</a
+                        href={resolve("/quickstart")}>{m.nav_quickstart()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -55,14 +55,14 @@
                         {page.url.pathname.startsWith(resolve('/blog'))
                             ? 'active'
                             : ''}"
-                        href={resolve("/blog")}>{m.blog()}</a
+                        href={resolve("/blog")}>{m.nav_blog()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
                     <a
                         class="nav-link
                         {page.url.pathname === resolve('/faq') ? 'active' : ''}"
-                        href={resolve("/faq")}>{m.faqs()}</a
+                        href={resolve("/faq")}>{m.nav_faqs()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -71,7 +71,7 @@
                         {page.url.pathname === resolve('/download')
                             ? 'active'
                             : ''}"
-                        href={resolve("/download")}>{m.download()}</a
+                        href={resolve("/download")}>{m.nav_download()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -80,7 +80,7 @@
                         {page.url.pathname === resolve('/compatibility')
                             ? 'active'
                             : ''}"
-                        href={resolve("/compatibility")}>{m.compatibility()}</a
+                        href={resolve("/compatibility")}>{m.nav_compatibility()}</a
                     >
                 </li>
                 <VerticalSeparator />
@@ -102,7 +102,7 @@
                     <a
                         class="nav-link"
                         target="_blank"
-                        href="https://ko-fi.com/vita3k">{m.donate()}</a
+                        href="https://ko-fi.com/vita3k">{m.nav_donate()}</a
                     >
                 </li>
                 <VerticalSeparator />
@@ -112,7 +112,7 @@
                             value={locale}
                             selected={getLocale() === locale}
                         >
-                            {m.lang({}, { locale: locale })}
+                            {m.nav_lang({}, { locale: locale })}
                         </option>
                     {/each}
                 </select>

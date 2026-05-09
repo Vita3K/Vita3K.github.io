@@ -40,14 +40,14 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <h1>
-                    <strong>{m.quickstart()}</strong>
+                    <strong>{m.quickstart_quickstart()}</strong>
                 </h1>
                 <hr />
                 <br />
             </div>
             <div class="col-lg-8 mx-auto">
                 <p class="text-faded mb-1">
-                    {m.get_started()}
+                    {m.quickstart_get_started()}
                 </p>
             </div>
         </div>
@@ -56,15 +56,17 @@
 <section class="bg-dark text-white pb-5">
     <div class="container">
         <div>
-            <h1 class="text-center">{m.hardware_requirements()}</h1>
+            <h1 class="text-center">{m.quickstart_hardware_requirements()}</h1>
             <div class="my-5">
                 <h5>
-                    {m.hardware_requirements_desc()}
+                    {m.quickstart_hardware_requirements_desc()}
                 </h5>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-6 d-flex flex-column">
-                    <h4 class="my-4"><b>{m.minimum_requirements()}</b></h4>
+                    <h4 class="my-4">
+                        <b>{m.quickstart_minimum_requirements()}</b>
+                    </h4>
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
@@ -72,7 +74,7 @@
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
                             <p>
-                                {m.gpu_that_supports_opengl_version({
+                                {m.quickstart_gpu_that_supports_opengl_version({
                                     version: "4.4",
                                 })}
                             </p>
@@ -84,7 +86,7 @@
                             style="background: url('img/icons/cpu.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.any_x86_64_cpu()}</p>
+                            <p>{m.quickstart_any_x86_64_cpu()}</p>
                         </div>
                     </div>
                     <div class="row no-gutters reqs">
@@ -93,19 +95,21 @@
                             style="background: url('img/icons/ram.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.minimum_of_4gb_of_ram()}</p>
+                            <p>{m.quickstart_minimum_of_4gb_of_ram()}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex flex-column">
-                    <h4 class="my-4"><b>{m.recommended_requirements()}</b></h4>
+                    <h4 class="my-4">
+                        <b>{m.quickstart_recommended_requirements()}</b>
+                    </h4>
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
                             style="background: url('img/icons/vulkan.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.gpu_that_supports_vulkan()}</p>
+                            <p>{m.quickstart_gpu_that_supports_vulkan()}</p>
                         </div>
                     </div>
                     <div class="row no-gutters reqs mt-3">
@@ -114,7 +118,9 @@
                             style="background: url('img/icons/gpu.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.gpu_that_supports_shader_interlock()}</p>
+                            <p>
+                                {m.quickstart_gpu_that_supports_shader_interlock()}
+                            </p>
                         </div>
                     </div>
                     <div class="row no-gutters reqs my-3">
@@ -123,16 +129,16 @@
                             style="background: url('img/icons/cpu.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.x86_64_cpu_with_avx()}</p>
+                            <p>{m.quickstart_x86_64_cpu_with_avx()}</p>
                         </div>
                     </div>
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url('img/icons/ram.svg') no-repeat center"
+                            style="background: url('img/icons/ram.quickstart_svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.minimum_of_8gb_of_ram()}</p>
+                            <p>{m.quickstart_minimum_of_8gb_of_ram()}</p>
                         </div>
                     </div>
                 </div>
@@ -140,17 +146,19 @@
         </div>
         <div>
             <div class="mt-5 pt-5">
-                <h1 class="text-center">{m.software_requirements()}</h1>
+                <h1 class="text-center">
+                    {m.quickstart_software_requirements()}
+                </h1>
                 <div class="mt-5">
-                    <h4><b>{m.microsoft_redistributable()}</b></h4>
+                    <h4><b>{m.quickstart_microsoft_redistributable()}</b></h4>
                     <p>
-                        {@html m.microsoft_redistributable_desc({
+                        {@html m.quickstart_microsoft_redistributable_desc({
                             link: "https://aka.ms/vs/17/release/vc_redist.x64.exe",
                         })}
                     </p>
-                    <h4><b>{m.operating_system()}</b></h4>
+                    <h4><b>{m.quickstart_operating_system()}</b></h4>
                     <p>
-                        {m.operating_system_desc()}
+                        {m.quickstart_operating_system_desc()}
                     </p>
                 </div>
             </div>
@@ -159,36 +167,38 @@
 </section>
 <section class="bg-dark text-white">
     <div class="container">
-        <h1 class="text-center mb-5">{m.installing_the_firmware()}</h1>
+        <h1 class="text-center mb-5">
+            {m.quickstart_installing_the_firmware()}
+        </h1>
         <div>
             <p>
-                {m.firmware_desc()}
+                {m.quickstart_firmware_desc()}
             </p>
             <p>
                 <b>
-                    {@html m.firmware_download({
+                    {@html m.quickstart_firmware_download({
                         link: "https://www.playstation.com/en-us/support/hardware/psvita/system-software/",
                     })}
                 </b>
             </p>
             <p>
-                {m.font_firmware_desc()}
+                {m.quickstart_font_firmware_desc()}
                 {#if urlObtained}
-                    {@html m.you_can_download_it_here({
+                    {@html m.quickstart_you_can_download_it_here({
                         link: sysdataURL,
                     })}
                 {:else}
-                    {@html m.could_not_get_url()}
+                    {@html m.quickstart_could_not_get_url()}
                 {/if}
             </p>
             <p>
-                {@html m.install_both_firmware_packages()}
+                {@html m.quickstart_install_both_firmware_packages()}
             </p>
         </div>
         <div class="mt-5">
-            <h4><b>{m.managing_modules()}</b></h4>
+            <h4><b>{m.quickstart_managing_modules()}</b></h4>
             <p>
-                {@html m.managing_modules_desc()}
+                {@html m.quickstart_managing_modules_desc()}
             </p>
         </div>
     </div>
@@ -398,7 +408,7 @@
                                 <p>
                                     Download the latest <a
                                         href="https://github.com/TheOfficialFloW/NoNpDrm/releases"
-                                        >nonpdrm.skprx</a
+                                        >nonpdrm.quickstart_skprx</a
                                     >, copy it to <code>ux0:tai</code>
                                     and modify the
                                     <code>ux0:tai/config.txt</code>
@@ -408,7 +418,7 @@
                                     <br />
                                     <code
                                         >*KERNEL<br />
-                                        ux0:tai/nonpdrm.skprx</code
+                                        ux0:tai/nonpdrm.quickstart_skprx</code
                                     ><br />
                                     Don't forget to reboot your device, otherwise
                                     the plugin will have no effect yet. If you know
@@ -461,8 +471,9 @@
                                 Open Vita3k, click on the File entry in the
                                 menubar and click Install .vpk/.zip. Select your <code
                                     >TITLE_ID.zip</code
-                                > file and confirm. The game will begin installing
-                                (This might take a long time for large games).
+                                > file and confirm.quickstart_ The game will begin
+                                installing (This might take a long time for large
+                                games).
                             </li>
                             <div class="my-2">For DLC</div>
                             <li>
@@ -491,7 +502,8 @@
                                 Open Vita3k, click on the File entry in the
                                 menubar and click Install .vpk/.zip. Select your <code
                                     >DLC_FOLDER.zip</code
-                                > file and confirm. The DLC will begin installing.
+                                > file and confirm.quickstart_ The DLC will begin
+                                installing.
                             </li>
                         </ol>
                     </div>

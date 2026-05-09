@@ -14,9 +14,9 @@
                 <hr />
             </div>
             <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">{m.description()}</p>
+                <p class="text-faded mb-5">{m.home_description()}</p>
                 <a class="btn btn-primary btn-xl" href="#about"
-                    >{m.find_out_more()}</a
+                    >{m.home_find_out_more()}</a
                 >
             </div>
         </div>
@@ -26,12 +26,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading text-white">{m.about_vita3k()}</h2>
+                <h2 class="section-heading text-white">{m.home_about_vita3k()}</h2>
                 <hr class="light my-4" />
                 <p class="text-faded mb-4">
-                    {m.vita3k_description()}
+                    {m.home_vita3k_description()}
                     <br />
-                    {m.legal_notice()}
+                    {m.home_legal_notice()}
                 </p>
             </div>
         </div>
@@ -41,12 +41,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading text-white">{m.whats_new()}</h2>
+                <h2 class="section-heading text-white">{m.home_whats_new()}</h2>
                 <hr class="light my-4" />
                 <p class="text-faded mb-4">
-                    {m.blog_description()}<br /><br />
+                    {m.home_blog_description()}<br /><br />
                     <a class="btn btn-primary btn-xl" href={resolve("/blog")}
-                        >{m.blog()}</a
+                        >{m.home_blog()}</a
                     >
                 </p>
             </div>
@@ -61,18 +61,18 @@
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
                 <h2 class="section-heading">
-                    {m.check_out_what_currently_runs()}
+                    {m.home_check_out_what_currently_runs()}
                 </h2>
                 <hr class="my-4" />
                 <p class="mb-5">
-                    {@html m.the_emulator_can_run_some_commercial_games()}
+                    {@html m.home_the_emulator_can_run_some_commercial_games()}
                     <br />
-                    {@html m.check_out_their_compatibility_list({
+                    {@html m.home_check_out_their_compatibility_list({
                         link: resolve("/compatibility"),
                     })}
                     <br />
                     <br />
-                    <!-- {@html m.several_homebrew_games_are_also_supported()} -->
+                    <!-- {@html m.home_several_homebrew_games_are_also_supported()} -->
                 </p>
             </div>
         </div>
@@ -103,10 +103,10 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading">{m.show_us_your_love()}</h2>
+                <h2 class="section-heading">{m.home_show_us_your_love()}</h2>
                 <hr class="my-4" />
                 <p class="mb-5">
-                    {@html m.ko_fi_page({
+                    {@html m.home_ko_fi_page({
                         link: "https://ko-fi.com/vita3k/",
                     })}
                 </p>
@@ -119,7 +119,7 @@
                     <a
                         class="btn btn-light btn-xl sr-button"
                         href="https://ko-fi.com/vita3k/tiers"
-                        >{m.become_a_supporter()}</a
+                        >{m.home_become_a_supporter()}</a
                     >
                 </p>
             </div>

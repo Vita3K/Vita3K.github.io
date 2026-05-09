@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
                 <h2 class="section-heading text-white">
-                    {m.pick_up_your_build()}
+                    {m.download_pick_up_your_build()}
                 </h2>
                 <hr class="my-4" />
             </div>
@@ -54,7 +54,7 @@
             <DownloadBox
                 name="Android Nightlies"
                 link="android-latest.apk"
-                primaryText={m.download()}
+                primaryText={m.download_download()}
                 icon="fa-android"
             />
         </div>
@@ -64,7 +64,7 @@
             <div class="col-lg-8 mx-auto text-center">
                 <p class="">
                     <a href="https://github.com/Vita3K/Vita3K-builds/releases"
-                        >{m.older_versions()}</a
+                        >{m.download_older_versions()}</a
                     >
                 </p>
             </div>
