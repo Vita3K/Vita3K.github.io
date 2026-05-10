@@ -1,0 +1,89 @@
+.plate {
+    border-radius: 30px;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+    text-decoration: none;
+
+    @include sans-serif-font();
+
+    &:hover {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+.progress {
+    background-color: $bg-color;
+}
+
+table {
+    @include sans-serif-font();
+}
+
+.status-field {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+}
+
+
+.title-name {
+    color: $white;
+    text-decoration: none;
+}
+
+.bg-nothing {
+    background-color: $nothing;
+}
+
+.bg-bootable {
+    background-color: $bootable;
+}
+
+.bg-intro {
+    background-color: $intro;
+}
+
+.bg-menu {
+    background-color: $menu;
+}
+
+.bg-ingame-minus {
+    background-color: $ingame_minus;
+}
+
+.bg-ingame-plus {
+    background-color: $ingame_plus;
+}
+
+.bg-playable {
+    background-color: $playable;
+}
+
+.region {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+}
+
+.region- {
+    &USA {
+        background-color: #ffffff;
+    }
+
+    &JPN {
+        background-color: #ff3838;
+    }
+
+    &EUR {
+        background-color: #1e64dc;
+    }
+
+    &ASIA {
+        background-color: #3efd7e;
+    }
+
+    &UNK {
+        background-color: #000000;
+    }
+}

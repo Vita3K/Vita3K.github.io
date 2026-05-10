@@ -1,11 +1,11 @@
-# Vita3K.github.io
+# Vita3K Website
 
-The source code for https://vita3k.org
+Website made in svelte
 
-## Development
-
-```
-gem install bundler jekyll
-bundle install
-bundle exec jekyll serve
-```
+# Building/previewing
+* `npm install`
+## Devving (changes in real time)
+* `npm run dev`
+## Building
+* `npm run build`
+    * `npm run preview` For previewing the last build

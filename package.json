@@ -1,33 +1,39 @@
 {
-  "name": "vita3k.github.io",
-  "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "browser-sync": "^3.0.4",
-    "font-awesome": "^4.7.0",
-    "gulp": "^5.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-header": "^2.0.9",
-    "jquery": "^3.5.1",
-    "magnific-popup": "^1.1.0",
-    "scrollreveal": "^4.0.7",
-    "gulp-rename": "^2.0.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Vita3K/Vita3K.github.io.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Vita3K/Vita3K.github.io/issues"
-  },
-  "homepage": "https://github.com/Vita3K/Vita3K.github.io#readme"
+	"name": "vita3k.github.io",
+	"private": true,
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@eslint/compat": "^2.0.4",
+		"@eslint/js": "^10.0.1",
+		"@inlang/paraglide-js": "^2.15.2",
+		"@sveltejs/adapter-static": "^3.0.10",
+		"@sveltejs/kit": "^2.57.0",
+		"@sveltejs/vite-plugin-svelte": "^7.0.0",
+		"@types/node": "^24",
+		"eslint": "^10.2.0",
+		"eslint-plugin-svelte": "^3.17.0",
+		"globals": "^17.4.0",
+		"svelte": "^5.55.2",
+		"svelte-check": "^4.4.6",
+		"typescript": "^6.0.2",
+		"typescript-eslint": "^8.58.1",
+		"vite": "^8.0.7"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.8",
+		"mdsvex": "^0.12.7",
+		"remark": "^15.0.1",
+		"remark-html": "^16.0.1",
+		"sass-embedded": "^1.99.0"
+	}
 }

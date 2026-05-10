@@ -1,0 +1,151 @@
+// Global styling for this template
+// *::selection {
+//     background: lightgray !important;
+//     /* WebKit/Blink Browsers */
+// }
+
+// *::-moz-selection {
+//     background: lightgray !important;
+//     /* Gecko Browsers */
+// }
+
+
+// ::-moz-selection {
+//     color: $white;
+//     background: $gray-900;
+//     text-shadow: none;
+// }
+
+// ::selection {
+//     color: $white;
+//     background: $gray-900;
+//     text-shadow: none;
+// }
+
+// img::selection {
+//     color: $white;
+//     background: transparent;
+// }
+
+// img::-moz-selection {
+//     color: $white;
+//     background: transparent;
+// }
+
+
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    @include serif-font;
+    background-color: #191919;
+}
+
+hr {
+    max-width: 50px;
+    border-width: 3px;
+    border-color: $primary;
+}
+
+hr.light {
+    border-color: $white;
+}
+
+a {
+    color: $primary;
+    @include transition-all;
+
+    &:hover {
+        color: darken($primary, .1);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @include sans-serif-font;
+}
+
+.bg-primary {
+    background-color: $primary !important;
+}
+
+.bg-dark {
+    background-color: $gray-900 !important;
+}
+
+.text-faded {
+    color: fade-out($white, .3);
+}
+
+section {
+    padding: 8rem 0;
+}
+
+.section-heading {
+    margin-top: 0;
+}
+
+#footer {
+    background-color: #191919;
+}
+
+.fa-coffee::after {
+    content: '\f004';
+    font-weight: 900;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    margin: 9px 0 0 -44px;
+}
+
+.reqs p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.reqs>div:first-of-type {
+    filter: invert(48%) sepia(95%) saturate(2625%) hue-rotate(338deg) brightness(100%) contrast(89%);
+}
+
+.row {
+    justify-content: center;
+}
+
+/* return top button */
+#page_top {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: rgb(0 0 0 / 40%) 0 10px 32px 0;
+    background: #F05F40;
+    border-radius: 50%;
+
+    &::before {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: '\f062';
+        /*icon*/
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        /*icon color*/
+        position: absolute;
+        width: 40px;
+        height: 30px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+    }
+}

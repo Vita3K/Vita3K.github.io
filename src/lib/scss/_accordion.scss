@@ -1,0 +1,64 @@
+// Variables
+$font-stack: Arial, Helvetica, sans-serif;
+
+.accordion-item {
+    background-color: $bg-color;
+    border-radius: .4rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    box-shadow: .5rem 2px .5rem rgba(0, 0, 0, .1);
+
+    // Nesting the link inside the item
+    .accordion-link {
+        font-family: $font-stack;
+        font-size: 2rem;
+        color: $primary;
+        text-decoration: none;
+        background-color: $bg-color;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 0;
+        border-style: none;
+
+        i {
+            color: $primary;
+            padding: .5rem;
+        }
+    }
+
+    // Logic for the toggle icons
+    [data-toggle="collapse"] {
+        &.collapsed {
+            > .ion-md-add-circle { display: inline-block; }
+            > .ion-md-remove-circle { display: none; }
+        }
+
+        &:not(.collapsed) {
+            > .ion-md-add-circle { display: none; }
+            > .ion-md-remove-circle { display: inline-block; }
+        }
+    }
+}
+
+.answer {
+    overflow: hidden;
+    position: relative;
+    transition: max-height 1500ms;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: .6rem;
+        height: 90%;
+        background-color: #d93f0b;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.padding-wrapper {
+    padding: 2rem;
+}
