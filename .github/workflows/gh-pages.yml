@@ -34,3 +34,4 @@ jobs:
           publish_dir: ./build
           publish_branch: gh-pages
           force_orphan: true
+          cname: vita3k.org  # ← これだけでOK
