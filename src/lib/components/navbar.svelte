@@ -20,7 +20,7 @@
         <a class="nav-link" href={resolve("/")}>
             <img
                 class="logo"
-                src="/img/logo.svg"
+                src="{resolve('/img/logo.svg')}"
                 width="32"
                 height="32"
                 title="Logo by Gordon Mackay"
