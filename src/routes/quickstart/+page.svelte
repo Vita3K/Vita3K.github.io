@@ -137,7 +137,7 @@
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url('img/icons/ram.quickstart_svg') no-repeat center"
+                            style="background: url('img/icons/ram.svg') no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
                             <p>{m.quickstart_recommended_Xgb_of_ram({
