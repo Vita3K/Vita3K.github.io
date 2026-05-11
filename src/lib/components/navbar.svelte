@@ -5,6 +5,8 @@
     import { page } from "$app/state";
     import VerticalSeparator from "$lib/components/VerticalSeparator.svelte";
 
+    import logo from "$lib/assets/logo.svg";
+
     let selectedLocale = $state(getLocale());
 
     $effect(() => {
@@ -25,7 +27,7 @@
         <a class="nav-link" href={resolve("/")}>
             <img
                 class="logo"
-                src="{resolve('/img/logo.svg')}"
+                src="{logo}"
                 width="32"
                 height="32"
                 title="Logo by Gordon Mackay"
