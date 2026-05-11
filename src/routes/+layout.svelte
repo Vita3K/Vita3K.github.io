@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { Pathname } from "$app/types";
-    import { resolve } from "$app/paths";
+    import { asset, resolve } from "$app/paths";
     import { page } from "$app/state";
     import { locales, localizeHref } from "$lib/paraglide/runtime";
     import favicon from "$lib/assets/favicon.ico";
@@ -63,7 +63,7 @@
         property="og:description"
         content="Vita3K is an experimental open-source Sony PlayStation Vita emulator for Windows, macOS, Linux and Android written in C++."
     />
-    <meta property="og:image" content="https://vita3k.org/img/logo.webp" />
+    <meta property="og:image" content={asset("/img/logo.webp")} />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
     <meta property="og:url" content="https://vita3k.org/" />
@@ -76,7 +76,7 @@
         name="twitter:description"
         content="Vita3K is an experimental open-source Sony PlayStation Vita emulator for Windows, macOS, Linux and Android written in C++."
     />
-    <meta name="twitter:image" content="https://vita3k.org/img/logo.webp" />
+    <meta name="twitter:image" content={asset("/img/logo.webp")} />
     <meta name="theme-color" content="#ffa500" />
     <!-- orange -->
     <meta

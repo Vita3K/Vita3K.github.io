@@ -1,10 +1,13 @@
 <script lang="ts">
     import { m } from "$lib/paraglide/messages.js";
-    import { resolve } from "$app/paths";
+    import { asset, resolve } from "$app/paths";
     import ShowcaseImage from "$lib/components/ShowcaseImage.svelte";
 </script>
 
-<header class="masthead text-center text-white d-flex">
+<header
+    class="masthead text-center text-white d-flex"
+    style="background-image: url({asset('/img/header.webp')});"
+>
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
@@ -26,7 +29,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading text-white">{m.home_about_vita3k()}</h2>
+                <h2 class="section-heading text-white">
+                    {m.home_about_vita3k()}
+                </h2>
                 <hr class="light my-4" />
                 <p class="text-faded mb-4">
                     {m.home_vita3k_description()}

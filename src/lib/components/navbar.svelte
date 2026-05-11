@@ -27,7 +27,7 @@
         <a class="nav-link" href={resolve("/")}>
             <img
                 class="logo"
-                src="{logo}"
+                src={logo}
                 width="32"
                 height="32"
                 title="Logo by Gordon Mackay"

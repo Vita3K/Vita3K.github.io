@@ -1,6 +1,7 @@
 <script lang="ts">
     import AccordionItem from "$lib/components/AccordionItem.svelte";
     import { onMount } from "svelte";
+    import { asset } from "$app/paths";
     import { m } from "$lib/paraglide/messages.js";
 
     // Initial value is just a placeholder just in case the request fails, it will be updated on the onMount function
@@ -69,7 +70,9 @@
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url('img/icons/opengl.svg') no-repeat center"
+                            style="background: url({asset(
+                                '/img/icons/opengl.svg',
+                            )}) no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
                             <p>
@@ -82,7 +85,9 @@
                     <div class="row no-gutters reqs my-3">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url('img/icons/cpu.svg') no-repeat center"
+                            style="background: url({asset(
+                                '/img/icons/cpu.svg',
+                            )}) no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
                             <p>{m.quickstart_any_x86_64_cpu()}</p>
@@ -91,12 +96,16 @@
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url('img/icons/ram.svg') no-repeat center"
+                            style="background: url({asset(
+                                '/img/icons/ram.svg',
+                            )}) no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.quickstart_minimum_of_Xgb_of_ram({
-                                amount: "4",
-                            })}</p>
+                            <p>
+                                {m.quickstart_minimum_of_Xgb_of_ram({
+                                    amount: "4",
+                                })}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -107,7 +116,9 @@
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url('img/icons/vulkan.svg') no-repeat center"
+                            style="background: url({asset(
+                                '/img/icons/vulkan.svg',
+                            )}) no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
                             <p>{m.quickstart_gpu_that_supports_vulkan()}</p>
@@ -116,7 +127,9 @@
                     <div class="row no-gutters reqs mt-3">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url('img/icons/gpu.svg') no-repeat center"
+                            style="background: url({asset(
+                                '/img/icons/gpu.svg',
+                            )}) no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
                             <p>
@@ -127,7 +140,9 @@
                     <div class="row no-gutters reqs my-3">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url('img/icons/cpu.svg') no-repeat center"
+                            style="background: url({asset(
+                                '/img/icons/cpu.svg',
+                            )}) no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
                             <p>{m.quickstart_x86_64_cpu_with_avx()}</p>
@@ -136,12 +151,16 @@
                     <div class="row no-gutters reqs">
                         <div
                             class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url('img/icons/ram.svg') no-repeat center"
+                            style="background: url({asset(
+                                '/img/icons/ram.svg',
+                            )}) no-repeat center"
                         ></div>
                         <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.quickstart_recommended_Xgb_of_ram({
-                                amount: "8",
-                            })}</p>
+                            <p>
+                                {m.quickstart_recommended_Xgb_of_ram({
+                                    amount: "8",
+                                })}
+                            </p>
                         </div>
                     </div>
                 </div>

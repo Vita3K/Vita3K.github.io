@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { resolve } from "$app/paths";
+    import { asset } from "$app/paths";
 
     const { name, imageLink }: { name: string; imageLink: string } = $props();
 </script>
@@ -7,11 +7,11 @@
 <div class="col-lg-4 col-sm-6">
     <a
         class="portfolio-box"
-        href={resolve(`/img/portfolio/fullsize/${imageLink}`)}
+        href={asset(`/img/portfolio/fullsize/${imageLink}`)}
     >
         <img
             class="img-fluid"
-            src={resolve(`/img/portfolio/thumbnails/${imageLink}`)}
+            src={asset(`/img/portfolio/thumbnails/${imageLink}`)}
             alt={name}
         />
         <div class="portfolio-box-caption">
