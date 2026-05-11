@@ -34,7 +34,6 @@
     });
 </script>
 
-/* eslint-disable svelte/no-at-html-tags */
 <section class="text-center text-white d-flex">
     <div class="container my-auto">
         <div class="row">
