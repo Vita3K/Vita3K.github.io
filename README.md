@@ -1,6 +1,8 @@
 # Vita3K Website
 
-Website made in svelte
+[Vita3K official website](https://vita3k.github.io/) made in svelte.
+
+Compatibility list is generated using our [api](https://github.com/Vita3K/api).
 
 # Building/previewing
 * `npm install`
