@@ -17,8 +17,32 @@
         }
     }
 
+    .vertical-separator {
+        position: relative;
+        display: inline-block;
+        width: 4px;
+        height: 2vw;
+        border-radius: 0px;
+        margin-bottom: -2px;
+        color: #fff;
+        border-bottom: 2px solid transparent;
+        background: rgba(255, 255, 255, 0.2);
+        align-self: center;
+    }
+
     padding-left: 1rem;
     padding-right: 1rem;
+
+    .navbar-toggler {
+        border-color: $primary;
+        margin: 0.25rem 0.25rem 0.25rem 0.25rem;
+        padding: 0.25rem 0.75rem;
+
+        &-icon {
+            // Filter that makes the SVG match $primary
+            filter: invert(53%) sepia(35%) saturate(6754%) hue-rotate(339deg) brightness(102%) contrast(88%);
+        }
+    }
 
     .navbar-nav {
         >li.nav-item {
@@ -28,7 +52,7 @@
                 font-size: .9rem;
                 font-weight: 700;
                 text-transform: uppercase;
-                color: $gray-900;
+                color: fade-out($white, .3);
 
                 &:hover {
                     color: $primary;
@@ -105,8 +129,6 @@
 
             .navbar-nav>li.nav-item>a.nav-link,
             .navbar-nav>li.nav-item>a.nav-link:focus {
-                color: $gray-900;
-
                 &:hover {
                     color: $primary;
                 }
@@ -118,4 +140,48 @@
 
 .navbar>.container {
     max-width: fit-content;
+}
+
+@media (max-width: 991.98px) {
+    .vertical-separator {
+        width: 100% !important;
+        height: 4px !important;
+    }
+
+    .navbar>.container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        background: $gray-900;
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .navbar-nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+
+    .navbar-nav>li.nav-item {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .navbar-nav>li.nav-item>a.nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+    }
 }

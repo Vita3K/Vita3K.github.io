@@ -10,6 +10,11 @@
     $effect(() => {
         setLocale(selectedLocale);
     });
+
+    let navCollapsed = $state(true);
+    function toggleNavbar() {
+        navCollapsed = !navCollapsed;
+    }
 </script>
 
 <nav
@@ -30,15 +35,14 @@
         <button
             class="navbar-toggler navbar-toggler-right"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
             aria-controls="navbarResponsive"
-            aria-expanded="false"
+            aria-expanded={!navCollapsed}
             aria-label="Toggle navigation"
+            on:click={toggleNavbar}
         >
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="navbar-collapse collapse" class:show={!navCollapsed} id="navbarResponsive">
             <ul class="navbar-nav ml-auto text-center">
                 <li class="nav-item d-flex align-items-center">
                     <a
