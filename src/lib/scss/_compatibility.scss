@@ -22,17 +22,25 @@
 
 table {
     @include sans-serif-font();
+
+    td>a {
+        text-decoration: none;
+    }
+
+    .title-name {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .status-field {
     text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
 }
 
-
-.title-name {
-    color: $white;
-    text-decoration: none;
-}
 
 .bg-nothing {
     background-color: $nothing;
@@ -60,6 +68,10 @@ table {
 
 .bg-playable {
     background-color: $playable;
+}
+
+.bg-unknown {
+    background-color: #000000;
 }
 
 .region {

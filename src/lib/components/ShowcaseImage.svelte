@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
     import { resolve } from "$app/paths";
 
-    const { name, imageLink } = $props();
+    const { name, imageLink }: { name: string; imageLink: string } = $props();
 </script>
 
 <div class="col-lg-4 col-sm-6">

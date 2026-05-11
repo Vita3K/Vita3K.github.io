@@ -2,15 +2,19 @@
     import { onMount } from "svelte";
     import { m } from "$lib/paraglide/messages.js";
 
-    type FIELDS =
-        | "Nothing"
-        | "Bootable"
-        | "Intro"
-        | "Menu"
-        | "Ingame -"
-        | "Ingame +"
-        | "Playable"
-        | "Unknown";
+    // Fields and their class names
+    const FIELDS = {
+        Nothing: "nothing",
+        Bootable: "bootable",
+        Intro: "intro",
+        Menu: "menu",
+        "Ingame -": "ingame-minus",
+        "Ingame +": "ingame-plus",
+        Playable: "playable",
+        Unknown: "unknown",
+    }
+
+    type FIELDS = keyof typeof FIELDS;
 
     type ORDER_FIELDS = "titleId" | "name" | "status";
     type ORDER_TYPE = "asc" | "desc";
@@ -32,7 +36,7 @@
         name: string;
         titleId: string;
         status: FIELDS;
-        color: string;
+        colorClass: string;
         issueId: number;
         translatedStatus?: string;
         region?: REGION;
@@ -210,6 +214,8 @@
                 }
                 views[e.status].push(e);
             }
+
+            e.colorClass = FIELDS[e.status];
 
             if (e.titleId.startsWith("PCSA") || e.titleId.startsWith("PCSE")) {
                 e.region = "USA";
@@ -560,6 +566,7 @@
                                 <tr>
                                     <td
                                         align="left"
+                                        title={entry.region ? entry.region : "Unknown Region"}
                                         class="{'region-' +
                                             entry.region} region"
                                     >
@@ -575,8 +582,7 @@
                                     </td>
                                     <!-- In Svelte, we use the style attribute for dynamic colors -->
                                     <td
-                                        style="background-color: #{entry.color}"
-                                        class="status-field"
+                                        class="status-field bg-{entry.colorClass}"
                                     >
                                         <span style="color: white">
                                             <div>
