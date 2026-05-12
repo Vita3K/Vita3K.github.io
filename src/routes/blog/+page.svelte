@@ -1,13 +1,8 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import { m } from "$lib/paraglide/messages.js";
 
     const { data } = $props();
     const posts = data.posts;
-
-    onMount(() => {
-        console.log(posts);
-    });
 </script>
 
 <section class="blog-body bg-dark text-white">

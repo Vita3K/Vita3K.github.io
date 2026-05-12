@@ -15,9 +15,7 @@
         );
 
         if (!f.ok) {
-            console.error(
-                "Failed to fetch the system data URL, using the fallback URL instead",
-            );
+            console.error("Failed to fetch the system data URL");
             return;
         }
 
