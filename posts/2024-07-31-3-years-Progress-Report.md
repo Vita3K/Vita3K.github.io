@@ -1,5 +1,6 @@
 ---
 title: "3 years Progress Report: Summer 2024"
+author: nishinji
 ---
 
 # Introduction
@@ -19,7 +20,7 @@ The most important contribution thus far is the addition of the [Vulkan](https:/
 
 ![](/img/posts/2024-07-31/atelier.png)
 
-**Ingame scene from Atelier Ayesha; graphics have been greatly improved. Compare it to the one in the [previous report](https://vita3k.org/2021/07/31/3-years-Progress-Report.html)!**
+**Ingame scene from Atelier Ayesha; graphics have been greatly improved. Compare it to the one in the [previous report](./2021-07-31-3-years-Progress-Report)!**
 
 ## Upscaling support ([#1812](https://github.com/Vita3K/Vita3K/pull/1812))
 
@@ -111,7 +112,7 @@ Developer [Zangetsu](https://github.com/Zangetsu38) has been working on improvin
 
 ![](/img/posts/2024-07-31/compat.png)
 
-**You can now check game compatibility much more easily! No more need to check [the site](https://vita3k.org/compatibility.html) every time.**
+**You can now check game compatibility much more easily! No more need to check [the site](https://vita3k.org/compatibility) every time.**
 
 ## Improve language support
 
@@ -184,7 +185,7 @@ Developer [bookmist](https://github.com/bookmist) has also brought many code opt
 
 **Yes, I only spent a few minutes on this diagram.**
 
-Compatibility testing is primarily done by volunteer testers, and three years of development have resulted in significant improvements. Three years ago, only about [3 percent](https://web.archive.org/web/20210807123006/https://vita3k.org/compatibility.html) of the games were considered playable.(And it wasn't very well maintained.) Now, Vita3K boasts upwards of [50 percent](https://vita3k.org/compatibility.html) compatibility!
+Compatibility testing is primarily done by volunteer testers, and three years of development have resulted in significant improvements. Three years ago, only about [3 percent](https://web.archive.org/web/20210807123006/https://vita3k.org/compatibility) of the games were considered playable.(And it wasn't very well maintained.) Now, Vita3K boasts upwards of [50 percent](https://vita3k.org/compatibility) compatibility!
 
 Compatibility is still not perfect, though our volunteer developers are always working hard to improve it, However some great vita exclusive games like <persona>Persona 4 Golden</persona>(Not an exclusive title anymore...), Freedom Wars, Muramasa Rebirth and SOUL SACRIFICE are playable. Many of the inner workings of the Vita are still undocumented, meaning many parts must be reverse engineered in order to replicate its behavior.
 

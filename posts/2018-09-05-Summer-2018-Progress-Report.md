@@ -1,5 +1,6 @@
 ---
 title: "Progress Report: Summer 2018"
+author: VelocityRa
 ---
 # Introduction
 Welcome to this summer's progress report! _It's been a while._

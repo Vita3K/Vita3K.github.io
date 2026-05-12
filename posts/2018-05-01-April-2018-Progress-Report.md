@@ -1,5 +1,6 @@
 ---
 title: "Progress Report: April 2018"
+author: VelocityRa
 ---
 # Introduction
 Welcome to our *first* progress report!
