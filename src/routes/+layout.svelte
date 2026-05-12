@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { afterNavigate } from "$app/navigation";
     import type { Pathname } from "$app/types";
     import { asset, resolve } from "$app/paths";
     import { page } from "$app/state";
@@ -12,6 +13,10 @@
     import "$lib/scss/creative.scss";
 
     let { children } = $props();
+
+    afterNavigate(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    });
 </script>
 
 <Navbar />

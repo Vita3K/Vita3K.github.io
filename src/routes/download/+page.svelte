@@ -4,7 +4,7 @@
     import DownloadBox from "$lib/components/DownloadBox.svelte";
 </script>
 
-<section class="bg-dark text-dark" id="download">
+<section class="bg-dark text-dark">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
