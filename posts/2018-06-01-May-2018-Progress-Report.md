@@ -82,9 +82,9 @@ Probably the first game to go in-game with graphics (hand-crafted shaders aren't
 
 #### Screenshots
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown.png)
+![](/img/posts/2018-06-01/unknown.png)
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(1).png)
+![](/img/posts/2018-06-01/unknown(1).png)
 
 #### Video
 [![](https://img.youtube.com/vi/Odro8wrLrlQ/0.jpg)](https://www.youtube.com/watch?v=Odro8wrLrlQ)
@@ -104,21 +104,21 @@ Probably the first game to go in-game with graphics (hand-crafted shaders aren't
 ![](https://user-images.githubusercontent.com/36709480/40811855-4aa3333e-6533-11e8-8db2-62aba7e13e18.png?width=1006&height=627)
 
 ### Alone With You
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(2).png)
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(3).png)
+![](/img/posts/2018-06-01/unknown(2).png)
+![](/img/posts/2018-06-01/unknown(3).png)
 
 ### Siralim
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(4).png)
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(5).png)
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(6).png)
+![](/img/posts/2018-06-01/unknown(4).png)
+![](/img/posts/2018-06-01/unknown(5).png)
+![](/img/posts/2018-06-01/unknown(6).png)
 
 Saving works as well:
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(7).png)
+![](/img/posts/2018-06-01/unknown(7).png)
 
 ### Darius Burst: Chronicle Saviours
 
 No shaders written for this one, but it boots:
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(8).png)
+![](/img/posts/2018-06-01/unknown(8).png)
 
 ## Homebrew
 
@@ -126,7 +126,7 @@ Here’s a few other screeshots showing homebrews that either boot or are playab
 
 ### Vita Hexen II
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-06-01/unknown(9).png)
+![](/img/posts/2018-06-01/unknown(9).png)
 
 ### GNU Robbo ([#234](https://github.com/vita3k/vita3k/pull/234))
 

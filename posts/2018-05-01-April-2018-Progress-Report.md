@@ -35,48 +35,48 @@ Fortunately, after the refactoring and improvements introduced by [#170](https:/
 
 #### OpenSyobon
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/opensyobon.png)
+![](/img/posts/2018-05-01/opensyobon.png)
 
 #### Minicraft
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/minicraft.png)
+![](/img/posts/2018-05-01/minicraft.png)
 
 #### Labyrinth 3D
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/labyrinth3d.png) 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown.png)
+![](/img/posts/2018-05-01/labyrinth3d.png) 
+![](/img/posts/2018-05-01/unknown.png)
 
 #### flppy Bird
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown(1).png)
+![](/img/posts/2018-05-01/unknown(1).png)
 
 #### HOTA
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/hota.png)
+![](/img/posts/2018-05-01/hota.png)
 
 #### HandyVita
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown(2).png)
+![](/img/posts/2018-05-01/unknown(2).png)
 
 #### milieTetris
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown(3).png)
+![](/img/posts/2018-05-01/unknown(3).png)
 
 #### Blockout
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/blockout1.png)
+![](/img/posts/2018-05-01/blockout1.png)
 
 #### Katawa Shoujo
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/katawashoujo.png)
+![](/img/posts/2018-05-01/katawashoujo.png)
 
 #### ZeldaROTH
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/zeldaROTH.png)
+![](/img/posts/2018-05-01/zeldaROTH.png)
 
 #### ZeldaNSQ
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/zeldaNSQ.png)
+![](/img/posts/2018-05-01/zeldaNSQ.png)
 
 ### GUI/Debugger ([#147](https://github.com/Vita3K/Vita3K/pull/147))
 
@@ -86,7 +86,7 @@ Booting games is still only possible by supplying them as command-line arguments
 
 #### Debugger UI
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/unknown(4).png)
+![](/img/posts/2018-05-01/unknown(4).png)
 
 Progress Screenshots
 ====================
@@ -95,15 +95,15 @@ Here’s a few other screeshots showing homebrews that either boot or are playab
 
 #### Flood it ([#152](https://github.com/Vita3K/Vita3K/pull/152))
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/floodit.png)
+![](/img/posts/2018-05-01/floodit.png)
 
 #### Numpty Physics ([#163](https://github.com/Vita3K/Vita3K/pull/163))
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/numpty.png)
+![](/img/posts/2018-05-01/numpty.png)
 
 #### ZeldaNSQ ([#159](https://github.com/Vita3K/Vita3K/pull/159))
 
-![](https://github.com/Vita3K/Vita3K.github.io/raw/master/_posts/img/2018-05-01/zeldaNSQ.png)
+![](/img/posts/2018-05-01/zeldaNSQ.png)
 
 Roadmap
 ===
