@@ -93,15 +93,15 @@ Probably the first game to go in-game with graphics (hand-crafted shaders aren't
 ### 10 Second Ninja ([#230](https://github.com/vita3k/vita3k/pull/230))
 
 #### Screenshots
-![](https://user-images.githubusercontent.com/36709480/40812190-c1b9cfd6-6534-11e8-9d1c-939101056f22.png?width=1006&height=627)
-![](https://user-images.githubusercontent.com/36709480/40812239-02ca633c-6535-11e8-8564-5041a7ae8e05.png?width=1006&height=627)
+![](/img/posts/2018-06-01/ninjax.png)
+![](/img/posts/2018-06-01/ninjax2.png)
 #### Video
 [![](https://img.youtube.com/vi/irWsme9DMBo/0.jpg)](https://www.youtube.com/watch?v=irWsme9DMBo)
 
 ### Downwell [(#230)](https://github.com/vita3k/vita3k/pull/230)
 
-![](https://user-images.githubusercontent.com/36709480/40811988-cf0b4f6c-6533-11e8-8a50-4e728ef94d2e.png?width=1006&height=627)
-![](https://user-images.githubusercontent.com/36709480/40811855-4aa3333e-6533-11e8-8db2-62aba7e13e18.png?width=1006&height=627)
+![](/img/posts/2018-06-01/downwell.png)
+![](/img/posts/2018-06-01/downwell2.png)
 
 ### Alone With You
 ![](/img/posts/2018-06-01/unknown(2).png)
@@ -130,15 +130,15 @@ Here’s a few other screeshots showing homebrews that either boot or are playab
 
 ### GNU Robbo ([#234](https://github.com/vita3k/vita3k/pull/234))
 
-![](https://user-images.githubusercontent.com/36709480/40622779-7f468c40-62a3-11e8-9664-0e83ceaff620.png)
+![](/img/posts/2018-06-01/robbo.png)
 
 #### SDLLopan ([#234](https://github.com/vita3k/vita3k/pull/234))
 
-![](https://user-images.githubusercontent.com/36709480/40808311-09a229aa-6527-11e8-9fd1-327094f54608.png?width=1006&height=627)
+![](/img/posts/2018-06-01/sdllopan.png)
 
 #### Manga Downloader ([#234](https://github.com/vita3k/vita3k/pull/234))
 
-![](https://user-images.githubusercontent.com/36709480/40622568-8e19c3c8-62a2-11e8-8bcd-4d0f051e4d26.png?width=1006&height=627)
+![](/img/posts/2018-06-01/mangadownloader.png)
 
 # ZeldaROTH
 

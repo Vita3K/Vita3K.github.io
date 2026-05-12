@@ -9,11 +9,11 @@ First, let's get to the report. It's obvious everyone wants to hear more about w
 
 ## Graphic library (GXM) changes
 
-![image9](https://user-images.githubusercontent.com/25717050/127731941-0bc07c7c-cea8-47b9-b78a-3f2fdfc894d5.png)
+![image9](/img/posts/2021-07-31/persona.png)
 
 **Ingame scene from Persona 4 Golden; the foundational works on our renderer and shader recompiler was pushed forward by adjusting to this game.**
 
-![image3](https://user-images.githubusercontent.com/25717050/127731991-837c724b-52d9-4a19-8125-86b2cdb3f358.png)
+![image3](/img/posts/2021-07-31/akiba.png)
 
 **Ingame scene from Akiba’s Trip; it’s one of the most sophisticated 3d graphics scenes that vita3k can render perfectly.**
 
@@ -46,7 +46,7 @@ This feature was implemented by developer [Watchful](https://github.com/KorewaWa
 
 ### Deferred
 
-![image4](https://user-images.githubusercontent.com/25717050/127732106-6a44a181-02de-4b52-a694-0b1f100eb452.png)
+![image4](/img/posts/2021-07-31/127732106-6a44a181-02de-4b52-a694-0b1f100eb452.png)
 
 **とある魔術の電脳戦機** **is one of the game that benefits from deferred implementation most, in which the mecha and the UI got rendered.**
 
@@ -70,7 +70,7 @@ We've tried to optimize and clean the graphics backend part of the emulator as b
 
 ## Kernel and CPU changes
 
-![image7](https://user-images.githubusercontent.com/25717050/127732111-532b8332-43e5-45e4-9a76-dc36131b079b.png)
+![image7](/img/posts/2021-07-31/blessingFlowers.png)
 
 **Ending scene from Saenai Heroine no Sodatekata: Blessing Flowers; the game has motivated us to aim for perfect libult and libpvf emulation over the last year. It’s now playable from beginning to end with little audio glitches.**
 
@@ -98,7 +98,7 @@ By employing Dynarmic, LLE libpvf is now working without any hack. LLE libult ha
 
 While performance is not there in some heavier games, it runs simple visual novel games and some complicated 3d games full speed. We are able to boot tons of games, and many of them go ingame. Various commercial games, including Digimon, Saenai, Persona 4 Golden, Akiba, To love ru, and Virtual Tennis, run fairly stable without any sign of freeze or random crash in long hours of gameplay. We are particularly excited for the future with Dynarmic, as the developer of the project are very active around for help and support. There’s still a major issue with booting unity games yet, but we’re going to tackle this very hard and hopefully improve compatibility drastically.
 
-![image2](https://user-images.githubusercontent.com/25717050/127732144-90bb7a32-cdc5-4aec-83c4-d14cdcff3d88.png)
+![image2](/img/posts/2021-07-31/atelier.png)
 
 **Ingame scene from Atelier Ayesha; it benefited tremendously from full-fledged libult emulation, transitioning from intro to ingame.**
 
@@ -125,7 +125,7 @@ As of today video player support is in a really early state, which is the reason
 
 ## Trophies!
 
-![image10](https://user-images.githubusercontent.com/25717050/127732152-38f50c46-af96-4e16-9f97-198cf69448b9.png)
+![image10](/img/posts/2021-07-31/gravityDuck.png)
 
 **Trophy notification in Gravity Duck. It seems the player has failed quite a lot.**
 
@@ -133,7 +133,7 @@ While playing games is for fun, it's more satisfying when you can grind and try 
 
 Trophies API is not very hard, so it's implemented quite early in the emulator. We enjoy adding support for random things that we have the knowledge of doing. The API only consists of getting info about available, register a trophy as earned and the progress of trophies earned, so it's quite simple. We even add a notification systems using ImGui, to display what trophy you have earned. It's very fun to learn that you have earned something with a small notification, if it's silently registered there is no more fun is there?
 
-![image12](https://user-images.githubusercontent.com/25717050/127732158-98e30598-87b6-43b0-824e-8d84c6526ff2.png)
+![image12](/img/posts/2021-07-31/trophy.png)
 
 ### Status
 
@@ -142,7 +142,7 @@ As of now, the trophies system is complete, however the trophy save file is not 
 
 ## Virtual keyboard (IME) and Save/load dialog
 
-![image6](https://user-images.githubusercontent.com/25717050/127732170-b68ba175-c19c-4039-be14-de6f9fdca943.png)
+![image6](/img/posts/2021-07-31/kb.png)
 
 **The standard virtual keyboard**
 
@@ -154,19 +154,19 @@ It was not until developer [IllusionMan1212](https://github.com/illusionman1212)
 
 By utilising the ImGui library, to the full extent, and with careful considerations about the design and suitable to the language culture, both implementations of the APIs now presented very modernly in the UI. We hope users enjoy the work these developers made.
 
-![image1](https://user-images.githubusercontent.com/25717050/127732187-b22af137-03df-40ce-b4fb-72ed0c6997f7.png)
+![image1](/img/posts/2021-07-31/kbFR.png)
 
 **The virtual keyboard for French**
 
-![image5](https://user-images.githubusercontent.com/25717050/127732194-d78fbe33-ca6f-41a2-841b-195f2e5b4ed2.png)
+![image5](/img/posts/2021-07-31/kbLang.png)
 
 **Ability to switch the keyboard layout between languages**
 
-![image11](https://user-images.githubusercontent.com/25717050/127732204-b7c3dcea-d090-424f-8590-7c36889a411a.png)
+![image11](/img/posts/2021-07-31/load.png)
 
 **Dialog prompt to load the save**
 
-![image8](https://user-images.githubusercontent.com/25717050/127732211-559c81c6-39ab-44bc-bb93-fdf5953a845b.png)
+![image8](/img/posts/2021-07-31/saving.png)
 
 **Save dialog with progress and the date the save is made**
 

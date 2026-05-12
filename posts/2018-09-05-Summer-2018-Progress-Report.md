@@ -64,7 +64,7 @@ Implements an I/O related feature/function that fetches information about Vita f
 Complete re-design of our game select screen to be grid-based and the addition of sorting by title ID and game title (the latter one being used by default).
 
 ### Screenshot
-![](https://user-images.githubusercontent.com/6632271/43784632-357e01a4-9a6d-11e8-8410-633c8d07b79f.png)
+![](/img/posts/2018-09-05/gameSelect.png)
 
 
 ## Shader gen, kernel, IO and renderer improvements ([#307](https://github.com/Vita3K/Vita3K/pull/307)) by VelocityRa
@@ -125,7 +125,7 @@ The game now advances further, it shows a cut-scene and dialogue before freezing
 ## Screenshots
 ![](/img/posts/2018-09-05/unknown(1).png)
 
-![](https://user-images.githubusercontent.com/20528385/44298024-99e69b80-a2a9-11e8-91c4-fca594b0e5e0.png)
+![](/img/posts/2018-09-05/aloneWithYou.png)
 
 ---
 There's _many_ other improvements in commercial games, but we can't show off much other than logs, since no-one has written shaders for them.

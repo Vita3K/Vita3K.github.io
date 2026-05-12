@@ -17,7 +17,7 @@ The most important contribution thus far is the addition of the [Vulkan](https:/
 
 **A major step forward in history. This is the first image of vulkan renderer. Where's happy meal?**
 
-![](https://github.com/Vita3K/compatibility/assets/107111782/44d6b55b-a6b0-49fd-b3e1-83de2874d1c5)
+![](/img/posts/2024-07-31/atelier.png)
 
 **Ingame scene from Atelier Ayesha; graphics have been greatly improved. Compare it to the one in the [previous report](https://vita3k.org/2021/07/31/3-years-Progress-Report.html)!**
 
@@ -109,7 +109,7 @@ Developer [Zangetsu](https://github.com/Zangetsu38) has been working on improvin
 
 [Zangetsu](https://github.com/Zangetsu38) has added a compatibility status section to the emulator, signifying a title's current compatibility status. This is especially useful for testers, as it makes it much easier to see which games have or haven't been tested and how compatibility changes from one point to another. Additionally, in games where compatibility has not been reported, clicking 'create state report' will open a draft on GitHub. This has made reporting compatibility much easier. Note that compatibility is based on the pc version and reports are accepted only for the pc version.
 
-![](https://user-images.githubusercontent.com/5261759/215394789-ebffaccc-10d5-4ec6-ae1f-e1077220a021.png)
+![](/img/posts/2024-07-31/compat.png)
 
 **You can now check game compatibility much more easily! No more need to check [the site](https://vita3k.org/compatibility.html) every time.**
 
@@ -160,7 +160,7 @@ Some games utilized unloading or re-loading certain [modules](https://wiki.henka
 
 Contributor [hobyst](https://github.com/hobyst) took it upon himself to add support for the [Tracy](https://github.com/wolfpld/tracy) profiler to the emulator. Tracy allows developers working on the emulator to see extremely in-depth information about the CPU, GPU, memory allocations, and much more, allowing for incredibly precise debugging and analyzing of the performance and workings of the code. Needless to say, this tool has proved incredibly useful. 
 
-![](https://user-images.githubusercontent.com/48522412/145694018-8af841bf-82e1-4a63-95e9-88bb5a473a11.png)
+![](/img/posts/2024-07-31/tracy.png)
 
 **The GUI really makes you *feel* like a developer.**
 
@@ -168,7 +168,7 @@ Contributor [hobyst](https://github.com/hobyst) took it upon himself to add supp
 
 [lybxlpsv](https://github.com/lybxlpsv) fixed a long-standing bug that prevented Project Diva MV footage from loading. This allows the Project Diva series to be played without a hack.
 
-![](https://github.com/Vita3K/compatibility/assets/107111782/b38ee26f-aa8a-4ff2-9d86-243cc742dca1)
+![](/img/posts/2024-07-31/miku.png)
 
 **Ingame scene from Hatsune Miku Project Diva X; Meet the Diva on your PC!**
 
