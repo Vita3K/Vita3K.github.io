@@ -59,7 +59,7 @@
         name="keywords"
         content="vita3k, PSVita, PSVita emulator, PSVita emulation, PSVita, emulator, windows, macos, linux, android"
     />
-    <CompositeMeta key="image" content={`https://vita3k.org${asset("/img/logo.webp")}`} />
+    <CompositeMeta key="image" content={`https://vita3k.org/${asset("/img/logo.webp")}`} />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
     <meta property="og:url" content="https://vita3k.org/" />

@@ -123,7 +123,7 @@
                     <a
                         class="nav-link"
                         target="_blank"
-                        href="https://crowdin.com/project/Vita3k"
+                        href="https://crowdin.vita3k.org"
                         on:click={collapseNavbar}>{m.nav_translate()}</a
                     >
                 </li>
