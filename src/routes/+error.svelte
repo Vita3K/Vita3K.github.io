@@ -14,6 +14,7 @@
             if (urlWithoutHTML == "/index") {
                 newUrl = "/";
             }
+            newUrl = urlWithoutHTML;
         }
 
         // Redirect blog posts like /2024/07/31-3-years-Progress-Report to /blog/2024-07-31-3-years-Progress-Report
