@@ -15,7 +15,7 @@
     <CompositeMeta key="author" content={author} />
     <CompositeMeta
         key="description"
-        content={post ? post.meta.description : ""}
+        content={post ? post.excerpt : ""}
     />
 </svelte:head>
 
