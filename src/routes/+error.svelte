@@ -11,10 +11,10 @@
         if (url.endsWith(".html")) {
             shouldRedirect = true;
             let urlWithoutHTML = url.replace(/\.html$/, "");
+            newUrl = urlWithoutHTML;
             if (urlWithoutHTML == "/index") {
                 newUrl = "/";
             }
-            newUrl = urlWithoutHTML;
         }
 
         // Redirect blog posts like /2024/07/31-3-years-Progress-Report to /blog/2024-07-31-3-years-Progress-Report
