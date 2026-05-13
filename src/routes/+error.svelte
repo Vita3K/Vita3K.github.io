@@ -7,12 +7,26 @@
 
     if (typeof window !== "undefined") {
         const url = window.location.pathname;
+        let newUrl = url;
         if (url.endsWith(".html")) {
             shouldRedirect = true;
-            let newUrl = url.replace(/\.html$/, "");
-            if (newUrl == "/index") {
+            let urlWithoutHTML = url.replace(/\.html$/, "");
+            if (urlWithoutHTML == "/index") {
                 newUrl = "/";
             }
+        }
+
+        // Redirect blog posts like /2024/07/31-3-years-Progress-Report to /blog/2024-07-31-3-years-Progress-Report
+        // Needed because of dumb historic reasons
+        const blogDateMatch = newUrl.match(
+            /^\/(\d{4})\/(\d{2})\/(\d{2})\/(.+)$/,
+        );
+        if (blogDateMatch) {
+            const [, year, month, day, slug] = blogDateMatch;
+            newUrl = `/blog/${year}-${month}-${day}-${slug}`;
+        }
+
+        if (url != newUrl) {
             goto(
                 resolve(newUrl + window.location.search + window.location.hash),
                 {
