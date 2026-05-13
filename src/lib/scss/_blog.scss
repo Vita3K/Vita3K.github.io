@@ -23,7 +23,9 @@
         pointer-events: auto;
     }
 
-
+    @media (max-width: 992px) {
+        max-width: 100%;
+    }
 }
 
 .blog-post {
