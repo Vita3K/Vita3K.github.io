@@ -1,6 +1,44 @@
 import { remark } from 'remark';
 import remark_html from 'remark-html';
 
+function stripHtml(html: string) {
+    return html
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function getPublishedLabel(slug: string) {
+    const match = slug.match(/^(\d{4})-(\d{2})-(\d{2})/);
+
+    if (!match) {
+        return '';
+    }
+
+    const [, year, month, day] = match;
+    const monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+    ];
+    const monthIndex = Number(month) - 1;
+
+    if (monthIndex < 0 || monthIndex >= monthNames.length) {
+        return '';
+    }
+
+    return `${monthNames[monthIndex]} ${Number(day)}, ${year}`;
+}
+
 export async function getAllPosts() {
     // Import all markdown files as raw text
     const modules = import.meta.glob('/posts/*.md', { query: '?raw', import: 'default', eager: true });
@@ -44,13 +82,18 @@ export async function getAllPosts() {
             .process(content);
         const htmlStr = processed.toString();
         const pMatch = htmlStr.match(/<p>([\s\S]*?)<\/p>/i);
-        const excerpt = `<p>${pMatch ? pMatch[1] : 'Excerpt not available'}</p>`;
+        const excerptHtml = pMatch ? pMatch[1] : 'Excerpt not available';
+        const slug = file.split('/').pop()?.replace(/\.md$/, '') ?? '';
+        const excerptText = stripHtml(excerptHtml);
+
         return {
             meta: meta,
-            slug: file.split('/').pop()?.replace(/\.md$/, ''),
-            url: `/blog/${file.split('/').pop()?.replace(/\.md$/, '')}`,
+            slug,
+            url: `/blog/${slug}`,
             html: { body: htmlStr },
-            excerpt,
+            excerpt: `<p>${excerptHtml}</p>`,
+            excerptText,
+            publishedLabel: getPublishedLabel(slug),
         };
     }));
     posts.sort((a, b) => (a.slug < b.slug ? 1 : -1));

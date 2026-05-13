@@ -2,11 +2,11 @@
     import { m } from "$lib/paraglide/messages.js";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
 
-    const { data } = $props();
-    const post = data.post;
+    let { data } = $props();
+    let post = $derived(data.post);
 
-    const title = post ? post.meta.title : m.blog_post_not_found();
-    const author = post ? post.meta.author : "";
+    let title = $derived(post ? post.meta.title : m.blog_post_not_found());
+    let author = $derived(post ? post.meta.author : "");
 </script>
 
 <svelte:head>
@@ -15,44 +15,36 @@
     <CompositeMeta key="author" content={author} />
     <CompositeMeta
         key="description"
-        content={post ? post.excerpt : ""}
+        content={post ? post.excerptText : ""}
     />
 </svelte:head>
 
 {#if post}
-    <div>
-        <section class="blog-body bg-dark text-white">
-            <div class="container" id="blog-container">
-                <div class="row blog-post">
-                    <div class="col-lg-12 mx-auto text-center">
-                        <h2 class="blog-post-title section-heading">
-                            <font color="#bbbbbb">{post.meta.title}</font>
-                        </h2>
-                        <h4>
-                            <font color="#777777">
-                                {@html m.blog_written_by({
-                                    author: post.meta.author,
-                                })}
-                            </font>
-                        </h4>
-                        <div
-                            class="stackedit__html blog-post-body mb-5"
-                            align="left"
-                        >
-                            {@html post.html.body}
-                        </div>
-                    </div>
+    <section class="blog-page blog-detail bg-dark text-white">
+        <div class="container" id="blog-container">
+            <article class="blog-post">
+                <header class="blog-article-header text-center">
+                    {#if post.publishedLabel}
+                        <p class="blog-eyebrow">{post.publishedLabel}</p>
+                    {/if}
+                    <h1 class="blog-post-title section-heading">{post.meta.title}</h1>
+                    <p class="blog-article-author">
+                        {@html m.blog_written_by({
+                            author: post.meta.author,
+                        })}
+                    </p>
+                </header>
+                <div class="stackedit__html blog-post-body">
+                    {@html post.html.body}
                 </div>
-            </div>
-        </section>
-    </div>
+            </article>
+        </div>
+    </section>
 {:else}
-    <section class="blog-post">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 mx-auto text-center">
-                    <h1>{m.blog_post_not_found()}</h1>
-                </div>
+    <section class="blog-page blog-detail bg-dark text-white">
+        <div class="container" id="blog-container">
+            <div class="blog-post blog-post-missing text-center">
+                <h1>{m.blog_post_not_found()}</h1>
             </div>
         </div>
     </section>
