@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 Not Found</title>
+    <meta name="robots" content="noindex" />
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #161616;
+            --panel: rgba(0, 0, 0, 0.35);
+            --text: #f5f5f5;
+            --muted: #d0d0d0;
+            --accent: #ff9800;
+            --accent-hover: #ffb547;
+            --border: rgba(255, 255, 255, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            font-family: "Open Sans", Arial, sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top, rgba(255, 152, 0, 0.18), transparent 35%),
+                linear-gradient(180deg, #222 0%, var(--bg) 100%);
+        }
+
+        main {
+            width: min(100%, 720px);
+            padding: 40px 32px;
+            text-align: center;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+        }
+
+        h1 {
+            margin: 0 0 16px;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        p {
+            margin: 0 auto 20px;
+            max-width: 40rem;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+
+        a {
+            color: var(--accent);
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+        }
+    </style>
+    <script>
+        (function () {
+            function normalizeLegacyPathname(pathname) {
+                let normalizedPathname = pathname;
+
+                if (normalizedPathname.endsWith(".html")) {
+                    normalizedPathname = normalizedPathname.slice(0, -".html".length);
+                }
+
+                if (normalizedPathname === "/index") {
+                    return "/";
+                }
+
+                const legacyBlogMatch = normalizedPathname.match(
+                    /^\/(\d{4})\/(\d{2})\/(\d{2})\/(.+)$/,
+                );
+
+                if (legacyBlogMatch) {
+                    const [, year, month, day, slug] = legacyBlogMatch;
+                    return "/blog/" + year + "-" + month + "-" + day + "-" + slug;
+                }
+
+                return normalizedPathname;
+            }
+
+            const nextPathname = normalizeLegacyPathname(window.location.pathname);
+
+            if (nextPathname !== window.location.pathname) {
+                window.location.replace(
+                    nextPathname + window.location.search + window.location.hash,
+                );
+            }
+        })();
+    </script>
+</head>
+<body>
+    <main>
+        <h1>404 - Not Found</h1>
+        <p>
+            The page you were looking for does not exist. If you followed an old
+            Vita3K link, this page already tried to forward you to the new route.
+        </p>
+        <p>
+            You can head back to the <a href="/">home page</a> or browse the
+            <a href="/blog">blog</a>.
+        </p>
+    </main>
+</body>
+</html>
