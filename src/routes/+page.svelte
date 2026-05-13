@@ -2,7 +2,14 @@
     import { m } from "$lib/paraglide/messages.js";
     import { asset, resolve } from "$app/paths";
     import ShowcaseImage from "$lib/components/ShowcaseImage.svelte";
+    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
 </script>
+
+<svelte:head>
+    <title>{m.meta_title()}</title>
+    <CompositeMeta key="title" content="Vita3K - PlayStation Vita Emulator" />
+    <CompositeMeta key="description" content="Vita3K is an experimental open-source Sony PlayStation Vita emulator for Windows, macOS, Linux and Android written in C++." />
+</svelte:head>
 
 <header
     class="masthead text-center text-white d-flex"

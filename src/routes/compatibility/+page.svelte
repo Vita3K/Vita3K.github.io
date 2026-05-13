@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { m } from "$lib/paraglide/messages.js";
+    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
 
     // Fields and their class names
     const FIELDS = {
@@ -12,7 +13,7 @@
         "Ingame +": "ingame-plus",
         Playable: "playable",
         Unknown: "unknown",
-    }
+    };
 
     type FIELDS = keyof typeof FIELDS;
 
@@ -241,11 +242,22 @@
     });
 </script>
 
+<svelte:head>
+    <title>Vita3K - {m.nav_compatibility()}</title>
+    <CompositeMeta key="title" content="Vita3K - {m.nav_compatibility()}" />
+    <CompositeMeta
+        key="description"
+        content="Vita3K compatibility list for +3000 Games"
+    />
+</svelte:head>
+
 <section class="text-white" id="compatibility">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 mx-auto text-center">
-                <h2 class="section-heading">{m.compatibility_compatibility_list()}</h2>
+                <h2 class="section-heading">
+                    {m.compatibility_compatibility_list()}
+                </h2>
                 <hr class="my-4" />
                 {m.compatibility_emulator_undergoing_changes()}
                 <br /><br />
@@ -254,7 +266,7 @@
                         style="display:inline-block;vertical-align:middle;"
                         type="text"
                         class="form-control"
-                        placeholder="{m.compatibility_search()}"
+                        placeholder={m.compatibility_search()}
                         required={true}
                         bind:value={searchQuery}
                     />
@@ -270,7 +282,8 @@
                         href="#"
                         class="plate bg-bootable"
                         onclick={() => changeView("Bootable")}
-                        >{m.compatibility_bootable()} ({views["Bootable"].length})
+                        >{m.compatibility_bootable()} ({views["Bootable"]
+                            .length})
                     </a>
                     <a
                         href="#"
@@ -288,19 +301,22 @@
                         href="#"
                         class="plate bg-ingame-minus"
                         onclick={() => changeView("Ingame -")}
-                        >{m.compatibility_ingame_minus()} ({views["Ingame -"].length})
+                        >{m.compatibility_ingame_minus()} ({views["Ingame -"]
+                            .length})
                     </a>
                     <a
                         href="#"
                         class="plate bg-ingame-plus"
                         onclick={() => changeView("Ingame +")}
-                        >{m.compatibility_ingame_plus()} ({views["Ingame +"].length})
+                        >{m.compatibility_ingame_plus()} ({views["Ingame +"]
+                            .length})
                     </a>
                     <a
                         href="#"
                         class="plate bg-playable"
                         onclick={() => changeView("Playable")}
-                        >{m.compatibility_playable()} ({views["Playable"].length})
+                        >{m.compatibility_playable()} ({views["Playable"]
+                            .length})
                     </a>
                     <a
                         href="#"
@@ -566,7 +582,9 @@
                                 <tr>
                                     <td
                                         align="left"
-                                        title={entry.region ? entry.region : "Unknown Region"}
+                                        title={entry.region
+                                            ? entry.region
+                                            : "Unknown Region"}
                                         class="{'region-' +
                                             entry.region} region"
                                     >

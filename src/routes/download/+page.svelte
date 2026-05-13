@@ -2,7 +2,17 @@
     import { m } from "$lib/paraglide/messages.js";
 
     import DownloadBox from "$lib/components/DownloadBox.svelte";
+    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
 </script>
+
+<svelte:head>
+    <title>Vita3K - {m.nav_download()}</title>
+    <CompositeMeta key="title" content="Vita3K - {m.nav_download()}" />
+    <CompositeMeta
+        key="description"
+        content="Vita3K download page for the latest builds"
+    />
+</svelte:head>
 
 <section class="bg-dark text-dark">
     <div class="container">

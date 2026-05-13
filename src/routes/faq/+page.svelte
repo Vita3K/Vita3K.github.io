@@ -1,6 +1,15 @@
 <script>
     import { resolve } from "$app/paths";
+    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+    import { m } from "$lib/paraglide/messages.js";
 </script>
+
+<svelte:head>
+    <title>Vita3K - {m.nav_faqs()}</title>
+
+    <CompositeMeta key="title" content="Vita3K - {m.nav_faqs()}" />
+    <CompositeMeta key="description" content="Vita3K frequently asked questions" />
+</svelte:head>
 
 <section class="text-center text-white d-flex">
     <div class="container my-auto">

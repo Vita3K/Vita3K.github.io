@@ -3,6 +3,7 @@
     import { onMount } from "svelte";
     import { asset } from "$app/paths";
     import { m } from "$lib/paraglide/messages.js";
+    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
 
     // Initial value is just a placeholder just in case the request fails, it will be updated on the onMount function
     let urlObtained = $state(false);
@@ -32,6 +33,12 @@
         urlObtained = sysdataURL !== ""; // If the URL is not empty, then we obtained it successfully
     });
 </script>
+
+<svelte:head>
+    <title>Vita3K - {m.nav_quickstart()}</title>
+    <CompositeMeta key="title" content="Vita3K - {m.nav_quickstart()}" />
+    <CompositeMeta key="description" content="Vita3K quickstart guide" />
+</svelte:head>
 
 <section class="text-center text-white d-flex">
     <div class="container my-auto">

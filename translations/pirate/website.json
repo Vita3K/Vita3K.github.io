@@ -1,4 +1,5 @@
 {
+    "meta_title": "Vita3K - Playstation Vita Emulator",
     "nav_lang": "Pirate",
     "nav_quickstart": "Set Sail Quick!",
     "nav_blog": "Captain's Log",
@@ -62,6 +63,7 @@
     "quickstart_install_both_firmware_packages": "Install <b>both</b> firmware packages usin' the <code>File > Install Firmware</code> menu.",
     "quickstart_managing_modules": "Musterin' the Crew (Modules)",
     "quickstart_managing_modules_desc": "Manage yer system modules in <code>Configuration > Settings > Core</code>. We recommend <code>Modules Mode > Automatic</code>. If some modules be mutinous, try tossin' 'em overboard.",
+    "blog_written_by": "Written by <b>{author}</b>",
     "blog_read_more": "Read more, ye curious buccaneer!",
     "blog_post_not_found": "Post not found",
     "download_pick_up_your_build": "Snag yer build, ye scallywag!",

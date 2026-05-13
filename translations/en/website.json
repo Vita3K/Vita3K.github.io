@@ -1,4 +1,5 @@
 {
+    "meta_title": "Vita3K - Playstation Vita Emulator",
     "nav_lang": "English",
     "nav_quickstart": "Quickstart",
     "nav_blog": "Blog",
@@ -62,6 +63,7 @@
     "quickstart_install_both_firmware_packages": "Install <b>both</b> firmware packages using the <code>File > Install Firmware</code> menu option.",
     "quickstart_managing_modules": "Managing Modules",
     "quickstart_managing_modules_desc": "System modules can be managed in the <code>Configuration > Settings > Core</code> tab of the emulator, we recommend <code>Modules Mode > Automatic</code>. And if you have doubts some modules are causing crashes you can try to remove them.",
+    "blog_written_by": "Written by <b>{author}</b>",
     "blog_read_more": "Read more",
     "blog_post_not_found": "Post not found",
     "download_pick_up_your_build": "Pick up your build!",
