@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="64"
+     height="64"
+     viewBox="0 0 64 64">
+
+	<defs>
+		<radialGradient id="ocean" cx="35%" cy="30%" r="70%">
+			<stop offset="0%" stop-color="#4fc3f7"/>
+			<stop offset="100%" stop-color="#1565c0"/>
+		</radialGradient>
+
+		<linearGradient id="land" x1="0" x2="1">
+			<stop offset="0%" stop-color="#9be15d"/>
+			<stop offset="100%" stop-color="#65c466"/>
+		</linearGradient>
+	</defs>
+
+	<!-- Earth -->
+	<circle cx="32" cy="32" r="30" fill="url(#ocean)"/>
+
+	<!-- Asia -->
+	<path
+    fill="url(#land)"
+    d="
+      M18 16
+      L25 12
+      L38 11
+      L48 15
+      L53 20
+      L50 26
+      L46 27
+      L43 23
+      L38 24
+      L35 28
+      L31 29
+      L29 33
+      L25 39
+      L21 42
+      L18 40
+      L19 33
+      L16 28
+      L15 23
+      Z
+    "
+  />
+
+	<!-- Japan -->
+	<circle cx="46" cy="30" r="1.5" fill="#9be15d"/>
+	<circle cx="48" cy="33" r="1.2" fill="#9be15d"/>
+
+	<!-- Indonesia -->
+	<ellipse cx="37" cy="44" rx="5" ry="1.5" fill="#9be15d"/>
+
+	<!-- Australia -->
+	<path
+    fill="url(#land)"
+    d="
+      M42 47
+      L48 46
+      L53 49
+      L52 54
+      L45 55
+      L40 52
+      Z
+    "
+  />
+
+</svg>

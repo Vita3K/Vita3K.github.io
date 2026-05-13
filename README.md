@@ -1,15 +1,40 @@
 # Vita3K Website
 
-[Vita3K official website](https://vita3k.github.io/) made in svelte.
+[Vita3K official website](https://vita3k.github.io/) made with Svelte.
 
-Compatibility list is generated using our [api](https://github.com/Vita3K/api).
+The compatibility list is generated using the [Vita3K API](https://github.com/Vita3K/api).
 
 ---
 
-## Building/previewing
-  * `npm install`
-### Devving (changes in real time)
-  * `npm run dev`
-### Building
-  * `npm run build`
-    * `npm run preview` For previewing the last build
+## Requirements
+
+Before building the website, make sure you have:
+
+- [Node.js](https://nodejs.org/) 18 or newer
+- npm (included with Node.js)
+
+## Installation
+
+Install dependencies:
+
+```bash
+# Install project dependencies
+npm install
+```
+
+---
+
+## Development
+
+Start the development server with hot reload enabled:
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview the latest production build
+npm run preview
+```

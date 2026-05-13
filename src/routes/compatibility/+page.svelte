@@ -212,14 +212,19 @@
 
             if (e.titleId.startsWith("PCSA") || e.titleId.startsWith("PCSE")) {
                 e.region = "USA";
+                e.regionFlag = "/img/flags/us.svg";
             } else if (e.titleId.startsWith("PCSB") || e.titleId.startsWith("PCSF")) {
                 e.region = "EUR";
+                e.regionFlag = "/img/flags/eu.svg";
             } else if (e.titleId.startsWith("PCSC") || e.titleId.startsWith("PCSG")) {
                 e.region = "JPN";
+                e.regionFlag = "/img/flags/jp.svg";
             } else if (e.titleId.startsWith("PCSD") || e.titleId.startsWith("PCSH")) {
                 e.region = "ASIA";
+                e.regionFlag = "/img/flags/asia.svg";
             } else {
                 e.region = "UNK";
+                e.regionFlag = "/img/flags/unk.svg";
             }
         });
     });
@@ -375,8 +380,8 @@
                             {#each data.filter((entry) => filterEntries(entry)) as entry (entry.titleId)}
                                 <tr>
                                     <td align="left">
-                                        <span class="region-badge region-badge-{entry.region}" title={entry.region ?? "Unknown Region"}>{entry.region ?? "UNK"}</span>
-                                        <b><small>{entry.titleId}</small></b>
+                                        <img class="region-flag" src={entry.regionFlag} alt={entry.region ?? "UNK"} title={entry.region ?? "Unknown Region"}/>
+                                        <small class="title-id">{entry.titleId}</small>
                                     </td>
                                     <td align="left">
                                         <a class="title-name" href="https://github.com/Vita3K/compatibility/issues/{entry.issueId}">

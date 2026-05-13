@@ -16,12 +16,15 @@
     }
 }
 
-.progress {
-    background-color: $bg-color;
-}
+.progress {background-color: $bg-color;}
 
 table {
     @include sans-serif-font();
+
+    td,
+    th {
+        padding: 1px 5px;
+    }
 
     td>a {
         text-decoration: none;
@@ -32,84 +35,60 @@ table {
         text-decoration: none;
 
         &:hover {
+            color: #F05F40;
             text-decoration: underline;
         }
     }
 }
 
-.status-field {
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+.title-id {
+  font-family: "Cascadia Code", monospace;
+  font-variant-numeric: tabular-nums;
+  color: #f2f2f2;
 }
 
-
-.bg-nothing {
-    background-color: $nothing;
-}
-
-.bg-bootable {
-    background-color: $bootable;
-}
-
-.bg-intro {
-    background-color: $intro;
-}
-
-.bg-menu {
-    background-color: $menu;
-}
-
-.bg-ingame-minus {
-    background-color: $ingame_minus;
-}
-
-.bg-ingame-plus {
-    background-color: $ingame_plus;
-}
-
-.bg-playable {
-    background-color: $playable;
-}
-
-.bg-unknown {
-    background-color: #000000;
-}
-
-.region-badge {
+.region-flag {
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
   display: inline-block;
-  font-size: 10px;
-  font-weight: bold;
-  padding: 1px 5px;
-  border-radius: 3px;
-  margin-right: 4px;
   vertical-align: middle;
+  margin-right: 6px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.15s ease;
 
-  &-USA {
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    border: 1px solid #ffffff;
+  &:hover {
+    transform: scale(1.15);
   }
+}
 
-  &-JPN {
-    background: rgba(255,56,56,0.15);
-    color: #ff3838;
-    border: 1px solid #ff3838;
-  }
+.status-field {
+  color: white;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 0 8px rgba(0,0,0,0.25);
+  transition: transform 0.15s ease, filter 0.15s ease;
 
-  &-EUR {
-    background: rgba(30,100,220,0.2);
-    color: #6fa0ff;
-    border: 1px solid #6fa0ff;
+  &:hover {
+    filter: brightness(1.08);
   }
+}
 
-  &-ASIA {
-    background: rgba(62,253,126,0.1);
-    color: #3efd7e;
-    border: 1px solid #3efd7e;
-  }
+.status-field div {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
 
-  &-UNK {
-    background: rgba(128,128,128,0.1);
-    color: #888888;
-    border: 1px solid #888888;
-  }
+.bg-nothing {background: rgba(255, 32, 32, 0.75);}
+.bg-bootable {background: rgba(160, 96, 255, 0.75);}
+.bg-intro {background: rgba(230, 50, 170, 0.75);}
+.bg-menu {background: rgba(80, 160, 250, 0.75);}
+.bg-ingame-minus {background: rgba(240, 160, 0, 0.75);}
+.bg-ingame-plus {background: rgba(255, 210, 80, 0.75);}
+.bg-playable {background: rgba(40, 170, 40, 0.75);}
+.bg-unknown {background: rgba(120, 120, 120, 0.75);
 }
