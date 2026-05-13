@@ -91,5 +91,19 @@
     "compatibility_title_id": "Title ID",
     "compatibility_entry_name": "Name o' the Booty",
     "compatibility_status": "State o' the Ship",
-    "compatibility_unknown": "Unknown, like the Bermuda Triangle"
+    "compatibility_unknown": "Unknown, like the Bermuda Triangle",
+    "compatibility_last_updated": "Last logged",
+    "compatibility_loading": "Chartin' compatibilARRRty data...",
+    "compatibility_failed_to_load": "CompatibilARRRty data be unavailable fer the moment.",
+    "compatibility_no_results": "No booty matches that hunt in this view.",
+    "compatibility_games": "games",
+    "compatibility_game": "Booty",
+    "compatibility_report": "Logbook",
+    "compatibility_sort_by": "Sort the manifest",
+    "compatibility_view_report": "Open logbook",
+    "compatibility_choose_region": "Choose waters",
+    "compatibility_choose_region_help": "Pick the regional logbook ye want to inspect.",
+    "compatibility_regions": "Waters",
+    "compatibility_region_variation": "Varies by waters",
+    "compatibility_close": "Close hatch"
 }

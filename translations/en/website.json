@@ -91,5 +91,19 @@
     "compatibility_title_id": "Title ID",
     "compatibility_name": "Name",
     "compatibility_status": "Status",
-    "compatibility_unknown": "Unknown"
+    "compatibility_unknown": "Unknown",
+    "compatibility_last_updated": "Last updated",
+    "compatibility_loading": "Loading compatibility data...",
+    "compatibility_failed_to_load": "Compatibility data could not be loaded right now.",
+    "compatibility_no_results": "No games match that search in the current view.",
+    "compatibility_games": "games",
+    "compatibility_game": "Game",
+    "compatibility_report": "Report",
+    "compatibility_sort_by": "Sort compatibility list",
+    "compatibility_view_report": "Open report",
+    "compatibility_choose_region": "Choose region",
+    "compatibility_choose_region_help": "Select the regional compatibility report you want to open.",
+    "compatibility_regions": "Regions",
+    "compatibility_region_variation": "Varies by region",
+    "compatibility_close": "Close"
 }

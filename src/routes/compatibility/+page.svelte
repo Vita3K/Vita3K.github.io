@@ -1,9 +1,9 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { asset } from "$app/paths";
     import { m } from "$lib/paraglide/messages.js";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
 
-    // Fields and their class names
     const FIELDS = {
         Nothing: "nothing",
         Bootable: "bootable",
@@ -13,392 +13,619 @@
         "Ingame +": "ingame-plus",
         Playable: "playable",
         Unknown: "unknown",
-    };
+    } as const;
+
+    const STATUS_FIELDS: FIELDS[] = [
+        "Nothing",
+        "Bootable",
+        "Intro",
+        "Menu",
+        "Ingame -",
+        "Ingame +",
+        "Playable",
+    ];
+
+    const STATUS_ORDER: FIELDS[] = [...STATUS_FIELDS, "Unknown"];
+    const REGION_ORDER: REGION[] = ["USA", "EUR", "JPN", "ASIA", "UNK"];
 
     type FIELDS = keyof typeof FIELDS;
-
     type ORDER_FIELDS = "titleId" | "name" | "status";
     type ORDER_TYPE = "asc" | "desc";
-
     type REGION = "JPN" | "USA" | "EUR" | "ASIA" | "UNK";
 
-    let views = $state({
-        Nothing: [],
-        Bootable: [],
-        Intro: [],
-        Menu: [],
-        "Ingame -": [],
-        "Ingame +": [],
-        Playable: [],
-        Unknown: [],
-    });
-
-    type CompatibilityEntry = {
+    type ApiCompatibilityEntry = {
         name: string;
         titleId: string;
         status: FIELDS;
-        colorClass: string;
         issueId: number;
-        translatedStatus?: string;
-        region?: REGION;
     };
 
-    let data: CompatibilityEntry[] = $state([]);
+    type CompatibilityEntry = ApiCompatibilityEntry & {
+        colorClass: string;
+        translatedStatus: string;
+        region: REGION;
+        regionFlag: string;
+        reportUrl: string;
+    };
+
+    type CompatibilityGame = {
+        name: string;
+        titleId: string;
+        status: FIELDS;
+        translatedStatus: string;
+        colorClass: string;
+        regions: CompatibilityEntry[];
+        hasMixedStatus: boolean;
+    };
+
+    type CompatibilityViews = Record<FIELDS, CompatibilityGame[]>;
+
+    let views: CompatibilityViews = $state(createEmptyViews());
+    let data: CompatibilityGame[] = $state([]);
+    let activeView: FIELDS = $state("Unknown");
     let currentField: ORDER_FIELDS = $state("name");
-    let currentOrder: ORDER_TYPE = $state("desc");
-    let searchQuery: string = $state("");
+    let currentOrder: ORDER_TYPE = $state("asc");
+    let searchQuery = $state("");
+    let lastUpdatedAt = $state("");
+    let lastUpdatedAgo = $state("");
+    let isLoading = $state(true);
+    let loadError = $state("");
+    let selectedGame: CompatibilityGame | null = $state(null);
+
+    function createEmptyViews(): CompatibilityViews {
+        return {
+            Nothing: [],
+            Bootable: [],
+            Intro: [],
+            Menu: [],
+            "Ingame -": [],
+            "Ingame +": [],
+            Playable: [],
+            Unknown: [],
+        };
+    }
 
     function timeAgo(date: Date) {
         const now = new Date();
         const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
 
         let interval = Math.floor(seconds / 31536000);
-        if (interval >= 1) return interval + " years ago";
+        if (interval >= 1) return `${interval} years ago`;
 
         interval = Math.floor(seconds / 2592000);
-        if (interval >= 1) return interval + " months ago";
+        if (interval >= 1) return `${interval} months ago`;
 
         interval = Math.floor(seconds / 86400);
-        if (interval >= 1) return interval + " days ago";
+        if (interval >= 1) return `${interval} days ago`;
 
         interval = Math.floor(seconds / 3600);
-        if (interval >= 1) return interval + " hours ago";
+        if (interval >= 1) return `${interval} hours ago`;
 
         interval = Math.floor(seconds / 60);
-        if (interval >= 1) return interval + " minutes ago";
+        if (interval >= 1) return `${interval} minutes ago`;
 
         return "just now";
     }
 
-    // Change tag
-    function changeView(field: FIELDS) {
-        data = views[field];
-        orderBy(currentField, false);
+    function getTranslatedStatus(status: FIELDS) {
+        switch (status) {
+            case "Nothing":
+                return m.compatibility_nothing();
+            case "Bootable":
+                return m.compatibility_bootable();
+            case "Intro":
+                return m.compatibility_intro();
+            case "Menu":
+                return m.compatibility_menu();
+            case "Ingame -":
+                return m.compatibility_ingame_minus();
+            case "Ingame +":
+                return m.compatibility_ingame_plus();
+            case "Playable":
+                return m.compatibility_playable();
+            default:
+                return m.compatibility_unknown();
+        }
     }
 
-    // Search query
-    function filterEntries(entry: CompatibilityEntry) {
-        if (searchQuery == undefined || searchQuery == "") return true;
+    function getStatusDescription(status: FIELDS) {
+        switch (status) {
+            case "Nothing":
+                return m.compatibility_nothing_desc();
+            case "Bootable":
+                return m.compatibility_bootable_desc();
+            case "Intro":
+                return m.compatibility_intro_desc();
+            case "Menu":
+                return m.compatibility_menu_desc();
+            case "Ingame -":
+                return m.compatibility_ingame_minus_desc();
+            case "Ingame +":
+                return m.compatibility_ingame_plus_desc();
+            case "Playable":
+                return m.compatibility_playable_desc();
+            default:
+                return m.compatibility_region_variation();
+        }
+    }
+
+    function getRegionMeta(titleId: string) {
+        if (titleId.startsWith("PCSA") || titleId.startsWith("PCSE")) {
+            return { region: "USA" as REGION, regionFlag: asset("/img/flags/us.svg") };
+        }
+
+        if (titleId.startsWith("PCSB") || titleId.startsWith("PCSF")) {
+            return { region: "EUR" as REGION, regionFlag: asset("/img/flags/eu.svg") };
+        }
+
+        if (titleId.startsWith("PCSC") || titleId.startsWith("PCSG")) {
+            return { region: "JPN" as REGION, regionFlag: asset("/img/flags/jp.svg") };
+        }
+
+        if (titleId.startsWith("PCSD") || titleId.startsWith("PCSH")) {
+            return { region: "ASIA" as REGION, regionFlag: asset("/img/flags/asia.svg") };
+        }
+
+        return { region: "UNK" as REGION, regionFlag: asset("/img/flags/unk.svg") };
+    }
+
+    function getStatusRank(status: FIELDS) {
+        return STATUS_ORDER.indexOf(status);
+    }
+
+    function compareEntries(left: CompatibilityEntry, right: CompatibilityEntry) {
         return (
-            entry.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            entry.titleId.toLowerCase().includes(searchQuery.toLowerCase())
+            REGION_ORDER.indexOf(left.region) - REGION_ORDER.indexOf(right.region) ||
+            left.titleId.localeCompare(right.titleId)
         );
     }
 
-    function orderBy(v: ORDER_FIELDS, switchOrder = true) {
-        const statusOrder = [
-            "Nothing",
-            "Bootable",
-            "Intro",
-            "Menu",
-            "Ingame -",
-            "Ingame +",
-            "Playable",
-            "Unknown",
-        ];
-
-        const reversedStatusOrder = [
-            "Playable",
-            "Ingame +",
-            "Ingame -",
-            "Menu",
-            "Intro",
-            "Bootable",
-            "Nothing",
-            "Unknown",
-        ];
-
-        let order: ORDER_TYPE = currentOrder;
-        let field: ORDER_FIELDS = v;
-
-        if (switchOrder) {
-            if (currentField !== v) {
-                currentOrder = "asc";
-            } else {
-                order = currentOrder === "asc" ? "desc" : "asc";
-            }
-        }
+    function compareGames(left: CompatibilityGame, right: CompatibilityGame, field: ORDER_FIELDS, order: ORDER_TYPE) {
+        const direction = order === "asc" ? 1 : -1;
 
         switch (field) {
-            case "titleId": {
-                if (order === "asc") {
-                    data = data.sort((a, b) => a.titleId.localeCompare(b.titleId));
-                } else {
-                    data = data.sort((b, a) => a.titleId.localeCompare(b.titleId));
-                }
-                break;
-            }
-            case "name": {
-                if (order === "asc") {
-                    data = data.sort((a, b) => a.name.localeCompare(b.name));
-                } else {
-                    data = data.sort((b, a) => a.name.localeCompare(b.name));
-                }
-                break;
-            }
-            case "status": {
-                if (order === "asc") {
-                    data = data.sort(
-                        (a, b) => statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status),
-                    );
-                } else {
-                    data = data.sort(
-                        (a, b) => reversedStatusOrder.indexOf(a.status) - reversedStatusOrder.indexOf(b.status),
-                    );
-                }
-                break;
-            }
+            case "titleId":
+                return left.titleId.localeCompare(right.titleId) * direction;
+            case "status":
+                return (getStatusRank(left.status) - getStatusRank(right.status)) * direction;
+            default:
+                return left.name.localeCompare(right.name) * direction;
         }
-        currentField = field;
-        currentOrder = order;
     }
 
-    onMount(async () => {
-        document.title = m.compatibility_compatibility_list();
+    function sortGames(entries: CompatibilityGame[], field: ORDER_FIELDS, order: ORDER_TYPE) {
+        return [...entries].sort((left, right) => compareGames(left, right, field, order));
+    }
 
-        const res = await fetch("https://vita3k-api.pedro.moe/list/commercial");
+    function rebuildData() {
+        data = sortGames(views[activeView], currentField, currentOrder);
+    }
 
-        if (!res.ok) {
-            console.error("Failed to fetch compatibility data");
-            return;
+    function changeView(field: FIELDS) {
+        activeView = field;
+        rebuildData();
+    }
+
+    function orderBy(field: ORDER_FIELDS) {
+        if (currentField === field) {
+            currentOrder = currentOrder === "asc" ? "desc" : "asc";
+        } else {
+            currentField = field;
+            currentOrder = "asc";
         }
 
-        const res_data = await res.json();
-        const updatedAt = new Date(res_data.date * 1000);
-        const updatedAtStr = updatedAt.toLocaleString();
-        const timeAgoStr = timeAgo(updatedAt);
+        rebuildData();
+    }
 
-        const lastUpdatedAtElem = document.getElementById("lastUpdatedAt");
-        const timeAgoElem = document.getElementById("timeAgo");
+    function filterEntries(entry: CompatibilityGame) {
+        const query = searchQuery.trim().toLowerCase();
 
-        if (lastUpdatedAtElem) lastUpdatedAtElem.textContent = updatedAtStr;
-        if (timeAgoElem) timeAgoElem.textContent = timeAgoStr;
+        if (!query) {
+            return true;
+        }
 
-        views["Unknown"] = res_data.list;
-        data = views["Unknown"];
-        orderBy("name");
+        return (
+            entry.name.toLowerCase().includes(query) ||
+            entry.regions.some(
+                ({ titleId, region }) =>
+                    titleId.toLowerCase().includes(query) || region.toLowerCase().includes(query),
+            )
+        );
+    }
 
-        data.forEach((e) => {
-            // Unknown already has all games, no need to add it twice
-            e.translatedStatus = m.compatibility_unknown();
-            if (e.status != "Unknown") {
-                switch (e.status) {
-                    case "Nothing":
-                        e.translatedStatus = m.compatibility_nothing();
-                        break;
-                    case "Bootable":
-                        e.translatedStatus = m.compatibility_bootable();
-                        break;
-                    case "Intro":
-                        e.translatedStatus = m.compatibility_intro();
-                        break;
-                    case "Menu":
-                        e.translatedStatus = m.compatibility_menu();
-                        break;
-                    case "Ingame -":
-                        e.translatedStatus = m.compatibility_ingame_minus();
-                        break;
-                    case "Ingame +":
-                        e.translatedStatus = m.compatibility_ingame_plus();
-                        break;
-                    case "Playable":
-                        e.translatedStatus = m.compatibility_playable();
-                        break;
-                }
-                views[e.status].push(e);
-            }
+    function getCompletion(field: FIELDS) {
+        const total = views.Unknown.length;
 
-            e.colorClass = FIELDS[e.status];
+        if (total === 0) {
+            return 0;
+        }
 
-            if (e.titleId.startsWith("PCSA") || e.titleId.startsWith("PCSE")) {
-                e.region = "USA";
-                e.regionFlag = "/img/flags/us.svg";
-            } else if (e.titleId.startsWith("PCSB") || e.titleId.startsWith("PCSF")) {
-                e.region = "EUR";
-                e.regionFlag = "/img/flags/eu.svg";
-            } else if (e.titleId.startsWith("PCSC") || e.titleId.startsWith("PCSG")) {
-                e.region = "JPN";
-                e.regionFlag = "/img/flags/jp.svg";
-            } else if (e.titleId.startsWith("PCSD") || e.titleId.startsWith("PCSH")) {
-                e.region = "ASIA";
-                e.regionFlag = "/img/flags/asia.svg";
-            } else {
-                e.region = "UNK";
-                e.regionFlag = "/img/flags/unk.svg";
-            }
+        return (views[field].length / total) * 100;
+    }
+
+    function getSortIndicator(field: ORDER_FIELDS) {
+        if (currentField !== field) {
+            return "";
+        }
+
+        return currentOrder === "asc" ? "↑" : "↓";
+    }
+
+    function getRegionSummary(game: CompatibilityGame) {
+        return game.regions.map(({ titleId }) => titleId).join(" · ");
+    }
+
+    function getFilteredData() {
+        return data.filter(filterEntries);
+    }
+
+    function openRegionPicker(game: CompatibilityGame) {
+        selectedGame = game;
+    }
+
+    function closeRegionPicker() {
+        selectedGame = null;
+    }
+
+    function handleDialogBackdropClick(event: MouseEvent) {
+        if (event.target === event.currentTarget) {
+            closeRegionPicker();
+        }
+    }
+
+    function handleWindowKeydown(event: KeyboardEvent) {
+        if (event.key === "Escape" && selectedGame) {
+            closeRegionPicker();
+        }
+    }
+
+    function groupEntries(entries: CompatibilityEntry[]) {
+        const groupedEntries = new Map<string, CompatibilityEntry[]>();
+
+        for (const entry of entries) {
+            const key = entry.name.trim().toLowerCase();
+            const list = groupedEntries.get(key) ?? [];
+
+            list.push(entry);
+            groupedEntries.set(key, list);
+        }
+
+        return Array.from(groupedEntries.values()).map((regions) => {
+            const sortedRegions = [...regions].sort(compareEntries);
+            const representative = [...regions].sort(
+                (left, right) =>
+                    getStatusRank(right.status) - getStatusRank(left.status) || compareEntries(left, right),
+            )[0];
+            const titleId = [...sortedRegions].map(({ titleId }) => titleId).sort((left, right) => left.localeCompare(right))[0];
+            const uniqueStatuses = new Set(sortedRegions.map(({ status }) => status));
+
+            return {
+                name: sortedRegions[0].name,
+                titleId,
+                status: representative.status,
+                translatedStatus: representative.translatedStatus,
+                colorClass: representative.colorClass,
+                regions: sortedRegions,
+                hasMixedStatus: uniqueStatuses.size > 1,
+            } satisfies CompatibilityGame;
         });
-    });
+    }
+
+    function buildViews(games: CompatibilityGame[]) {
+        const nextViews = createEmptyViews();
+
+        nextViews.Unknown = games;
+
+        for (const game of games) {
+            if (game.status !== "Unknown") {
+                nextViews[game.status].push(game);
+            }
+        }
+
+        return nextViews;
+    }
+
+    async function loadCompatibility() {
+        isLoading = true;
+        loadError = "";
+
+        try {
+            const response = await fetch("https://vita3k-api.pedro.moe/list/commercial");
+
+            if (!response.ok) {
+                throw new Error(`Request failed with status ${response.status}`);
+            }
+
+            const payload = (await response.json()) as {
+                date: number;
+                list: ApiCompatibilityEntry[];
+            };
+
+            const updatedAt = new Date(payload.date * 1000);
+            const enrichedEntries = payload.list.map((entry) => {
+                const regionMeta = getRegionMeta(entry.titleId);
+
+                return {
+                    ...entry,
+                    ...regionMeta,
+                    colorClass: FIELDS[entry.status],
+                    translatedStatus: getTranslatedStatus(entry.status),
+                    reportUrl: `https://github.com/Vita3K/compatibility/issues/${entry.issueId}`,
+                } satisfies CompatibilityEntry;
+            });
+
+            views = buildViews(groupEntries(enrichedEntries));
+            lastUpdatedAt = updatedAt.toLocaleString();
+            lastUpdatedAgo = timeAgo(updatedAt);
+            activeView = "Unknown";
+            data = sortGames(views.Unknown, currentField, currentOrder);
+        } catch (error) {
+            console.error("Failed to fetch compatibility data", error);
+            loadError = m.compatibility_failed_to_load();
+            views = createEmptyViews();
+            data = [];
+        } finally {
+            isLoading = false;
+        }
+    }
+
+    onMount(loadCompatibility);
 </script>
 
 <svelte:head>
     <title>Vita3K - {m.nav_compatibility()}</title>
-    <CompositeMeta key="title" content="Vita3K - {m.nav_compatibility()}" />
+    <CompositeMeta key="title" content={`Vita3K - ${m.nav_compatibility()}`} />
     <CompositeMeta key="description" content="Vita3K compatibility list for +3000 Games" />
 </svelte:head>
 
-<section class="text-white" id="compatibility">
+<svelte:window onkeydown={handleWindowKeydown} />
+
+<section class="text-white compatibility-page" id="compatibility">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mx-auto text-center">
-                <h2 class="section-heading">{m.compatibility_compatibility_list()}</h2>
-                <hr class="my-4" />
-                {m.compatibility_emulator_undergoing_changes()}
-                <br /><br />
-                <p class="mb-5">
-                    <input style="display:inline-block;vertical-align:middle;" type="text" class="form-control" placeholder={m.compatibility_search()} required={true} bind:value={searchQuery} />
-                    <br />
-                    <br />{m.compatibility_tags()}:
-                    <a href="#" class="plate bg-nothing" onclick={() => changeView("Nothing")}>{m.compatibility_nothing()} ({views["Nothing"].length})</a>
-                    <a href="#" class="plate bg-bootable" onclick={() => changeView("Bootable")}>{m.compatibility_bootable()} ({views["Bootable"].length})</a>
-                    <a href="#" class="plate bg-intro" onclick={() => changeView("Intro")}>{m.compatibility_intro()} ({views["Intro"].length})</a>
-                    <a href="#" class="plate bg-menu" onclick={() => changeView("Menu")}>{m.compatibility_menu()} ({views["Menu"].length})</a>
-                    <a href="#" class="plate bg-ingame-minus" onclick={() => changeView("Ingame -")}>{m.compatibility_ingame_minus()} ({views["Ingame -"].length})</a>
-                    <a href="#" class="plate bg-ingame-plus" onclick={() => changeView("Ingame +")}>{m.compatibility_ingame_plus()} ({views["Ingame +"].length})</a>
-                    <a href="#" class="plate bg-playable" onclick={() => changeView("Playable")}>{m.compatibility_playable()} ({views["Playable"].length})</a>
-                    <a href="#" class="plate" onclick={() => changeView("Unknown")} style="background-color: #3030ff">{m.compatibility_all()} ({views["Unknown"].length})</a>
-                </p>
-                <center>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <small>
-                                        <font color="#ff2020">{m.compatibility_nothing()} ({((views["Nothing"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
-                                        <font color="#ffffff">{m.compatibility_nothing_desc()}</font>
-                                    </small>
-                                </td>
-                                <td width="25%">
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-nothing" style="width:{(views['Nothing'].length / views['Unknown'].length) * 100}%"></div>
+        <div class="compatibility-shell">
+            <header class="compatibility-header">
+                <div class="compatibility-heading">
+                    <h2 class="section-heading">{m.compatibility_compatibility_list()}</h2>
+                    <hr class="my-4" />
+                    <p class="compatibility-lead">{m.compatibility_emulator_undergoing_changes()}</p>
+
+                    {#if !isLoading && !loadError && lastUpdatedAt}
+                        <p class="compatibility-updated">
+                            <span>{m.compatibility_last_updated()}:</span>
+                            <strong>{lastUpdatedAt}</strong>
+                            <span class="compatibility-update-age">({lastUpdatedAgo})</span>
+                        </p>
+                    {/if}
+                </div>
+
+            </header>
+
+            {#if isLoading}
+                <div class="compatibility-feedback">{m.compatibility_loading()}</div>
+            {:else if loadError}
+                <div class="compatibility-feedback compatibility-feedback--error">{loadError}</div>
+            {:else}
+                <div class="compatibility-status-legend" role="list">
+                    {#each STATUS_FIELDS as field (field)}
+                        <button
+                            type="button"
+                            class="status-row"
+                            class:active={activeView === field}
+                            onclick={() => changeView(field)}
+                        >
+                            <div class="status-row-copy">
+                                <span class="status-row-label">
+                                    <span class={`status-row-dot bg-${FIELDS[field]}`}></span>
+                                    <strong>{getTranslatedStatus(field)} ({getCompletion(field).toFixed(2)}%):</strong>
+                                </span>
+                                <span class="status-row-description">{getStatusDescription(field)}</span>
+                            </div>
+
+                            <div class="status-row-metrics">
+                                <span class="status-row-count">{views[field].length}</span>
+                                <div class="status-row-track">
+                                    <div
+                                        class={`status-row-bar bg-${FIELDS[field]}`}
+                                        style={`width: ${getCompletion(field)}%`}
+                                    ></div>
+                                </div>
+                            </div>
+                        </button>
+                    {/each}
+                </div>
+
+                <div class="compatibility-filter-strip" role="toolbar" aria-label={m.compatibility_tags()}>
+                    <button
+                        type="button"
+                        class="filter-chip filter-chip--all"
+                        class:active={activeView === "Unknown"}
+                        aria-pressed={activeView === "Unknown"}
+                        onclick={() => changeView("Unknown")}
+                    >
+                        <span>{m.compatibility_all()}</span>
+                        <strong>{views.Unknown.length}</strong>
+                    </button>
+
+                    {#each STATUS_FIELDS as field (field)}
+                        <button
+                            type="button"
+                            class={`filter-chip bg-${FIELDS[field]}`}
+                            class:active={activeView === field}
+                            aria-pressed={activeView === field}
+                            onclick={() => changeView(field)}
+                        >
+                            <span class={`filter-chip-dot bg-${FIELDS[field]}`}></span>
+                            <span>{getTranslatedStatus(field)}</span>
+                            <strong>{views[field].length}</strong>
+                        </button>
+                    {/each}
+                </div>
+
+                <section class="compatibility-results-panel" aria-labelledby="compatibility-results-heading">
+                    <div class="results-toolbar">
+                        <div class="results-heading">
+                            <h2 id="compatibility-results-heading">
+                                {activeView === "Unknown" ? m.compatibility_all() : getTranslatedStatus(activeView)}
+                            </h2>
+                            <p>{getFilteredData().length} {m.compatibility_games()}</p>
+                        </div>
+
+                        <label class="compatibility-search" for="compatibility-search">
+                            <span class="compatibility-search-label">{m.compatibility_search()}</span>
+                            <input
+                                id="compatibility-search"
+                                type="search"
+                                class="compatibility-search-input"
+                                placeholder={m.compatibility_search()}
+                                bind:value={searchQuery}
+                            />
+                        </label>
+
+                        <div class="sort-toolbar" role="toolbar" aria-label={m.compatibility_sort_by()}>
+                            <button
+                                type="button"
+                                class="sort-chip"
+                                class:active={currentField === "name"}
+                                aria-pressed={currentField === "name"}
+                                onclick={() => orderBy("name")}
+                            >
+                                <span>{m.compatibility_name()}</span>
+                                <strong>{getSortIndicator("name")}</strong>
+                            </button>
+                            <button
+                                type="button"
+                                class="sort-chip"
+                                class:active={currentField === "titleId"}
+                                aria-pressed={currentField === "titleId"}
+                                onclick={() => orderBy("titleId")}
+                            >
+                                <span>{m.compatibility_title_id()}</span>
+                                <strong>{getSortIndicator("titleId")}</strong>
+                            </button>
+                            <button
+                                type="button"
+                                class="sort-chip"
+                                class:active={currentField === "status"}
+                                aria-pressed={currentField === "status"}
+                                onclick={() => orderBy("status")}
+                            >
+                                <span>{m.compatibility_status()}</span>
+                                <strong>{getSortIndicator("status")}</strong>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="compatibility-column-headings" aria-hidden="true">
+                        <span>{m.compatibility_game()}</span>
+                        <span>{m.compatibility_status()}</span>
+                        <span>{m.compatibility_report()}</span>
+                    </div>
+
+                    {#if getFilteredData().length === 0}
+                        <div class="compatibility-feedback compatibility-feedback--empty">
+                            {m.compatibility_no_results()}
+                        </div>
+                    {:else}
+                        <div class="compatibility-game-list">
+                            {#each getFilteredData() as game (game.name)}
+                                <article class="compatibility-game-card">
+                                    <div class="compatibility-game-main">
+                                        <div class="compatibility-game-copy">
+                                            <h3>{game.name}</h3>
+                                            <p class="compatibility-game-ids">{getRegionSummary(game)}</p>
+                                            <div class="compatibility-game-flags" aria-label={m.compatibility_regions()}>
+                                                {#each game.regions as region (region.titleId)}
+                                                    <span class="compatibility-flag-pill" title={`${region.region} • ${region.titleId}`}>
+                                                        <img
+                                                            class="region-flag"
+                                                            src={region.regionFlag}
+                                                            alt={region.region}
+                                                        />
+                                                        <span>{region.region}</span>
+                                                    </span>
+                                                {/each}
+                                            </div>
+                                        </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <small>
-                                        <font color="#a060ff">{m.compatibility_bootable()} ({((views["Bootable"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
-                                        <font color="#ffffff">{m.compatibility_bootable_desc()}</font>
-                                    </small>
-                                </td>
-                                <td width="25%">
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-bootable" style="width:{(views['Bootable'].length / views['Unknown'].length) * 100}%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <small>
-                                        <font color="#e632aa">{m.compatibility_intro()} ({((views["Intro"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
-                                        <font color="#ffffff">{m.compatibility_intro_desc()}</font>
-                                    </small>
-                                </td>
-                                <td width="25%">
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-intro" style="width:{(views['Intro'].length / views['Unknown'].length) * 100}%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <small>
-                                        <font color="#50a0fa">{m.compatibility_menu()} ({((views["Menu"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
-                                        <font color="#ffffff">{m.compatibility_menu_desc()}</font>
-                                    </small>
-                                </td>
-                                <td width="25%">
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-menu" style="width:{(views['Menu'].length / views['Unknown'].length) * 100}%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <small>
-                                        <font color="#f0a000">{m.compatibility_ingame_minus()} ({((views["Ingame -"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
-                                        <font color="#ffffff">{m.compatibility_ingame_minus_desc()}</font>
-                                    </small>
-                                </td>
-                                <td width="25%">
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-minus" style="width:{(views['Ingame -'].length / views['Unknown'].length) * 100}%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <small>
-                                        <font color="#ffd250">{m.compatibility_ingame_plus()} ({((views["Ingame +"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
-                                        <font color="#ffffff">{m.compatibility_ingame_plus_desc()}</font>
-                                    </small>
-                                </td>
-                                <td width="25%">
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-plus" style="width:{(views['Ingame +'].length / views['Unknown'].length) * 100}%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <small>
-                                        <font color="#28AA28">{m.compatibility_playable()} ({((views["Playable"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
-                                        <font color="#ffffff">{m.compatibility_playable_desc()}</font>
-                                    </small>
-                                </td>
-                                <td width="25%">
-                                    <div class="progress">
-                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-playable" style="width:{(views['Playable'].length / views['Unknown'].length) * 100}%"></div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br />
-                    <p>Last Updated at: <span id="lastUpdatedAt"></span> (<span id="timeAgo"></span>)</p>
-                    <br />
-                    <table class="table-hover table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <td>
-                                    <a href="#" onclick={() => orderBy("titleId")} style="color:yellow">
-                                        <small id="titleIdHead">Title ID {currentField === "titleId" ? currentOrder === "asc" ? "↓" : "↑" : ""}</small>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" onclick={() => orderBy("name")} style="color:yellow">
-                                        <small id="nameHead">{m.compatibility_name()} {currentField === "name" ? currentOrder === "asc" ? "↓" : "↑" : ""}</small>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" onclick={() => orderBy("status")} style="color:yellow">
-                                        <small id="statusHead">{m.compatibility_status()} {currentField === "status" ? currentOrder === "asc" ? "↓" : "↑" : ""}</small>
-                                    </a>
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {#each data.filter((entry) => filterEntries(entry)) as entry (entry.titleId)}
-                                <tr>
-                                    <td align="left">
-                                        <img class="region-flag" src={entry.regionFlag} alt={entry.region ?? "UNK"} title={entry.region ?? "Unknown Region"}/>
-                                        <small class="title-id">{entry.titleId}</small>
-                                    </td>
-                                    <td align="left">
-                                        <a class="title-name" href="https://github.com/Vita3K/compatibility/issues/{entry.issueId}">
-                                            <small>{entry.name}</small>
-                                        </a>
-                                    </td>
-                                    <td class="status-field bg-{entry.colorClass}">
-                                        <span style="color: white">
-                                            <div>{entry.translatedStatus}</div>
+
+                                    <div class="compatibility-game-status">
+                                        <span class={`status-badge bg-${game.colorClass}`}>
+                                            {game.translatedStatus}
                                         </span>
-                                    </td>
-                                </tr>
+
+                                        {#if game.hasMixedStatus}
+                                            <span class="status-variation-note">
+                                                {m.compatibility_region_variation()}
+                                            </span>
+                                        {/if}
+                                    </div>
+
+                                    <div class="compatibility-game-action">
+                                        {#if game.regions.length === 1}
+                                            <a
+                                                class="report-trigger"
+                                                href={game.regions[0].reportUrl}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                        {m.compatibility_view_report()}
+                                            </a>
+                                        {:else}
+                                            <button
+                                                type="button"
+                                                class="report-trigger"
+                                                onclick={() => openRegionPicker(game)}
+                                            >
+                                                        {m.compatibility_view_report()}
+                                            </button>
+                                        {/if}
+                                    </div>
+                                </article>
                             {/each}
-                        </tbody>
-                    </table>
-                </center>
-            </div>
+                        </div>
+                    {/if}
+                </section>
+            {/if}
         </div>
     </div>
+
+    {#if selectedGame}
+        <div class="compatibility-dialog-backdrop" role="presentation" onclick={handleDialogBackdropClick}>
+            <div class="compatibility-dialog" role="dialog" aria-modal="true" aria-labelledby="region-picker-title">
+                <div class="compatibility-dialog-header">
+                    <div>
+                        <p class="compatibility-dialog-eyebrow">{m.compatibility_regions()}</p>
+                        <h2 id="region-picker-title">{selectedGame.name}</h2>
+                    </div>
+
+                    <button type="button" class="compatibility-dialog-close" onclick={closeRegionPicker}>
+                        {m.compatibility_close()}
+                    </button>
+                </div>
+
+                <p class="compatibility-dialog-copy">{m.compatibility_choose_region_help()}</p>
+
+                <div class="region-picker-toolbar" role="toolbar" aria-label={m.compatibility_regions()}>
+                    {#each selectedGame.regions as region (region.titleId)}
+                        <a
+                            class="region-picker-option"
+                            href={region.reportUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            onclick={closeRegionPicker}
+                        >
+                            <span class="region-picker-option-meta">
+                                <img class="region-flag" src={region.regionFlag} alt={region.region} />
+                                <strong>{region.region}</strong>
+                            </span>
+                            <span class="region-picker-option-id">{region.titleId}</span>
+                            <span class={`region-picker-option-status bg-${region.colorClass}`}>
+                                {region.translatedStatus}
+                            </span>
+                        </a>
+                    {/each}
+                </div>
+            </div>
+        </div>
+    {/if}
 </section>
