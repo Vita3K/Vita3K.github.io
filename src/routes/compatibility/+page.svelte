@@ -122,13 +122,9 @@
         switch (field) {
             case "titleId": {
                 if (order === "asc") {
-                    data = data.sort((a, b) =>
-                        a.titleId.localeCompare(b.titleId),
-                    );
+                    data = data.sort((a, b) => a.titleId.localeCompare(b.titleId));
                 } else {
-                    data = data.sort((b, a) =>
-                        a.titleId.localeCompare(b.titleId),
-                    );
+                    data = data.sort((b, a) => a.titleId.localeCompare(b.titleId));
                 }
                 break;
             }
@@ -143,15 +139,11 @@
             case "status": {
                 if (order === "asc") {
                     data = data.sort(
-                        (a, b) =>
-                            statusOrder.indexOf(a.status) -
-                            statusOrder.indexOf(b.status),
+                        (a, b) => statusOrder.indexOf(a.status) - statusOrder.indexOf(b.status),
                     );
                 } else {
                     data = data.sort(
-                        (a, b) =>
-                            reversedStatusOrder.indexOf(a.status) -
-                            reversedStatusOrder.indexOf(b.status),
+                        (a, b) => reversedStatusOrder.indexOf(a.status) - reversedStatusOrder.indexOf(b.status),
                     );
                 }
                 break;
@@ -220,20 +212,11 @@
 
             if (e.titleId.startsWith("PCSA") || e.titleId.startsWith("PCSE")) {
                 e.region = "USA";
-            } else if (
-                e.titleId.startsWith("PCSB") ||
-                e.titleId.startsWith("PCSF")
-            ) {
+            } else if (e.titleId.startsWith("PCSB") || e.titleId.startsWith("PCSF")) {
                 e.region = "EUR";
-            } else if (
-                e.titleId.startsWith("PCSC") ||
-                e.titleId.startsWith("PCSG")
-            ) {
+            } else if (e.titleId.startsWith("PCSC") || e.titleId.startsWith("PCSG")) {
                 e.region = "JPN";
-            } else if (
-                e.titleId.startsWith("PCSD") ||
-                e.titleId.startsWith("PCSH")
-            ) {
+            } else if (e.titleId.startsWith("PCSD") || e.titleId.startsWith("PCSH")) {
                 e.region = "ASIA";
             } else {
                 e.region = "UNK";
@@ -245,367 +228,164 @@
 <svelte:head>
     <title>Vita3K - {m.nav_compatibility()}</title>
     <CompositeMeta key="title" content="Vita3K - {m.nav_compatibility()}" />
-    <CompositeMeta
-        key="description"
-        content="Vita3K compatibility list for +3000 Games"
-    />
+    <CompositeMeta key="description" content="Vita3K compatibility list for +3000 Games" />
 </svelte:head>
 
 <section class="text-white" id="compatibility">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 mx-auto text-center">
-                <h2 class="section-heading">
-                    {m.compatibility_compatibility_list()}
-                </h2>
+                <h2 class="section-heading">{m.compatibility_compatibility_list()}</h2>
                 <hr class="my-4" />
                 {m.compatibility_emulator_undergoing_changes()}
                 <br /><br />
                 <p class="mb-5">
-                    <input
-                        style="display:inline-block;vertical-align:middle;"
-                        type="text"
-                        class="form-control"
-                        placeholder={m.compatibility_search()}
-                        required={true}
-                        bind:value={searchQuery}
-                    />
+                    <input style="display:inline-block;vertical-align:middle;" type="text" class="form-control" placeholder={m.compatibility_search()} required={true} bind:value={searchQuery} />
                     <br />
                     <br />{m.compatibility_tags()}:
-                    <a
-                        href="#"
-                        class="plate bg-nothing"
-                        onclick={() => changeView("Nothing")}
-                        >{m.compatibility_nothing()} ({views["Nothing"].length})
-                    </a>
-                    <a
-                        href="#"
-                        class="plate bg-bootable"
-                        onclick={() => changeView("Bootable")}
-                        >{m.compatibility_bootable()} ({views["Bootable"]
-                            .length})
-                    </a>
-                    <a
-                        href="#"
-                        class="plate bg-intro"
-                        onclick={() => changeView("Intro")}
-                        >{m.compatibility_intro()} ({views["Intro"].length})
-                    </a>
-                    <a
-                        href="#"
-                        class="plate bg-menu"
-                        onclick={() => changeView("Menu")}
-                        >{m.compatibility_menu()} ({views["Menu"].length})
-                    </a>
-                    <a
-                        href="#"
-                        class="plate bg-ingame-minus"
-                        onclick={() => changeView("Ingame -")}
-                        >{m.compatibility_ingame_minus()} ({views["Ingame -"]
-                            .length})
-                    </a>
-                    <a
-                        href="#"
-                        class="plate bg-ingame-plus"
-                        onclick={() => changeView("Ingame +")}
-                        >{m.compatibility_ingame_plus()} ({views["Ingame +"]
-                            .length})
-                    </a>
-                    <a
-                        href="#"
-                        class="plate bg-playable"
-                        onclick={() => changeView("Playable")}
-                        >{m.compatibility_playable()} ({views["Playable"]
-                            .length})
-                    </a>
-                    <a
-                        href="#"
-                        class="plate"
-                        onclick={() => changeView("Unknown")}
-                        style="background-color: #3030ff"
-                        >{m.compatibility_all()} ({views["Unknown"].length})</a
-                    >
+                    <a href="#" class="plate bg-nothing" onclick={() => changeView("Nothing")}>{m.compatibility_nothing()} ({views["Nothing"].length})</a>
+                    <a href="#" class="plate bg-bootable" onclick={() => changeView("Bootable")}>{m.compatibility_bootable()} ({views["Bootable"].length})</a>
+                    <a href="#" class="plate bg-intro" onclick={() => changeView("Intro")}>{m.compatibility_intro()} ({views["Intro"].length})</a>
+                    <a href="#" class="plate bg-menu" onclick={() => changeView("Menu")}>{m.compatibility_menu()} ({views["Menu"].length})</a>
+                    <a href="#" class="plate bg-ingame-minus" onclick={() => changeView("Ingame -")}>{m.compatibility_ingame_minus()} ({views["Ingame -"].length})</a>
+                    <a href="#" class="plate bg-ingame-plus" onclick={() => changeView("Ingame +")}>{m.compatibility_ingame_plus()} ({views["Ingame +"].length})</a>
+                    <a href="#" class="plate bg-playable" onclick={() => changeView("Playable")}>{m.compatibility_playable()} ({views["Playable"].length})</a>
+                    <a href="#" class="plate" onclick={() => changeView("Unknown")} style="background-color: #3030ff">{m.compatibility_all()} ({views["Unknown"].length})</a>
                 </p>
                 <center>
                     <table>
                         <tbody>
                             <tr>
                                 <td>
-                                    <small
-                                        ><font color="#ff2020"
-                                            >{m.compatibility_nothing()} ({(
-                                                (views["Nothing"].length /
-                                                    views["Unknown"].length) *
-                                                100
-                                            ).toFixed(2)}%):</font
-                                        >
-                                        <font color="#ffffff"
-                                            >{m.compatibility_nothing_desc()}</font
-                                        ></small
-                                    >
+                                    <small>
+                                        <font color="#ff2020">{m.compatibility_nothing()} ({((views["Nothing"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
+                                        <font color="#ffffff">{m.compatibility_nothing_desc()}</font>
+                                    </small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
-                                        <div
-                                            class="progress-bar progress-bar-striped progress-bar-animated bg-nothing"
-                                            style="width:{(views['Nothing']
-                                                .length /
-                                                views['Unknown'].length) *
-                                                100}%"
-                                        ></div>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-nothing" style="width:{(views['Nothing'].length / views['Unknown'].length) * 100}%"></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <small
-                                        ><font color="#a060ff"
-                                            >{m.compatibility_bootable()} ({(
-                                                (views["Bootable"].length /
-                                                    views["Unknown"].length) *
-                                                100
-                                            ).toFixed(2)}%):</font
-                                        >
-                                        <font color="#ffffff"
-                                            >{m.compatibility_bootable_desc()}</font
-                                        ></small
-                                    >
+                                    <small>
+                                        <font color="#a060ff">{m.compatibility_bootable()} ({((views["Bootable"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
+                                        <font color="#ffffff">{m.compatibility_bootable_desc()}</font>
+                                    </small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
-                                        <div
-                                            class="progress-bar progress-bar-striped progress-bar-animated bg-bootable"
-                                            style="width:{(views['Bootable']
-                                                .length /
-                                                views['Unknown'].length) *
-                                                100}%"
-                                        ></div>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-bootable" style="width:{(views['Bootable'].length / views['Unknown'].length) * 100}%"></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <small
-                                        ><font color="#e632aa"
-                                            >{m.compatibility_intro()} ({(
-                                                (views["Intro"].length /
-                                                    views["Unknown"].length) *
-                                                100
-                                            ).toFixed(2)}%):</font
-                                        >
-                                        <font color="#ffffff"
-                                            >{m.compatibility_intro_desc()}</font
-                                        ></small
-                                    >
+                                    <small>
+                                        <font color="#e632aa">{m.compatibility_intro()} ({((views["Intro"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
+                                        <font color="#ffffff">{m.compatibility_intro_desc()}</font>
+                                    </small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
-                                        <div
-                                            class="progress-bar progress-bar-striped progress-bar-animated bg-intro"
-                                            style="width:{(views['Intro']
-                                                .length /
-                                                views['Unknown'].length) *
-                                                100}%"
-                                        ></div>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-intro" style="width:{(views['Intro'].length / views['Unknown'].length) * 100}%"></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <small
-                                        ><font color="#50a0fa"
-                                            >{m.compatibility_menu()} ({(
-                                                (views["Menu"].length /
-                                                    views["Unknown"].length) *
-                                                100
-                                            ).toFixed(2)}%):</font
-                                        >
-                                        <font color="#ffffff"
-                                            >{m.compatibility_menu_desc()}</font
-                                        ></small
-                                    >
+                                    <small>
+                                        <font color="#50a0fa">{m.compatibility_menu()} ({((views["Menu"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
+                                        <font color="#ffffff">{m.compatibility_menu_desc()}</font>
+                                    </small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
-                                        <div
-                                            class="progress-bar progress-bar-striped progress-bar-animated bg-menu"
-                                            style="width:{(views['Menu']
-                                                .length /
-                                                views['Unknown'].length) *
-                                                100}%"
-                                        ></div>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-menu" style="width:{(views['Menu'].length / views['Unknown'].length) * 100}%"></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <small
-                                        ><font color="#f0a000"
-                                            >{m.compatibility_ingame_minus()} ({(
-                                                (views["Ingame -"].length /
-                                                    views["Unknown"].length) *
-                                                100
-                                            ).toFixed(2)}%):</font
-                                        >
-                                        <font color="#ffffff"
-                                            >{m.compatibility_ingame_minus_desc()}</font
-                                        ></small
-                                    >
+                                    <small>
+                                        <font color="#f0a000">{m.compatibility_ingame_minus()} ({((views["Ingame -"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
+                                        <font color="#ffffff">{m.compatibility_ingame_minus_desc()}</font>
+                                    </small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
-                                        <div
-                                            class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-minus"
-                                            style="width:{(views['Ingame -']
-                                                .length /
-                                                views['Unknown'].length) *
-                                                100}%"
-                                        ></div>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-minus" style="width:{(views['Ingame -'].length / views['Unknown'].length) * 100}%"></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <small
-                                        ><font color="#ffd250"
-                                            >{m.compatibility_ingame_plus()} ({(
-                                                (views["Ingame +"].length /
-                                                    views["Unknown"].length) *
-                                                100
-                                            ).toFixed(2)}%):</font
-                                        >
-                                        <font color="#ffffff"
-                                            >{m.compatibility_ingame_plus_desc()}</font
-                                        ></small
-                                    >
+                                    <small>
+                                        <font color="#ffd250">{m.compatibility_ingame_plus()} ({((views["Ingame +"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
+                                        <font color="#ffffff">{m.compatibility_ingame_plus_desc()}</font>
+                                    </small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
-                                        <div
-                                            class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-plus"
-                                            style="width:{(views['Ingame +']
-                                                .length /
-                                                views['Unknown'].length) *
-                                                100}%"
-                                        ></div>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-ingame-plus" style="width:{(views['Ingame +'].length / views['Unknown'].length) * 100}%"></div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <small
-                                        ><font color="#28AA28"
-                                            >{m.compatibility_playable()} ({(
-                                                (views["Playable"].length /
-                                                    views["Unknown"].length) *
-                                                100
-                                            ).toFixed(2)}%):</font
-                                        >
-                                        <font color="#ffffff"
-                                            >{m.compatibility_playable_desc()}</font
-                                        ></small
-                                    >
+                                    <small>
+                                        <font color="#28AA28">{m.compatibility_playable()} ({((views["Playable"].length / views["Unknown"].length) * 100).toFixed(2)}%):</font>
+                                        <font color="#ffffff">{m.compatibility_playable_desc()}</font>
+                                    </small>
                                 </td>
                                 <td width="25%">
                                     <div class="progress">
-                                        <div
-                                            class="progress-bar progress-bar-striped progress-bar-animated bg-playable"
-                                            style="width:{(views['Playable']
-                                                .length /
-                                                views['Unknown'].length) *
-                                                100}%"
-                                        ></div>
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-playable" style="width:{(views['Playable'].length / views['Unknown'].length) * 100}%"></div>
                                     </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                     <br />
-                    <p>
-                        Last Updated at: <span id="lastUpdatedAt"></span>
-                        (<span id="timeAgo"></span>)
-                    </p>
+                    <p>Last Updated at: <span id="lastUpdatedAt"></span> (<span id="timeAgo"></span>)</p>
                     <br />
                     <table class="table-hover table-bordered table-striped">
                         <thead>
                             <tr>
-                                <td
-                                    ><a
-                                        href="#"
-                                        onclick={() => orderBy("titleId")}
-                                        style="color:yellow"
-                                    >
-                                        <small id="titleIdHead"
-                                            >Title ID {currentField ===
-                                            "titleId"
-                                                ? currentOrder === "asc"
-                                                    ? "↓"
-                                                    : "↑"
-                                                : ""}</small
-                                        ></a
-                                    ></td
-                                >
-                                <td
-                                    ><a
-                                        href="#"
-                                        onclick={() => orderBy("name")}
-                                        style="color:yellow"
-                                        ><small id="nameHead"
-                                            >{m.compatibility_name()}
-                                            {currentField === "name"
-                                                ? currentOrder === "asc"
-                                                    ? "↓"
-                                                    : "↑"
-                                                : ""}</small
-                                        ></a
-                                    ></td
-                                >
-                                <td
-                                    ><a
-                                        href="#"
-                                        onclick={() => orderBy("status")}
-                                        style="color:yellow"
-                                        ><small id="statusHead"
-                                            >{m.compatibility_status()}
-                                            {currentField === "status"
-                                                ? currentOrder === "asc"
-                                                    ? "↓"
-                                                    : "↑"
-                                                : ""}</small
-                                        ></a
-                                    ></td
-                                >
+                                <td>
+                                    <a href="#" onclick={() => orderBy("titleId")} style="color:yellow">
+                                        <small id="titleIdHead">Title ID {currentField === "titleId" ? currentOrder === "asc" ? "↓" : "↑" : ""}</small>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick={() => orderBy("name")} style="color:yellow">
+                                        <small id="nameHead">{m.compatibility_name()} {currentField === "name" ? currentOrder === "asc" ? "↓" : "↑" : ""}</small>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" onclick={() => orderBy("status")} style="color:yellow">
+                                        <small id="statusHead">{m.compatibility_status()} {currentField === "status" ? currentOrder === "asc" ? "↓" : "↑" : ""}</small>
+                                    </a>
+                                </td>
                             </tr>
                         </thead>
                         <tbody>
-                            {#each data.filter( (entry) => filterEntries(entry), ) as entry (entry.titleId)}
+                            {#each data.filter((entry) => filterEntries(entry)) as entry (entry.titleId)}
                                 <tr>
-                                    <td
-                                        align="left"
-                                        title={entry.region
-                                            ? entry.region
-                                            : "Unknown Region"}
-                                        class="{'region-' +
-                                            entry.region} region"
-                                    >
+                                    <td align="left">
+                                        <span class="region-badge region-badge-{entry.region}" title={entry.region ?? "Unknown Region"}>{entry.region ?? "UNK"}</span>
                                         <b><small>{entry.titleId}</small></b>
                                     </td>
                                     <td align="left">
-                                        <a
-                                            class="title-name"
-                                            href="https://github.com/Vita3K/compatibility/issues/{entry.issueId}"
-                                        >
+                                        <a class="title-name" href="https://github.com/Vita3K/compatibility/issues/{entry.issueId}">
                                             <small>{entry.name}</small>
                                         </a>
                                     </td>
-                                    <!-- In Svelte, we use the style attribute for dynamic colors -->
-                                    <td
-                                        class="status-field bg-{entry.colorClass}"
-                                    >
+                                    <td class="status-field bg-{entry.colorClass}">
                                         <span style="color: white">
-                                            <div>
-                                                {entry.translatedStatus}
-                                            </div>
+                                            <div>{entry.translatedStatus}</div>
                                         </span>
                                     </td>
                                 </tr>

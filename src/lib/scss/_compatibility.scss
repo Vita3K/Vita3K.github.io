@@ -74,28 +74,42 @@ table {
     background-color: #000000;
 }
 
-.region {
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
-}
+.region-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 1px 5px;
+  border-radius: 3px;
+  margin-right: 4px;
+  vertical-align: middle;
 
-.region- {
-    &USA {
-        background-color: #ffffff;
-    }
+  &-USA {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: 1px solid #ffffff;
+  }
 
-    &JPN {
-        background-color: #ff3838;
-    }
+  &-JPN {
+    background: rgba(255,56,56,0.15);
+    color: #ff3838;
+    border: 1px solid #ff3838;
+  }
 
-    &EUR {
-        background-color: #1e64dc;
-    }
+  &-EUR {
+    background: rgba(30,100,220,0.2);
+    color: #6fa0ff;
+    border: 1px solid #6fa0ff;
+  }
 
-    &ASIA {
-        background-color: #3efd7e;
-    }
+  &-ASIA {
+    background: rgba(62,253,126,0.1);
+    color: #3efd7e;
+    border: 1px solid #3efd7e;
+  }
 
-    &UNK {
-        background-color: #000000;
-    }
+  &-UNK {
+    background: rgba(128,128,128,0.1);
+    color: #888888;
+    border: 1px solid #888888;
+  }
 }
