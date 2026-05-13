@@ -23,35 +23,12 @@
   gap: 1.4rem;
 }
 
-.compatibility-heading,
 .compatibility-filter-strip {
   position: relative;
 }
 
-.compatibility-heading .section-heading {
-  margin: 0;
-  font-size: clamp(2.3rem, 3.4vw, 3.5rem);
-  line-height: 1;
-  text-align: center;
-}
-
-.compatibility-lead {
-  max-width: 72rem;
-  margin: 0;
-  color: var(--compatibility-muted);
-  font-size: 1rem;
-  line-height: 1.65;
-  white-space: pre-line;
-  text-align: center;
-}
-
-.compatibility-header {
-  display: grid;
-  gap: 1rem;
-}
-
 .compatibility-updated {
-  margin: 0.9rem 0 0;
+  margin: 0;
   color: rgba(255, 255, 255, 0.68);
   text-align: center;
 

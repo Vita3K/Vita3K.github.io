@@ -1,6 +1,7 @@
 <script>
     import { asset, resolve } from "$app/paths";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+    import PageHeader from "$lib/components/PageHeader.svelte";
     import { m } from "$lib/paraglide/messages.js";
 
     const faqItems = [
@@ -275,12 +276,9 @@
     <CompositeMeta key="description" content="Vita3K frequently asked questions" />
 </svelte:head>
 
-<section class="faq-page text-white">
+<section class="page-route faq-page text-white">
     <div class="container">
-        <div class="faq-page__header text-center">
-            <h1>FAQs</h1>
-            <p class="text-faded mb-0">Frequently asked questions.</p>
-        </div>
+        <PageHeader title="FAQs" description="Frequently asked questions." />
 
         <div class="faq-page__list">
             {#each faqItems as item}

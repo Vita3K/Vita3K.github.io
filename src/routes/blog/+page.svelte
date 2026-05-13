@@ -1,5 +1,6 @@
 <script lang="ts">
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+    import PageHeader from "$lib/components/PageHeader.svelte";
     import { m } from "$lib/paraglide/messages.js";
 
     let { data } = $props();
@@ -14,21 +15,13 @@
     />
 </svelte:head>
 
-<section class="blog-page blog-index bg-dark text-white">
+<section class="page-route blog-page blog-index bg-dark text-white">
     <div class="container" id="blog-container">
-        <div class="row blog-index-header text-center">
-            <div class="col-lg-10 mx-auto">
-                <h1 class="blog-index-title">
-                    <strong>{m.nav_blog()}</strong>
-                </h1>
-                <hr />
-                <br />
-            </div>
-            <div class="col-lg-8 mx-auto">
-                <p class="blog-index-copy text-faded mb-1">
-                    Our infrequent progress reports on the state of the emulator.
-                </p>
-            </div>
+        <div class="blog-index-header">
+            <PageHeader
+                title={m.nav_blog()}
+                description="Our infrequent progress reports on the state of the emulator."
+            />
         </div>
 
         <div class="blog-list" role="list">

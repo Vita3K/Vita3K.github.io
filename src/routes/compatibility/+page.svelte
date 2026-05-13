@@ -3,6 +3,7 @@
     import { asset } from "$app/paths";
     import { m } from "$lib/paraglide/messages.js";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+    import PageHeader from "$lib/components/PageHeader.svelte";
 
     const FIELDS = {
         Nothing: "nothing",
@@ -380,25 +381,21 @@
 
 <svelte:window onkeydown={handleWindowKeydown} />
 
-<section class="text-white compatibility-page" id="compatibility">
+<section class="page-route text-white compatibility-page" id="compatibility">
     <div class="container">
         <div class="compatibility-shell">
-            <header class="compatibility-header">
-                <div class="compatibility-heading">
-                    <h2 class="section-heading">{m.compatibility_compatibility_list()}</h2>
-                    <hr class="my-4" />
-                    <p class="compatibility-lead">{m.compatibility_emulator_undergoing_changes()}</p>
-
-                    {#if !isLoading && !loadError && lastUpdatedAt}
-                        <p class="compatibility-updated">
-                            <span>{m.compatibility_last_updated()}:</span>
-                            <strong>{lastUpdatedAt}</strong>
-                            <span class="compatibility-update-age">({lastUpdatedAgo})</span>
-                        </p>
-                    {/if}
-                </div>
-
-            </header>
+            <PageHeader
+                title={m.compatibility_compatibility_list()}
+                description={m.compatibility_emulator_undergoing_changes()}
+            >
+                {#if !isLoading && !loadError && lastUpdatedAt}
+                    <p class="compatibility-updated">
+                        <span>{m.compatibility_last_updated()}:</span>
+                        <strong>{lastUpdatedAt}</strong>
+                        <span class="compatibility-update-age">({lastUpdatedAgo})</span>
+                    </p>
+                {/if}
+            </PageHeader>
 
             {#if isLoading}
                 <div class="compatibility-feedback">{m.compatibility_loading()}</div>

@@ -3,6 +3,7 @@
 
     import DownloadBox from "$lib/components/DownloadBox.svelte";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+    import PageHeader from "$lib/components/PageHeader.svelte";
 </script>
 
 <svelte:head>
@@ -14,16 +15,9 @@
     />
 </svelte:head>
 
-<section class="bg-dark text-dark">
+<section class="page-route bg-dark text-dark">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-heading text-white">
-                    {m.download_pick_up_your_build()}
-                </h2>
-                <hr class="my-4" />
-            </div>
-        </div>
+        <PageHeader title={m.download_pick_up_your_build()} />
     </div>
 
     <div class="container">

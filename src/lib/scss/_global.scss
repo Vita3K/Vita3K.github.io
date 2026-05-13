@@ -121,6 +121,14 @@ section {
     padding: 8rem 0;
 }
 
+.page-route {
+    padding-top: clamp(5rem, 8vw, 5.75rem) !important;
+}
+
+.page-route--intro-only {
+    padding-bottom: clamp(1.25rem, 2.8vw, 2rem) !important;
+}
+
 .section-heading {
     margin-top: 0;
 }

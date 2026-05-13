@@ -1,5 +1,6 @@
 <script lang="ts">
     import AccordionItem from "$lib/components/AccordionItem.svelte";
+    import PageHeader from "$lib/components/PageHeader.svelte";
     import { onMount } from "svelte";
     import { asset } from "$app/paths";
     import { m } from "$lib/paraglide/messages.js";
@@ -40,22 +41,12 @@
     <CompositeMeta key="description" content="Vita3K quickstart guide" />
 </svelte:head>
 
-<section class="text-center text-white d-flex">
-    <div class="container my-auto">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h1>
-                    <strong>{m.quickstart_quickstart()}</strong>
-                </h1>
-                <hr />
-                <br />
-            </div>
-            <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-1">
-                    {m.quickstart_get_started()}
-                </p>
-            </div>
-        </div>
+<section class="page-route page-route--intro-only text-center text-white">
+    <div class="container">
+        <PageHeader
+            title={m.quickstart_quickstart()}
+            description={m.quickstart_get_started()}
+        />
     </div>
 </section>
 <section class="bg-dark text-white pb-5">
