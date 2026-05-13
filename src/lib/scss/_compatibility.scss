@@ -42,7 +42,7 @@ table {
 }
 
 .title-id {
-  font-family: "Cascadia Code", monospace;
+  @include mono-font();
   font-variant-numeric: tabular-nums;
   color: #f2f2f2;
 }

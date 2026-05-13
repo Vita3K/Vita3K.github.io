@@ -37,18 +37,15 @@
     </script>
 
     <link rel="icon" href={favicon} />
-    <!-- Custom fonts for this template -->
+    <!-- Shared typography and icons -->
     <link
         href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
         rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-        rel="stylesheet"
-        type="text/css"
-    />
-    <link
-        href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet"
         type="text/css"
     />

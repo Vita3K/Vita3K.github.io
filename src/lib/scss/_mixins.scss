@@ -13,9 +13,13 @@
 }
 
 @mixin serif-font() {
-    font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+    font-family: $font-display;
 }
 
 @mixin sans-serif-font() {
-    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-family: $font-sans;
+}
+
+@mixin mono-font() {
+    font-family: $font-mono;
 }

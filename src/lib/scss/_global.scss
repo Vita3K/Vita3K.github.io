@@ -38,13 +38,24 @@ html {
     height: 100%;
 }
 
+:root {
+    color-scheme: dark;
+}
+
 html {
     overflow: auto;
+    scroll-behavior: smooth;
 }
 
 body {
-    @include serif-font;
+    @include sans-serif-font;
     background-color: #191919;
+    color: $gray-100;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv11", "ss03", "liga", "calt";
 }
 
 hr {
@@ -73,6 +84,25 @@ h4,
 h5,
 h6 {
     @include sans-serif-font;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+p,
+li,
+input,
+button,
+select,
+textarea {
+    @include sans-serif-font;
+}
+
+code,
+pre,
+kbd,
+samp {
+    @include mono-font;
 }
 
 .bg-primary {

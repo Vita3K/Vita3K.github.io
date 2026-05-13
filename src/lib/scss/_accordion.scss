@@ -1,6 +1,3 @@
-// Variables
-$font-stack: Arial, Helvetica, sans-serif;
-
 .accordion-item {
     background-color: $bg-color;
     border-radius: .4rem;
@@ -10,7 +7,7 @@ $font-stack: Arial, Helvetica, sans-serif;
 
     // Nesting the link inside the item
     .accordion-link {
-        font-family: $font-stack;
+        @include sans-serif-font;
         font-size: 2rem;
         color: $primary;
         text-decoration: none;
