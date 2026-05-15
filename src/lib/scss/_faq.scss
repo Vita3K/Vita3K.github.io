@@ -96,13 +96,10 @@
     code {
         padding: 0.08rem 0.38rem;
         border-radius: 0.35rem;
-        background: rgba($white, 0.05);
         border: 1px solid rgba($white, 0.08);
-        color: #ffd9cf;
     }
 
     a {
-        color: lighten($primary, 10%);
         text-decoration-thickness: 1px;
         text-underline-offset: 0.18em;
     }

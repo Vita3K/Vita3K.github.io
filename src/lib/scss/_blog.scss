@@ -98,7 +98,7 @@
 .blog-card-link:hover .blog-card-frame,
 .blog-card-link:focus-visible .blog-card-frame {
     transform: translateY(-4px);
-    border-color: rgba(240, 95, 64, 0.38);
+    border-color: rgba(240, 95, 64, 0.40);
 }
 
 .blog-post-title {
@@ -129,10 +129,10 @@
 }
 
 .blog-card-date {
-    background: rgba(240, 95, 64, 0.12);
-    color: rgba(255, 221, 212, 0.95);
-    border: 1px solid rgba(240, 95, 64, 0.28);
-    font-weight: 700;
+    background: #412402;
+    color: #FAC775;
+    border: 1px solid #854F0B;
+    font-weight: 500;
     letter-spacing: 0.01em;
 }
 
@@ -173,7 +173,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    color: rgba(255, 221, 212, 0.96);
+    color: rgba(240, 95, 64, 0.92);
     font-weight: 700;
     letter-spacing: 0.01em;
 }

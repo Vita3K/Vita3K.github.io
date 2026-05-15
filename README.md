@@ -31,7 +31,10 @@ Start the development server with hot reload enabled:
 ```bash
 # Start development server
 npm run dev
+```
+Or you can build the website for production and preview it locally using the following commands manually:
 
+```bash
 # Build for production
 npm run build
 
