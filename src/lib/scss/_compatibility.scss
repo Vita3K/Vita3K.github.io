@@ -133,15 +133,6 @@
   }
 }
 
-.filter-chip {
-  min-width: 0;
-  justify-content: flex-start;
-}
-
-.filter-chip--all {
-  background: rgba(255, 255, 255, 0.03);
-}
-
 .filter-chip-dot {
   width: 0.65rem;
   height: 0.65rem;
@@ -504,6 +495,58 @@
 .bg-playable { background: rgba(40, 170, 40, 0.8); }
 .bg-unknown { background: rgba(120, 120, 120, 0.78); }
 
+$compat-status-colors: ( 
+  nothing: rgba(255, 32, 32, 0.78),
+  bootable: rgba(160, 96, 255, 0.78),
+  intro: rgba(230, 50, 170, 0.78),
+  menu: rgba(80, 160, 250, 0.78),
+  ingame-minus: rgba(240, 160, 0, 0.78),
+  ingame-plus: rgba(255, 210, 80, 0.8),
+  playable: rgba(40, 170, 40, 0.8),
+  unknown: rgba(120, 120, 120, 0.78),
+  );
+
+.filter-chip {
+  @each $name, $color in $compat-status-colors {
+    &.bg-#{$name} {
+      background: rgba(255, 255, 255, 0.03);
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      &.active {
+        background: $color;
+        border-color: transparent;
+
+        strong {
+          color: $white;
+        }
+      }
+    }
+  }
+  min-width: 0;
+  justify-content: flex-start;
+}
+
+.filter-chip--all {
+  background: rgba(255, 255, 255, 0.03);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  &.active {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: transparent;
+    color: $white;
+
+    strong {
+      color: $white;
+    }
+  }
+}
+
 @media (max-width: 991px) {
   .status-row {
     align-items: stretch;
@@ -538,8 +581,36 @@
   }
 
   .compatibility-game-card {
-    grid-template-columns: 1fr;
-    align-items: start;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "main   status" "main   action";
+    column-gap: 1rem;
+    row-gap: 0.45rem;
+    align-items: center;
+    padding: 0.8rem 0;
+  }
+
+  .compatibility-game-main {
+    grid-area: main;
+  }
+
+  .compatibility-game-status {
+    grid-area: status;
+    justify-self: end;
+    align-self: start;
+    justify-items: end;
+    text-align: right;
+  }
+
+  .compatibility-game-action {
+    grid-area: action;
+    justify-self: end;
+    align-self: end;
+    width: auto;
+  }
+
+  .report-trigger {
+    width: auto;
   }
 
   .compatibility-game-status,
@@ -564,8 +635,7 @@
   }
 
   .filter-chip,
-  .sort-chip,
-  .report-trigger {
+  .sort-chip {
     width: 100%;
   }
 
