@@ -236,11 +236,11 @@
             unstable). The games should be in a .zip or .vpk format if you want
             to install them from the emulator, or if you prefer to copy them
             yourself, you can drag and drop the game folder in your <code
-                >pref_path/ux0/app</code
+                >vita_fs/ux0/app</code
             > folder (not applicable for NoNpDrm dumps/.pkg files).
         </p>
         <p>
-            <code>pref_path</code> defaults to:
+            <code>vita_fs</code> defaults to:
             <br /><code>%Appdata%/Roaming/Vita3K/Vita3K</code> on windows
             <br /><code>~/.local/share/Vita3K/Vita3K</code> on linux
             <br /><code>~/Library/Application Support/Vita3K</code> on macOS
