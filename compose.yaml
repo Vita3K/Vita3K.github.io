@@ -1,0 +1,19 @@
+services:
+  web-dev:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
+    profiles:
+      - dev
+
+  web-prod:
+    build:
+      context: .
+      target: production
+    ports:
+      - "8080:80"
