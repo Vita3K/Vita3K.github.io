@@ -84,7 +84,7 @@
             id: "how-do-i-get-games",
             question: "How do I get games?",
             answer: `
-                <p>For homebrew, get them through <a href="https://vitadb.rinnegatamante.it/">VitaDB</a>.</p>
+                <p>For homebrew, get them through <a href="https://www.rinnegatamante.eu/vitadb/">VitaDB</a>.</p>
                 <p>
                     For commercial games, you should read the <a href="${resolve("/quickstart")}">quickstart guide</a>.
                 </p>
