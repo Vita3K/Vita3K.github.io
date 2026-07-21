@@ -18,7 +18,7 @@
                     The requirements for running Vita3K are still not fully known and may change during its current development stage.
                     The absolute minimum requirements for running the program are:
                 </p>
-                <div class="faq-specs">
+                <div class="specs">
                     <div>
                         <h3>PC</h3>
                         <ul>
@@ -91,7 +91,6 @@
             `,
         },
         {
-
             id: "how-do-i-run-games",
             question: "How do I run games?",
             answer: `
@@ -308,12 +307,12 @@
     <div class="container">
         <PageHeader title="FAQs" description="Frequently asked questions." />
 
-        <div class="faq-page__list">
+        <div class="list">
             {#each faqItems as item (faqItems.indexOf(item))}
-                <article class="faq-entry">
-                    <div class="faq-entry__question">
+                <article class="entry">
+                    <div class="question-row">
                         <img
-                            class="faq-entry__label"
+                            class="label"
                             src={asset("/img/icons/faq-question.svg")}
                             alt=""
                             aria-hidden="true"
@@ -321,27 +320,42 @@
                         <h2 id={item.id}>
                             {item.question}
                             <button
-                                class="faq-entry__link-btn"
+                                class="link-btn"
                                 onclick={() => copyLink(item.id)}
                                 aria-label="Copy link to this section"
                                 title="Copy link"
                             >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                                    />
+                                    <path
+                                        d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                                    />
                                 </svg>
                             </button>
                         </h2>
                     </div>
 
-                    <div class="faq-entry__answer-row">
+                    <div class="answer-row">
                         <img
-                            class="faq-entry__label faq-entry__label--answer"
+                            class="label"
                             src={asset("/img/icons/faq-answer.svg")}
                             alt=""
                             aria-hidden="true"
                         />
-                        <div class="faq-entry__answer">
+                        <div class="answer">
                             {@html item.answer}
                         </div>
                     </div>
@@ -350,7 +364,3 @@
         </div>
     </div>
 </section>
-
-<style>
-    
-</style>

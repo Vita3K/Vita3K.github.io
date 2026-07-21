@@ -28,31 +28,41 @@
     // Logic for the toggle icons
     [data-toggle="collapse"] {
         &.collapsed {
-            > .ion-md-add-circle { display: inline-block; }
-            > .ion-md-remove-circle { display: none; }
+            >.ion-md-add-circle {
+                display: inline-block;
+            }
+
+            >.ion-md-remove-circle {
+                display: none;
+            }
         }
 
         &:not(.collapsed) {
-            > .ion-md-add-circle { display: none; }
-            > .ion-md-remove-circle { display: inline-block; }
+            >.ion-md-add-circle {
+                display: none;
+            }
+
+            >.ion-md-remove-circle {
+                display: inline-block;
+            }
         }
     }
-}
 
-.answer {
-    overflow: hidden;
-    position: relative;
-    transition: max-height 1500ms;
+    .answer {
+        overflow: hidden;
+        position: relative;
+        transition: max-height 1500ms;
 
-    &::before {
-        content: "";
-        position: absolute;
-        width: .6rem;
-        height: 90%;
-        background-color: #d93f0b;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
+        &::before {
+            content: "";
+            position: absolute;
+            width: .6rem;
+            height: 90%;
+            background-color: #d93f0b;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
     }
 }
 
