@@ -1,0 +1,24 @@
+// Hide Google's own translation banner/tooltips so it doesn't clash with the fixed navbar.
+// Google injects these as top-level iframes; the banner's class name is obfuscated and
+// changes between widget versions (it used to be .goog-te-banner-frame), so match every
+// `skiptranslate` iframe instead of a specific class.
+iframe.skiptranslate {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    pointer-events: none !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+    display: none !important;
+}
+
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}

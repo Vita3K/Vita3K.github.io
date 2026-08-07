@@ -231,13 +231,13 @@
             HENkaku <b class="text-danger">3.60 - 3.65</b>.
         </p>
         <p>
-            Currently, Vita3K supports .pkg, NoNpDrm, FAGDec, or manually
+            Currently, Vita3K supports .pkg, VCI, NoNpDrm, FAGDec, or manually
             decrypted games (Vitamin dumps are not supported and Maidump is
-            unstable). The games should be in a .zip or .vpk format if you want
-            to install them from the emulator, or if you prefer to copy them
-            yourself, you can drag and drop the game folder in your <code
+            unstable). The games should be in a .zip, .vpk, or .vci format if
+            you want to install them from the emulator, or if you prefer to
+            copy them yourself, you can drag and drop the game folder in your <code
                 >vita_fs/ux0/app</code
-            > folder (not applicable for NoNpDrm dumps/.pkg files).
+            > folder (not applicable for NoNpDrm dumps/.pkg/.vci files).
         </p>
         <p>
             <code>vita_fs</code> defaults to:
@@ -251,6 +251,59 @@
                 These are the several ways to dump and get decrypted games in
                 order of their accuracy.
             </p>
+
+            <AccordionItem id="vci" title="VCI (cartridge games only)" initiallyOpen={false}>
+                <div class="answer">
+                    <div class="padding-wrapper">
+                        <p class="my-3"></p>
+                        <h5>
+                            Using <a
+                                href="https://github.com/oestriot/GcToolKit"
+                                >GcToolKit</a
+                            >
+                        </h5>
+                        <p class="my-3">
+                            VCI (Vita Cartridge Image) is a true 1:1 backup of
+                            a physical PS Vita game cartridge, including its
+                            authentication data. Because of this, it only
+                            works for <b>cartridge</b> games, not digital
+                            (PSN) games. It is the most accurate dumping
+                            method.
+                        </p>
+                        <ol>
+                            <li>
+                                Install <a
+                                    href="https://github.com/oestriot/GcToolKit"
+                                    >GcToolKit</a
+                                > on your jailbroken PS Vita (or use its network
+                                backup companion app from your PC).
+                            </li>
+                            <li>
+                                Insert the game cartridge you want to dump
+                                into your Vita.
+                            </li>
+                            <li>
+                                Launch GcToolKit, choose to back up the
+                                entire game cart, and select
+                                <code>VCI</code> as the output format.
+                            </li>
+                            <li>
+                                Wait for the dump to finish. The resulting
+                                <code>.vci</code> file will be saved to your
+                                chosen storage device.
+                            </li>
+                            <li>
+                                Transfer the <code>.vci</code> file to your PC.
+                            </li>
+                            <li>
+                                Use <code>File</code> ->
+                                <code>Install Archive (.zip / .vpk / .vci)</code>
+                                and select it. The game will begin installing.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </AccordionItem>
 
             <AccordionItem
                 id="fagdec"
