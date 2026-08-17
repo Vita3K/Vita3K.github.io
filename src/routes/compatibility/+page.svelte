@@ -27,12 +27,12 @@
     ];
 
     const STATUS_ORDER: FIELDS[] = [...STATUS_FIELDS, "Unknown"];
-    const REGION_ORDER: REGION[] = ["USA", "EUR", "JPN", "ASIA", "UNK"];
+    const REGION_ORDER: REGION[] = ["USA", "EUR", "JPN", "ASIA", "INT"];
 
     type FIELDS = keyof typeof FIELDS;
     type ORDER_FIELDS = "titleId" | "name" | "status";
     type ORDER_TYPE = "asc" | "desc";
-    type REGION = "JPN" | "USA" | "EUR" | "ASIA" | "UNK";
+    type REGION = "JPN" | "USA" | "EUR" | "ASIA" | "INT";
 
     type ApiCompatibilityEntry = {
         name: string;
@@ -62,7 +62,6 @@
     type CompatibilityViews = Record<FIELDS, CompatibilityGame[]>;
 
     let views: CompatibilityViews = $state(createEmptyViews());
-    let data: CompatibilityGame[] = $state([]);
     let activeView: FIELDS = $state("Unknown");
     let currentField: ORDER_FIELDS = $state("name");
     let currentOrder: ORDER_TYPE = $state("asc");
@@ -72,6 +71,15 @@
     let isLoading = $state(true);
     let loadError = $state("");
     let selectedGame: CompatibilityGame | null = $state(null);
+    let selectedRegions: REGION[] = $state([]);
+
+    const filteredGames = $derived(
+        sortGames(
+            views[activeView].filter(filterEntries).map(restrictToSelectedRegions),
+            currentField,
+            currentOrder,
+        ),
+    );
 
     function createEmptyViews(): CompatibilityViews {
         return {
@@ -150,24 +158,45 @@
         }
     }
 
-    function getRegionMeta(titleId: string) {
+    function getRegionFlag(region: REGION) {
+        switch (region) {
+            case "USA":
+                return asset("/img/flags/us.svg");
+            case "EUR":
+                return asset("/img/flags/eu.svg");
+            case "JPN":
+                return asset("/img/flags/jp.svg");
+            case "ASIA":
+                return asset("/img/flags/asia.svg");
+            default:
+                return asset("/img/flags/unk.svg");
+        }
+    }
+
+    function getRegion(titleId: string): REGION {
         if (titleId.startsWith("PCSA") || titleId.startsWith("PCSE")) {
-            return { region: "USA" as REGION, regionFlag: asset("/img/flags/us.svg") };
+            return "USA";
         }
 
         if (titleId.startsWith("PCSB") || titleId.startsWith("PCSF")) {
-            return { region: "EUR" as REGION, regionFlag: asset("/img/flags/eu.svg") };
+            return "EUR";
         }
 
         if (titleId.startsWith("PCSC") || titleId.startsWith("PCSG")) {
-            return { region: "JPN" as REGION, regionFlag: asset("/img/flags/jp.svg") };
+            return "JPN";
         }
 
         if (titleId.startsWith("PCSD") || titleId.startsWith("PCSH")) {
-            return { region: "ASIA" as REGION, regionFlag: asset("/img/flags/asia.svg") };
+            return "ASIA";
         }
 
-        return { region: "UNK" as REGION, regionFlag: asset("/img/flags/unk.svg") };
+        return "INT";
+    }
+
+    function getRegionMeta(titleId: string) {
+        const region = getRegion(titleId);
+
+        return { region, regionFlag: getRegionFlag(region) };
     }
 
     function getStatusRank(status: FIELDS) {
@@ -198,13 +227,41 @@
         return [...entries].sort((left, right) => compareGames(left, right, field, order));
     }
 
-    function rebuildData() {
-        data = sortGames(views[activeView], currentField, currentOrder);
+    /** Summarises every release of a game into the single row the list shows. */
+    function createGame(regions: CompatibilityEntry[]) {
+        const sortedRegions = [...regions].sort(compareEntries);
+        const representative = [...regions].sort(
+            (left, right) =>
+                getStatusRank(right.status) - getStatusRank(left.status) || compareEntries(left, right),
+        )[0];
+        const titleId = [...sortedRegions].map(({ titleId }) => titleId).sort((left, right) => left.localeCompare(right))[0];
+        const uniqueStatuses = new Set(sortedRegions.map(({ status }) => status));
+
+        return {
+            name: sortedRegions[0].name,
+            titleId,
+            status: representative.status,
+            translatedStatus: representative.translatedStatus,
+            colorClass: representative.colorClass,
+            regions: sortedRegions,
+            hasMixedStatus: uniqueStatuses.size > 1,
+        } satisfies CompatibilityGame;
+    }
+
+    /**
+     * Rebuilds a game out of the selected regions only, so a filtered list never
+     * shows the title IDs, flags or status of a release the reader filtered out.
+     */
+    function restrictToSelectedRegions(game: CompatibilityGame) {
+        if (selectedRegions.length === 0) {
+            return game;
+        }
+
+        return createGame(game.regions.filter(({ region }) => selectedRegions.includes(region)));
     }
 
     function changeView(field: FIELDS) {
         activeView = field;
-        rebuildData();
     }
 
     function orderBy(field: ORDER_FIELDS) {
@@ -214,11 +271,34 @@
             currentField = field;
             currentOrder = "asc";
         }
-
-        rebuildData();
     }
 
-    function filterEntries(entry: CompatibilityGame) {
+    function toggleRegion(region: REGION) {
+        selectedRegions = selectedRegions.includes(region)
+            ? selectedRegions.filter((selected) => selected !== region)
+            : [...selectedRegions, region];
+    }
+
+    function clearRegions() {
+        selectedRegions = [];
+    }
+
+    function getRegionCount(region: REGION) {
+        return views[activeView].filter((game) => game.regions.some((entry) => entry.region === region)).length;
+    }
+
+    /** Names the result set: the status view, narrowed by whichever regions are on. */
+    function getResultsTitle() {
+        if (selectedRegions.length === 0) {
+            return activeView === "Unknown" ? m.compatibility_all() : getTranslatedStatus(activeView);
+        }
+
+        const regions = REGION_ORDER.filter((region) => selectedRegions.includes(region)).join(" + ");
+
+        return activeView === "Unknown" ? regions : `${getTranslatedStatus(activeView)} · ${regions}`;
+    }
+
+    function matchesSearch(entry: CompatibilityGame) {
         const query = searchQuery.trim().toLowerCase();
 
         if (!query) {
@@ -232,6 +312,18 @@
                     titleId.toLowerCase().includes(query) || region.toLowerCase().includes(query),
             )
         );
+    }
+
+    function matchesRegions(entry: CompatibilityGame) {
+        if (selectedRegions.length === 0) {
+            return true;
+        }
+
+        return entry.regions.some(({ region }) => selectedRegions.includes(region));
+    }
+
+    function filterEntries(entry: CompatibilityGame) {
+        return matchesSearch(entry) && matchesRegions(entry);
     }
 
     function getCompletion(field: FIELDS) {
@@ -257,7 +349,7 @@
     }
 
     function getFilteredData() {
-        return data.filter(filterEntries);
+        return filteredGames;
     }
 
     function openRegionPicker(game: CompatibilityGame) {
@@ -291,25 +383,7 @@
             groupedEntries.set(key, list);
         }
 
-        return Array.from(groupedEntries.values()).map((regions) => {
-            const sortedRegions = [...regions].sort(compareEntries);
-            const representative = [...regions].sort(
-                (left, right) =>
-                    getStatusRank(right.status) - getStatusRank(left.status) || compareEntries(left, right),
-            )[0];
-            const titleId = [...sortedRegions].map(({ titleId }) => titleId).sort((left, right) => left.localeCompare(right))[0];
-            const uniqueStatuses = new Set(sortedRegions.map(({ status }) => status));
-
-            return {
-                name: sortedRegions[0].name,
-                titleId,
-                status: representative.status,
-                translatedStatus: representative.translatedStatus,
-                colorClass: representative.colorClass,
-                regions: sortedRegions,
-                hasMixedStatus: uniqueStatuses.size > 1,
-            } satisfies CompatibilityGame;
-        });
+        return Array.from(groupedEntries.values()).map(createGame);
     }
 
     function buildViews(games: CompatibilityGame[]) {
@@ -359,12 +433,10 @@
             lastUpdatedAt = updatedAt.toLocaleString();
             lastUpdatedAgo = timeAgo(updatedAt);
             activeView = "Unknown";
-            data = sortGames(views.Unknown, currentField, currentOrder);
         } catch (error) {
             console.error("Failed to fetch compatibility data", error);
             loadError = m.compatibility_failed_to_load();
             views = createEmptyViews();
-            data = [];
         } finally {
             isLoading = false;
         }
@@ -459,10 +531,38 @@
                 </div>
 
                 <section class="compatibility-results-panel" aria-labelledby="compatibility-results-heading">
+                    <div class="compatibility-region-filter">
+                        <div class="region-filter-chips" role="group" aria-label={m.compatibility_filter_by_region()}>
+                            <button
+                                type="button"
+                                class="filter-chip filter-chip--all"
+                                class:active={selectedRegions.length === 0}
+                                aria-pressed={selectedRegions.length === 0}
+                                onclick={clearRegions}
+                            >
+                                <span>{m.compatibility_all_regions()}</span>
+                            </button>
+
+                            {#each REGION_ORDER as region (region)}
+                                <button
+                                    type="button"
+                                    class="filter-chip filter-chip--region"
+                                    class:active={selectedRegions.includes(region)}
+                                    aria-pressed={selectedRegions.includes(region)}
+                                    onclick={() => toggleRegion(region)}
+                                >
+                                    <img class="region-flag" src={getRegionFlag(region)} alt="" />
+                                    <span>{region}</span>
+                                    <strong>{getRegionCount(region)}</strong>
+                                </button>
+                            {/each}
+                        </div>
+                    </div>
+
                     <div class="results-toolbar">
                         <div class="results-heading">
                             <h2 id="compatibility-results-heading">
-                                {activeView === "Unknown" ? m.compatibility_all() : getTranslatedStatus(activeView)}
+                                {getResultsTitle()}
                             </h2>
                             <p>{getFilteredData().length} {m.compatibility_games()}</p>
                         </div>

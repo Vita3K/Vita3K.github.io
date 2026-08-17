@@ -279,6 +279,28 @@
   justify-content: flex-end;
 }
 
+.compatibility-region-filter {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.region-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.filter-chip--region {
+  gap: 0.45rem;
+
+  &.active {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: transparent;
+  }
+}
+
 .compatibility-column-headings {
   display: grid;
   grid-template-columns: minmax(0, 1fr) var(--compatibility-status-col) var(--compatibility-report-col);
@@ -637,6 +659,10 @@ $compat-status-colors: (
   .filter-chip,
   .sort-chip {
     width: 100%;
+  }
+
+  .region-filter-chips .filter-chip {
+    width: auto;
   }
 
   .compatibility-update-pill,

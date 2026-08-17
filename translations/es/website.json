@@ -91,5 +91,7 @@
     "compatibility_title_id": "ID de título",
     "compatibility_name": "Nombre",
     "compatibility_status": "Estado",
-    "compatibility_unknown": "Desconocido"
+    "compatibility_unknown": "Desconocido",
+    "compatibility_filter_by_region": "Filtrar por región",
+    "compatibility_all_regions": "Todas las regiones"
 }

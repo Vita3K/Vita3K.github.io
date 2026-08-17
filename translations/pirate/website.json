@@ -105,5 +105,7 @@
     "compatibility_choose_region_help": "Pick the regional logbook ye want to inspect.",
     "compatibility_regions": "Waters",
     "compatibility_region_variation": "Varies by waters",
-    "compatibility_close": "Close hatch"
+    "compatibility_close": "Close hatch",
+    "compatibility_filter_by_region": "Sift by waters",
+    "compatibility_all_regions": "All waters"
 }
