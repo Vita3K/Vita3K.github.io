@@ -230,6 +230,13 @@
   color: rgba(255, 255, 255, 0.64);
 }
 
+.region-picker-option-native {
+  display: block;
+  margin-bottom: 0.1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.78rem;
+}
+
 .status-row-metrics {
   display: grid;
   grid-template-columns: 3rem minmax(180px, 260px);
@@ -344,6 +351,13 @@
 .compatibility-game-copy h3 {
   margin: 0;
   font-size: 0.98rem;
+  line-height: 1.3;
+}
+
+.compatibility-game-native-name {
+  margin: 0.15rem 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.84rem;
   line-height: 1.3;
 }
 

@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { asset } from "$app/paths";
     import { m } from "$lib/paraglide/messages.js";
+    import { nativeTitles } from "$lib/native-titles";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
     import PageHeader from "$lib/components/PageHeader.svelte";
 
@@ -44,6 +45,7 @@
     type CompatibilityEntry = ApiCompatibilityEntry & {
         colorClass: string;
         translatedStatus: string;
+        nativeName: string;
         region: REGION;
         regionFlag: string;
         reportUrl: string;
@@ -51,6 +53,8 @@
 
     type CompatibilityGame = {
         name: string;
+        nativeNames: string[];
+        searchText: string;
         titleId: string;
         status: FIELDS;
         translatedStatus: string;
@@ -72,6 +76,8 @@
     let loadError = $state("");
     let selectedGame: CompatibilityGame | null = $state(null);
     let selectedRegions: REGION[] = $state([]);
+
+    const normalizedQuery = $derived(normalizeForSearch(searchQuery.trim()));
 
     const filteredGames = $derived(
         sortGames(
@@ -199,6 +205,11 @@
         return { region, regionFlag: getRegionFlag(region) };
     }
 
+    /** The title a release shipped with at home, when that is not the western one. */
+    function getNativeName(titleId: string) {
+        return nativeTitles[titleId] ?? "";
+    }
+
     function getStatusRank(status: FIELDS) {
         return STATUS_ORDER.indexOf(status);
     }
@@ -236,9 +247,12 @@
         )[0];
         const titleId = [...sortedRegions].map(({ titleId }) => titleId).sort((left, right) => left.localeCompare(right))[0];
         const uniqueStatuses = new Set(sortedRegions.map(({ status }) => status));
+        const nativeNames = [...new Set(sortedRegions.map(({ nativeName }) => nativeName).filter(Boolean))];
 
         return {
             name: sortedRegions[0].name,
+            nativeNames,
+            searchText: buildSearchText(sortedRegions),
             titleId,
             status: representative.status,
             translatedStatus: representative.translatedStatus,
@@ -298,20 +312,30 @@
         return activeView === "Unknown" ? regions : `${getTranslatedStatus(activeView)} · ${regions}`;
     }
 
-    function matchesSearch(entry: CompatibilityGame) {
-        const query = searchQuery.trim().toLowerCase();
+    /**
+     * Folds case, character width and kana, so a query finds a game however it was
+     * typed: "ﾍﾟﾙｿﾅ", "ぺるそな" and "ペルソナ" all have to reach the same row.
+     */
+    function normalizeForSearch(value: string) {
+        return value
+            .normalize("NFKC")
+            .toLowerCase()
+            .replace(/[ぁ-ゖ]/g, (kana) => String.fromCharCode(kana.charCodeAt(0) + 0x60));
+    }
 
-        if (!query) {
+    /** Everything a reader may type at a game: both its names, its IDs and its regions. */
+    function buildSearchText(regions: CompatibilityEntry[]) {
+        const terms = regions.flatMap(({ name, nativeName, titleId, region }) => [name, nativeName, titleId, region]);
+
+        return normalizeForSearch(terms.join(" "));
+    }
+
+    function matchesSearch(entry: CompatibilityGame) {
+        if (!normalizedQuery) {
             return true;
         }
 
-        return (
-            entry.name.toLowerCase().includes(query) ||
-            entry.regions.some(
-                ({ titleId, region }) =>
-                    titleId.toLowerCase().includes(query) || region.toLowerCase().includes(query),
-            )
-        );
+        return entry.searchText.includes(normalizedQuery);
     }
 
     function matchesRegions(entry: CompatibilityGame) {
@@ -425,6 +449,7 @@
                     ...regionMeta,
                     colorClass: FIELDS[entry.status],
                     translatedStatus: getTranslatedStatus(entry.status),
+                    nativeName: getNativeName(entry.titleId),
                     reportUrl: `https://github.com/Vita3K/compatibility/issues/${entry.issueId}`,
                 } satisfies CompatibilityEntry;
             });
@@ -629,6 +654,9 @@
                                     <div class="compatibility-game-main">
                                         <div class="compatibility-game-copy">
                                             <h3>{game.name}</h3>
+                                            {#each game.nativeNames as nativeName (nativeName)}
+                                                <p class="compatibility-game-native-name">{nativeName}</p>
+                                            {/each}
                                             <p class="compatibility-game-ids">{getRegionSummary(game)}</p>
                                             <div class="compatibility-game-flags" aria-label={m.compatibility_regions()}>
                                                 {#each game.regions as region (region.titleId)}
@@ -715,7 +743,12 @@
                                 <img class="region-flag" src={region.regionFlag} alt={region.region} />
                                 <strong>{region.region}</strong>
                             </span>
-                            <span class="region-picker-option-id">{region.titleId}</span>
+                            <span class="region-picker-option-id">
+                                {#if region.nativeName}
+                                    <span class="region-picker-option-native">{region.nativeName}</span>
+                                {/if}
+                                {region.titleId}
+                            </span>
                             <span class={`region-picker-option-status bg-${region.colorClass}`}>
                                 {region.translatedStatus}
                             </span>
