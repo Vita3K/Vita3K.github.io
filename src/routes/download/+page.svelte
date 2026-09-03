@@ -1,6 +1,7 @@
 <script lang="ts">
     import { m } from "$lib/paraglide/messages.js";
 
+    import BuildHistory from "$lib/components/BuildHistory.svelte";
     import DownloadBox from "$lib/components/DownloadBox.svelte";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
     import PageHeader from "$lib/components/PageHeader.svelte";
@@ -64,14 +65,6 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <p class="">
-                    <a href="https://github.com/Vita3K/Vita3K-builds/releases"
-                        >{m.download_older_versions()}</a
-                    >
-                </p>
-            </div>
-        </div>
+        <BuildHistory />
     </div>
 </section>
