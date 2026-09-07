@@ -1,0 +1,15 @@
+# Crowdin configuration for the Vita3K website.
+
+preserve_hierarchy: true
+
+files:
+    - source: /translations/en/website.json
+      translation: /translations/%two_letters_code%/website.json
+      dest: /website.json
+      languages_mapping:
+          two_letters_code:
+              en-GB: en-GB
+              pt-BR: pt-BR
+              pt-PT: pt-PT
+              zh-CN: zh-Hans
+              zh-TW: zh-Hant

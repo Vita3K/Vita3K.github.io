@@ -1,0 +1,140 @@
+# Brings the website translations back from Crowdin once a month.
+
+name: Sync Crowdin translations
+
+on:
+    # 03:00 UTC on the first day of every month.
+    schedule:
+        - cron: "0 3 1 * *"
+
+    workflow_dispatch:
+        inputs:
+            min_completion:
+                description: "How much of the site a new language has to have translated before it goes live, in percent"
+                required: false
+                default: "80"
+
+permissions:
+    contents: write
+    pull-requests: write
+
+# One import at a time: two runs would fight over the same branch.
+concurrency:
+    group: "crowdin-sync"
+    cancel-in-progress: false
+
+jobs:
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v7
+
+            # The Crowdin action turns a refused download into a warning and still exits 0,
+            # which would carry an empty import all the way to a pull request. Ask the API
+            # first, where a missing role or scope is an error with a readable message.
+            - name: Check the Crowdin credentials
+              env:
+                  CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+                  CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+              run: |
+                  api="https://api.crowdin.com/api/v2/projects/$CROWDIN_PROJECT_ID/files?limit=500"
+                  files="$RUNNER_TEMP/crowdin-files.json"
+                  status=$(curl -sS -o "$files" -w '%{http_code}' -H "Authorization: Bearer $CROWDIN_PERSONAL_TOKEN" "$api")
+
+                  if [ "$status" != "200" ]; then
+                      echo "Crowdin answered HTTP $status:"
+                      cat "$files"
+                      echo
+                      echo "CROWDIN_PERSONAL_TOKEN needs the manager or developer role on the"
+                      echo "project, and the project, project.source and project.translation scopes."
+                      exit 1
+                  fi
+
+                  echo "Files in the Crowdin project (the dest in crowdin.yml has to be one of these):"
+                  jq -r '.data[].data.path' "$files"
+
+            - name: Download translations from Crowdin
+              uses: crowdin/github-action@v3
+              with:
+                  # Sources reach Crowdin through the project's own GitHub integration, so
+                  # this workflow only brings translations back.
+                  upload_sources: false
+                  download_translations: true
+                  # Leave untranslated messages out of the files rather than filling them
+                  # with English. Paraglide already falls back to the source locale, and the
+                  # keys that are present are how sync-locales.mjs measures a language.
+                  skip_untranslated_strings: true
+                  # The commit and the pull request happen below, once the download has been
+                  # filtered and reviewed.
+                  push_translations: false
+                  create_pull_request: false
+                  project_id: ${{ secrets.CROWDIN_PROJECT_ID }}
+                  token: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+
+            - name: Set up Node
+              uses: actions/setup-node@v7
+              with:
+                  node-version: 22
+                  cache: npm
+
+            # The steps below and the pull request itself all read this file, so name it
+            # once here rather than repeating the path in five places.
+            - name: Start the pull request body
+              run: |
+                  echo "REPORT_PATH=$RUNNER_TEMP/pull-request-body.md" >> "$GITHUB_ENV"
+                  {
+                      echo "Monthly import from [Crowdin](https://crowdin.com/project/vita3k)."
+                      echo
+                  } > "$RUNNER_TEMP/pull-request-body.md"
+
+            - name: Pick the languages to ship
+              run: node scripts/sync-locales.mjs
+              env:
+                  MIN_COMPLETION: ${{ inputs.min_completion || '80' }}
+
+            # A language inlang cannot load takes the whole site down, so find out here
+            # rather than on the push to master that follows the merge.
+            - name: Check that the site still builds
+              id: build
+              continue-on-error: true
+              run: |
+                  npm ci
+                  npm run build
+
+            - name: Note a failed build in the pull request
+              if: steps.build.outcome == 'failure'
+              run: |
+                  {
+                      echo "> [!CAUTION]"
+                      echo "> \`npm run build\` failed on these translations. Do not merge until it passes."
+                      echo
+                  } >> "$REPORT_PATH"
+
+            - name: Review the incoming translations
+              id: review
+              run: node scripts/review-translations.mjs
+              env:
+                  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+            - name: Open a pull request
+              uses: peter-evans/create-pull-request@v8
+              with:
+                  branch: "l10n/crowdin"
+                  add-paths: |
+                      translations
+                      project.inlang/settings.json
+                  commit-message: "translations: Import from Crowdin"
+                  # The action defaults the author to whoever triggered the run, which on a
+                  # schedule is whichever human touched the repository last. Nobody wrote
+                  # these strings by hand, so credit the bot that the committer already is.
+                  author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+                  title: "translations: Import from Crowdin"
+                  body-path: ${{ env.REPORT_PATH }}
+                  # A flagged string, a review that could not run, or a broken build is not
+                  # something to merge on a glance at the diff.
+                  draft: ${{ steps.review.outputs.blocking == 'true' || steps.build.outcome == 'failure' }}
+
+            - name: Fail if the site did not build
+              if: steps.build.outcome == 'failure'
+              run: exit 1

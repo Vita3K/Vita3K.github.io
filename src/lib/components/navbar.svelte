@@ -8,9 +8,16 @@
 
     import logo from "$lib/assets/logo.svg";
 
-    // Real spoken languages the site itself is translated into.
-    // ("pirate" is a joke locale, so it's intentionally excluded here.)
-    const SUPPORTED_LOCALES = ["en", "es"];
+    // Locales that exist only as a joke, and so say nothing about whether a visitor
+    // can read the site in their own language.
+    const JOKE_LOCALES = ["pirate"];
+
+    // Real spoken languages the site itself is translated into. Derived from the locales
+    // inlang knows about, so a language imported from Crowdin counts as supported without
+    // anyone having to remember this list.
+    const SUPPORTED_LOCALES = locales
+        .filter((locale) => !JOKE_LOCALES.includes(locale))
+        .map((locale) => locale.split("-")[0].toLowerCase());
     const GOOGLE_TRANSLATE_VALUE = "google-translate";
     const GOOGLE_TRANSLATE_COOKIE = "googtrans";
 
