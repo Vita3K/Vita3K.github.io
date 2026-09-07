@@ -41,3 +41,11 @@ npm run build
 # Preview the latest production build
 npm run preview
 ```
+
+---
+
+## Translations
+
+The site's strings live in `translations/<locale>/website.json` and are translated on
+[Crowdin](https://crowdin.com/project/vita3k). English is the source, so add and edit
+strings in `translations/en/website.json` and leave the other languages to Crowdin.
