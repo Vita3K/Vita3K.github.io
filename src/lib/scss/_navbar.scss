@@ -77,8 +77,13 @@
             padding: 5px 10px;
             border-radius: 5px;
             cursor: pointer;
+            color-scheme: dark;
 
             &:hover {
+                background-color: $gray-900;
+                color: $white;
+            }
+            option {
                 background-color: $gray-900;
                 color: $white;
             }
