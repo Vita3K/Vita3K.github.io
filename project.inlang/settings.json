@@ -9,8 +9,9 @@
 	},
 	"baseLocale": "en",
 	"locales": [
-        "en",
-        "es",
-        "pirate"
+		"en",
+		"es",
+		"ja",
+		"pirate"
 	]
 }
