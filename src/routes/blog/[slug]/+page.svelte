@@ -1,5 +1,6 @@
 <script lang="ts">
     import { m } from "$lib/paraglide/messages.js";
+    import { sanitize } from "$lib/sanitize";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
 
     let { data } = $props();
@@ -29,9 +30,9 @@
                     {/if}
                     <h1 class="blog-post-title section-heading">{post.meta.title}</h1>
                     <p class="blog-article-author">
-                        {@html m.blog_written_by({
+                        {@html sanitize(m.blog_written_by({
                             author: post.meta.author,
-                        })}
+                        }))}
                     </p>
                 </header>
                 <div class="stackedit__html blog-post-body">

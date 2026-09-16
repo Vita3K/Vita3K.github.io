@@ -1,5 +1,6 @@
 <script lang="ts">
     import { m } from "$lib/paraglide/messages.js";
+    import { sanitize } from "$lib/sanitize";
     import { asset, resolve } from "$app/paths";
     import ShowcaseImage from "$lib/components/ShowcaseImage.svelte";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
@@ -7,8 +8,8 @@
 
 <svelte:head>
     <title>{m.meta_title()}</title>
-    <CompositeMeta key="title" content="Vita3K - PlayStation Vita Emulator" />
-    <CompositeMeta key="description" content="Vita3K is an experimental open-source Sony PlayStation Vita emulator for Windows, macOS, Linux and Android written in C++." />
+    <CompositeMeta key="title" content={m.meta_title()} />
+    <CompositeMeta key="description" content={m.home_meta_description()} />
 </svelte:head>
 
 <header
@@ -77,14 +78,14 @@
                 </h2>
                 <hr class="my-4" />
                 <p class="mb-5">
-                    {@html m.home_the_emulator_can_run_some_commercial_games()}
+                    {@html sanitize(m.home_the_emulator_can_run_some_commercial_games())}
                     <br />
-                    {@html m.home_check_out_their_compatibility_list({
+                    {@html sanitize(m.home_check_out_their_compatibility_list({
                         link: resolve("/compatibility"),
-                    })}
+                    }))}
                     <br />
                     <br />
-                    <!-- {@html m.home_several_homebrew_games_are_also_supported()} -->
+                    <!-- {@html sanitize(m.home_several_homebrew_games_are_also_supported())} -->
                 </p>
             </div>
         </div>
@@ -118,9 +119,9 @@
                 <h2 class="section-heading">{m.home_show_us_your_love()}</h2>
                 <hr class="my-4" />
                 <p class="mb-5">
-                    {@html m.home_ko_fi_page({
+                    {@html sanitize(m.home_ko_fi_page({
                         link: "https://ko-fi.com/vita3k/",
-                    })}
+                    }))}
                 </p>
             </div>
         </div>

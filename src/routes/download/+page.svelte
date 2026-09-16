@@ -10,10 +10,7 @@
 <svelte:head>
     <title>Vita3K - {m.nav_download()}</title>
     <CompositeMeta key="title" content="Vita3K - {m.nav_download()}" />
-    <CompositeMeta
-        key="description"
-        content="Vita3K download page for the latest builds"
-    />
+    <CompositeMeta key="description" content={m.download_meta_description()} />
 </svelte:head>
 
 <section class="page-route bg-dark text-dark">
@@ -24,7 +21,7 @@
     <div class="container">
         <div class="row mb-5">
             <DownloadBox
-                name="Windows Nightlies"
+                name={m.download_nightlies({ platform: "Windows" })}
                 primaryText="x64"
                 link="windows-latest.zip"
                 secondaryText="arm"
@@ -32,7 +29,7 @@
                 icon="fa-windows"
             />
             <DownloadBox
-                name="macOS Nightlies"
+                name={m.download_nightlies({ platform: "macOS" })}
                 primaryText="x64"
                 link="macos-latest.dmg"
                 secondaryText="arm"
@@ -40,7 +37,7 @@
                 icon="fa-apple"
             />
             <DownloadBox
-                name="Linux AppImage Nightlies"
+                name={m.download_nightlies({ platform: "Linux AppImage" })}
                 primaryText="x64"
                 link="Vita3K-x86_64.AppImage"
                 secondaryText="arm"
@@ -49,7 +46,7 @@
             />
 
             <DownloadBox
-                name="Linux Nightlies"
+                name={m.download_nightlies({ platform: "Linux" })}
                 primaryText="x64"
                 link="ubuntu-latest.zip"
                 secondaryText="arm"
@@ -57,7 +54,7 @@
                 icon="fa-linux"
             />
             <DownloadBox
-                name="Android Nightlies"
+                name={m.download_nightlies({ platform: "Android" })}
                 link="android-latest.apk"
                 primaryText={m.download_download()}
                 icon="fa-android"

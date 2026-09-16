@@ -2,6 +2,7 @@
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
     import PageHeader from "$lib/components/PageHeader.svelte";
     import { m } from "$lib/paraglide/messages.js";
+    import { sanitize } from "$lib/sanitize";
 
     let { data } = $props();
 </script>
@@ -34,9 +35,9 @@
                                 <span class="blog-card-date">{post.publishedLabel}</span>
                             {/if}
                             <span class="blog-card-author">
-                                {@html m.blog_written_by({
+                                {@html sanitize(m.blog_written_by({
                                     author: post.meta.author,
-                                })}
+                                }))}
                             </span>
                         </div>
 

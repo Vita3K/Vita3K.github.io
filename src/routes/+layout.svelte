@@ -4,6 +4,7 @@
     import { asset, resolve } from "$app/paths";
     import { page } from "$app/state";
     import { locales, localizeHref } from "$lib/paraglide/runtime";
+    import { m } from "$lib/paraglide/messages.js";
     import favicon from "$lib/assets/favicon.ico";
 
     import Navbar from "$lib/components/navbar.svelte";
@@ -101,6 +102,6 @@
     class="nav-link js-scroll-trigger"
     href="#"
     id="page_top"
-    aria-label="Go to top"
+    aria-label={m.nav_back_to_top()}
 >
 </a>

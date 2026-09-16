@@ -5,6 +5,9 @@
 
     const currentYear = new Date().getFullYear();
 
+    /** A person's name, so it is credited the same way whatever language the page is in. */
+    const LOGO_AUTHOR = "Gordon Mackay";
+
     const pageLinks = [
         { href: resolve("/quickstart"), label: () => m.nav_quickstart() },
         { href: resolve("/blog"), label: () => m.nav_blog() },
@@ -54,14 +57,14 @@
     <div class="container">
         <div class="footer-shell">
             <div class="footer-brand">
-                <a class="footer-home" href={resolve("/")} aria-label="Vita3K home">
+                <a class="footer-home" href={resolve("/")} aria-label={m.nav_home()}>
                     <img
                         class="footer-logo"
                         src={logo}
                         width="52"
                         height="52"
-                        title="Logo by Gordon Mackay"
-                        alt="Vita3K logo"
+                        title={m.footer_logo_by({ name: LOGO_AUTHOR })}
+                        alt={m.footer_logo_alt()}
                     />
                     <div>
                         <h2>Vita3K</h2>
@@ -71,9 +74,9 @@
                     {m.footer_legal_notice()}
                 </p>
                 <p class="footer-meta">
-                    <span>&copy; 2018-{currentYear} Vita3K team</span>
+                    <span>&copy; 2018-{currentYear} {m.footer_team()}</span>
                     <span>
-                        Logo by Gordon Mackay
+                        {m.footer_logo_by({ name: LOGO_AUTHOR })}
                         <a href="https://gordonmackayillustration.blogspot.co.uk/">Blog</a>
                         /
                         <a href="https://www.etsy.com/uk/shop/GMackayIllustration">Etsy</a>

@@ -184,8 +184,8 @@
                 src={logo}
                 width="32"
                 height="32"
-                title="Logo by Gordon Mackay"
-                alt="Home"
+                title={m.footer_logo_by({ name: "Gordon Mackay" })}
+                alt={m.nav_home()}
             />
         </a>
         <button
@@ -193,7 +193,7 @@
             type="button"
             aria-controls="navbarResponsive"
             aria-expanded={!navCollapsed}
-            aria-label="Toggle navigation"
+            aria-label={m.nav_toggle_navigation()}
             on:click={toggleNavbar}
         >
             <span class="navbar-toggler-icon"></span>

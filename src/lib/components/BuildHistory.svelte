@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { m } from "$lib/paraglide/messages.js";
+    import { getLocale } from "$lib/paraglide/runtime";
     import { BUILD_RELEASES_URL, fetchBuilds, type Build, type PlatformId } from "$lib/builds";
 
     type PlatformOption = { platform: PlatformId; label: string };
@@ -72,7 +73,7 @@
     }
 
     function formatDate(date: Date) {
-        return date.toLocaleDateString(undefined, {
+        return date.toLocaleDateString(getLocale(), {
             year: "numeric",
             month: "short",
             day: "numeric",

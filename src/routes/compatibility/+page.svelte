@@ -2,6 +2,7 @@
     import { onMount } from "svelte";
     import { asset } from "$app/paths";
     import { m } from "$lib/paraglide/messages.js";
+    import { getLocale } from "$lib/paraglide/runtime";
     import { nativeTitles } from "$lib/native-titles";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
     import PageHeader from "$lib/components/PageHeader.svelte";
@@ -100,26 +101,32 @@
         };
     }
 
+    /** Largest unit first, so an age of two days reads as "2 days ago" and not "48 hours ago". */
+    const AGE_UNITS: [Intl.RelativeTimeFormatUnit, number][] = [
+        ["year", 31536000],
+        ["month", 2592000],
+        ["day", 86400],
+        ["hour", 3600],
+        ["minute", 60],
+    ];
+
+    /**
+     * Intl already knows how every language words an age and how it pluralises the number,
+     * so this asks it rather than sending one message per unit to be translated by hand.
+     */
     function timeAgo(date: Date) {
-        const now = new Date();
-        const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
+        const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
+        const relative = new Intl.RelativeTimeFormat(getLocale(), { numeric: "auto" });
 
-        let interval = Math.floor(seconds / 31536000);
-        if (interval >= 1) return `${interval} years ago`;
+        for (const [unit, size] of AGE_UNITS) {
+            const amount = Math.floor(seconds / size);
 
-        interval = Math.floor(seconds / 2592000);
-        if (interval >= 1) return `${interval} months ago`;
+            if (amount >= 1) {
+                return relative.format(-amount, unit);
+            }
+        }
 
-        interval = Math.floor(seconds / 86400);
-        if (interval >= 1) return `${interval} days ago`;
-
-        interval = Math.floor(seconds / 3600);
-        if (interval >= 1) return `${interval} hours ago`;
-
-        interval = Math.floor(seconds / 60);
-        if (interval >= 1) return `${interval} minutes ago`;
-
-        return "just now";
+        return m.compatibility_just_now();
     }
 
     function getTranslatedStatus(status: FIELDS) {
@@ -455,7 +462,7 @@
             });
 
             views = buildViews(groupEntries(enrichedEntries));
-            lastUpdatedAt = updatedAt.toLocaleString();
+            lastUpdatedAt = updatedAt.toLocaleString(getLocale());
             lastUpdatedAgo = timeAgo(updatedAt);
             activeView = "Unknown";
         } catch (error) {
@@ -473,7 +480,7 @@
 <svelte:head>
     <title>Vita3K - {m.nav_compatibility()}</title>
     <CompositeMeta key="title" content={`Vita3K - ${m.nav_compatibility()}`} />
-    <CompositeMeta key="description" content="Vita3K compatibility list for +3000 Games" />
+    <CompositeMeta key="description" content={m.compatibility_meta_description()} />
 </svelte:head>
 
 <svelte:window onkeydown={handleWindowKeydown} />

@@ -4,7 +4,19 @@
     import { onMount } from "svelte";
     import { asset } from "$app/paths";
     import { m } from "$lib/paraglide/messages.js";
+    import { sanitize } from "$lib/sanitize";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+
+    // The tools the dumping guide links to. They are passed into the messages rather than
+    // written inside them so that a translator can move the link through the sentence
+    // without being able to change where it points.
+    const GC_TOOL_KIT = "https://github.com/oestriot/GcToolKit";
+    const VITASHELL = "https://github.com/TheOfficialFloW/VitaShell/releases";
+    const FAGDEC =
+        "https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build";
+    const VITA_ORGANIZER =
+        "https://github.com/vitaorganizer/vitaorganizer/releases";
+    const NONPDRM = "https://github.com/TheOfficialFloW/NoNpDrm/releases";
 
     // Initial value is just a placeholder just in case the request fails, it will be updated on the onMount function
     let urlObtained = $state(false);
@@ -38,7 +50,7 @@
 <svelte:head>
     <title>Vita3K - {m.nav_quickstart()}</title>
     <CompositeMeta key="title" content="Vita3K - {m.nav_quickstart()}" />
-    <CompositeMeta key="description" content="Vita3K quickstart guide" />
+    <CompositeMeta key="description" content={m.quickstart_meta_description()} />
 </svelte:head>
 
 <section class="page-route page-route--intro-only text-center text-white">
@@ -170,9 +182,9 @@
                 <div class="mt-5">
                     <h4><b>{m.quickstart_microsoft_redistributable()}</b></h4>
                     <p>
-                        {@html m.quickstart_microsoft_redistributable_desc({
+                        {@html sanitize(m.quickstart_microsoft_redistributable_desc({
                             link: "https://aka.ms/vs/17/release/vc_redist.x64.exe",
-                        })}
+                        }))}
                     </p>
                     <h4><b>{m.quickstart_operating_system()}</b></h4>
                     <p>
@@ -194,112 +206,79 @@
             </p>
             <p>
                 <b>
-                    {@html m.quickstart_firmware_download({
+                    {@html sanitize(m.quickstart_firmware_download({
                         link: "https://www.playstation.com/en-us/support/hardware/psvita/system-software/",
-                    })}
+                    }))}
                 </b>
             </p>
             <p>
                 {m.quickstart_font_firmware_desc()}
                 {#if urlObtained}
-                    {@html m.quickstart_you_can_download_it_here({
+                    {@html sanitize(m.quickstart_you_can_download_it_here({
                         link: sysdataURL,
-                    })}
+                    }))}
                 {:else}
-                    {@html m.quickstart_could_not_get_url()}
+                    {@html sanitize(m.quickstart_could_not_get_url())}
                 {/if}
             </p>
             <p>
-                {@html m.quickstart_install_both_firmware_packages()}
+                {@html sanitize(m.quickstart_install_both_firmware_packages())}
             </p>
         </div>
         <div class="mt-5">
             <h4><b>{m.quickstart_managing_modules()}</b></h4>
             <p>
-                {@html m.quickstart_managing_modules_desc()}
+                {@html sanitize(m.quickstart_managing_modules_desc())}
             </p>
         </div>
     </div>
 </section>
 <section class="bg-dark text-white pt-5">
     <div class="container">
-        <h1 class="text-center mb-5">Dumping Games</h1>
+        <h1 class="text-center mb-5">{m.quickstart_dumping_games()}</h1>
         <p>
-            Vita3K does <b class="text-danger">not</b> condone piracy,
-            therefore, you are required to dump your own games. Currently, it is
-            preferred to dump your games on a Vita or Vita TV (PS TV) using
-            HENkaku <b class="text-danger">3.60 - 3.65</b>.
+            {@html sanitize(m.quickstart_dumping_no_piracy())}
         </p>
         <p>
-            Currently, Vita3K supports .pkg, VCI, NoNpDrm, FAGDec, or manually
-            decrypted games (Vitamin dumps are not supported and Maidump is
-            unstable). The games should be in a .zip, .vpk, or .vci format if
-            you want to install them from the emulator, or if you prefer to
-            copy them yourself, you can drag and drop the game folder in your <code
-                >vita_fs/ux0/app</code
-            > folder (not applicable for NoNpDrm dumps/.pkg/.vci files).
+            {@html sanitize(m.quickstart_dumping_supported_formats())}
         </p>
         <p>
-            <code>vita_fs</code> defaults to:
-            <br /><code>%Appdata%/Roaming/Vita3K/Vita3K</code> on windows
-            <br /><code>~/.local/share/Vita3K/Vita3K</code> on linux
-            <br /><code>~/Library/Application Support/Vita3K</code> on macOS
+            {@html sanitize(m.quickstart_dumping_vita_fs_defaults())}
+            <br />{@html sanitize(m.quickstart_dumping_vita_fs_windows())}
+            <br />{@html sanitize(m.quickstart_dumping_vita_fs_linux())}
+            <br />{@html sanitize(m.quickstart_dumping_vita_fs_macos())}
         </p>
         <div class="my-5">
-            <h3>How to dump your games</h3>
+            <h3>{m.quickstart_dumping_how_to()}</h3>
             <p class="my-3">
-                These are the several ways to dump and get decrypted games in
-                order of their accuracy.
+                {m.quickstart_dumping_how_to_desc()}
             </p>
 
-            <AccordionItem id="vci" title="VCI (cartridge games only)" initiallyOpen={false}>
+            <AccordionItem
+                id="vci"
+                title={m.quickstart_vci_title()}
+                initiallyOpen={false}
+            >
                 <div class="answer">
                     <div class="padding-wrapper">
                         <p class="my-3"></p>
                         <h5>
-                            Using <a
-                                href="https://github.com/oestriot/GcToolKit"
-                                >GcToolKit</a
-                            >
+                            {@html sanitize(m.quickstart_vci_using({ link: GC_TOOL_KIT }))}
                         </h5>
                         <p class="my-3">
-                            VCI (Vita Cartridge Image) is a true 1:1 backup of
-                            a physical PS Vita game cartridge, including its
-                            authentication data. Because of this, it only
-                            works for <b>cartridge</b> games, not digital
-                            (PSN) games. It is the most accurate dumping
-                            method.
+                            {@html sanitize(m.quickstart_vci_desc())}
                         </p>
                         <ol>
                             <li>
-                                Install <a
-                                    href="https://github.com/oestriot/GcToolKit"
-                                    >GcToolKit</a
-                                > on your jailbroken PS Vita (or use its network
-                                backup companion app from your PC).
+                                {@html sanitize(m.quickstart_vci_step_install({
+                                    link: GC_TOOL_KIT,
+                                }))}
                             </li>
-                            <li>
-                                Insert the game cartridge you want to dump
-                                into your Vita.
-                            </li>
-                            <li>
-                                Launch GcToolKit, choose to back up the
-                                entire game cart, and select
-                                <code>VCI</code> as the output format.
-                            </li>
-                            <li>
-                                Wait for the dump to finish. The resulting
-                                <code>.vci</code> file will be saved to your
-                                chosen storage device.
-                            </li>
-                            <li>
-                                Transfer the <code>.vci</code> file to your PC.
-                            </li>
-                            <li>
-                                Use <code>File</code> ->
-                                <code>Install Archive (.zip / .vpk / .vci)</code>
-                                and select it. The game will begin installing.
-                            </li>
+                            <li>{m.quickstart_vci_step_insert()}</li>
+                            <li>{@html sanitize(m.quickstart_vci_step_backup())}</li>
+                            <li>{@html sanitize(m.quickstart_vci_step_wait())}</li>
+                            <li>{@html sanitize(m.quickstart_vci_step_transfer())}</li>
+                            <li>{@html sanitize(m.quickstart_vci_step_archive())}</li>
                         </ol>
                     </div>
                 </div>
@@ -307,111 +286,62 @@
 
             <AccordionItem
                 id="fagdec"
-                title="FAGDec + Vitashell"
+                title={m.quickstart_fagdec_title()}
                 initiallyOpen={false}
             >
                 <div class="answer">
                     <div class="padding-wrapper">
                         <p class="my-3"></p>
                         <h5>
-                            Using <a
-                                href="https://github.com/TheOfficialFloW/VitaShell/releases"
-                                >Vitashell</a
-                            >
-                            and
-                            <a
-                                href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build"
-                                >FAGDec</a
-                            >
+                            {@html sanitize(m.quickstart_fagdec_using({
+                                vitashell: VITASHELL,
+                                fagdec: FAGDEC,
+                            }))}
                         </h5>
 
                         <ol>
                             <li>
-                                Download <a
-                                    href="https://github.com/TheOfficialFloW/VitaShell/releases"
-                                    >Vitashell</a
-                                >
-                                and
-                                <a
-                                    href="https://github.com/CelesteBlue-dev/PSVita-RE-tools/tree/master/FAGDec/build"
-                                    >FAGDec</a
-                                > and install them to your PS Vita
+                                {@html sanitize(m.quickstart_fagdec_step_download({
+                                    vitashell: VITASHELL,
+                                    fagdec: FAGDEC,
+                                }))}
                             </li>
                             <li>
                                 <ol type="A">
-                                    <li>If you're dumping from a cartridge:</li>
+                                    <li>
+                                        {m.quickstart_fagdec_step_cartridge()}
+                                    </li>
                                     <p>
-                                        Launch Vitashell and navigate to <code
-                                            >gro0:app</code
-                                        >
+                                        {@html sanitize(m.quickstart_fagdec_step_cartridge_desc())}
                                     </p>
-                                    <li>If you're dumping a digital game:</li>
+                                    <li>{m.quickstart_fagdec_step_digital()}</li>
                                     <p>
-                                        Launch Vitashell and navigate to <code
-                                            >ux0:app</code
-                                        > (or wherever your games are) and choose
-                                        a game you want to dump
+                                        {@html sanitize(m.quickstart_fagdec_step_digital_desc())}
                                     </p>
                                 </ol>
                             </li>
                             <li>
-                                Hover over your game's folder and press <code
-                                    >△</code
-                                >
-                                then choose <code>Open decrypted</code>
+                                {@html sanitize(m.quickstart_fagdec_step_open_decrypted())}
                             </li>
-                            <li>
-                                Now copy everything inside the game's folder and
-                                paste it in a folder of your choosing
-                            </li>
+                            <li>{m.quickstart_fagdec_step_copy()}</li>
                             <p class="my-2">
-                                That's the game files done, now we need to use
-                                FAGDec to decrypt the selfs.
+                                {m.quickstart_fagdec_note_selfs()}
                             </p>
+                            <li>{m.quickstart_fagdec_step_launch()}</li>
                             <li>
-                                Launch FAGDec and scroll down until you find the
-                                game you want to dump
+                                {@html sanitize(m.quickstart_fagdec_step_decrypt_all())}
                             </li>
+                            <li>{@html sanitize(m.quickstart_fagdec_step_start())}</li>
                             <li>
-                                Hover on the game and press the <code>✖</code>
-                                button, wait for FAGDec to find all the modules and
-                                then select
-                                <code>DECRYPT ALL</code>
+                                {@html sanitize(m.quickstart_fagdec_step_start_decrypt())}
                             </li>
-                            <li>
-                                You will see that the modules have been listed
-                                on the right side of the screen. Now go back to
-                                the main menu and press <code>Start</code>
-                            </li>
-                            <li>
-                                You will see two options here, select the one
-                                that says <code
-                                    >[START] START DECRYPT(SELF)</code
-                                >
-                            </li>
-                            <li>
-                                Now just wait until it finishes decrypting the
-                                game modules
-                            </li>
-                            <li>
-                                You can find the output files in <code
-                                    >ux0:FAGDec/app/'title_id'</code
-                                >
-                            </li>
+                            <li>{m.quickstart_fagdec_step_wait()}</li>
+                            <li>{@html sanitize(m.quickstart_fagdec_step_output())}</li>
                             <p class="my-3">
-                                Now all you gotta do is take the files that
-                                FAGDec outputted and put them in the previously
-                                copied folder from VitaShell, if asked to
-                                replace some files, confirm the replacement.
+                                {m.quickstart_fagdec_note_merge()}
                             </p>
                             <p>
-                                <b
-                                    >It's very <u class="text-danger"
-                                        >important</u
-                                    > that the folder containing the game files be
-                                    named as the game's Title ID. Otherwise your
-                                    game won't boot.</b
-                                >
+                                {@html sanitize(m.quickstart_fagdec_note_title_id())}
                             </p>
                         </ol>
                     </div>
@@ -419,162 +349,68 @@
 
                 <div class="answer">
                     <div class="padding-wrapper">
-                        <h5 class="my-3">Building a .vpk file</h5>
+                        <h5 class="my-3">{m.quickstart_vpk_title()}</h5>
                         <p class="my-3">
-                            After dumping your game, you can optionally package
-                            it into a .vpk file for Vita3K to install. By
-                            packaging your dump into a .vpk, you can drag and
-                            drop it directly into the Vita3K window to install
-                            it.
+                            {m.quickstart_vpk_desc()}
                         </p>
                         <ol>
                             <li>
-                                Download <a
-                                    href="https://github.com/vitaorganizer/vitaorganizer/releases"
-                                    >VitaOrganizer</a
-                                > and run the application on your PC.
+                                {@html sanitize(m.quickstart_vpk_step_download({
+                                    link: VITA_ORGANIZER,
+                                }))}
                             </li>
-                            <li>
-                                Click <code>File</code> ->
-                                <code>Create vpk from maidump folder...</code>
-                            </li>
-                            <li>
-                                Select the <code>EBOOT.BIN</code> file inside of
-                                your dump folder.
-                            </li>
+                            <li>{@html sanitize(m.quickstart_vpk_step_create())}</li>
+                            <li>{@html sanitize(m.quickstart_vpk_step_select())}</li>
                             <p>
-                                The progress of the vpk creation will be shown
-                                at the bottom of the VitaOrganizer window. Once
-                                it's completed, open Vita3K and drag the vpk
-                                onto the Vita3K window.
+                                {m.quickstart_vpk_note_progress()}
                             </p>
                         </ol>
                     </div>
                 </div>
             </AccordionItem>
 
-            <AccordionItem id="nonprdm" title="NoNpDrm" initiallyOpen={false}>
+            <AccordionItem
+                id="nonprdm"
+                title={m.quickstart_nonpdrm_title()}
+                initiallyOpen={false}
+            >
                 <div class="answer">
                     <div class="padding-wrapper">
                         <p class="my-3"></p>
                         <h5>
-                            Using <a
-                                href="https://github.com/TheOfficialFloW/VitaShell/releases"
-                                >Vitashell</a
-                            >
-                            with
-                            <a
-                                href="https://github.com/TheOfficialFloW/NoNpDrm/releases"
-                                >NoNpDrm</a
-                            >
+                            {@html sanitize(m.quickstart_nonpdrm_using({
+                                vitashell: VITASHELL,
+                                nonpdrm: NONPDRM,
+                            }))}
                         </h5>
                         <ol>
                             <li>
-                                Download <a
-                                    href="https://github.com/TheOfficialFloW/VitaShell/releases"
-                                    >Vitashell</a
-                                > and install it to your PS Vita
+                                {@html sanitize(m.quickstart_nonpdrm_step_download({
+                                    link: VITASHELL,
+                                }))}
                             </li>
                             <li>
                                 <p>
-                                    Download the latest <a
-                                        href="https://github.com/TheOfficialFloW/NoNpDrm/releases"
-                                        >nonpdrm.quickstart_skprx</a
-                                    >, copy it to <code>ux0:tai</code>
-                                    and modify the
-                                    <code>ux0:tai/config.txt</code>
-                                    file to add the path to the module under
-                                    <code>*KERNEL</code>
-                                    as follows
-                                    <br />
-                                    <code
-                                        >*KERNEL<br />
-                                        ux0:tai/nonpdrm.quickstart_skprx</code
-                                    ><br />
-                                    Don't forget to reboot your device, otherwise
-                                    the plugin will have no effect yet. If you know
-                                    what you are doing, you may change this path
-                                    to an arbitrary location as long as it matches
-                                    the exact location of the module. You may also
-                                    edit the
-                                    <code>ur0:tai/config.txt</code>
-                                    instead assuming you do not have a config.txt
-                                    file inside the
-                                    <code>ux0:tai/</code> folder
+                                    {@html sanitize(m.quickstart_nonpdrm_step_plugin({
+                                        link: NONPDRM,
+                                    }))}
                                 </p>
                             </li>
                             <li>
-                                Now you have to generate a license key. In order
-                                to generate a fake license file containing the
-                                application's rif key, you must first launch the
-                                application with the NoNpDrm plugin enabled. The
-                                fake licenses for the applications will then be
-                                stored at <br />
-
-                                <code
-                                    >ux0:nonpdrm/license/app/TITLE_ID/6488b73b912a753a492e2714e9b38bc7.rif
-                                    <br />
-                                    ux0:nonpdrm/license/addcont/TITLE_ID/DLC_FOLDER/6488b73b912a753a492e2714e9b38bc7.rif
-                                    (for additional content)</code
-                                >
+                                {@html sanitize(m.quickstart_nonpdrm_step_license())}
                             </li>
                             <li>
-                                Transfer the content of <code
-                                    >gro0:app/TITLE_ID</code
-                                >
-                                or <code>ux0:app/TITLE_ID</code> to your PC and
-                                copy the fake license
-                                <code
-                                    >ux0:nonpdrm/license/app/TITLE_ID/6488b73b912a753a492e2714e9b38bc7.rif</code
-                                >
-                                file as
-                                <code>TITLE_ID/sce_sys/package/work.bin</code
-                                ><br /><b
-                                    >You need to overwrite the original work.bin</b
-                                >
+                                {@html sanitize(m.quickstart_nonpdrm_step_transfer())}
                             </li>
+                            <li>{@html sanitize(m.quickstart_nonpdrm_step_zip())}</li>
+                            <li>{@html sanitize(m.quickstart_nonpdrm_step_install())}</li>
+                            <div class="my-2">{m.quickstart_nonpdrm_dlc()}</div>
                             <li>
-                                Go inside of the <code>TITLE_ID</code>, select
-                                all the contents and compress them into a .zip
-                                format.
+                                {@html sanitize(m.quickstart_nonpdrm_dlc_step_copy())}
                             </li>
+                            <li>{@html sanitize(m.quickstart_nonpdrm_dlc_step_zip())}</li>
                             <li>
-                                Open Vita3k, click on the File entry in the
-                                menubar and click Install .vpk/.zip. Select your <code
-                                    >TITLE_ID.zip</code
-                                > file and confirm.quickstart_ The game will begin
-                                installing (This might take a long time for large
-                                games).
-                            </li>
-                            <div class="my-2">For DLC</div>
-                            <li>
-                                You can also install DLC from <code
-                                    >ux0:addcont/TITLE_ID/DLC_FOLDER</code
-                                >
-                                or, on selected card games, from
-                                <code>grw0:addcont/TITLE_ID/DLC_FOLDER</code>
-                                (ONE AT A TIME)
-                                <br />To do so, copy the fake license
-                                <code
-                                    >ux0:nonpdrm/license/addcont/TITLE_ID/DLC_FOLDER/6488b73b912a753a492e2714e9b38bc7.rif</code
-                                >
-                                to
-                                <code>DLC_FOLDER/sce_sys/package/work.bin</code>
-                                and transfer it to your pc. <br /><b
-                                    >You need to overwrite the original work.bin</b
-                                >.
-                            </li>
-                            <li>
-                                Go inside of the <code>DLC_FOLDER</code>
-                                , select all the contents and compress them into
-                                a .zip format.
-                            </li>
-                            <li>
-                                Open Vita3k, click on the File entry in the
-                                menubar and click Install .vpk/.zip. Select your <code
-                                    >DLC_FOLDER.zip</code
-                                > file and confirm.quickstart_ The DLC will begin
-                                installing.
+                                {@html sanitize(m.quickstart_nonpdrm_dlc_step_install())}
                             </li>
                         </ol>
                     </div>
