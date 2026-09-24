@@ -11,7 +11,9 @@
 	"locales": [
 		"en",
 		"es",
+		"fr",
 		"ja",
-		"pirate"
+		"pirate",
+		"zh-Hant"
 	]
 }
