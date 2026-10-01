@@ -51,6 +51,7 @@
         status: FIELDS;
         regionFlag: string;
         reportUrl: string;
+        isOnlineOnly: boolean;
     };
 
     type CompatibilityGame = {
@@ -63,6 +64,7 @@
         colorClass: string;
         regions: CompatibilityEntry[];
         hasMixedStatus: boolean;
+        isOnlineOnly: boolean;
     };
 
     type CompatibilityViews = Record<FIELDS, CompatibilityGame[]>;
@@ -300,6 +302,9 @@
             colorClass: representative.colorClass,
             regions: sortedRegions,
             hasMixedStatus: uniqueStatuses.size > 1,
+            isOnlineOnly: sortedRegions.some(
+                ({ isOnlineOnly }) => isOnlineOnly,
+            ),
         } satisfies CompatibilityGame;
     }
 
@@ -414,14 +419,24 @@
         return matchesSearch(entry) && matchesRegions(entry);
     }
 
+    /**
+     * Online-only games cannot be played offline whatever the emulator does, so they
+     * are left out of the percentages rather than dragging every status down.
+     */
     function getCompletion(field: FIELDS) {
-        const total = views.Unknown.length;
+        const total = views.Unknown.filter(
+            ({ isOnlineOnly }) => !isOnlineOnly,
+        ).length;
 
         if (total === 0) {
             return 0;
         }
 
-        return (views[field].length / total) * 100;
+        const count = views[field].filter(
+            ({ isOnlineOnly }) => !isOnlineOnly,
+        ).length;
+
+        return (count / total) * 100;
     }
 
     function getSortIndicator(field: ORDER_FIELDS) {
@@ -538,6 +553,7 @@
                     translatedStatus: getTranslatedStatus(status),
                     nativeName: getNativeName(entry.titleId),
                     reportUrl: `https://github.com/Vita3K/compatibility/issues/${entry.issueId}`,
+                    isOnlineOnly: labels.some((l) => l.name == "online-only"),
                 } satisfies CompatibilityEntry;
             });
 
@@ -798,7 +814,39 @@
                                 <article class="compatibility-game-card">
                                     <div class="compatibility-game-main">
                                         <div class="compatibility-game-copy">
-                                            <h3>{game.name}</h3>
+                                            <h3>
+                                                {game.name}
+                                                {#if game.isOnlineOnly}
+                                                    <span
+                                                        class="online-only-icon"
+                                                        title={m.compatibility_online_only()}
+                                                        aria-label={m.compatibility_online_only()}
+                                                        role="img"
+                                                    >
+                                                        <svg
+                                                            viewBox="0 0 24 24"
+                                                            fill="none"
+                                                            stroke="currentColor"
+                                                            stroke-width="2"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                            aria-hidden="true"
+                                                        >
+                                                            <circle
+                                                                cx="12"
+                                                                cy="12"
+                                                                r="10"
+                                                            />
+                                                            <path
+                                                                d="M2 12h20"
+                                                            />
+                                                            <path
+                                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                                                            />
+                                                        </svg>
+                                                    </span>
+                                                {/if}
+                                            </h3>
                                             {#each game.nativeNames as nativeName (nativeName)}
                                                 <p
                                                     class="compatibility-game-native-name"

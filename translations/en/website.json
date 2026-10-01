@@ -179,6 +179,7 @@
     "compatibility_choose_region_help": "Select the regional compatibility report you want to open.",
     "compatibility_regions": "Regions",
     "compatibility_region_variation": "Varies by region",
+    "compatibility_online_only": "Online-only",
     "compatibility_close": "Close",
     "compatibility_filter_by_region": "Filter by region",
     "compatibility_all_regions": "All regions",
