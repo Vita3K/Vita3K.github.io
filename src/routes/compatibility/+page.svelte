@@ -1,5 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { Tween, prefersReducedMotion } from "svelte/motion";
+    import { cubicOut } from "svelte/easing";
     import { asset } from "$app/paths";
     import { m } from "$lib/paraglide/messages.js";
     import { getLocale } from "$lib/paraglide/runtime";
@@ -43,6 +45,11 @@
         issueId: number;
     };
 
+    type CompatibilityPayload = {
+        date: number;
+        list: ApiCompatibilityEntry[];
+    };
+
     type CompatibilityEntry = ApiCompatibilityEntry & {
         colorClass: string;
         translatedStatus: string;
@@ -80,6 +87,31 @@
     let loadError = $state("");
     let selectedGame: CompatibilityGame | null = $state(null);
     let selectedRegions: REGION[] = $state([]);
+
+    /**
+     * What the legend shows. It chases the real numbers rather than jumping to them,
+     * so the bars and counts climb while the list is still streaming in.
+     */
+    const shownLegend = new Tween(
+        {
+            counts: STATUS_FIELDS.map(() => 0),
+            shares: STATUS_FIELDS.map(() => 0),
+        },
+        { duration: 700, easing: cubicOut },
+    );
+
+    $effect(() => {
+        shownLegend.set(
+            {
+                counts: STATUS_FIELDS.map((field) => countGames(views[field])),
+                shares: STATUS_FIELDS.map(getCompletion),
+            },
+            { duration: prefersReducedMotion.current ? 0 : 700 },
+        );
+    });
+
+    /** Nothing has arrived yet, so the legend can only show that it is waiting. */
+    const isWaiting = $derived(isLoading && views.Unknown.length === 0);
 
     const normalizedQuery = $derived(normalizeForSearch(searchQuery.trim()));
 
@@ -347,10 +379,20 @@
         selectedRegions = [];
     }
 
+    /**
+     * Online-only games cannot be played offline whatever the emulator does, so they
+     * stay in the list but are left out of every count and percentage on the page.
+     */
+    function countGames(games: CompatibilityGame[]) {
+        return games.filter(({ isOnlineOnly }) => !isOnlineOnly).length;
+    }
+
     function getRegionCount(region: REGION) {
-        return views[activeView].filter((game) =>
-            game.regions.some((entry) => entry.region === region),
-        ).length;
+        return countGames(
+            views[activeView].filter((game) =>
+                game.regions.some((entry) => entry.region === region),
+            ),
+        );
     }
 
     /** Names the result set: the status view, narrowed by whichever regions are on. */
@@ -419,24 +461,14 @@
         return matchesSearch(entry) && matchesRegions(entry);
     }
 
-    /**
-     * Online-only games cannot be played offline whatever the emulator does, so they
-     * are left out of the percentages rather than dragging every status down.
-     */
     function getCompletion(field: FIELDS) {
-        const total = views.Unknown.filter(
-            ({ isOnlineOnly }) => !isOnlineOnly,
-        ).length;
+        const total = countGames(views.Unknown);
 
         if (total === 0) {
             return 0;
         }
 
-        const count = views[field].filter(
-            ({ isOnlineOnly }) => !isOnlineOnly,
-        ).length;
-
-        return (count / total) * 100;
+        return (countGames(views[field]) / total) * 100;
     }
 
     function getSortIndicator(field: ORDER_FIELDS) {
@@ -449,6 +481,45 @@
 
     function getRegionSummary(game: CompatibilityGame) {
         return game.regions.map(({ titleId }) => titleId).join(" · ");
+    }
+
+    /**
+     * Rows drawn so far. Drawing all two thousand games at once held the page for about
+     * a second, so the list starts with a screenful and grows as the reader scrolls.
+     */
+    const LIST_PAGE_SIZE = 60;
+    let renderLimit = $state(LIST_PAGE_SIZE);
+
+    const renderedGames = $derived(filteredGames.slice(0, renderLimit));
+
+    // A new filter, search or sort starts again from the top of the list.
+    $effect(() => {
+        void activeView;
+        void normalizedQuery;
+        void selectedRegions;
+        void currentField;
+        void currentOrder;
+        renderLimit = LIST_PAGE_SIZE;
+    });
+
+    /** Draws the next page of rows shortly before the reader reaches the end. */
+    function loadMoreWhenNear(node: HTMLElement) {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                if (entries.some(({ isIntersecting }) => isIntersecting)) {
+                    renderLimit += LIST_PAGE_SIZE * 2;
+                }
+            },
+            { rootMargin: "1200px 0px" },
+        );
+
+        observer.observe(node);
+
+        return {
+            destroy() {
+                observer.disconnect();
+            },
+        };
     }
 
     function getFilteredData() {
@@ -503,6 +574,88 @@
         return nextViews;
     }
 
+    function enrichEntry(entry: ApiCompatibilityEntry) {
+        const regionMeta = getRegionMeta(entry.titleId);
+
+        const labels: { name: string; color: string }[] = JSON.parse(
+            entry.labels,
+        );
+
+        let status: FIELDS = "Unknown";
+
+        if (labels.find((l) => l.name == "Playable")) status = "Playable";
+        if (labels.find((l) => l.name == "Ingame +")) status = "Ingame +";
+        if (labels.find((l) => l.name == "Ingame -")) status = "Ingame -";
+        if (labels.find((l) => l.name == "Menu")) status = "Menu";
+        if (labels.find((l) => l.name == "Intro")) status = "Intro";
+        if (labels.find((l) => l.name == "Bootable")) status = "Bootable";
+        if (labels.find((l) => l.name == "Nothing")) status = "Nothing";
+
+        return {
+            ...entry,
+            ...regionMeta,
+            status,
+            colorClass: FIELDS[status],
+            translatedStatus: getTranslatedStatus(status),
+            nativeName: getNativeName(entry.titleId),
+            reportUrl: `https://github.com/Vita3K/compatibility/issues/${entry.issueId}`,
+            isOnlineOnly: labels.some((l) => l.name == "online-only"),
+        } satisfies CompatibilityEntry;
+    }
+
+    // One complete game object of the minified feed. Labels are an escaped string,
+    // so their own `{"name"` never matches, and `issueId` always closes an entry.
+    const STREAMED_ENTRY = /\{"name":.*?"issueId":\d+\}/g;
+    const STREAM_UPDATE_INTERVAL = 120;
+
+    /**
+     * Reads the feed as it downloads and hands over every game seen so far, so the
+     * legend can fill up during the download. The finished body is still parsed as a
+     * whole at the end, which stays correct even if the entry pattern ever stops matching.
+     */
+    async function readCompatibility(
+        response: Response,
+        onEntries: (entries: ApiCompatibilityEntry[]) => void,
+    ) {
+        if (!response.body) {
+            return (await response.json()) as CompatibilityPayload;
+        }
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        const entries: ApiCompatibilityEntry[] = [];
+        let text = "";
+        let scannedUpTo = 0;
+        let lastUpdate = 0;
+
+        for (;;) {
+            const { done, value } = await reader.read();
+
+            if (done) {
+                break;
+            }
+
+            text += decoder.decode(value, { stream: true });
+            STREAMED_ENTRY.lastIndex = scannedUpTo;
+
+            let match: RegExpExecArray | null;
+
+            while ((match = STREAMED_ENTRY.exec(text))) {
+                entries.push(JSON.parse(match[0]));
+                scannedUpTo = STREAMED_ENTRY.lastIndex;
+            }
+
+            if (performance.now() - lastUpdate > STREAM_UPDATE_INTERVAL) {
+                lastUpdate = performance.now();
+                onEntries(entries);
+            }
+        }
+
+        text += decoder.decode();
+
+        return JSON.parse(text) as CompatibilityPayload;
+    }
+
     async function loadCompatibility() {
         isLoading = true;
         loadError = "";
@@ -518,46 +671,20 @@
                 );
             }
 
-            const payload = (await response.json()) as {
-                date: number;
-                list: ApiCompatibilityEntry[];
-            };
+            // Only entries that arrived since the last update are enriched again.
+            const streamed: CompatibilityEntry[] = [];
 
-            const updatedAt = new Date(payload.date * 1000);
-            const enrichedEntries = payload.list.map((entry) => {
-                const regionMeta = getRegionMeta(entry.titleId);
+            const payload = await readCompatibility(response, (entries) => {
+                for (let i = streamed.length; i < entries.length; i++) {
+                    streamed.push(enrichEntry(entries[i]));
+                }
 
-                const labels: { name: string; color: string }[] = JSON.parse(
-                    entry.labels,
-                );
-
-                let status: FIELDS = "Unknown";
-
-                if (labels.find((l) => l.name == "Playable"))
-                    status = "Playable";
-                if (labels.find((l) => l.name == "Ingame +"))
-                    status = "Ingame +";
-                if (labels.find((l) => l.name == "Ingame -"))
-                    status = "Ingame -";
-                if (labels.find((l) => l.name == "Menu")) status = "Menu";
-                if (labels.find((l) => l.name == "Intro")) status = "Intro";
-                if (labels.find((l) => l.name == "Bootable"))
-                    status = "Bootable";
-                if (labels.find((l) => l.name == "Nothing")) status = "Nothing";
-
-                return {
-                    ...entry,
-                    ...regionMeta,
-                    status,
-                    colorClass: FIELDS[status],
-                    translatedStatus: getTranslatedStatus(status),
-                    nativeName: getNativeName(entry.titleId),
-                    reportUrl: `https://github.com/Vita3K/compatibility/issues/${entry.issueId}`,
-                    isOnlineOnly: labels.some((l) => l.name == "online-only"),
-                } satisfies CompatibilityEntry;
+                views = buildViews(groupEntries(streamed));
             });
 
-            views = buildViews(groupEntries(enrichedEntries));
+            const updatedAt = new Date(payload.date * 1000);
+
+            views = buildViews(groupEntries(payload.list.map(enrichEntry)));
             lastUpdatedAt = updatedAt.toLocaleString(getLocale());
             lastUpdatedAgo = timeAgo(updatedAt);
             activeView = "Unknown";
@@ -575,6 +702,7 @@
 
 <svelte:head>
     <title>Vita3K - {m.nav_compatibility()}</title>
+    <link rel="preconnect" href="https://api.vita3k.org" crossorigin="anonymous" />
     <CompositeMeta key="title" content={`Vita3K - ${m.nav_compatibility()}`} />
     <CompositeMeta
         key="description"
@@ -583,6 +711,24 @@
 </svelte:head>
 
 <svelte:window onkeydown={handleWindowKeydown} />
+
+{#snippet globeIcon()}
+    <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+    >
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20" />
+        <path
+            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+        />
+    </svg>
+{/snippet}
 
 <section class="page-route text-white compatibility-page" id="compatibility">
     <div class="container">
@@ -602,21 +748,24 @@
                 {/if}
             </PageHeader>
 
-            {#if isLoading}
-                <div class="compatibility-feedback">
-                    {m.compatibility_loading()}
-                </div>
-            {:else if loadError}
+            {#if loadError}
                 <div
                     class="compatibility-feedback compatibility-feedback--error"
                 >
                     {loadError}
                 </div>
             {:else}
-                <div class="compatibility-status-legend" role="list">
-                    {#each STATUS_FIELDS as field (field)}
+                <div
+                    class="compatibility-status-legend"
+                    class:is-waiting={isWaiting}
+                    class:has-active={activeView !== "Unknown"}
+                    aria-busy={isLoading}
+                    role="list"
+                >
+                    {#each STATUS_FIELDS as field, index (field)}
                         <button
                             type="button"
+                            style={`--row-index: ${index}`}
                             class="status-row"
                             class:active={activeView === field}
                             onclick={() => changeView(field)}
@@ -627,9 +776,9 @@
                                         class={`status-row-dot bg-${FIELDS[field]}`}
                                     ></span>
                                     <strong
-                                        >{getTranslatedStatus(field)} ({getCompletion(
-                                            field,
-                                        ).toFixed(2)}%):</strong
+                                        >{getTranslatedStatus(field)} ({shownLegend.current.shares[
+                                            index
+                                        ].toFixed(2)}%):</strong
                                     >
                                 </span>
                                 <span class="status-row-description"
@@ -639,12 +788,14 @@
 
                             <div class="status-row-metrics">
                                 <span class="status-row-count"
-                                    >{views[field].length}</span
+                                    >{Math.round(
+                                        shownLegend.current.counts[index],
+                                    )}</span
                                 >
                                 <div class="status-row-track">
                                     <div
                                         class={`status-row-bar bg-${FIELDS[field]}`}
-                                        style={`width: ${getCompletion(field)}%`}
+                                        style={`width: ${shownLegend.current.shares[index]}%`}
                                     ></div>
                                 </div>
                             </div>
@@ -652,6 +803,11 @@
                     {/each}
                 </div>
 
+                {#if isLoading}
+                    <div class="compatibility-feedback">
+                        {m.compatibility_loading()}
+                    </div>
+                {:else}
                 <div
                     class="compatibility-filter-strip"
                     role="toolbar"
@@ -665,7 +821,7 @@
                         onclick={() => changeView("Unknown")}
                     >
                         <span>{m.compatibility_all()}</span>
-                        <strong>{views.Unknown.length}</strong>
+                        <strong>{countGames(views.Unknown)}</strong>
                     </button>
 
                     {#each STATUS_FIELDS as field (field)}
@@ -679,7 +835,7 @@
                             <span class={`filter-chip-dot bg-${FIELDS[field]}`}
                             ></span>
                             <span>{getTranslatedStatus(field)}</span>
-                            <strong>{views[field].length}</strong>
+                            <strong>{countGames(views[field])}</strong>
                         </button>
                     {/each}
                 </div>
@@ -734,8 +890,21 @@
                                 {getResultsTitle()}
                             </h2>
                             <p>
-                                {getFilteredData().length}
+                                {countGames(getFilteredData())}
                                 {m.compatibility_games()}
+                                {#if getFilteredData().length > countGames(getFilteredData())}
+                                    <span
+                                        class="online-only-count"
+                                        title={m.compatibility_online_only()}
+                                    >
+                                        ·
+                                        <span class="online-only-icon">
+                                            {@render globeIcon()}
+                                        </span>
+                                        {getFilteredData().length -
+                                            countGames(getFilteredData())}
+                                    </span>
+                                {/if}
                             </p>
                         </div>
 
@@ -810,8 +979,11 @@
                         </div>
                     {:else}
                         <div class="compatibility-game-list">
-                            {#each getFilteredData() as game (game.name)}
-                                <article class="compatibility-game-card">
+                            {#each renderedGames as game, index (game.name)}
+                                <article
+                                    class="compatibility-game-card"
+                                    style={`--card-index: ${Math.min(index, 24)}`}
+                                >
                                     <div class="compatibility-game-main">
                                         <div class="compatibility-game-copy">
                                             <h3>
@@ -823,27 +995,7 @@
                                                         aria-label={m.compatibility_online_only()}
                                                         role="img"
                                                     >
-                                                        <svg
-                                                            viewBox="0 0 24 24"
-                                                            fill="none"
-                                                            stroke="currentColor"
-                                                            stroke-width="2"
-                                                            stroke-linecap="round"
-                                                            stroke-linejoin="round"
-                                                            aria-hidden="true"
-                                                        >
-                                                            <circle
-                                                                cx="12"
-                                                                cy="12"
-                                                                r="10"
-                                                            />
-                                                            <path
-                                                                d="M2 12h20"
-                                                            />
-                                                            <path
-                                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                                                            />
-                                                        </svg>
+                                                        {@render globeIcon()}
                                                     </span>
                                                 {/if}
                                             </h3>
@@ -918,8 +1070,16 @@
                                 </article>
                             {/each}
                         </div>
+                        {#if renderLimit < filteredGames.length}
+                            <div
+                                class="compatibility-list-sentinel"
+                                use:loadMoreWhenNear
+                                aria-hidden="true"
+                            ></div>
+                        {/if}
                     {/if}
                 </section>
+                {/if}
             {/if}
         </div>
     </div>

@@ -3,10 +3,18 @@
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
     import PageHeader from "$lib/components/PageHeader.svelte";
     import { m } from "$lib/paraglide/messages.js";
+    import { reveal } from "$lib/actions/reveal";
 
-    function copyLink(id: string) {
+    let copiedId = $state("");
+    let copiedTimer: number | undefined;
+
+    async function copyLink(id: string) {
         const url = `${window.location.origin}${window.location.pathname}#${id}`;
-        navigator.clipboard.writeText(url);
+        await navigator.clipboard.writeText(url);
+
+        copiedId = id;
+        window.clearTimeout(copiedTimer);
+        copiedTimer = window.setTimeout(() => (copiedId = ""), 1800);
     }
 
     const faqItems = [
@@ -309,7 +317,7 @@
 
         <div class="list">
             {#each faqItems as item (faqItems.indexOf(item))}
-                <article class="entry">
+                <article class="entry" use:reveal>
                     <div class="question-row">
                         <img
                             class="label"
@@ -321,6 +329,7 @@
                             {item.question}
                             <button
                                 class="link-btn"
+                                class:copied={copiedId === item.id}
                                 onclick={() => copyLink(item.id)}
                                 aria-label="Copy link to this section"
                                 title="Copy link"
@@ -344,6 +353,9 @@
                                         d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
                                     />
                                 </svg>
+                                {#if copiedId === item.id}
+                                    <span>Copied</span>
+                                {/if}
                             </button>
                         </h2>
                     </div>

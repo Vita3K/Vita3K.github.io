@@ -1,35 +1,26 @@
 <script lang="ts">
-    let { id, title, initiallyOpen, children } = $props();
+    import type { Snippet } from "svelte";
 
-    let open = $state(initiallyOpen);
-
-    const toggle = () => (open = !open);
+    let {
+        id,
+        title,
+        initiallyOpen = false,
+        children,
+    }: {
+        id: string;
+        title: string;
+        initiallyOpen?: boolean;
+        children: Snippet;
+    } = $props();
 </script>
 
-<div class="accordion-item">
-    <div role="tab" id="{id}Header">
-        <button
-            type="button"
-            class="accordion-link"
-            class:collapsed={!open}
-            aria-expanded={open}
-            aria-controls={id}
-            onclick={toggle}
-        >
-            {title}
-            <i class="icon ion-md-add-circle"></i>
-            <i class="icon ion-md-remove-circle"></i>
-        </button>
-    </div>
+<details class="accordion-item" {id} open={initiallyOpen}>
+    <summary class="accordion-link">
+        <span>{title}</span>
+        <span class="accordion-chevron" aria-hidden="true"></span>
+    </summary>
 
-    <div
-        class="collapse"
-        class:show={open}
-        {id}
-        role="tabpanel"
-        aria-labelledby="{id}Header"
-        data-parent="#accordion"
-    >
+    <div class="accordion-body">
         {@render children()}
     </div>
-</div>
+</details>

@@ -2,7 +2,8 @@
     import AccordionItem from "$lib/components/AccordionItem.svelte";
     import PageHeader from "$lib/components/PageHeader.svelte";
     import { onMount } from "svelte";
-    import { asset } from "$app/paths";
+    import { asset, resolve } from "$app/paths";
+    import { reveal } from "$lib/actions/reveal";
     import { m } from "$lib/paraglide/messages.js";
     import { sanitize } from "$lib/sanitize";
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
@@ -17,6 +18,163 @@
     const VITA_ORGANIZER =
         "https://github.com/vitaorganizer/vitaorganizer/releases";
     const NONPDRM = "https://github.com/TheOfficialFloW/NoNpDrm/releases";
+
+    const VC_REDIST = "https://aka.ms/vs/17/release/vc_redist.x64.exe";
+    const DISCORD = "https://discord.gg/6aGwQzh";
+    const COMPAT_REPO = "https://github.com/Vita3K/compatibility/issues";
+
+    const STEPS = [
+        {
+            href: "#requirements",
+            title: () => m.quickstart_step_requirements(),
+            desc: () => m.quickstart_step_requirements_desc(),
+        },
+        {
+            href: resolve("/download"),
+            title: () => m.quickstart_step_download(),
+            desc: () => m.quickstart_step_download_desc(),
+        },
+        {
+            href: "#firmware",
+            title: () => m.quickstart_step_firmware(),
+            desc: () => m.quickstart_step_firmware_desc(),
+        },
+        {
+            href: "#dumping",
+            title: () => m.quickstart_step_dump(),
+            desc: () => m.quickstart_step_dump_desc(),
+        },
+        {
+            href: "#installing",
+            title: () => m.quickstart_step_play(),
+            desc: () => m.quickstart_step_play_desc(),
+        },
+    ];
+
+    const HARDWARE = {
+        minimum: [
+            {
+                icon: "/img/icons/opengl.svg",
+                text: () =>
+                    m.quickstart_gpu_that_supports_opengl_version({
+                        version: "4.4",
+                    }),
+            },
+            { icon: "/img/icons/cpu.svg", text: () => m.quickstart_any_x86_64_cpu() },
+            {
+                icon: "/img/icons/ram.svg",
+                text: () => m.quickstart_minimum_of_Xgb_of_ram({ amount: "4" }),
+            },
+        ],
+        recommended: [
+            {
+                icon: "/img/icons/vulkan.svg",
+                text: () => m.quickstart_gpu_that_supports_vulkan(),
+            },
+            {
+                icon: "/img/icons/gpu.svg",
+                text: () => m.quickstart_gpu_that_supports_shader_interlock(),
+            },
+            {
+                icon: "/img/icons/cpu.svg",
+                text: () => m.quickstart_x86_64_cpu_with_avx(),
+            },
+            {
+                icon: "/img/icons/ram.svg",
+                text: () => m.quickstart_recommended_Xgb_of_ram({ amount: "8" }),
+            },
+        ],
+    };
+
+    const INSTALL_METHODS = [
+        {
+            icon: "fa-archive",
+            title: () => m.quickstart_install_pkg_title(),
+            desc: () => m.quickstart_install_pkg_desc(),
+        },
+        {
+            icon: "fa-file-archive",
+            title: () => m.quickstart_install_archive_title(),
+            desc: () => m.quickstart_install_archive_desc(),
+        },
+        {
+            icon: "fa-folder-open",
+            title: () => m.quickstart_install_manual_title(),
+            desc: () => m.quickstart_install_manual_desc(),
+        },
+    ];
+
+    const TIPS = [
+        {
+            icon: "fa-tv",
+            title: () => m.quickstart_tip_backend_title(),
+            desc: () => m.quickstart_tip_backend_desc(),
+        },
+        {
+            icon: "fa-cogs",
+            title: () => m.quickstart_tip_modules_title(),
+            desc: () => m.quickstart_tip_modules_desc(),
+        },
+        {
+            icon: "fa-gamepad",
+            title: () => m.quickstart_tip_controls_title(),
+            desc: () => m.quickstart_tip_controls_desc(),
+        },
+        {
+            icon: "fa-list-ul",
+            title: () => m.quickstart_tip_compat_title(),
+            desc: () =>
+                m.quickstart_tip_compat_desc({ link: resolve("/compatibility") }),
+        },
+    ];
+
+    const TROUBLES = [
+        {
+            title: () => m.quickstart_trouble_dll_title(),
+            desc: () => m.quickstart_trouble_dll_desc({ link: VC_REDIST }),
+        },
+        {
+            title: () => m.quickstart_trouble_boot_title(),
+            desc: () => m.quickstart_trouble_boot_desc(),
+        },
+        {
+            title: () => m.quickstart_trouble_text_title(),
+            desc: () => m.quickstart_trouble_text_desc(),
+        },
+        {
+            title: () => m.quickstart_trouble_report_title(),
+            desc: () =>
+                m.quickstart_trouble_report_desc({
+                    faq: resolve("/faq"),
+                    compat: COMPAT_REPO,
+                }),
+        },
+    ];
+
+    const NEXT = [
+        {
+            href: resolve("/faq"),
+            icon: "fa-question-circle",
+            title: () => m.nav_faqs(),
+            desc: () => m.quickstart_next_faq_desc(),
+            external: false,
+        },
+        {
+            href: resolve("/compatibility"),
+            icon: "fa-list-ul",
+            title: () => m.nav_compatibility(),
+            desc: () => m.quickstart_next_compat_desc(),
+            external: false,
+        },
+        {
+            href: DISCORD,
+            icon: "fa-discord",
+            brand: true,
+            title: () => "Discord",
+            desc: () => m.quickstart_next_discord_desc(),
+            external: true,
+        },
+    ];
 
     // Initial value is just a placeholder just in case the request fails, it will be updated on the onMount function
     let urlObtained = $state(false);
@@ -53,7 +211,7 @@
     <CompositeMeta key="description" content={m.quickstart_meta_description()} />
 </svelte:head>
 
-<section class="page-route page-route--intro-only text-center text-white">
+<section class="page-route page-route--intro-only bg-dark text-center text-white">
     <div class="container">
         <PageHeader
             title={m.quickstart_quickstart()}
@@ -61,196 +219,145 @@
         />
     </div>
 </section>
-<section class="bg-dark text-white pb-5">
+
+<section class="qs-section qs-steps-section text-white">
     <div class="container">
-        <div>
-            <h1 class="text-center">{m.quickstart_hardware_requirements()}</h1>
-            <div class="my-5">
-                <h5>
-                    {m.quickstart_hardware_requirements_desc()}
-                </h5>
+        <h2 class="qs-heading qs-heading--small">{m.quickstart_steps_title()}</h2>
+        <ol class="qs-steps">
+            {#each STEPS as step, index (step.href)}
+                <li use:reveal={index * 70}>
+                    <a class="qs-step" href={step.href}>
+                        <span class="qs-step__number">{index + 1}</span>
+                        <strong>{step.title()}</strong>
+                        <span>{step.desc()}</span>
+                    </a>
+                </li>
+            {/each}
+        </ol>
+    </div>
+</section>
+
+<section class="qs-section text-white" id="requirements">
+    <div class="container">
+        <h2 class="qs-heading">{m.quickstart_hardware_requirements()}</h2>
+        <p class="qs-lead">{m.quickstart_hardware_requirements_desc()}</p>
+
+        <div class="qs-grid qs-grid--2">
+            <div class="qs-card" use:reveal>
+                <h3 class="qs-card__title">
+                    {m.quickstart_minimum_requirements()}
+                </h3>
+                <ul class="qs-reqs">
+                    {#each HARDWARE.minimum as req (req.text())}
+                        <li>
+                            <img src={asset(req.icon)} alt="" />
+                            <span>{req.text()}</span>
+                        </li>
+                    {/each}
+                </ul>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-6 d-flex flex-column">
-                    <h4 class="my-4">
-                        <b>{m.quickstart_minimum_requirements()}</b>
-                    </h4>
-                    <div class="row no-gutters reqs">
-                        <div
-                            class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url({asset(
-                                '/img/icons/opengl.svg',
-                            )}) no-repeat center"
-                        ></div>
-                        <div class="col-9 col-sm-10 col-lg-10">
-                            <p>
-                                {m.quickstart_gpu_that_supports_opengl_version({
-                                    version: "4.4",
-                                })}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row no-gutters reqs my-3">
-                        <div
-                            class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url({asset(
-                                '/img/icons/cpu.svg',
-                            )}) no-repeat center"
-                        ></div>
-                        <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.quickstart_any_x86_64_cpu()}</p>
-                        </div>
-                    </div>
-                    <div class="row no-gutters reqs">
-                        <div
-                            class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url({asset(
-                                '/img/icons/ram.svg',
-                            )}) no-repeat center"
-                        ></div>
-                        <div class="col-9 col-sm-10 col-lg-10">
-                            <p>
-                                {m.quickstart_minimum_of_Xgb_of_ram({
-                                    amount: "4",
-                                })}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 d-flex flex-column">
-                    <h4 class="my-4">
-                        <b>{m.quickstart_recommended_requirements()}</b>
-                    </h4>
-                    <div class="row no-gutters reqs">
-                        <div
-                            class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url({asset(
-                                '/img/icons/vulkan.svg',
-                            )}) no-repeat center"
-                        ></div>
-                        <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.quickstart_gpu_that_supports_vulkan()}</p>
-                        </div>
-                    </div>
-                    <div class="row no-gutters reqs mt-3">
-                        <div
-                            class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url({asset(
-                                '/img/icons/gpu.svg',
-                            )}) no-repeat center"
-                        ></div>
-                        <div class="col-9 col-sm-10 col-lg-10">
-                            <p>
-                                {m.quickstart_gpu_that_supports_shader_interlock()}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row no-gutters reqs my-3">
-                        <div
-                            class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url({asset(
-                                '/img/icons/cpu.svg',
-                            )}) no-repeat center"
-                        ></div>
-                        <div class="col-9 col-sm-10 col-lg-10">
-                            <p>{m.quickstart_x86_64_cpu_with_avx()}</p>
-                        </div>
-                    </div>
-                    <div class="row no-gutters reqs">
-                        <div
-                            class="col-2 col-sm-1 col-lg-1 mx-2"
-                            style="background: url({asset(
-                                '/img/icons/ram.svg',
-                            )}) no-repeat center"
-                        ></div>
-                        <div class="col-9 col-sm-10 col-lg-10">
-                            <p>
-                                {m.quickstart_recommended_Xgb_of_ram({
-                                    amount: "8",
-                                })}
-                            </p>
-                        </div>
-                    </div>
-                </div>
+            <div class="qs-card qs-card--accent" use:reveal={90}>
+                <h3 class="qs-card__title">
+                    {m.quickstart_recommended_requirements()}
+                </h3>
+                <ul class="qs-reqs">
+                    {#each HARDWARE.recommended as req (req.text())}
+                        <li>
+                            <img src={asset(req.icon)} alt="" />
+                            <span>{req.text()}</span>
+                        </li>
+                    {/each}
+                </ul>
             </div>
         </div>
-        <div>
-            <div class="mt-5 pt-5">
-                <h1 class="text-center">
-                    {m.quickstart_software_requirements()}
-                </h1>
-                <div class="mt-5">
-                    <h4><b>{m.quickstart_microsoft_redistributable()}</b></h4>
-                    <p>
-                        {@html sanitize(m.quickstart_microsoft_redistributable_desc({
-                            link: "https://aka.ms/vs/17/release/vc_redist.x64.exe",
-                        }))}
-                    </p>
-                    <h4><b>{m.quickstart_operating_system()}</b></h4>
-                    <p>
-                        {m.quickstart_operating_system_desc()}
-                    </p>
-                </div>
+
+        <h2 class="qs-heading qs-heading--sub">
+            {m.quickstart_software_requirements()}
+        </h2>
+        <div class="qs-grid qs-grid--2">
+            <div class="qs-card" use:reveal>
+                <h3 class="qs-card__title">
+                    <i class="fab fa-windows" aria-hidden="true"></i>
+                    {m.quickstart_microsoft_redistributable()}
+                </h3>
+                <p>
+                    {@html sanitize(m.quickstart_microsoft_redistributable_desc({
+                        link: VC_REDIST,
+                    }))}
+                </p>
+            </div>
+            <div class="qs-card" use:reveal={90}>
+                <h3 class="qs-card__title">
+                    <i class="fas fa-desktop" aria-hidden="true"></i>
+                    {m.quickstart_operating_system()}
+                </h3>
+                <p>{m.quickstart_operating_system_desc()}</p>
             </div>
         </div>
     </div>
 </section>
-<section class="bg-dark text-white">
+
+<section class="qs-section text-white" id="firmware">
     <div class="container">
-        <h1 class="text-center mb-5">
-            {m.quickstart_installing_the_firmware()}
-        </h1>
-        <div>
-            <p>
-                {m.quickstart_firmware_desc()}
-            </p>
-            <p>
-                <b>
+        <h2 class="qs-heading">{m.quickstart_installing_the_firmware()}</h2>
+        <p class="qs-lead">{m.quickstart_firmware_desc()}</p>
+
+        <ol class="qs-timeline">
+            <li use:reveal>
+                <p>
                     {@html sanitize(m.quickstart_firmware_download({
                         link: "https://www.playstation.com/en-us/support/hardware/psvita/system-software/",
                     }))}
-                </b>
-            </p>
-            <p>
-                {m.quickstart_font_firmware_desc()}
-                {#if urlObtained}
-                    {@html sanitize(m.quickstart_you_can_download_it_here({
-                        link: sysdataURL,
-                    }))}
-                {:else}
-                    {@html sanitize(m.quickstart_could_not_get_url())}
-                {/if}
-            </p>
-            <p>
-                {@html sanitize(m.quickstart_install_both_firmware_packages())}
-            </p>
-        </div>
-        <div class="mt-5">
-            <h4><b>{m.quickstart_managing_modules()}</b></h4>
-            <p>
-                {@html sanitize(m.quickstart_managing_modules_desc())}
-            </p>
+                </p>
+            </li>
+            <li use:reveal={80}>
+                <p>
+                    {m.quickstart_font_firmware_desc()}
+                    {#if urlObtained}
+                        {@html sanitize(m.quickstart_you_can_download_it_here({
+                            link: sysdataURL,
+                        }))}
+                    {:else}
+                        {@html sanitize(m.quickstart_could_not_get_url())}
+                    {/if}
+                </p>
+            </li>
+            <li use:reveal={160}>
+                <p>
+                    {@html sanitize(m.quickstart_install_both_firmware_packages())}
+                </p>
+            </li>
+        </ol>
+
+        <div class="qs-card qs-card--note" use:reveal>
+            <h3 class="qs-card__title">
+                <i class="fas fa-cubes" aria-hidden="true"></i>
+                {m.quickstart_managing_modules()}
+            </h3>
+            <p>{@html sanitize(m.quickstart_managing_modules_desc())}</p>
         </div>
     </div>
 </section>
-<section class="bg-dark text-white pt-5">
+<section class="qs-section text-white" id="dumping">
     <div class="container">
-        <h1 class="text-center mb-5">{m.quickstart_dumping_games()}</h1>
-        <p>
-            {@html sanitize(m.quickstart_dumping_no_piracy())}
-        </p>
-        <p>
-            {@html sanitize(m.quickstart_dumping_supported_formats())}
-        </p>
-        <p>
-            {@html sanitize(m.quickstart_dumping_vita_fs_defaults())}
-            <br />{@html sanitize(m.quickstart_dumping_vita_fs_windows())}
-            <br />{@html sanitize(m.quickstart_dumping_vita_fs_linux())}
-            <br />{@html sanitize(m.quickstart_dumping_vita_fs_macos())}
-        </p>
-        <div class="my-5">
-            <h3>{m.quickstart_dumping_how_to()}</h3>
-            <p class="my-3">
+        <h2 class="qs-heading">{m.quickstart_dumping_games()}</h2>
+        <div class="qs-card qs-card--prose">
+            <p>
+                {@html sanitize(m.quickstart_dumping_no_piracy())}
+            </p>
+            <p>
+                {@html sanitize(m.quickstart_dumping_supported_formats())}
+            </p>
+            <p>
+                {@html sanitize(m.quickstart_dumping_vita_fs_defaults())}
+                <br />{@html sanitize(m.quickstart_dumping_vita_fs_windows())}
+                <br />{@html sanitize(m.quickstart_dumping_vita_fs_linux())}
+                <br />{@html sanitize(m.quickstart_dumping_vita_fs_macos())}
+            </p>
+        </div>
+        <div class="qs-dump-methods">
+            <h3 class="qs-heading qs-heading--sub">{m.quickstart_dumping_how_to()}</h3>
+            <p class="qs-lead">
                 {m.quickstart_dumping_how_to_desc()}
             </p>
 
@@ -416,6 +523,89 @@
                     </div>
                 </div>
             </AccordionItem>
+        </div>
+    </div>
+</section>
+
+<section class="qs-section text-white" id="installing">
+    <div class="container">
+        <h2 class="qs-heading">{m.quickstart_installing_games()}</h2>
+        <p class="qs-lead">{m.quickstart_installing_games_desc()}</p>
+
+        <div class="qs-grid qs-grid--3">
+            {#each INSTALL_METHODS as method, index (method.icon)}
+                <div class="qs-card" use:reveal={index * 80}>
+                    <span class="qs-card__icon" aria-hidden="true">
+                        <i class={`fas ${method.icon}`}></i>
+                    </span>
+                    <h3 class="qs-card__title">{method.title()}</h3>
+                    <p>{@html sanitize(method.desc())}</p>
+                </div>
+            {/each}
+        </div>
+    </div>
+</section>
+
+<section class="qs-section text-white" id="first-steps">
+    <div class="container">
+        <h2 class="qs-heading">{m.quickstart_first_steps()}</h2>
+        <p class="qs-lead">{m.quickstart_first_steps_desc()}</p>
+
+        <div class="qs-grid qs-grid--2">
+            {#each TIPS as tip, index (tip.icon + index)}
+                <div class="qs-card qs-card--row" use:reveal={(index % 2) * 80}>
+                    <span class="qs-card__icon" aria-hidden="true">
+                        <i class={`fas ${tip.icon}`}></i>
+                    </span>
+                    <div>
+                        <h3 class="qs-card__title">{tip.title()}</h3>
+                        <p>{@html sanitize(tip.desc())}</p>
+                    </div>
+                </div>
+            {/each}
+        </div>
+    </div>
+</section>
+
+<section class="qs-section text-white" id="troubleshooting">
+    <div class="container">
+        <h2 class="qs-heading">{m.quickstart_troubleshooting()}</h2>
+
+        <div class="qs-troubles">
+            {#each TROUBLES as trouble, index (index)}
+                <details class="qs-trouble" use:reveal={index * 60}>
+                    <summary>
+                        <i class="fas fa-wrench" aria-hidden="true"></i>
+                        <span>{trouble.title()}</span>
+                    </summary>
+                    <p>{@html sanitize(trouble.desc())}</p>
+                </details>
+            {/each}
+        </div>
+    </div>
+</section>
+
+<section class="qs-section qs-next text-white">
+    <div class="container">
+        <h2 class="qs-heading qs-heading--small">{m.quickstart_next_title()}</h2>
+        <div class="qs-grid qs-grid--3">
+            {#each NEXT as link, index (link.href)}
+                <a
+                    class="qs-card qs-card--link"
+                    href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noreferrer" : undefined}
+                    use:reveal={index * 80}
+                >
+                    <span class="qs-card__icon" aria-hidden="true">
+                        <i class={`${link.brand ? "fab" : "fas"} ${link.icon}`}></i>
+                    </span>
+                    <h3 class="qs-card__title">
+                        {link.title()} <span aria-hidden="true">→</span>
+                    </h3>
+                    <p>{link.desc()}</p>
+                </a>
+            {/each}
         </div>
     </div>
 </section>

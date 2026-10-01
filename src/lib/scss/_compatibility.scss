@@ -175,6 +175,8 @@
 }
 
 .status-row {
+  animation: compat-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--row-index, 0) * 60ms);
   align-items: center;
   gap: 1rem;
   padding: 0.45rem 0;
@@ -253,8 +255,94 @@
 }
 
 .status-row-bar {
+  position: relative;
   height: 100%;
+  overflow: hidden;
   border-radius: inherit;
+}
+
+.status-row-track {
+  transition: height 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.status-row-bar {
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.status-row-dot {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+
+// The filtered status stands out: the others step back, its bar thickens and glows.
+.compatibility-status-legend {
+  .status-row {
+    transition: background 0.18s ease, opacity 0.3s ease;
+  }
+
+  &.has-active .status-row:not(.active) {
+    opacity: 0.45;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .status-row.active {
+    .status-row-track {
+      height: 0.95rem;
+    }
+
+    .status-row-bar {
+      filter: brightness(1.15);
+      box-shadow: 0 0 0.9rem rgba(255, 255, 255, 0.25);
+    }
+
+    .status-row-dot {
+      transform: scale(1.35);
+      box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.14);
+    }
+  }
+}
+
+.status-row:hover .status-row-bar {
+  filter: brightness(1.2);
+}
+
+// Before the first bytes arrive, the empty tracks shimmer so the wait reads as progress.
+.compatibility-status-legend.is-waiting .status-row-track {
+  background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.16) 50%,
+      rgba(255, 255, 255, 0.05) 100%
+    )
+    0 0 / 200% 100%;
+  animation: compat-waiting 1.4s linear infinite;
+}
+
+@keyframes compat-waiting {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes compat-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-row,
+  .compatibility-game-card,
+  .compatibility-status-legend.is-waiting .status-row-track {
+    animation: none;
+  }
 }
 
 .compatibility-results-panel {
@@ -342,6 +430,9 @@
   border-bottom: 1px solid var(--compatibility-divider);
   box-shadow: none;
   transition: background 0.18s ease;
+  // Rows that appear after a filter change rise in, the first couple of dozen in turn.
+  animation: compat-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--card-index, 0) * 22ms);
 
   &:hover {
     background: rgba(255, 255, 255, 0.025);
@@ -363,6 +454,16 @@
   svg {
     width: 1em;
     height: 1em;
+  }
+}
+
+// Online-only games listed but not counted, shown beside the game count.
+.online-only-count {
+  margin-left: 0.25rem;
+  white-space: nowrap;
+
+  .online-only-icon {
+    margin: 0 0.15rem 0 0.25rem;
   }
 }
 
@@ -698,4 +799,8 @@ $compat-status-colors: (
     flex-direction: column;
     align-items: start;
   }
+}
+
+.compatibility-list-sentinel {
+  height: 1px;
 }

@@ -15,6 +15,7 @@
     import CompositeMeta from "$lib/components/CompositeMeta.svelte";
 
     let { children } = $props();
+    let scrollY = $state(0);
 
     afterNavigate(() => {
         window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -93,15 +94,32 @@
     </iframe>
 </noscript>
 
+<svelte:window bind:scrollY />
+
 {@render children()}
 
 <Footer />
 
 <!-- Page top button -->
 <a
-    class="nav-link js-scroll-trigger"
-    href="#"
+    href="#top"
     id="page_top"
+    class:is-visible={scrollY > 600}
     aria-label={m.nav_back_to_top()}
+    onclick={(event) => {
+        event.preventDefault();
+        window.scrollTo({ top: 0 });
+    }}
 >
+    <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+    >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
 </a>

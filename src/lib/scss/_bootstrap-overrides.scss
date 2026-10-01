@@ -18,7 +18,61 @@ hr {
 }
 
 .btn-xl {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
   padding: 1rem 2rem;
+  letter-spacing: 0.04em;
+}
+
+.btn {
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.25s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+  &:active {
+    transform: translateY(1px) scale(0.98);
+  }
+}
+
+.btn-primary {
+  box-shadow: 0 0.75rem 1.75rem -0.75rem rgba($primary, 0.8);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1rem 2rem -0.75rem rgba($primary, 0.9);
+  }
+}
+
+// Outline buttons for dark and orange backgrounds, beside a primary one.
+.btn-ghost,
+.btn-light-ghost {
+  color: $white;
+  background: rgba($white, 0.04);
+  box-shadow: inset 0 0 0 1.5px rgba($white, 0.25);
+
+  &:hover,
+  &:focus-visible {
+    color: $white;
+    background: rgba($white, 0.1);
+    box-shadow: inset 0 0 0 1.5px rgba($white, 0.6);
+    transform: translateY(-2px);
+  }
+}
+
+.btn-light-ghost {
+  background: rgba($white, 0.12);
+  box-shadow: inset 0 0 0 1.5px rgba($white, 0.55);
+
+  &:hover,
+  &:focus-visible {
+    color: $primary;
+    background: $white;
+  }
 }
 
 .no-gutters {

@@ -1,0 +1,410 @@
+// Styling for the quickstart page
+
+.qs-section {
+    padding: clamp(3rem, 6vw, 4.5rem) 0;
+    background-color: $gray-900;
+    scroll-margin-top: 4rem;
+
+    + .qs-section {
+        border-top: 1px solid rgba($white, 0.05);
+    }
+
+    code {
+        padding: 0.1rem 0.42rem;
+        border: 1px solid rgba($white, 0.08);
+        border-radius: 0.4rem;
+        background: rgba($white, 0.05);
+        color: #ffcbb8;
+        font-size: 0.88em;
+    }
+
+    a:not(.qs-step):not(.qs-card) {
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.2em;
+    }
+}
+
+.qs-heading {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-align: center;
+}
+
+.qs-heading--small {
+    margin-bottom: 1.75rem;
+    font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+}
+
+.qs-heading--sub {
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+}
+
+.qs-lead {
+    max-width: 46rem;
+    margin: 0 auto 2.25rem;
+    color: rgba($white, 0.68);
+    text-align: center;
+    text-wrap: pretty;
+}
+
+// Five step overview
+
+.qs-steps-section {
+    padding-top: 1rem;
+}
+
+.qs-steps {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.85rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: none;
+
+    li {
+        position: relative;
+    }
+
+    // A thin line joins the steps on wide screens.
+    li:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        top: 2.35rem;
+        right: -0.85rem;
+        width: 0.85rem;
+        height: 2px;
+        background: rgba($primary, 0.4);
+    }
+
+    @media (max-width: 991.98px) {
+        grid-template-columns: 1fr;
+
+        li:not(:last-child)::after {
+            display: none;
+        }
+    }
+}
+
+.qs-step {
+    display: grid;
+    gap: 0.4rem;
+    height: 100%;
+    padding: 1.25rem;
+    border: 1px solid rgba($white, 0.08);
+    border-radius: 1rem;
+    background: rgba($white, 0.03);
+    color: $white;
+    text-decoration: none;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, background-color 0.3s ease;
+
+    strong {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    span:last-child {
+        color: rgba($white, 0.58);
+        font-size: 0.86rem;
+        line-height: 1.5;
+    }
+
+    &:hover {
+        color: $white;
+        transform: translateY(-3px);
+        border-color: rgba($primary, 0.55);
+        background: rgba($primary, 0.06);
+
+        .qs-step__number {
+            background: $primary;
+            color: $white;
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        grid-template-columns: auto minmax(0, 1fr);
+        column-gap: 1rem;
+        align-items: center;
+
+        .qs-step__number {
+            grid-row: span 2;
+        }
+    }
+}
+
+.qs-step__number {
+    display: grid;
+    place-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-bottom: 0.4rem;
+    border-radius: 50%;
+    background: rgba($primary, 0.14);
+    color: $primary;
+    font-weight: 800;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    @media (max-width: 991.98px) {
+        margin-bottom: 0;
+    }
+}
+
+// Cards
+
+.qs-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.qs-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.qs-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 767.98px) {
+    .qs-grid--2,
+    .qs-grid--3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.qs-card {
+    padding: 1.5rem;
+    border: 1px solid rgba($white, 0.08);
+    border-radius: 1.1rem;
+    background: rgba($white, 0.03);
+    color: rgba($white, 0.76);
+
+    p {
+        margin: 0;
+    }
+
+    p + p {
+        margin-top: 0.9rem;
+    }
+}
+
+.qs-card--accent {
+    border-color: rgba($primary, 0.45);
+    background:
+        radial-gradient(ellipse 80% 60% at 100% 0%, rgba($primary, 0.12), transparent 70%),
+        rgba($white, 0.03);
+}
+
+.qs-card--note {
+    margin-top: 1.5rem;
+    border-left: 3px solid $primary;
+}
+
+.qs-card--prose {
+    line-height: 1.8;
+}
+
+.qs-card--row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+
+    .qs-card__icon {
+        flex: none;
+        margin-bottom: 0;
+    }
+}
+
+.qs-card--link {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+
+    .qs-card__title span {
+        display: inline-block;
+        color: $primary;
+        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    &:hover {
+        color: rgba($white, 0.76);
+        transform: translateY(-3px);
+        border-color: rgba($primary, 0.55);
+
+        .qs-card__title span {
+            transform: translateX(4px);
+        }
+    }
+}
+
+.qs-card__icon {
+    display: inline-grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-bottom: 1rem;
+    border-radius: 0.8rem;
+    background: rgba($primary, 0.12);
+    color: $primary;
+}
+
+.qs-card__title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0 0 0.6rem;
+    color: $white;
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    i {
+        color: $primary;
+    }
+}
+
+.qs-reqs {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0.75rem 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        padding: 0.7rem 0.85rem;
+        border-radius: 0.75rem;
+        background: rgba($white, 0.03);
+        color: $white;
+    }
+
+    // Tints the icon set to the brand orange.
+    img {
+        flex: none;
+        width: 1.9rem;
+        height: 1.9rem;
+        object-fit: contain;
+        filter: invert(48%) sepia(95%) saturate(2625%) hue-rotate(338deg) brightness(100%) contrast(89%);
+    }
+}
+
+// Firmware steps
+
+.qs-timeline {
+    position: relative;
+    display: grid;
+    gap: 1rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    counter-reset: qs-timeline;
+
+    li {
+        position: relative;
+        padding: 1.1rem 1.25rem 1.1rem 4rem;
+        border: 1px solid rgba($white, 0.08);
+        border-radius: 1rem;
+        background: rgba($white, 0.03);
+        color: rgba($white, 0.78);
+        counter-increment: qs-timeline;
+
+        &::before {
+            content: counter(qs-timeline);
+            position: absolute;
+            top: 1rem;
+            left: 1.1rem;
+            display: grid;
+            place-items: center;
+            width: 1.9rem;
+            height: 1.9rem;
+            border-radius: 50%;
+            background: $primary;
+            color: $white;
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+    + .qs-card--note {
+        max-width: 50rem;
+        margin-inline: auto;
+    }
+}
+
+// Dumping guides
+
+.qs-dump-methods {
+    margin-top: 1rem;
+}
+
+// Troubleshooting
+
+.qs-troubles {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.qs-trouble {
+    border: 1px solid rgba($white, 0.08);
+    border-radius: 1rem;
+    background: rgba($white, 0.03);
+    transition: border-color 0.3s ease;
+
+    &[open] {
+        border-color: rgba($primary, 0.4);
+    }
+
+    summary {
+        display: flex;
+        align-items: center;
+        gap: 0.85rem;
+        padding: 1rem 1.25rem;
+        color: $white;
+        font-weight: 700;
+        cursor: pointer;
+        list-style: none;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        i {
+            color: $primary;
+        }
+
+        &::after {
+            content: "+";
+            margin-left: auto;
+            color: rgba($white, 0.5);
+            font-size: 1.3rem;
+            font-weight: 400;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    &[open] summary::after {
+        transform: rotate(45deg);
+    }
+
+    p {
+        margin: 0;
+        padding: 0 1.25rem 1.15rem 3.3rem;
+        color: rgba($white, 0.74);
+    }
+}
+
+.qs-next {
+    padding-bottom: clamp(4rem, 8vw, 6rem);
+}

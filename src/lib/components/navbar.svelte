@@ -164,6 +164,7 @@
     }
 
     let navCollapsed = $state(true);
+    let scrollY = $state(0);
     function toggleNavbar() {
         navCollapsed = !navCollapsed;
     }
@@ -173,8 +174,11 @@
     }
 </script>
 
+<svelte:window bind:scrollY />
+
 <nav
-    class="navbar navbar-expand-lg navbar-light fixed-top bg-dark"
+    class="navbar navbar-expand-lg navbar-light fixed-top"
+    class:navbar-scrolled={scrollY > 8 || !navCollapsed}
     id="mainNav"
 >
     <div class="container">

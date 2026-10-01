@@ -1,71 +1,115 @@
-.accordion-item {
-    background-color: $bg-color;
-    border-radius: .4rem;
-    margin-bottom: 1rem;
-    padding: 1rem;
-    box-shadow: .5rem 2px .5rem rgba(0, 0, 0, .1);
+// Expandable panels, used by the dumping guides on the quickstart page
 
-    // Nesting the link inside the item
+.accordion-item {
+    interpolate-size: allow-keywords;
+    margin-bottom: 0.85rem;
+    border: 1px solid rgba($white, 0.08);
+    border-radius: 1.1rem;
+    background: rgba($white, 0.025);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+
+    &:hover {
+        border-color: rgba($white, 0.16);
+    }
+
+    &[open] {
+        border-color: rgba($primary, 0.4);
+        background: rgba($white, 0.035);
+    }
+
+    &::details-content {
+        height: 0;
+        overflow: clip;
+        transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1), content-visibility 0.45s allow-discrete;
+    }
+
+    &[open]::details-content {
+        height: auto;
+    }
+
     .accordion-link {
-        @include sans-serif-font;
-        font-size: 2rem;
-        color: $primary;
-        text-decoration: none;
-        background-color: $bg-color;
-        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem 0;
-        border-style: none;
+        gap: 1rem;
+        padding: 1.25rem 1.5rem;
+        color: $white;
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        font-weight: 700;
+        cursor: pointer;
+        list-style: none;
 
-        i {
-            color: $primary;
-            padding: .5rem;
+        &::-webkit-details-marker {
+            display: none;
         }
     }
 
-    // Logic for the toggle icons
-    [data-toggle="collapse"] {
-        &.collapsed {
-            >.ion-md-add-circle {
-                display: inline-block;
-            }
-
-            >.ion-md-remove-circle {
-                display: none;
-            }
-        }
-
-        &:not(.collapsed) {
-            >.ion-md-add-circle {
-                display: none;
-            }
-
-            >.ion-md-remove-circle {
-                display: inline-block;
-            }
-        }
-    }
-
-    .answer {
-        overflow: hidden;
+    .accordion-chevron {
         position: relative;
-        transition: max-height 1500ms;
+        flex: none;
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+        background: rgba($primary, 0.14);
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease;
 
         &::before {
             content: "";
             position: absolute;
-            width: .6rem;
-            height: 90%;
-            background-color: #d93f0b;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
+            top: 44%;
+            left: 50%;
+            width: 0.55rem;
+            height: 0.55rem;
+            border-right: 2px solid $primary;
+            border-bottom: 2px solid $primary;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+    &[open] .accordion-chevron {
+        background: $primary;
+        transform: rotate(180deg);
+
+        &::before {
+            border-color: $white;
+        }
+    }
+
+    .accordion-body {
+        padding: 0 1.5rem 1.25rem;
+    }
+
+    .answer {
+        position: relative;
+        padding-left: 1.25rem;
+        border-left: 3px solid rgba($primary, 0.55);
+        color: rgba($white, 0.78);
+
+        + .answer {
+            margin-top: 1.5rem;
+        }
+
+        h5 {
+            color: $white;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        ol {
+            padding-left: 1.3rem;
+        }
+
+        li {
+            margin-top: 0.5rem;
+        }
+
+        li::marker {
+            color: $primary;
+            font-weight: 700;
         }
     }
 }
 
 .padding-wrapper {
-    padding: 2rem;
+    padding: 0.5rem 0;
 }
