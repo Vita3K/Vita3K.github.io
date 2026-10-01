@@ -1,36 +1,15 @@
 // Global styling for this template
-// *::selection {
-//     background: lightgray !important;
-//     /* WebKit/Blink Browsers */
-// }
 
-// *::-moz-selection {
-//     background: lightgray !important;
-//     /* Gecko Browsers */
-// }
+::selection {
+    color: $white;
+    background: rgba($primary, 0.85);
+}
 
-
-// ::-moz-selection {
-//     color: $white;
-//     background: $gray-900;
-//     text-shadow: none;
-// }
-
-// ::selection {
-//     color: $white;
-//     background: $gray-900;
-//     text-shadow: none;
-// }
-
-// img::selection {
-//     color: $white;
-//     background: transparent;
-// }
-
-// img::-moz-selection {
-//     color: $white;
-//     background: transparent;
-// }
+:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
 
 body,
 html {
@@ -45,6 +24,13 @@ html {
 html {
     overflow: auto;
     scroll-behavior: smooth;
+    scrollbar-color: rgba($white, 0.22) $bg-color;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
@@ -56,6 +42,8 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     font-feature-settings: "cv11", "ss03", "liga", "calt";
+    // Break Japanese between phrases instead of in the middle of a word.
+    word-break: auto-phrase;
 }
 
 hr {
@@ -137,55 +125,61 @@ section {
     background-color: #191919;
 }
 
-.fa-coffee::after {
-    content: '\f004';
-    font-weight: 900;
-    font-size: 20px;
-    color: white;
-    position: absolute;
-    margin: 9px 0 0 -44px;
-}
-
-.reqs p {
-    margin: 0;
-    padding: 10px 0;
-}
-
-.reqs>div:first-of-type {
-    filter: invert(48%) sepia(95%) saturate(2625%) hue-rotate(338deg) brightness(100%) contrast(89%);
-}
-
 .row {
     justify-content: center;
 }
 
 /* return top button */
 #page_top {
-    width: 50px;
-    height: 50px;
     position: fixed;
-    right: 20px;
-    bottom: 20px;
-    box-shadow: rgb(0 0 0 / 40%) 0 10px 32px 0;
-    background: #F05F40;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 1020;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
     border-radius: 50%;
+    background: $primary;
+    color: $white;
+    box-shadow: 0 0.75rem 2rem rgba($black, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.75rem) scale(0.9);
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.3s,
+        background-color 0.2s;
 
-    &::before {
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        content: '\f062';
-        /*icon*/
-        font-size: 20px;
-        color: rgb(255, 255, 255);
-        /*icon color*/
-        position: absolute;
-        width: 40px;
-        height: 30px;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        margin: auto;
-        text-align: center;
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
     }
+
+    &:hover {
+        background: darken($primary, 6%);
+        transform: translateY(-2px);
+    }
+
+    svg {
+        width: 1.15rem;
+        height: 1.15rem;
+    }
+}
+
+/* scroll reveal, see $lib/actions/reveal.ts */
+.reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+}
+
+.reveal--visible {
+    opacity: 1;
+    transform: none;
 }

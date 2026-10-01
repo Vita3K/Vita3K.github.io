@@ -1,0 +1,83 @@
+// Styling for the download page
+
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13.5rem), 1fr));
+    gap: 1rem;
+    margin-bottom: clamp(3rem, 6vw, 4.5rem);
+}
+
+.download-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1.25rem 1.5rem;
+    border: 1px solid rgba($white, 0.08);
+    border-radius: 1.25rem;
+    background: rgba($white, 0.03);
+    color: $white;
+    text-align: center;
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.35s ease,
+        background-color 0.35s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgba($primary, 0.45);
+        background: rgba($primary, 0.05);
+    }
+}
+
+.download-card--recommended {
+    border-color: rgba($primary, 0.7);
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba($primary, 0.18), transparent 70%),
+        rgba($white, 0.03);
+    box-shadow: 0 1.25rem 2.5rem -1.5rem rgba($primary, 0.6);
+}
+
+.download-card__badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    background: $primary;
+    color: $white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    translate: -50% -50%;
+}
+
+.download-card__icon {
+    color: $primary;
+    font-size: 2.75rem;
+}
+
+.download-card__name {
+    margin: 0;
+    font-size: 1.1rem;
+    text-wrap: balance;
+}
+
+.download-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: auto;
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.6rem 1.25rem;
+        font-size: 0.85rem;
+    }
+}
