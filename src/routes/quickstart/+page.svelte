@@ -60,7 +60,10 @@
                         version: "4.4",
                     }),
             },
-            { icon: "/img/icons/cpu.svg", text: () => m.quickstart_any_x86_64_cpu() },
+            {
+                icon: "/img/icons/cpu.svg",
+                text: () => m.quickstart_any_x86_64_cpu(),
+            },
             {
                 icon: "/img/icons/ram.svg",
                 text: () => m.quickstart_minimum_of_Xgb_of_ram({ amount: "4" }),
@@ -81,7 +84,8 @@
             },
             {
                 icon: "/img/icons/ram.svg",
-                text: () => m.quickstart_recommended_Xgb_of_ram({ amount: "8" }),
+                text: () =>
+                    m.quickstart_recommended_Xgb_of_ram({ amount: "8" }),
             },
         ],
     };
@@ -124,7 +128,9 @@
             icon: "fa-list-ul",
             title: () => m.quickstart_tip_compat_title(),
             desc: () =>
-                m.quickstart_tip_compat_desc({ link: resolve("/compatibility") }),
+                m.quickstart_tip_compat_desc({
+                    link: resolve("/compatibility"),
+                }),
         },
     ];
 
@@ -182,24 +188,36 @@
     let sysdataURL = $state("");
 
     onMount(async () => {
-        const f = await fetch(
-            "https://api.allorigins.win/get?url=http://fus01.psp2.update.playstation.net/update/psp2/list/us/psp2-updatelist.xml",
-        );
+        const request = await fetch("https://api.vita3k.org/firmware");
 
-        if (!f.ok) {
+        if (!request.ok) {
             console.error("Failed to fetch the system data URL");
             return;
         }
 
-        const response = await f.json();
+        const contentType = request.headers.get("content-type");
+        if (!contentType) {
+            console.warn("firmware list has no content type");
+            return;
+        }
 
-        let parser = new DOMParser();
+        if (contentType.startsWith("application/json")) {
+            // Error can be ignored in this case
+            const contents = await request.json();
+            console.warn(contents);
+        } else if (contentType.startsWith("application/xml")) {
+            const response = await request.text();
 
-        const xmldoc = parser.parseFromString(response.contents, "text/xml");
+            let parser = new DOMParser();
 
-        sysdataURL =
-            xmldoc.getElementsByTagName("recovery")[0].childNodes[1]
-                .childNodes[0].nodeValue ?? "";
+            const xmldoc = parser.parseFromString(response, "text/xml");
+
+            sysdataURL =
+                xmldoc.getElementsByTagName("recovery")[0].childNodes[1]
+                    .childNodes[0].nodeValue ?? "";
+        } else {
+            console.warn(`Unknown content-type: ${contentType}`);
+        }
 
         urlObtained = sysdataURL !== ""; // If the URL is not empty, then we obtained it successfully
     });
@@ -208,10 +226,15 @@
 <svelte:head>
     <title>Vita3K - {m.nav_quickstart()}</title>
     <CompositeMeta key="title" content="Vita3K - {m.nav_quickstart()}" />
-    <CompositeMeta key="description" content={m.quickstart_meta_description()} />
+    <CompositeMeta
+        key="description"
+        content={m.quickstart_meta_description()}
+    />
 </svelte:head>
 
-<section class="page-route page-route--intro-only bg-dark text-center text-white">
+<section
+    class="page-route page-route--intro-only bg-dark text-center text-white"
+>
     <div class="container">
         <PageHeader
             title={m.quickstart_quickstart()}
@@ -222,7 +245,9 @@
 
 <section class="qs-section qs-steps-section text-white">
     <div class="container">
-        <h2 class="qs-heading qs-heading--small">{m.quickstart_steps_title()}</h2>
+        <h2 class="qs-heading qs-heading--small">
+            {m.quickstart_steps_title()}
+        </h2>
         <ol class="qs-steps">
             {#each STEPS as step, index (step.href)}
                 <li use:reveal={index * 70}>
@@ -281,9 +306,11 @@
                     {m.quickstart_microsoft_redistributable()}
                 </h3>
                 <p>
-                    {@html sanitize(m.quickstart_microsoft_redistributable_desc({
-                        link: VC_REDIST,
-                    }))}
+                    {@html sanitize(
+                        m.quickstart_microsoft_redistributable_desc({
+                            link: VC_REDIST,
+                        }),
+                    )}
                 </p>
             </div>
             <div class="qs-card" use:reveal={90}>
@@ -305,18 +332,22 @@
         <ol class="qs-timeline">
             <li use:reveal>
                 <p>
-                    {@html sanitize(m.quickstart_firmware_download({
-                        link: "https://www.playstation.com/en-us/support/hardware/psvita/system-software/",
-                    }))}
+                    {@html sanitize(
+                        m.quickstart_firmware_download({
+                            link: "https://www.playstation.com/en-us/support/hardware/psvita/system-software/",
+                        }),
+                    )}
                 </p>
             </li>
             <li use:reveal={80}>
                 <p>
                     {m.quickstart_font_firmware_desc()}
                     {#if urlObtained}
-                        {@html sanitize(m.quickstart_you_can_download_it_here({
-                            link: sysdataURL,
-                        }))}
+                        {@html sanitize(
+                            m.quickstart_you_can_download_it_here({
+                                link: sysdataURL,
+                            }),
+                        )}
                     {:else}
                         {@html sanitize(m.quickstart_could_not_get_url())}
                     {/if}
@@ -324,7 +355,9 @@
             </li>
             <li use:reveal={160}>
                 <p>
-                    {@html sanitize(m.quickstart_install_both_firmware_packages())}
+                    {@html sanitize(
+                        m.quickstart_install_both_firmware_packages(),
+                    )}
                 </p>
             </li>
         </ol>
@@ -356,7 +389,9 @@
             </p>
         </div>
         <div class="qs-dump-methods">
-            <h3 class="qs-heading qs-heading--sub">{m.quickstart_dumping_how_to()}</h3>
+            <h3 class="qs-heading qs-heading--sub">
+                {m.quickstart_dumping_how_to()}
+            </h3>
             <p class="qs-lead">
                 {m.quickstart_dumping_how_to_desc()}
             </p>
@@ -370,22 +405,38 @@
                     <div class="padding-wrapper">
                         <p class="my-3"></p>
                         <h5>
-                            {@html sanitize(m.quickstart_vci_using({ link: GC_TOOL_KIT }))}
+                            {@html sanitize(
+                                m.quickstart_vci_using({ link: GC_TOOL_KIT }),
+                            )}
                         </h5>
                         <p class="my-3">
                             {@html sanitize(m.quickstart_vci_desc())}
                         </p>
                         <ol>
                             <li>
-                                {@html sanitize(m.quickstart_vci_step_install({
-                                    link: GC_TOOL_KIT,
-                                }))}
+                                {@html sanitize(
+                                    m.quickstart_vci_step_install({
+                                        link: GC_TOOL_KIT,
+                                    }),
+                                )}
                             </li>
                             <li>{m.quickstart_vci_step_insert()}</li>
-                            <li>{@html sanitize(m.quickstart_vci_step_backup())}</li>
-                            <li>{@html sanitize(m.quickstart_vci_step_wait())}</li>
-                            <li>{@html sanitize(m.quickstart_vci_step_transfer())}</li>
-                            <li>{@html sanitize(m.quickstart_vci_step_archive())}</li>
+                            <li>
+                                {@html sanitize(m.quickstart_vci_step_backup())}
+                            </li>
+                            <li>
+                                {@html sanitize(m.quickstart_vci_step_wait())}
+                            </li>
+                            <li>
+                                {@html sanitize(
+                                    m.quickstart_vci_step_transfer(),
+                                )}
+                            </li>
+                            <li>
+                                {@html sanitize(
+                                    m.quickstart_vci_step_archive(),
+                                )}
+                            </li>
                         </ol>
                     </div>
                 </div>
@@ -400,18 +451,22 @@
                     <div class="padding-wrapper">
                         <p class="my-3"></p>
                         <h5>
-                            {@html sanitize(m.quickstart_fagdec_using({
-                                vitashell: VITASHELL,
-                                fagdec: FAGDEC,
-                            }))}
+                            {@html sanitize(
+                                m.quickstart_fagdec_using({
+                                    vitashell: VITASHELL,
+                                    fagdec: FAGDEC,
+                                }),
+                            )}
                         </h5>
 
                         <ol>
                             <li>
-                                {@html sanitize(m.quickstart_fagdec_step_download({
-                                    vitashell: VITASHELL,
-                                    fagdec: FAGDEC,
-                                }))}
+                                {@html sanitize(
+                                    m.quickstart_fagdec_step_download({
+                                        vitashell: VITASHELL,
+                                        fagdec: FAGDEC,
+                                    }),
+                                )}
                             </li>
                             <li>
                                 <ol type="A">
@@ -419,16 +474,24 @@
                                         {m.quickstart_fagdec_step_cartridge()}
                                     </li>
                                     <p>
-                                        {@html sanitize(m.quickstart_fagdec_step_cartridge_desc())}
+                                        {@html sanitize(
+                                            m.quickstart_fagdec_step_cartridge_desc(),
+                                        )}
                                     </p>
-                                    <li>{m.quickstart_fagdec_step_digital()}</li>
+                                    <li>
+                                        {m.quickstart_fagdec_step_digital()}
+                                    </li>
                                     <p>
-                                        {@html sanitize(m.quickstart_fagdec_step_digital_desc())}
+                                        {@html sanitize(
+                                            m.quickstart_fagdec_step_digital_desc(),
+                                        )}
                                     </p>
                                 </ol>
                             </li>
                             <li>
-                                {@html sanitize(m.quickstart_fagdec_step_open_decrypted())}
+                                {@html sanitize(
+                                    m.quickstart_fagdec_step_open_decrypted(),
+                                )}
                             </li>
                             <li>{m.quickstart_fagdec_step_copy()}</li>
                             <p class="my-2">
@@ -436,19 +499,33 @@
                             </p>
                             <li>{m.quickstart_fagdec_step_launch()}</li>
                             <li>
-                                {@html sanitize(m.quickstart_fagdec_step_decrypt_all())}
+                                {@html sanitize(
+                                    m.quickstart_fagdec_step_decrypt_all(),
+                                )}
                             </li>
-                            <li>{@html sanitize(m.quickstart_fagdec_step_start())}</li>
                             <li>
-                                {@html sanitize(m.quickstart_fagdec_step_start_decrypt())}
+                                {@html sanitize(
+                                    m.quickstart_fagdec_step_start(),
+                                )}
+                            </li>
+                            <li>
+                                {@html sanitize(
+                                    m.quickstart_fagdec_step_start_decrypt(),
+                                )}
                             </li>
                             <li>{m.quickstart_fagdec_step_wait()}</li>
-                            <li>{@html sanitize(m.quickstart_fagdec_step_output())}</li>
+                            <li>
+                                {@html sanitize(
+                                    m.quickstart_fagdec_step_output(),
+                                )}
+                            </li>
                             <p class="my-3">
                                 {m.quickstart_fagdec_note_merge()}
                             </p>
                             <p>
-                                {@html sanitize(m.quickstart_fagdec_note_title_id())}
+                                {@html sanitize(
+                                    m.quickstart_fagdec_note_title_id(),
+                                )}
                             </p>
                         </ol>
                     </div>
@@ -462,12 +539,18 @@
                         </p>
                         <ol>
                             <li>
-                                {@html sanitize(m.quickstart_vpk_step_download({
-                                    link: VITA_ORGANIZER,
-                                }))}
+                                {@html sanitize(
+                                    m.quickstart_vpk_step_download({
+                                        link: VITA_ORGANIZER,
+                                    }),
+                                )}
                             </li>
-                            <li>{@html sanitize(m.quickstart_vpk_step_create())}</li>
-                            <li>{@html sanitize(m.quickstart_vpk_step_select())}</li>
+                            <li>
+                                {@html sanitize(m.quickstart_vpk_step_create())}
+                            </li>
+                            <li>
+                                {@html sanitize(m.quickstart_vpk_step_select())}
+                            </li>
                             <p>
                                 {m.quickstart_vpk_note_progress()}
                             </p>
@@ -485,39 +568,65 @@
                     <div class="padding-wrapper">
                         <p class="my-3"></p>
                         <h5>
-                            {@html sanitize(m.quickstart_nonpdrm_using({
-                                vitashell: VITASHELL,
-                                nonpdrm: NONPDRM,
-                            }))}
+                            {@html sanitize(
+                                m.quickstart_nonpdrm_using({
+                                    vitashell: VITASHELL,
+                                    nonpdrm: NONPDRM,
+                                }),
+                            )}
                         </h5>
                         <ol>
                             <li>
-                                {@html sanitize(m.quickstart_nonpdrm_step_download({
-                                    link: VITASHELL,
-                                }))}
+                                {@html sanitize(
+                                    m.quickstart_nonpdrm_step_download({
+                                        link: VITASHELL,
+                                    }),
+                                )}
                             </li>
                             <li>
                                 <p>
-                                    {@html sanitize(m.quickstart_nonpdrm_step_plugin({
-                                        link: NONPDRM,
-                                    }))}
+                                    {@html sanitize(
+                                        m.quickstart_nonpdrm_step_plugin({
+                                            link: NONPDRM,
+                                        }),
+                                    )}
                                 </p>
                             </li>
                             <li>
-                                {@html sanitize(m.quickstart_nonpdrm_step_license())}
+                                {@html sanitize(
+                                    m.quickstart_nonpdrm_step_license(),
+                                )}
                             </li>
                             <li>
-                                {@html sanitize(m.quickstart_nonpdrm_step_transfer())}
+                                {@html sanitize(
+                                    m.quickstart_nonpdrm_step_transfer(),
+                                )}
                             </li>
-                            <li>{@html sanitize(m.quickstart_nonpdrm_step_zip())}</li>
-                            <li>{@html sanitize(m.quickstart_nonpdrm_step_install())}</li>
+                            <li>
+                                {@html sanitize(
+                                    m.quickstart_nonpdrm_step_zip(),
+                                )}
+                            </li>
+                            <li>
+                                {@html sanitize(
+                                    m.quickstart_nonpdrm_step_install(),
+                                )}
+                            </li>
                             <div class="my-2">{m.quickstart_nonpdrm_dlc()}</div>
                             <li>
-                                {@html sanitize(m.quickstart_nonpdrm_dlc_step_copy())}
+                                {@html sanitize(
+                                    m.quickstart_nonpdrm_dlc_step_copy(),
+                                )}
                             </li>
-                            <li>{@html sanitize(m.quickstart_nonpdrm_dlc_step_zip())}</li>
                             <li>
-                                {@html sanitize(m.quickstart_nonpdrm_dlc_step_install())}
+                                {@html sanitize(
+                                    m.quickstart_nonpdrm_dlc_step_zip(),
+                                )}
+                            </li>
+                            <li>
+                                {@html sanitize(
+                                    m.quickstart_nonpdrm_dlc_step_install(),
+                                )}
                             </li>
                         </ol>
                     </div>
@@ -587,7 +696,9 @@
 
 <section class="qs-section qs-next text-white">
     <div class="container">
-        <h2 class="qs-heading qs-heading--small">{m.quickstart_next_title()}</h2>
+        <h2 class="qs-heading qs-heading--small">
+            {m.quickstart_next_title()}
+        </h2>
         <div class="qs-grid qs-grid--3">
             {#each NEXT as link, index (link.href)}
                 <a
@@ -598,7 +709,8 @@
                     use:reveal={index * 80}
                 >
                     <span class="qs-card__icon" aria-hidden="true">
-                        <i class={`${link.brand ? "fab" : "fas"} ${link.icon}`}></i>
+                        <i class={`${link.brand ? "fab" : "fas"} ${link.icon}`}
+                        ></i>
                     </span>
                     <h3 class="qs-card__title">
                         {link.title()} <span aria-hidden="true">→</span>
