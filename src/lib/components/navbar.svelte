@@ -182,7 +182,7 @@
     id="mainNav"
 >
     <div class="container">
-        <a class="nav-link" href={resolve("/")} on:click={collapseNavbar}>
+        <a class="nav-link" href={resolve("/")} onclick={collapseNavbar}>
             <img
                 class="logo"
                 src={logo}
@@ -198,7 +198,7 @@
             aria-controls="navbarResponsive"
             aria-expanded={!navCollapsed}
             aria-label={m.nav_toggle_navigation()}
-            on:click={toggleNavbar}
+            onclick={toggleNavbar}
         >
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -215,7 +215,7 @@
                             ? 'active'
                             : ''}"
                         href={resolve("/quickstart")}
-                        on:click={collapseNavbar}>{m.nav_quickstart()}</a
+                        onclick={collapseNavbar}>{m.nav_quickstart()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -225,7 +225,7 @@
                             ? 'active'
                             : ''}"
                         href={resolve("/blog")}
-                        on:click={collapseNavbar}>{m.nav_blog()}</a
+                        onclick={collapseNavbar}>{m.nav_blog()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -233,7 +233,7 @@
                         class="nav-link
                         {page.url.pathname === resolve('/faq') ? 'active' : ''}"
                         href={resolve("/faq")}
-                        on:click={collapseNavbar}>{m.nav_faqs()}</a
+                        onclick={collapseNavbar}>{m.nav_faqs()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -243,7 +243,7 @@
                             ? 'active'
                             : ''}"
                         href={resolve("/download")}
-                        on:click={collapseNavbar}>{m.nav_download()}</a
+                        onclick={collapseNavbar}>{m.nav_download()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -253,7 +253,7 @@
                             ? 'active'
                             : ''}"
                         href={resolve("/compatibility")}
-                        on:click={collapseNavbar}>{m.nav_compatibility()}</a
+                        onclick={collapseNavbar}>{m.nav_compatibility()}</a
                     >
                 </li>
                 <VerticalSeparator />
@@ -262,7 +262,7 @@
                         class="nav-link"
                         target="_blank"
                         href="https://discord.gg/6aGwQzh"
-                        on:click={collapseNavbar}>Discord</a
+                        onclick={collapseNavbar}>Discord</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -270,7 +270,7 @@
                         class="nav-link"
                         target="_blank"
                         href="https://github.com/Vita3K"
-                        on:click={collapseNavbar}>GitHub</a
+                        onclick={collapseNavbar}>GitHub</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -278,7 +278,7 @@
                         class="nav-link"
                         target="_blank"
                         href="https://crowdin.vita3k.org"
-                        on:click={collapseNavbar}>{m.nav_translate()}</a
+                        onclick={collapseNavbar}>{m.nav_translate()}</a
                     >
                 </li>
                 <li class="nav-item d-flex align-items-center">
@@ -286,7 +286,7 @@
                         class="nav-link"
                         target="_blank"
                         href="https://ko-fi.com/vita3k"
-                        on:click={collapseNavbar}>{m.nav_donate()}</a
+                        onclick={collapseNavbar}>{m.nav_donate()}</a
                     >
                 </li>
                 <VerticalSeparator />
