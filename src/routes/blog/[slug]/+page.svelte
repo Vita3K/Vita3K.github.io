@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { m } from "$lib/paraglide/messages.js";
-    import { sanitize } from "$lib/sanitize";
-    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+    import { m } from "#lib/paraglide/messages.js";
+    import { sanitize } from "#lib/sanitize.js";
+    import CompositeMeta from "#lib/components/CompositeMeta.svelte";
 
     let { data } = $props();
     let post = $derived(data.post);

@@ -1,4 +1,4 @@
-import { getAllPosts } from '$lib/posts';
+import { getAllPosts } from '#lib/posts.js';
 
 export async function load({ params }) {
   const posts = await getAllPosts();

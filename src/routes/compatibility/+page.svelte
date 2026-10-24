@@ -3,11 +3,11 @@
     import { Tween, prefersReducedMotion } from "svelte/motion";
     import { cubicOut } from "svelte/easing";
     import { asset } from "$app/paths";
-    import { m } from "$lib/paraglide/messages.js";
-    import { getLocale } from "$lib/paraglide/runtime";
-    import { nativeTitles } from "$lib/native-titles";
-    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
-    import PageHeader from "$lib/components/PageHeader.svelte";
+    import { m } from "#lib/paraglide/messages.js";
+    import { getLocale } from "#lib/paraglide/runtime.js";
+    import { nativeTitles } from "#lib/native-titles.js";
+    import CompositeMeta from "#lib/components/CompositeMeta.svelte";
+    import PageHeader from "#lib/components/PageHeader.svelte";
 
     const FIELDS = {
         Nothing: "nothing",
@@ -213,15 +213,15 @@
     function getRegionFlag(region: REGION) {
         switch (region) {
             case "USA":
-                return asset("/img/flags/us.svg");
+                return asset("img/flags/us.svg");
             case "EUR":
-                return asset("/img/flags/eu.svg");
+                return asset("img/flags/eu.svg");
             case "JPN":
-                return asset("/img/flags/jp.svg");
+                return asset("img/flags/jp.svg");
             case "ASIA":
-                return asset("/img/flags/asia.svg");
+                return asset("img/flags/asia.svg");
             default:
-                return asset("/img/flags/unk.svg");
+                return asset("img/flags/unk.svg");
         }
     }
 

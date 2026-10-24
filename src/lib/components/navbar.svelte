@@ -1,12 +1,12 @@
 <script lang="ts">
     import { resolve } from "$app/paths";
-    import { m } from "$lib/paraglide/messages.js";
-    import { setLocale, getLocale, locales } from "$lib/paraglide/runtime";
+    import { m } from "#lib/paraglide/messages.js";
+    import { setLocale, getLocale, locales } from "#lib/paraglide/runtime.js";
     import { page } from "$app/state";
-    import VerticalSeparator from "$lib/components/VerticalSeparator.svelte";
+    import VerticalSeparator from "#lib/components/VerticalSeparator.svelte";
     import { onMount } from "svelte";
 
-    import logo from "$lib/assets/logo.svg";
+    import logo from "#lib/assets/logo.svg";
 
     // Locales that exist only as a joke, and so say nothing about whether a visitor
     // can read the site in their own language.

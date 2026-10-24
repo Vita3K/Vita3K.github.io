@@ -1,20 +1,20 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { m } from "$lib/paraglide/messages.js";
-    import { getLocale } from "$lib/paraglide/runtime";
-    import { sanitize } from "$lib/sanitize";
+    import { m } from "#lib/paraglide/messages.js";
+    import { getLocale } from "#lib/paraglide/runtime.js";
+    import { sanitize } from "#lib/sanitize.js";
     import { resolve } from "$app/paths";
-    import { reveal } from "$lib/actions/reveal";
+    import { reveal } from "#lib/actions/reveal.js";
     import {
         fetchCompatibilitySummary,
         SUMMARY_STATUSES,
         type CompatibilitySummary,
         type SummaryStatus,
-    } from "$lib/compatibility-summary";
-    import logo from "$lib/assets/logo.svg";
-    import HeroSymbols from "$lib/components/HeroSymbols.svelte";
-    import ShowcaseImage from "$lib/components/ShowcaseImage.svelte";
-    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+    } from "#lib/compatibility-summary.js";
+    import logo from "#lib/assets/logo.svg";
+    import HeroSymbols from "#lib/components/HeroSymbols.svelte";
+    import ShowcaseImage from "#lib/components/ShowcaseImage.svelte";
+    import CompositeMeta from "#lib/components/CompositeMeta.svelte";
 
     const PLATFORMS = [
         { name: "Windows", icon: "fa-windows" },
