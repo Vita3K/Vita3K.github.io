@@ -290,7 +290,7 @@
                     >
                 </li>
                 <VerticalSeparator />
-                <select value={currentSelectValue} on:change={handleLocaleSelect}>
+                <select value={currentSelectValue} onchange={handleLocaleSelect}>
                     {#each locales as locale (locale)}
                         <option value={locale}>
                             {m.nav_lang({}, { locale: locale })}
