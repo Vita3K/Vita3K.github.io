@@ -12,13 +12,14 @@
 
 <svelte:head>
     <title>{title}</title>
-    <CompositeMeta key="title" content={title} />
-    <CompositeMeta key="author" content={author} />
-    <CompositeMeta
-        key="description"
-        content={post ? post.excerptText : ""}
-    />
 </svelte:head>
+
+<CompositeMeta key="title" content={title} />
+<CompositeMeta key="author" content={author} />
+<CompositeMeta
+    key="description"
+    content={post ? post.excerptText : ""}
+/>
 
 {#if post}
     <section class="blog-page blog-detail bg-dark text-white">

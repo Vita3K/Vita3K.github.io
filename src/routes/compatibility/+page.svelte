@@ -703,12 +703,13 @@
 <svelte:head>
     <title>Vita3K - {m.nav_compatibility()}</title>
     <link rel="preconnect" href="https://api.vita3k.org" crossorigin="anonymous" />
-    <CompositeMeta key="title" content={`Vita3K - ${m.nav_compatibility()}`} />
-    <CompositeMeta
-        key="description"
-        content={m.compatibility_meta_description()}
-    />
 </svelte:head>
+
+<CompositeMeta key="title" content={`Vita3K - ${m.nav_compatibility()}`} />
+<CompositeMeta
+    key="description"
+    content={m.compatibility_meta_description()}
+/>
 
 <svelte:window onkeydown={handleWindowKeydown} />
 

@@ -9,12 +9,13 @@
 
 <svelte:head>
     <title>Vita3K - {m.nav_blog()}</title>
-    <CompositeMeta key="title" content="Vita3K - {m.nav_blog()}" />
-    <CompositeMeta
-        key="description"
-        content={`Vita3K blog - ${data.posts.length} posts`}
-    />
 </svelte:head>
+
+<CompositeMeta key="title" content="Vita3K - {m.nav_blog()}" />
+<CompositeMeta
+    key="description"
+    content={`Vita3K blog - ${data.posts.length} posts`}
+/>
 
 <section class="page-route blog-page blog-index bg-dark text-white">
     <div class="container" id="blog-container">

@@ -41,9 +41,10 @@
 
 <svelte:head>
     <title>Vita3K - {m.nav_download()}</title>
-    <CompositeMeta key="title" content="Vita3K - {m.nav_download()}" />
-    <CompositeMeta key="description" content={m.download_meta_description()} />
 </svelte:head>
+
+<CompositeMeta key="title" content="Vita3K - {m.nav_download()}" />
+<CompositeMeta key="description" content={m.download_meta_description()} />
 
 <section class="page-route bg-dark text-dark">
     <div class="container">

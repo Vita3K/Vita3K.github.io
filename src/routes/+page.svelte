@@ -124,9 +124,10 @@
     <title>{m.meta_title()}</title>
     <!-- The compatibility card reads the feed -->
     <link rel="preconnect" href="https://api.vita3k.org" crossorigin="anonymous" />
-    <CompositeMeta key="title" content={m.meta_title()} />
-    <CompositeMeta key="description" content={m.home_meta_description()} />
 </svelte:head>
+
+<CompositeMeta key="title" content={m.meta_title()} />
+<CompositeMeta key="description" content={m.home_meta_description()} />
 
 <header class="home-hero text-white">
     <div class="home-hero__backdrop" aria-hidden="true"></div>

@@ -304,12 +304,13 @@
 
 <svelte:head>
     <title>Vita3K - {m.nav_faqs()}</title>
-    <CompositeMeta key="title" content="Vita3K - {m.nav_faqs()}" />
-    <CompositeMeta
-        key="description"
-        content="Vita3K frequently asked questions"
-    />
 </svelte:head>
+
+<CompositeMeta key="title" content="Vita3K - {m.nav_faqs()}" />
+<CompositeMeta
+    key="description"
+    content="Vita3K frequently asked questions"
+/>
 
 <section class="page-route faq-page text-white">
     <div class="container">
