@@ -1,8 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { m } from "$lib/paraglide/messages.js";
-    import { getLocale } from "$lib/paraglide/runtime";
-    import { BUILD_RELEASES_URL, fetchBuilds, type Build, type PlatformId } from "$lib/builds";
+    import { m } from "#lib/paraglide/messages.js";
+    import { getLocale } from "#lib/paraglide/runtime.js";
+    import { BUILD_RELEASES_URL, fetchBuilds, type Build, type PlatformId } from "#lib/builds.js";
 
     type PlatformOption = { platform: PlatformId; label: string };
     type PlatformGroup = { name: string; icon: string; options: PlatformOption[] };

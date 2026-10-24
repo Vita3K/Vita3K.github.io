@@ -1,7 +1,7 @@
 <script lang="ts">
     import { resolve } from "$app/paths";
-    import { m } from "$lib/paraglide/messages.js";
-    import logo from "$lib/assets/logo.svg";
+    import { m } from "#lib/paraglide/messages.js";
+    import logo from "#lib/assets/logo.svg";
 
     const currentYear = new Date().getFullYear();
 

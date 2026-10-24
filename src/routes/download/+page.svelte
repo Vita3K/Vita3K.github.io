@@ -1,11 +1,11 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import { m } from "$lib/paraglide/messages.js";
+    import { m } from "#lib/paraglide/messages.js";
 
-    import BuildHistory from "$lib/components/BuildHistory.svelte";
-    import DownloadBox from "$lib/components/DownloadBox.svelte";
-    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
-    import PageHeader from "$lib/components/PageHeader.svelte";
+    import BuildHistory from "#lib/components/BuildHistory.svelte";
+    import DownloadBox from "#lib/components/DownloadBox.svelte";
+    import CompositeMeta from "#lib/components/CompositeMeta.svelte";
+    import PageHeader from "#lib/components/PageHeader.svelte";
 
     type Platform = "windows" | "macos" | "linux-appimage" | "android";
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
-    import PageHeader from "$lib/components/PageHeader.svelte";
-    import { m } from "$lib/paraglide/messages.js";
-    import { sanitize } from "$lib/sanitize";
+    import CompositeMeta from "#lib/components/CompositeMeta.svelte";
+    import PageHeader from "#lib/components/PageHeader.svelte";
+    import { m } from "#lib/paraglide/messages.js";
+    import { sanitize } from "#lib/sanitize.js";
 
     let { data } = $props();
 </script>

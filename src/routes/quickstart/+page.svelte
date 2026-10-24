@@ -1,12 +1,13 @@
 <script lang="ts">
-    import AccordionItem from "$lib/components/AccordionItem.svelte";
-    import PageHeader from "$lib/components/PageHeader.svelte";
+    import AccordionItem from "#lib/components/AccordionItem.svelte";
+    import PageHeader from "#lib/components/PageHeader.svelte";
     import { onMount } from "svelte";
     import { asset, resolve } from "$app/paths";
-    import { reveal } from "$lib/actions/reveal";
-    import { m } from "$lib/paraglide/messages.js";
-    import { sanitize } from "$lib/sanitize";
-    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+    import type { AssetPath } from "$app/types";
+    import { reveal } from "#lib/actions/reveal.js";
+    import { m } from "#lib/paraglide/messages.js";
+    import { sanitize } from "#lib/sanitize.js";
+    import CompositeMeta from "#lib/components/CompositeMeta.svelte";
 
     // The tools the dumping guide links to. They are passed into the messages rather than
     // written inside them so that a translator can move the link through the sentence
@@ -51,39 +52,42 @@
         },
     ];
 
-    const HARDWARE = {
+    const HARDWARE: Record<
+        "minimum" | "recommended",
+        { icon: AssetPath; text: () => string }[]
+    > = {
         minimum: [
             {
-                icon: "/img/icons/opengl.svg",
+                icon: "img/icons/opengl.svg",
                 text: () =>
                     m.quickstart_gpu_that_supports_opengl_version({
                         version: "4.4",
                     }),
             },
             {
-                icon: "/img/icons/cpu.svg",
+                icon: "img/icons/cpu.svg",
                 text: () => m.quickstart_any_x86_64_cpu(),
             },
             {
-                icon: "/img/icons/ram.svg",
+                icon: "img/icons/ram.svg",
                 text: () => m.quickstart_minimum_of_Xgb_of_ram({ amount: "4" }),
             },
         ],
         recommended: [
             {
-                icon: "/img/icons/vulkan.svg",
+                icon: "img/icons/vulkan.svg",
                 text: () => m.quickstart_gpu_that_supports_vulkan(),
             },
             {
-                icon: "/img/icons/gpu.svg",
+                icon: "img/icons/gpu.svg",
                 text: () => m.quickstart_gpu_that_supports_shader_interlock(),
             },
             {
-                icon: "/img/icons/cpu.svg",
+                icon: "img/icons/cpu.svg",
                 text: () => m.quickstart_x86_64_cpu_with_avx(),
             },
             {
-                icon: "/img/icons/ram.svg",
+                icon: "img/icons/ram.svg",
                 text: () =>
                     m.quickstart_recommended_Xgb_of_ram({ amount: "8" }),
             },

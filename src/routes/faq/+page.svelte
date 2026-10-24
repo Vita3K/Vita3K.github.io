@@ -1,9 +1,9 @@
 <script lang="ts">
     import { asset, resolve } from "$app/paths";
-    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
-    import PageHeader from "$lib/components/PageHeader.svelte";
-    import { m } from "$lib/paraglide/messages.js";
-    import { reveal } from "$lib/actions/reveal";
+    import CompositeMeta from "#lib/components/CompositeMeta.svelte";
+    import PageHeader from "#lib/components/PageHeader.svelte";
+    import { m } from "#lib/paraglide/messages.js";
+    import { reveal } from "#lib/actions/reveal.js";
 
     let copiedId = $state("");
     let copiedTimer: number | undefined;
@@ -321,7 +321,7 @@
                     <div class="question-row">
                         <img
                             class="label"
-                            src={asset("/img/icons/faq-question.svg")}
+                            src={asset("img/icons/faq-question.svg")}
                             alt=""
                             aria-hidden="true"
                         />
@@ -363,7 +363,7 @@
                     <div class="answer-row">
                         <img
                             class="label"
-                            src={asset("/img/icons/faq-answer.svg")}
+                            src={asset("img/icons/faq-answer.svg")}
                             alt=""
                             aria-hidden="true"
                         />

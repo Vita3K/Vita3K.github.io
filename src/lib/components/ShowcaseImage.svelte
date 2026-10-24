@@ -1,5 +1,6 @@
 <script lang="ts">
     import { asset } from "$app/paths";
+    import type { AssetPath } from "$app/types";
 
     const {
         name,
@@ -11,7 +12,7 @@
         onopen?: (name: string, src: string) => void;
     } = $props();
 
-    const fullsize = asset(`/img/portfolio/fullsize/${imageLink}`);
+    const fullsize = asset(`img/portfolio/fullsize/${imageLink}` as AssetPath);
 
     /** Keeps the plain link working for new tabs and no-script readers. */
     function handleClick(event: MouseEvent) {
@@ -26,7 +27,7 @@
 
 <a class="showcase-tile" href={fullsize} onclick={handleClick}>
     <img
-        src={asset(`/img/portfolio/thumbnails/${imageLink}`)}
+        src={asset(`img/portfolio/thumbnails/${imageLink}` as AssetPath)}
         alt={name}
         width="960"
         height="544"

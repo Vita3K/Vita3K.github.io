@@ -1,18 +1,18 @@
 <script lang="ts">
     import { afterNavigate } from "$app/navigation";
-    import type { Pathname } from "$app/types";
+    import type { Path } from "$app/types";
     import { asset, resolve } from "$app/paths";
     import { page } from "$app/state";
-    import { locales, localizeHref } from "$lib/paraglide/runtime";
-    import { m } from "$lib/paraglide/messages.js";
-    import favicon from "$lib/assets/favicon.ico";
+    import { locales, localizeHref } from "#lib/paraglide/runtime.js";
+    import { m } from "#lib/paraglide/messages.js";
+    import favicon from "#lib/assets/favicon.ico";
 
-    import Navbar from "$lib/components/navbar.svelte";
-    import Footer from "$lib/components/Footer.svelte";
+    import Navbar from "#lib/components/navbar.svelte";
+    import Footer from "#lib/components/Footer.svelte";
 
     import "bootstrap/scss/bootstrap.scss";
-    import "$lib/scss/creative.scss";
-    import CompositeMeta from "$lib/components/CompositeMeta.svelte";
+    import "#lib/scss/creative.scss";
+    import CompositeMeta from "#lib/components/CompositeMeta.svelte";
 
     let { children } = $props();
     let scrollY = $state(0);
@@ -58,7 +58,7 @@
         name="keywords"
         content="vita3k, PSVita, PSVita emulator, PSVita emulation, PSVita, emulator, windows, macos, linux, android"
     />
-    <CompositeMeta key="image" content={`https://vita3k.org/${asset("/img/logo.webp")}`} />
+    <CompositeMeta key="image" content={`https://vita3k.org/${asset("img/logo.webp")}`} />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="1024" />
     <meta property="og:url" content="https://vita3k.org/" />
@@ -77,7 +77,7 @@
     {#each locales as locale (locale)}
         <a
             href={resolve(
-                localizeHref(page.url.pathname, { locale }) as Pathname,
+                localizeHref(page.url.pathname, { locale }) as Path,
             )}>{locale}</a
         >
     {/each}
